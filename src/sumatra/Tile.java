@@ -16,6 +16,7 @@ public class Tile {
         capacity = -1;
         is_capacity_known = false;
         building = new NoBuilding();
+        players = new ArrayList<Player>();
     }
 
     public int getSnowlayers() {
