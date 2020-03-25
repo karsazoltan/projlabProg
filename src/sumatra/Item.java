@@ -1,5 +1,4 @@
 package sumatra;
-import java.util.*;
 
 /**
  * Általános absztrakt osztály, a játékban található tárgyak modellezésére
