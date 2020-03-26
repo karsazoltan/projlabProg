@@ -6,6 +6,7 @@ package sumatra;
 public abstract class Item {
     protected String objName;
 
+    public Item() {}
     public Item(String objName) {
         this.objName = objName;
     }
