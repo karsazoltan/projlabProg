@@ -5,13 +5,19 @@ package sumatra;
  */
 public abstract class Rope extends AutomaticItem {
 
+    public Rope(String objName) {
+        super(objName);
+    }
+
     /**
      * A kötelet hozzárendeli a paraméterként kapott játékoshoz.
      * @param p azon játékos, aki a tárgyat birtokolni fogja, vagy a tárgy valamilyen akciót hajt rajta végre
      */
     @Override
     public void giveToPlayer(Player p) {
+        Skeleton.printLine(objName, "giveToPlayer()");
         p.addRope(this);
+        Skeleton.returned();
     }
 
     /**

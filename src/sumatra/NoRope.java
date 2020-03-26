@@ -4,6 +4,11 @@ package sumatra;
  * Kötél leszármazott, azt reprezentálja, hogy egy játékosnak nincsen kötele.
  */
 public class NoRope extends Rope {
+
+    public NoRope(String objName) {
+        super(objName);
+    }
+
     /**
      * Játékosmentő függvény, a NoRope esetében viszont nem történik semmi, mert ezzel a "kötéllel"
      * nem lehet játékost menteni.
@@ -12,6 +17,9 @@ public class NoRope extends Rope {
      * @param newTile A kötelet birtokló játékos mezője.
      */
     @Override
-    public void save(Player p, Tile t, Tile newTile) { }
+    public void save(Player p, Tile t, Tile newTile) {
+        Skeleton.printLine(objName, "save()");
+        Skeleton.returned();
+    }
 
 }

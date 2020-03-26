@@ -5,5 +5,7 @@ package sumatra;
  */
 public abstract class AutomaticItem extends Item {
 
-    // TODO Hát ez nem csinál semmit xd
+    public AutomaticItem(String objName) {
+        super(objName);
+    }
 }

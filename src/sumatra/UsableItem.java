@@ -5,6 +5,10 @@ package sumatra;
  */
 public abstract class UsableItem extends Item {
 
+    public UsableItem(String objName) {
+        super(objName);
+    }
+
     /**
      * Az eszköz használatát reprezentáló függvény. Absztrakt, a leszármazottak ezt
      * a függvényt kell felüldefiniálják a működés végrehajtásához.
@@ -18,7 +22,8 @@ public abstract class UsableItem extends Item {
      */
     @Override
     public void giveToPlayer(Player p) {
-        Skeleton.printLine(null, null);
+        Skeleton.printLine(objName, "giveToPlayer()");
         p.addUsableItem(this);
+        Skeleton.returned();
     }
 }
