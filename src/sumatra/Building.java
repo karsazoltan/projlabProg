@@ -1,5 +1,7 @@
 package sumatra;
 
+import java.util.ArrayList;
+
 /**
  * Absztrakt építmény osztály. Minden Tile-nak van egy Buildinge, ami meghatározza, hogy hóvihar esetén
  * a mezőn álló játékosokkal mi történik. Ez a lehetséges építmények közös őse.

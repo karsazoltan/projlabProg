@@ -1,5 +1,7 @@
 package sumatra;
 
+import java.util.ArrayList;
+
 /**
  * Építmény leszármazott, azt szimbolizálja, hogy az adott mezőn nincs építmény.
  */

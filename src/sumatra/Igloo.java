@@ -1,5 +1,7 @@
 package sumatra;
 
+import java.util.ArrayList;
+
 /**
  * Építmény leszármazott, azt szimbolizálja, hogy az adott mezőn van iglu. Ekkor a hóvihar káros hatásaitól
  * a mezőn álló játékosok védve vannak.
