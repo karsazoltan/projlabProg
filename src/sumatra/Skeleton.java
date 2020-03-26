@@ -169,5 +169,23 @@ public class Skeleton {
 
     static int depth = 0;
     public static void printLine(String objectName, String methodName) {
+        for (int i = 0; i < depth; i++)
+            System.out.print("\t");
+        System.out.println(objectName + "." + methodName);
+        depth++;
+    }
+
+    public static void returned() {
+        if (depth <= 0) {
+            System.out.println("Hiba: Elrontotta valaki a returned() használatát, negatív mélység van :(");
+        }
+        depth--;
+    }
+
+    public static boolean askQuestion(String question) {
+        System.out.print(question + " (I/N) ");
+        Scanner sc = new Scanner(System.in);
+        String result = sc.next().trim();
+        return (result.equals("I") || result.equals("i"));
     }
 }
