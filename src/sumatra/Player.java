@@ -63,26 +63,30 @@ public abstract class Player {
      * @param newTile a mező, ahova a játékos lép.
      */
     public void move(Tile newTile) {
-
-        boolean hasMana = true; // opt van még munkaegysége
-
+        Skeleton.printLine(this.objName, "move");
+        boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
         if( hasMana ){
             tile.remove(this);
             newTile.accept(this);
 
             tile = newTile; // vagy Tile.accept-be Player.setTile(this); ???
         }
+
+        Skeleton.returned();
     }
 
     /**
      * Ás egyet a játékos, eltüntet egy réteg havat a mezőjéről.
      */ 
     public void dig() {
-        boolean hasMana = true; // opt van még munkaegysége
-        
+        Skeleton.printLine(this.objName, "dig");
+
+        boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
         if( hasMana ){
             tile.removeSnow(1);
         }
+
+        Skeleton.returned();
     }
 
 
@@ -90,7 +94,11 @@ public abstract class Player {
      * A játékos beleesik a vízbe.
      */ 
     public void fallInWater() {     
+        Skeleton.printLine(this.objName, "fallInWater");
+
         divingSuit.fallInWater(this);
+
+        Skeleton.returned();
     }
 
     /**
@@ -99,29 +107,39 @@ public abstract class Player {
      * @param target mező amin felhasználja a játékos a tárgyat.
      */ 
     public void useItem(int index, Tile target) {
-        boolean hasMana = true; // opt van még munkaegysége
-        
+        Skeleton.printLine(this.objName, "useItem");
+
+        boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
         if( hasMana ){
             useableItems.get(index).use(target);
         }
+
+        Skeleton.returned();
     }
 
     /**
      * A játékos felvesz egy tárgyat a mezőjéről.
      */ 
-    public void pickUpItem() {
-        boolean hasMana = true; // opt van még munkaegysége
-        
+    public void pickUpItem() {        
+        Skeleton.printLine(this.objName, "pickUpItem");
+
+        boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
         if( hasMana ){
             tile.pickUpItem(this);
         }
+
+        Skeleton.returned();
     }
 
     /**
      * A játékos összerakja a flare-t, ha ez sikerül befejeződik a játék.
      */ 
     public void buildFlare() {
+        Skeleton.printLine(this.objName, "buildFlare");
+
         World.getInstance().checkEndGame();
+
+        Skeleton.returned();
     }
 
     /**
@@ -129,7 +147,11 @@ public abstract class Player {
      * @param item az új tárgy, amit kap a játékos.
      */ 
     public void addUsableItem(UsableItem item) {
+        Skeleton.printLine(this.objName, "addUsableItem");
+
         useableItems.add(item);
+
+        Skeleton.returned();
     }
 
     /**
@@ -138,7 +160,11 @@ public abstract class Player {
      * @param target megmententő játékos mezője.
      */ 
     public void saveMe(Player p, Tile target){
+        Skeleton.printLine(this.objName, "saveMe");
+
         rope.save(p, target, tile);
+
+        Skeleton.returned();
     }
 
     /**
@@ -162,13 +188,21 @@ public abstract class Player {
      * @param ds az új búvárruha, amit kap a játékos.
      */
     public void addDivingSuit(DivingSuit ds){
+        Skeleton.printLine(this.objName, "addDivingSuit");
+
         divingSuit = ds;
+
+        Skeleton.returned();
     }
     /**
      * A játékos kap egy új kötelet.
      * @param r az új kötél, amit kap a játékos.
      */
     public void addRope(Rope r){
+        Skeleton.printLine(this.objName, "addRope");
+        
         rope = r;
+
+        Skeleton.returned();
     }
 }

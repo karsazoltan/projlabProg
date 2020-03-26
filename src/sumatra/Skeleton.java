@@ -28,16 +28,37 @@ public class Skeleton {
 
     }
 
+    /**
+     * Eszkimó használja a képességét nem lyukon szekvenciaindító függvény.
+     */
     public static void EskimoAbilityNoHole() {
+        Tile tile = new Tile();
+        Eskimo e = new Eskimo(tile, "e" );
 
+        tile.accept(e);
+        e.useAbility(tile);
     }
 
+    /**
+     * Eszkimó használja a képességét lyukon szekvenciaindító függvény.
+     */
     public static void EskimoAbilityOnHole() {
+        Tile tile = new HoleTile();
+        Eskimo e = new Eskimo(tile, "e" );
 
+        tile.accept(e);
+        e.useAbility(tile);
     }
 
+    /**
+     * Sarkkutató használja a képességét szekvenciaindító függvény.
+     */
     public static void ResearcherAbility() {
+        Tile tile = new Tile();
+        Researcher r = new Researcher(tile, "r" );
 
+        tile.accept(r);
+        r.useAbility(tile);
     }
 
     public static void SnowstormNoBuilding() {
