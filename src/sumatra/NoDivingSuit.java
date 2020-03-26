@@ -1,5 +1,7 @@
 package sumatra;
 
+import java.util.ArrayList;
+
 /**
  * Búvárruha leszármazott, azt szimbolizálja, hogy a játékosnak nincsen búvárruhája.
  */

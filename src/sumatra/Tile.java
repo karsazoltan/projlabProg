@@ -1,5 +1,6 @@
 package sumatra;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Tile {
@@ -82,7 +83,7 @@ public class Tile {
         }
     }
 
-    public Player[] getNeighingPlayers() {
+    public ArrayList<Player> getNeighingPlayers() {
         //TODO
     }
 
