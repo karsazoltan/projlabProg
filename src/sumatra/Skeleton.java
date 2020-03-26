@@ -76,16 +76,40 @@ public class Skeleton {
 
     }
 
+    /**
+     * Jelzőrakéta összeszerelése szekvenciaindító függvény
+     */
     public static void FlareAssembly() {
+        Eskimo eskimo = new Eskimo(null, "eskimo");
 
+        eskimo.buildFlare();
     }
 
+    /**
+     * Player ásóval ás szekvenciaindító függvény
+     */
     public static void PlayerDigsWithShovel() {
+        //Tile tile = new Tile("tile");
+        Tile tile = new Tile(); // TODO Jaki FIX THIS
+        Eskimo eskimo = new Eskimo(tile, "eskimo");
+        Shovel shovel = new Shovel("shovel");
+        eskimo.addUsableItem(shovel);
+        tile.accept(eskimo);
+
+        eskimo.useItem(0, tile); // TODO Ide kell a tile?
 
     }
 
+    /**
+     * Player kézzel ás szekvenciaindító függvény
+     */
     public static void PlayerDigsWithHands() {
+        //Tile tile = new Tile("tile");
+        Tile tile = new Tile(); // TODO Jaki FIX THIS
+        Eskimo eskimo = new Eskimo(tile, "eskimo");
+        tile.accept(eskimo);
 
+        eskimo.dig();
     }
 
     public static void SaveNoRope() {
