@@ -1,9 +1,11 @@
 package sumatra;
 
+import java.util.ArrayList;
+
 public class UnstableTile extends Tile {
     public void flip() {
-        Player[] players = getPlayers();
+        ArrayList<Player> players = getPlayers();
         for (int i = 0; i < getPlayers().size(); i++)
-            players.fallInWater();
+            players.get(i).fallInWater();
     }
 }
