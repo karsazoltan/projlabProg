@@ -18,6 +18,7 @@ public abstract class UsableItem extends Item {
      */
     @Override
     public void giveToPlayer(Player p) {
+        Skeleton.
         p.addUsableItem(this);
     }
 }

@@ -3,7 +3,8 @@ package sumatra;
 import java.util.*;
 
 public class Skeleton {
-    public static void print(String s) {
+    // TODO ez kell? Ne legyünk lusták :(
+    private static void print(String s) {
         System.out.println(s);
     }
 
