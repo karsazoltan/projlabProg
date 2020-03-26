@@ -54,6 +54,7 @@ public class Tile {
 
     public boolean placeItem(Item i) {
         item = i;
+        return false;
     }
 
     public void pickUpItem(Player p) {
