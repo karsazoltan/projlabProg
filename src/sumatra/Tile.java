@@ -43,7 +43,7 @@ public class Tile {
         snowlayers = 0;
         capacity = -1;
         is_capacity_known = false;
-        building = new NoBuilding();
+        building = new NoBuilding("noBuilding");
         players = new ArrayList<>();
     }
 
@@ -197,6 +197,6 @@ public class Tile {
      * A táblára helyez egy Igloo építményt
      */
     public void buildIgloo() {
-        building = new Igloo();
+        building = new Igloo("igloo");
     }
 }

@@ -7,6 +7,15 @@ import java.util.ArrayList;
  * a mezőn álló játékosokkal mi történik. Ez a lehetséges építmények közös őse.
  */
 public abstract class Building {
+    protected String objName;
+
+    /**
+     * Szkeleton konstruktor, meg lehet adni neki az objektum nevét
+     * @param objName Az objektum, mint változó neve
+     */
+    public Building(String objName) {
+        this.objName = objName;
+    }
 
     /**
      * Absztrakt függvény, hóvihar bekövetkezése esetén fut le. A Buildinget tartalmazó mező játékosaira
