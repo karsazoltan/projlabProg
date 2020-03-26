@@ -40,11 +40,11 @@ public class Skeleton {
 
     }
 
-    public static void SnowstromNoBuilding() {
+    public static void SnowstormNoBuilding() {
 
     }
 
-    public static void SnowstromIgloo() {
+    public static void SnowstormIgloo() {
 
     }
 
@@ -157,8 +157,8 @@ public class Skeleton {
         commands.put(6, () -> EskimoAbilityNoHole());
         commands.put(7, () -> EskimoAbilityOnHole());
         commands.put(8, () -> ResearcherAbility());
-        commands.put(9, () -> SnowstromNoBuilding());
-        commands.put(10, () -> SnowstromIgloo());
+        commands.put(9, () -> SnowstormNoBuilding());
+        commands.put(10, () -> SnowstormIgloo());
         commands.put(11, () -> PickUpFood());
         commands.put(12, () -> PickUpBasicRope());
         commands.put(13, () -> PickUpBasicDivingSuit());
