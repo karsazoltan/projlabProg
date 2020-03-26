@@ -27,7 +27,12 @@ public abstract class Player {
      */ 
     ArrayList<UsableItem> useableItems;
 
-    public Player(){
+    /**
+     * A játékos konstruktora, meg kell adni mezőt, ahol kezdetben van a játékos.
+     * @param starTile a mező melyen a játékos kezdetben van.
+     */
+    public Player(Tile startTile){
+        tile = startTile;
         divingSuit = new NoDivingSuit();
         rope = new NoRope();
         useableItems = new ArrayList<UsableItem>();
