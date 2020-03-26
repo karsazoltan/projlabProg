@@ -17,7 +17,7 @@ public class Tile {
         capacity = -1;
         is_capacity_known = false;
         building = new NoBuilding();
-        players = new ArrayList<Player>();
+        players = new ArrayList<>();
     }
 
     public int getSnowlayers() {
@@ -53,12 +53,15 @@ public class Tile {
     }
 
     public boolean placeItem(Item i) {
-        item = i;
-        return false;
+        if (item != null) {
+            item = i;
+            return false;
+        }
+        return true;
     }
 
     public void pickUpItem(Player p) {
-        //TODO
+        p.pickUpItem();
     }
 
     public void accept(Player p) {
@@ -66,7 +69,7 @@ public class Tile {
     }
 
     public void remove(Player p) {
-        //TODO
+        players.remove(p);
     }
 
     public void addNeighbor(Tile t) {
@@ -85,8 +88,11 @@ public class Tile {
     }
 
     public ArrayList<Player> getNeighingPlayers() {
-        //TODO
-        return null;
+        ArrayList<Player> neighingplayer = new ArrayList<>();
+        for (Tile t : neighbors) {
+            neighingplayer.addAll(t.players);
+        }
+        return neighingplayer;
     }
 
     public void revealCapacity() {
@@ -94,7 +100,7 @@ public class Tile {
     }
 
     public void storm() {
-        //TODO
+        building.onStorm(players);
     }
 
     public void buildIgloo() {
