@@ -5,6 +5,10 @@ package sumatra;
  */
 public abstract class AutomaticItem extends Item {
 
+    /**
+     * Szkeleton konstruktor, meg lehet adni neki az objektum nevét
+     * @param objName Az objektum, mint változó neve
+     */
     public AutomaticItem(String objName) {
         super(objName);
     }

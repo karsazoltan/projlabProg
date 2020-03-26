@@ -7,6 +7,10 @@ import java.util.ArrayList;
  */
 public class NoDivingSuit extends DivingSuit {
 
+    /**
+     * Szkeleton konstruktor, meg lehet adni neki az objektum nevét
+     * @param objName Az objektum, mint változó neve
+     */
     public NoDivingSuit(String objName) {
         super(objName);
     }

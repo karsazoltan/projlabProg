@@ -5,6 +5,10 @@ package sumatra;
  */
 public class NoRope extends Rope {
 
+    /**
+     * Szkeleton konstruktor, meg lehet adni neki az objektum nevét
+     * @param objName Az objektum, mint változó neve
+     */
     public NoRope(String objName) {
         super(objName);
     }
