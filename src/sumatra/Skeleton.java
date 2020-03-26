@@ -166,4 +166,8 @@ public class Skeleton {
             }
         }
     }
+
+    static int depth = 0;
+    public static void printLine(String objectName, String methodName) {
+    }
 }
