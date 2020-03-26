@@ -9,8 +9,8 @@ public class Researcher extends Player{
      * A sarkkutató játékos konstruktora, meg kell adni mezőt, ahol kezdetben van a játékos.
      * @param starTile a mező melyen a játékos kezdetben van.
      */
-    public Researcher(Tile startTile){
-        super(startTile);
+    public Researcher(Tile startTile, String objName){
+        super(startTile, objName);
     }
     /**
      * A sarkkutató játékos felfedi egy mezőröl, hogy hányan férnek el rajta.
