@@ -109,7 +109,7 @@ public abstract class Player {
      * A játékos összerakja a flare-t, ha ez sikerül befejeződik a játék.
      */ 
     public void buildFlare() {
-        World.checkEndGame();
+        World.getInstance().checkEndGame();
     }
 
     /**

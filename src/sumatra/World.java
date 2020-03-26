@@ -16,6 +16,19 @@ public class World {
     private List<FlarePart> flareParts;
 
     /**
+     * Singleton megvalósítás, a world példánya
+     */
+    private static World instance = new World();
+
+    /**
+     * Singleton megvalósítás, visszatér a singleton példánnyal.
+     * @return A singleton példány.
+     */
+    public static World getInstance() {
+        return instance;
+    }
+
+    /**
      * A játék indítására szolgáló függvény, körönként lehetőséget ad arra, hogy a játékosok lépjenek
      */
     public void startGame() {
