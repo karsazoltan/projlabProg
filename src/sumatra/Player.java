@@ -35,13 +35,13 @@ public abstract class Player {
 
     /**
      * A játékos konstruktora, meg kell adni mezőt, ahol kezdetben van a játékos.
-     * @param starTile a mező melyen a játékos kezdetben van.
+     * @param startTile a mező melyen a játékos kezdetben van.
      */
     public Player(Tile startTile, String pobjName){
         objName = pobjName;
         tile = startTile;
-        divingSuit = new NoDivingSuit();
-        rope = new NoRope();
+        divingSuit = new NoDivingSuit("noDivingSuit");
+        rope = new NoRope("noRope");
         useableItems = new ArrayList<UsableItem>();
     }
 
