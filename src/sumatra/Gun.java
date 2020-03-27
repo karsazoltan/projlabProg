@@ -9,7 +9,7 @@ public class Gun extends FlarePart {
     /**
      * Default constructor
      */
-    public Gun() {
+    public Gun(String objName) {
+        super(objName);
     }
-
 }

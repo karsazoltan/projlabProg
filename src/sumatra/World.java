@@ -8,12 +8,12 @@ public class World {
     /**
      * Mezók - Jaki még csinálja :)
      */
-    private List<Tile> tiles;
+    private ArrayList<Tile> tiles;
 
     /**
      * A jelzőrakéta egy alkatrészét reprezentáló típus
      */
-    private List<FlarePart> flareParts;
+    private ArrayList<FlarePart> flareParts;
 
     /**
      * Singleton megvalósítás, a world példánya
@@ -32,28 +32,32 @@ public class World {
      * A játék indítására szolgáló függvény, körönként lehetőséget ad arra, hogy a játékosok lépjenek
      */
     public void startGame() {
-        // TODO implement here
+        Skeleton.printLine("World", "startGame");
+        Skeleton.returned();
     }
 
     /**
      * Ellenőrzi a játék végét, azaz vagy nyertek a játékosok, vagy veszítettek
      */
     public void checkEndGame() {
-        // TODO implement here
+        Skeleton.printLine("World", "checkEndGame");
+        Skeleton.returned();
     }
 
     /**
      * Legenrálja a pályát alkotó táblákat
      */
     public void generateTiles() {
-        // TODO implement here
+        Skeleton.printLine("World", "generateTiles");
+        Skeleton.returned();
     }
 
     /**
      * Hóvihar generálására szolgáló függvény
      */
     public void generateSnowstorm() {
-        // TODO implement here
+        Skeleton.printLine("World", "generateSnowstorm");
+        Skeleton.returned();
     }
 
     /**
@@ -61,14 +65,17 @@ public class World {
      * @param fp a megtalált rész
      */
     public void registerFlarePart(FlarePart fp ) {
-        // TODO implement here
+        Skeleton.printLine("World", "registerFlarePart");
+        flareParts.add(fp);
+        Skeleton.returned();
     }
 
     /**
      * A játékosok vesztettek
      */
     public void loseGame() {
-        // TODO implement here
+        Skeleton.printLine("World", "loseGame");
+        Skeleton.returned();
     }
 
 }

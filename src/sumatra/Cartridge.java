@@ -9,6 +9,7 @@ public class Cartridge extends FlarePart {
     /**
      * Default constructor
      */
-    public Cartridge() {
+    public Cartridge(String objName) {
+        super(objName);
     }
 }

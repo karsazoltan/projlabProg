@@ -9,6 +9,7 @@ public class Beacon extends FlarePart {
     /**
      * Default constructor
      */
-    public Beacon() {
+    public Beacon(String objName) {
+        super(objName);
     }
 }
