@@ -41,9 +41,19 @@ public class World {
      */
     public void checkEndGame() {
         Skeleton.printLine("World", "checkEndGame");
+        if(Skeleton.askQuestion("Minden játékos egy mezőn áll? "))
+            if(Skeleton.askQuestion("Minden alkatrész megvan?"))
+                winGame();
         Skeleton.returned();
     }
 
+    /**
+     * a játék vége: nyertek a játékosok
+     */
+    public void winGame() {
+        Skeleton.printLine("World", "winGame");
+        Skeleton.returned();
+    }
     /**
      * Legenrálja a pályát alkotó táblákat
      */
@@ -57,6 +67,8 @@ public class World {
      */
     public void generateSnowstorm() {
         Skeleton.printLine("World", "generateSnowstorm");
+        Tile t = new Tile();
+        t.storm();
         Skeleton.returned();
     }
 
