@@ -76,6 +76,20 @@ public abstract class Player {
     }
 
     /**
+     * A játékost egy új mezőre teszi, függetlenül attól, hogy van-e munkaegysége.
+     * @param newTile a mező, ahol a játékos lesz.
+     */
+    public void forceMove(Tile newTile) {
+        Skeleton.printLine(this.objName, "foceMove()");
+
+        tile.remove(this);
+        newTile.accept(this);
+
+        tile = newTile;
+
+        Skeleton.returned();
+    }
+    /**
      * Ás egyet a játékos, eltüntet egy réteg havat a mezőjéről.
      */ 
     public void dig() {
