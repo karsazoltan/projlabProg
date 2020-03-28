@@ -142,8 +142,8 @@ public class Skeleton {
      * paraméterként adjuk át a tile-t.
      */
     public static void SnowstormNoBuilding() {
-        Tile t = new Tile("t");
-        Eskimo e = new Eskimo(t, "e");
+        Tile t = new Tile("tile");
+        Eskimo e = new Eskimo(t, "eskimo");
         startInit();
         t.accept(e);
         startSequence();
@@ -156,7 +156,7 @@ public class Skeleton {
      * paraméterként adjuk át a tile-t.
      */
     public static void SnowstormIgloo() {
-        Tile t = new Tile("t");
+        Tile t = new Tile("tile");
         startInit();
         t.buildIgloo();
         startSequence();
@@ -310,10 +310,10 @@ public class Skeleton {
      * Kimentési kísérlet kötél nélkül.
      */
     public static void SaveNoRope() {
-        Tile t1 = new Tile("t1");
-        Tile t2 = new Tile("t2");
-        Eskimo p1 = new Eskimo(t1, "p1");
-        Eskimo p = new Eskimo(t2, "p");
+        Tile t1 = new Tile("tile1");
+        Tile t2 = new Tile("tile2");
+        Eskimo p1 = new Eskimo(t1, "eskimo1");
+        Eskimo p = new Eskimo(t2, "eskimo2");
        
         //setup
         startInit();
@@ -330,11 +330,11 @@ public class Skeleton {
      * Kimetnés BasicRope-al.
      */
     public static void SaveBasicRope() {
-        Tile t1 = new Tile("t1");
-        Tile t2 = new Tile("t2");
-        Eskimo p1 = new Eskimo(t1, "p1");
-        Eskimo p = new Eskimo(t2, "p");
-        p.addRope(new BasicRope("br"));
+        Tile t1 = new Tile("tile1");
+        Tile t2 = new Tile("tile2");
+        Eskimo p1 = new Eskimo(t1, "eskimo1");
+        Eskimo p = new Eskimo(t2, "eskimo2");
+        p.addRope(new BasicRope("basicrope"));
        
         //setup
         startInit();
@@ -413,7 +413,7 @@ public class Skeleton {
                     if (idx == 0) scanner.close();
                     commands.get(idx).run();
                 }
-            } catch(Exception e) {
+            } catch (Exception e) {
                 System.out.println("Must be an integer value between 0 and 22!");
             }
         }
@@ -439,6 +439,7 @@ public class Skeleton {
         System.out.print(question + " (I/N) ");
         Scanner sc = new Scanner(System.in);
         String result = sc.next().trim();
+        sc.close();
         return (result.equals("I") || result.equals("i") || result.equals(""));
     }
 
