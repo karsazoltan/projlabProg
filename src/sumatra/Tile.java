@@ -28,7 +28,7 @@ public class Tile {
     /**
      * A táblán található játékosok
      */
-    private ArrayList<Player> players;
+    protected ArrayList<Player> players;
     /**
      * A táblán található tárgy
      */
@@ -39,7 +39,7 @@ public class Tile {
     private Building building;
 
     /**
-     * Az objektum nevét tárolja a skeletonhoz.
+     * Ez tárolja a válozó nevét, a szkeletonban a kiíráshoz kell.
      */
     protected String objName;
 
@@ -52,6 +52,7 @@ public class Tile {
         capacity = -1;
         is_capacity_known = false;
         building = new NoBuilding("noBuilding");
+        neighbors = new ArrayList<>();
         players = new ArrayList<>();
     }
 
@@ -92,6 +93,8 @@ public class Tile {
      * @return A táblán található játékosok
      */
     public ArrayList<Player> getPlayers() {
+        Skeleton.printLine(this.objName, "getPlayers");
+        Skeleton.returned();
         return players;
     }
 
@@ -117,10 +120,14 @@ public class Tile {
      * @return Az elhelyezés sikeressége
      */
     public boolean placeItem(Item i) {
+        Skeleton.printLine(this.objName, "placeItem");
+
         if (item != null) {
             item = i;
+            Skeleton.returned();
             return false;
         }
+        Skeleton.returned();
         return true;
     }
 
@@ -129,7 +136,11 @@ public class Tile {
      * @param p A játékos aki felveszi a tárgyat
      */
     public void pickUpItem(Player p) {
+        Skeleton.printLine(this.objName, "pickUpItem");
+
         item.giveToPlayer(p);
+
+        Skeleton.returned();
     }
 
     /**
@@ -137,7 +148,11 @@ public class Tile {
      * @param p A tábláról lépő játékos
      */
     public void accept(Player p) {
+        Skeleton.printLine(this.objName, "accept");
+
         players.add(p);
+
+        Skeleton.returned();
     }
 
     /**
@@ -145,7 +160,11 @@ public class Tile {
      * @param p Az eltávolítandő játékos
      */
     public void remove(Player p) {
+        Skeleton.printLine(this.objName, "remove");
+
         players.remove(p);
+
+        Skeleton.returned();
     }
 
     /**
@@ -153,7 +172,11 @@ public class Tile {
      * @param t A szomszéd tábla
      */
     public void addNeighbor(Tile t) {
+        Skeleton.printLine(this.objName, "addNeighbor");
+
         neighbors.add(t);
+
+        Skeleton.returned();
     }
 
     /**
@@ -163,6 +186,7 @@ public class Tile {
     public void addSnow(int amount) {
         Skeleton.printLine(objName, "addSnow()");
         snowlayers += amount;
+
         Skeleton.returned();
     }
 
@@ -171,10 +195,14 @@ public class Tile {
      * @param amount Az eltávolítandó hó mélysége
      */
     public void removeSnow(int amount) {
+        Skeleton.printLine(this.objName, "removeSnow");
+
         snowlayers -= amount;
         if (snowlayers < 0) {
             snowlayers = 0;
         }
+
+        Skeleton.returned();
     }
 
     /**
@@ -182,10 +210,15 @@ public class Tile {
      * @return A szomszédos játékosok
      */
     public ArrayList<Player> getNeighingPlayers() {
+        Skeleton.printLine(this.objName, "getNeighingPlayers");
+
         ArrayList<Player> neighingplayer = new ArrayList<>();
         for (Tile t : neighbors) {
             neighingplayer.addAll(t.players);
         }
+
+        Skeleton.returned();
+
         return neighingplayer;
     }
 
@@ -193,16 +226,22 @@ public class Tile {
      * Felfedi a mező teherbírását
      */
     public void revealCapacity() {
+        Skeleton.printLine(this.objName, "revealCapacity");
+
         is_capacity_known = true;
+
+        Skeleton.returned();
     }
 
     /**
      * Vihart csinál a táblán
      */
     public void storm() {
-        Skeleton.printLine(objName, "storm()");
+        Skeleton.printLine(this.objName, "storm");
+
         addSnow(new Random().nextInt(2));
         building.onStorm(players);
+
         Skeleton.returned();
     }
 
@@ -210,6 +249,10 @@ public class Tile {
      * A táblára helyez egy Igloo építményt
      */
     public void buildIgloo() {
+        Skeleton.printLine(this.objName, "buildIgloo");
+
         building = new Igloo("igloo");
+
+        Skeleton.returned();
     }
 }

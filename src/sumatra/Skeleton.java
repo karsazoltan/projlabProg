@@ -8,24 +8,87 @@ public class Skeleton {
         System.out.println(s);
     }
 
+    /**
+     * Játékos stabil jégtáblára lép szekvenciaindító függvény.
+     */
     public static void PlayerStepsOnTile() {
-        print("loxd");
+        Tile tile1 = new Tile("tile1");
+        Tile tile2 = new Tile("tile2");
+        Eskimo e = new Eskimo(tile1, "eskimo");
+
+        tile1.accept(e);
+        tile1.addNeighbor(tile2);
+        tile2.addNeighbor(tile1);
+
+        e.move(tile2);
     }
 
+    /**
+     * Játékos instabil jégtáblára lép búvárruha nélkül szekvenciaindító függvény.
+     */
     public static void PlayerStepsOnUnstableTileWithoutDivingSuit() {
+        Tile tile1 = new Tile("tile1");
+        UnstableTile tile2 = new UnstableTile("unstabletile");
+        Eskimo e = new Eskimo(tile1, "eskimo");
+        NoDivingSuit d = new NoDivingSuit("nodivinsuit");
 
+        tile1.accept(e);
+        tile1.addNeighbor(tile2);
+        tile2.addNeighbor(tile1);
+        e.addDivingSuit(d);
+
+        e.move(tile2);
     }
 
+    /**
+     * Játékos instabil jégtáblára lép búvárruhával szekvenciaindító függvény.
+     */
     public static void PlayerStepsOnUnstableTileWithDivingSuit() {
+        Tile tile1 = new Tile("tile1");
+        UnstableTile tile2 = new UnstableTile("unstabletile");
+        Eskimo e = new Eskimo(tile1, "eskimo");
+        BasicDivingSuit d = new BasicDivingSuit("basicdivinsuit");
 
+        tile1.accept(e);
+        tile1.addNeighbor(tile2);
+        tile2.addNeighbor(tile1);
+        e.addDivingSuit(d);
+
+        e.move(tile2);
     }
-    
+
+    /**
+     * Játékos lyukas jégtáblára lép búvárruha nélkül szekvenciaindító függvény.
+     */
     public static void PlayerStepsOnHoleWithoutDivingSuit() {
+        Tile tile1 = new Tile("tile1");
+        HoleTile tile2 = new HoleTile("holetile");
+        Eskimo e = new Eskimo(tile1, "eskimo");
+        NoDivingSuit d = new NoDivingSuit("nodivinsuit");
 
+        tile1.accept(e);
+        tile1.addNeighbor(tile2);
+        tile2.addNeighbor(tile1);
+        e.addDivingSuit(d);
+
+        e.move(tile2);
     }
 
+    /**
+     * Játékos lyukas jégtáblára lép búvárruhával szekvenciaindító függvény.
+     */
     public static void PlayerStepsOnHoleWithDivingSuit() {
+        Tile tile1 = new Tile("tile1");
+        HoleTile tile2 = new HoleTile("holetile");
+        Eskimo e = new Eskimo(tile1, "eskimo");
+        BasicDivingSuit d = new BasicDivingSuit("basicdivinsuit");
 
+        tile1.accept(e);
+        tile1.addNeighbor(tile2);
+        tile2.addNeighbor(tile1);
+        e.addDivingSuit(d);
+
+        e.move(tile2);
     }
 
     /**
@@ -64,9 +127,9 @@ public class Skeleton {
 
 
     /**
-     * Hóvihart generál a pályán. 
+     * Hóvihart generál a pályán.
      * Megjegyzés: prezentációs célokból a World generateSnowstorm függvényének
-     * paraméterként adjuk át a tile-t. 
+     * paraméterként adjuk át a tile-t.
      */
     public static void SnowstormNoBuilding() {
         Tile t = new Tile("t");
@@ -74,11 +137,11 @@ public class Skeleton {
         t.accept(e);
         World.getInstance().generateSnowstorm(t);
     }
-    
+
     /**
      * Hóvihart generál a pályán és érint egy igluval felszerelt Tile-t.
      * Megjegyzés: prezentációs célokból a World generateSnowstorm függvényének
-     * paraméterként adjuk át a tile-t. 
+     * paraméterként adjuk át a tile-t.
      */
     public static void SnowstormIgloo() {
         Tile t = new Tile("t");
@@ -127,8 +190,12 @@ public class Skeleton {
      * Player ásóval ás szekvenciaindító függvény
      */
     public static void PlayerDigsWithShovel() {
+<<<<<<< HEAD
         //Tile tile = new Tile("tile");
         Tile tile = new Tile("tile"); 
+=======
+        Tile tile = new Tile("tile");
+>>>>>>> 55e3bd3834ad282dc90ae942cab93d5c9c761bcf
         Eskimo eskimo = new Eskimo(tile, "eskimo");
         Shovel shovel = new Shovel("shovel");
         eskimo.addUsableItem(shovel);
@@ -142,7 +209,10 @@ public class Skeleton {
      * Player kézzel ás szekvenciaindító függvény
      */
     public static void PlayerDigsWithHands() {
+<<<<<<< HEAD
         //Tile tile = new Tile("tile");
+=======
+>>>>>>> 55e3bd3834ad282dc90ae942cab93d5c9c761bcf
         Tile tile = new Tile("tile");
         Eskimo eskimo = new Eskimo(tile, "eskimo");
         tile.accept(eskimo);
@@ -226,6 +296,7 @@ public class Skeleton {
                 }
             } catch(Exception e) {
                 print("Must be an integer value between 0 and 22!");
+                print("\n"+e);
             }
         }
     }
