@@ -438,8 +438,7 @@ public class Skeleton {
         System.out.print(question + " (I/N) ");
         Scanner sc = new Scanner(System.in);
         String result = sc.next().trim();
-        sc.close();
-        return (result.equals("I") || result.equals("i") || result.equals(""));
+        return (result.equals("I") || result.equals("i"));
     }
 
     public static void startInit() {
