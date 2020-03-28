@@ -23,7 +23,7 @@ public class BasicRope extends Rope {
     @Override
     public boolean save(Player p, Tile t, Tile newTile) {
         Skeleton.printLine(objName, "save()");
-        p.move(newTile);
+        p.forceMove(newTile);
         Skeleton.returned();
         return true;
     }
