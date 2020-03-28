@@ -25,6 +25,6 @@ public class BasicRope extends Rope {
         Skeleton.printLine(objName, "save()");
         p.move(newTile);
         Skeleton.returned();
-        return false;
+        return true;
     }
 }

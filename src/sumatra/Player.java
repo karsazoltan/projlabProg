@@ -96,8 +96,7 @@ public abstract class Player {
     public void fallInWater() {     
         Skeleton.printLine(this.objName, "fallInWater()");
 
-        boolean result = divingSuit.fallInWater(this);
-        if (result) {
+        if (divingSuit.fallInWater(this)) {
             World.getInstance().loseGame();
         }
 
