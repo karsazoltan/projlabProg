@@ -289,7 +289,6 @@ public class Skeleton {
         eskimo.useItem(0, tile);
 
     }
-
     /**
      * Player kézzel ás szekvenciaindító függvény
      */
