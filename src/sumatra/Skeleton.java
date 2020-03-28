@@ -329,7 +329,7 @@ public class Skeleton {
     }
 
     public static void ListFunctions() {
-        System.out.println(" 1 - Player steps on stable tile");
+        System.out.println(" 1 - Player steps on stable tile.");
         System.out.println(" 2 - Player steps on unstable tile without divingsuit");
         System.out.println(" 3 - Player steps on unstable tile with divingsuit.");
         System.out.println(" 4 - Player steps on hole without divingsuit");
