@@ -101,8 +101,8 @@ public class Skeleton {
      */
     public static void EskimoAbilityNoHole() {
         startInit();
-        Tile tile = new Tile("t");
-        Eskimo e = new Eskimo(tile, "e" );
+        Tile tile = new Tile("tile");
+        Eskimo e = new Eskimo(tile, "eskimo" );
         tile.accept(e);
 
         startSequence();
@@ -115,7 +115,7 @@ public class Skeleton {
     public static void EskimoAbilityOnHole() {
         startInit();
         Tile tile = new HoleTile("tile");
-        Eskimo e = new Eskimo(tile, "e" );
+        Eskimo e = new Eskimo(tile, "eskimo" );
 
         startSequence();
         e.useAbility(tile);
@@ -127,7 +127,7 @@ public class Skeleton {
     public static void ResearcherAbility() {
         startInit();
         Tile tile = new Tile("tile");
-        Researcher r = new Researcher(tile, "r" );
+        Researcher r = new Researcher(tile, "researcher" );
         tile.accept(r);
 
         startSequence();
