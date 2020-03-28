@@ -144,7 +144,9 @@ public class Skeleton {
     public static void SnowstormNoBuilding() {
         Tile t = new Tile("t");
         Eskimo e = new Eskimo(t, "e");
+        startInit();
         t.accept(e);
+        startSequence();
         World.getInstance().generateSnowstorm(t);
     }
 
@@ -155,7 +157,9 @@ public class Skeleton {
      */
     public static void SnowstormIgloo() {
         Tile t = new Tile("t");
+        startInit();
         t.buildIgloo();
+        startSequence();
         World.getInstance().generateSnowstorm(t);
     }
 
@@ -312,14 +316,19 @@ public class Skeleton {
         Eskimo p = new Eskimo(t2, "p");
        
         //setup
+        startInit();
         t2.accept(p);
         t1.accept(p1);
         t1.addNeighbor(t2);
         t2.addNeighbor(t1);
 
+        startSequence();
         p1.fallInWater();
     }
 
+    /**
+     * Kimetnés BasicRope-al.
+     */
     public static void SaveBasicRope() {
         Tile t1 = new Tile("t1");
         Tile t2 = new Tile("t2");
@@ -328,11 +337,13 @@ public class Skeleton {
         p.addRope(new BasicRope("br"));
        
         //setup
+        startInit();
         t2.accept(p);
         t1.accept(p1);
         t1.addNeighbor(t2);
         t2.addNeighbor(t1);
 
+        startSequence();
         p1.fallInWater();
     }
 
@@ -420,6 +431,7 @@ public class Skeleton {
         if (depth <= 0) {
             System.out.println("Hiba: Elrontotta valaki a returned() használatát, negatív mélység van :(");
         }
+
         depth--;
     }
 
@@ -427,7 +439,7 @@ public class Skeleton {
         System.out.print(question + " (I/N) ");
         Scanner sc = new Scanner(System.in);
         String result = sc.next().trim();
-        return (result.equals("I") || result.equals("i"));
+        return (result.equals("I") || result.equals("i") || result.equals(""));
     }
 
     public static void startInit() {
