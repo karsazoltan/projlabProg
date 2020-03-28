@@ -28,7 +28,7 @@ public class Skeleton {
         Tile tile1 = new Tile("tile1");
         UnstableTile tile2 = new UnstableTile("unstabletile");
         Eskimo e = new Eskimo(tile1, "eskimo");
-        NoDivingSuit d = new NoDivingSuit("nodivinsuit");
+        NoDivingSuit d = new NoDivingSuit("nodivingsuit");
 
         tile1.accept(e);
         tile1.addNeighbor(tile2);
@@ -47,7 +47,7 @@ public class Skeleton {
         Tile tile1 = new Tile("tile1");
         UnstableTile tile2 = new UnstableTile("unstabletile");
         Eskimo e = new Eskimo(tile1, "eskimo");
-        BasicDivingSuit d = new BasicDivingSuit("basicdivinsuit");
+        BasicDivingSuit d = new BasicDivingSuit("basicdivingsuit");
 
         tile1.accept(e);
         tile1.addNeighbor(tile2);
@@ -66,7 +66,7 @@ public class Skeleton {
         Tile tile1 = new Tile("tile1");
         HoleTile tile2 = new HoleTile("holetile");
         Eskimo e = new Eskimo(tile1, "eskimo");
-        NoDivingSuit d = new NoDivingSuit("nodivinsuit");
+        NoDivingSuit d = new NoDivingSuit("nodivingsuit");
 
         tile1.accept(e);
         tile1.addNeighbor(tile2);
@@ -85,7 +85,7 @@ public class Skeleton {
         Tile tile1 = new Tile("tile1");
         HoleTile tile2 = new HoleTile("holetile");
         Eskimo e = new Eskimo(tile1, "eskimo");
-        BasicDivingSuit d = new BasicDivingSuit("basicdivinsuit");
+        BasicDivingSuit d = new BasicDivingSuit("basicdivingsuit");
 
         tile1.accept(e);
         tile1.addNeighbor(tile2);
