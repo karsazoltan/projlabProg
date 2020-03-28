@@ -103,9 +103,9 @@ public class Skeleton {
         startInit();
         Tile tile = new Tile("t");
         Eskimo e = new Eskimo(tile, "e" );
+        tile.accept(e);
 
         startSequence();
-        tile.accept(e);
         e.useAbility(tile);
     }
 
@@ -116,9 +116,9 @@ public class Skeleton {
         startInit();
         Tile tile = new HoleTile("tile");
         Eskimo e = new Eskimo(tile, "e" );
+        tile.accept(e);
 
         startSequence();
-        tile.accept(e);
         e.useAbility(tile);
     }
 
@@ -129,9 +129,9 @@ public class Skeleton {
         startInit();
         Tile tile = new Tile("tile");
         Researcher r = new Researcher(tile, "r" );
+        tile.accept(r);
 
         startSequence();
-        tile.accept(r);
         r.useAbility(tile);
     }
 
@@ -163,6 +163,9 @@ public class Skeleton {
         World.getInstance().generateSnowstorm(t);
     }
 
+    /**
+     * Étel felvétele a mezőről
+     */
     public static void PickUpFood() {
         startInit();
         Tile t = new Tile("t");
@@ -175,6 +178,9 @@ public class Skeleton {
         e.pickUpItem();
     }
 
+    /**
+     * Kötél felvétele a mezőről
+     */
     public static void PickUpBasicRope() {
         startInit();
         Tile t = new Tile("t");
@@ -187,6 +193,9 @@ public class Skeleton {
         e.pickUpItem();
     }
 
+    /**
+     * Búvárruha felvétele a mezőről
+     */
     public static void PickUpBasicDivingSuit() {
         startInit();
         Tile t = new Tile("t");
@@ -199,6 +208,9 @@ public class Skeleton {
         e.pickUpItem();
     }
 
+    /**
+     * Ásó felvétele a mezőről
+     */
     public static void PickUpShovel() {
         startInit();
         Tile t = new Tile("t");
@@ -211,6 +223,9 @@ public class Skeleton {
         e.pickUpItem();
     }
 
+    /**
+     * Pisztolyrész felvétele a mezőről
+     */
     public static void PickUpGun() {
         startInit();
         Tile t = new Tile("t");
@@ -223,6 +238,9 @@ public class Skeleton {
         e.pickUpItem();
     }
 
+    /**
+     * Patronrész felvétele a mezőről
+     */
     public static void PickUpCartridge() {
         startInit();
         Tile t = new Tile("t");
@@ -234,7 +252,9 @@ public class Skeleton {
         startSequence();
         e.pickUpItem();
     }
-
+    /**
+     * Jelzőfényrész felvétele a mezőről
+     */
     public static void PickUpBeacon() {
         startInit();
         Tile t = new Tile("t");
@@ -273,7 +293,6 @@ public class Skeleton {
         eskimo.useItem(0, tile);
 
     }
-
     /**
      * Player kézzel ás szekvenciaindító függvény
      */
