@@ -28,7 +28,7 @@ public class Skeleton {
         Tile tile1 = new Tile("tile1");
         UnstableTile tile2 = new UnstableTile("unstabletile");
         Eskimo e = new Eskimo(tile1, "eskimo");
-        NoDivingSuit d = new NoDivingSuit("nodivinsuit");
+        NoDivingSuit d = new NoDivingSuit("nodivingsuit");
 
         tile1.accept(e);
         tile1.addNeighbor(tile2);
@@ -47,7 +47,7 @@ public class Skeleton {
         Tile tile1 = new Tile("tile1");
         UnstableTile tile2 = new UnstableTile("unstabletile");
         Eskimo e = new Eskimo(tile1, "eskimo");
-        BasicDivingSuit d = new BasicDivingSuit("basicdivinsuit");
+        BasicDivingSuit d = new BasicDivingSuit("basicdivingsuit");
 
         tile1.accept(e);
         tile1.addNeighbor(tile2);
@@ -66,7 +66,7 @@ public class Skeleton {
         Tile tile1 = new Tile("tile1");
         HoleTile tile2 = new HoleTile("holetile");
         Eskimo e = new Eskimo(tile1, "eskimo");
-        NoDivingSuit d = new NoDivingSuit("nodivinsuit");
+        NoDivingSuit d = new NoDivingSuit("nodivingsuit");
 
         tile1.accept(e);
         tile1.addNeighbor(tile2);
@@ -85,7 +85,7 @@ public class Skeleton {
         Tile tile1 = new Tile("tile1");
         HoleTile tile2 = new HoleTile("holetile");
         Eskimo e = new Eskimo(tile1, "eskimo");
-        BasicDivingSuit d = new BasicDivingSuit("basicdivinsuit");
+        BasicDivingSuit d = new BasicDivingSuit("basicdivingsuit");
 
         tile1.accept(e);
         tile1.addNeighbor(tile2);
@@ -347,7 +347,7 @@ public class Skeleton {
     }
 
     public static void ListFunctions() {
-        System.out.println(" 1 - Player steps on stable tile");
+        System.out.println(" 1 - Player steps on stable tile.");
         System.out.println(" 2 - Player steps on unstable tile without divingsuit");
         System.out.println(" 3 - Player steps on unstable tile with divingsuit.");
         System.out.println(" 4 - Player steps on hole without divingsuit");
@@ -413,7 +413,8 @@ public class Skeleton {
                     commands.get(idx).run();
                 }
             } catch(Exception e) {
-                System.out.println("Must be an integer value between 0 and 22!");
+                System.out.println("Must be an integer value between 0 and 22! (Vagy rossz a kódod xd)");
+                e.printStackTrace();
             }
         }
     }
