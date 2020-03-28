@@ -409,6 +409,7 @@ public class Skeleton {
             try {
                 int idx = Integer.parseInt(input);
                 if (idx <= 23 && idx >= 0) {
+                    if (idx == 0) scanner.close();
                     commands.get(idx).run();
                 }
             } catch (Exception e) {
