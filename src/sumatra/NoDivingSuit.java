@@ -23,12 +23,12 @@ public class NoDivingSuit extends DivingSuit {
      */
     @Override
     public void fallInWater(Player p) {
-        Skeleton.printLine(objName, "fallInWater()");
+        Skeleton.printLine(this.objName, "fallInWater()");
         ArrayList<Player> players = p.getTile().getNeighingPlayers();
-
+        
         for (Player q : players) {
-            q.saveMe(p, p.getTile());
-            //TODO Bool visszatérés?
+            Boolean result = q.saveMe(p, p.getTile());
+            //TODO Bool visszatérés
         }
         Skeleton.returned();
     }

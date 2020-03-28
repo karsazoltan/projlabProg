@@ -93,7 +93,7 @@ public class Tile {
      * @return A táblán található játékosok
      */
     public ArrayList<Player> getPlayers() {
-        Skeleton.printLine(this.objName, "getPlayers");
+        Skeleton.printLine(this.objName, "getPlayers()");
         Skeleton.returned();
         return players;
     }
@@ -120,7 +120,7 @@ public class Tile {
      * @return Az elhelyezés sikeressége
      */
     public boolean placeItem(Item i) {
-        Skeleton.printLine(this.objName, "placeItem");
+        Skeleton.printLine(this.objName, "placeItem()");
 
         if (item != null) {
             item = i;
@@ -136,7 +136,7 @@ public class Tile {
      * @param p A játékos aki felveszi a tárgyat
      */
     public void pickUpItem(Player p) {
-        Skeleton.printLine(this.objName, "pickUpItem");
+        Skeleton.printLine(this.objName, "pickUpItem()");
 
         item.giveToPlayer(p);
 
@@ -148,7 +148,7 @@ public class Tile {
      * @param p A tábláról lépő játékos
      */
     public void accept(Player p) {
-        Skeleton.printLine(this.objName, "accept");
+        Skeleton.printLine(this.objName, "accept()");
 
         players.add(p);
 
@@ -160,7 +160,7 @@ public class Tile {
      * @param p Az eltávolítandő játékos
      */
     public void remove(Player p) {
-        Skeleton.printLine(this.objName, "remove");
+        Skeleton.printLine(this.objName, "remove()");
 
         players.remove(p);
 
@@ -195,7 +195,7 @@ public class Tile {
      * @param amount Az eltávolítandó hó mélysége
      */
     public void removeSnow(int amount) {
-        Skeleton.printLine(this.objName, "removeSnow");
+        Skeleton.printLine(this.objName, "removeSnow()");
 
         snowlayers -= amount;
         if (snowlayers < 0) {
@@ -210,7 +210,7 @@ public class Tile {
      * @return A szomszédos játékosok
      */
     public ArrayList<Player> getNeighingPlayers() {
-        Skeleton.printLine(this.objName, "getNeighingPlayers");
+        Skeleton.printLine(this.objName, "getNeighingPlayers()");
 
         ArrayList<Player> neighingplayer = new ArrayList<>();
         for (Tile t : neighbors) {
@@ -226,7 +226,7 @@ public class Tile {
      * Felfedi a mező teherbírását
      */
     public void revealCapacity() {
-        Skeleton.printLine(this.objName, "revealCapacity");
+        Skeleton.printLine(this.objName, "revealCapacity()");
 
         is_capacity_known = true;
 
@@ -237,7 +237,7 @@ public class Tile {
      * Vihart csinál a táblán
      */
     public void storm() {
-        Skeleton.printLine(this.objName, "storm");
+        Skeleton.printLine(this.objName, "storm()");
 
         addSnow(new Random().nextInt(2));
         building.onStorm(players);
@@ -249,7 +249,7 @@ public class Tile {
      * A táblára helyez egy Igloo építményt
      */
     public void buildIgloo() {
-        Skeleton.printLine(this.objName, "buildIgloo");
+        Skeleton.printLine(this.objName, "buildIgloo()");
 
         building = new Igloo("igloo");
 

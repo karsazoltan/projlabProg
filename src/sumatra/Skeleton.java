@@ -190,12 +190,7 @@ public class Skeleton {
      * Player ásóval ás szekvenciaindító függvény
      */
     public static void PlayerDigsWithShovel() {
-<<<<<<< HEAD
-        //Tile tile = new Tile("tile");
-        Tile tile = new Tile("tile"); 
-=======
         Tile tile = new Tile("tile");
->>>>>>> 55e3bd3834ad282dc90ae942cab93d5c9c761bcf
         Eskimo eskimo = new Eskimo(tile, "eskimo");
         Shovel shovel = new Shovel("shovel");
         eskimo.addUsableItem(shovel);
@@ -209,10 +204,6 @@ public class Skeleton {
      * Player kézzel ás szekvenciaindító függvény
      */
     public static void PlayerDigsWithHands() {
-<<<<<<< HEAD
-        //Tile tile = new Tile("tile");
-=======
->>>>>>> 55e3bd3834ad282dc90ae942cab93d5c9c761bcf
         Tile tile = new Tile("tile");
         Eskimo eskimo = new Eskimo(tile, "eskimo");
         tile.accept(eskimo);
@@ -220,8 +211,22 @@ public class Skeleton {
         eskimo.dig();
     }
 
+    /**
+     * Kimentési kísérlet kötél nélkül.
+     */
     public static void SaveNoRope() {
+        Tile t1 = new Tile("t1");
+        Tile t2 = new Tile("t2");
+        Eskimo p1 = new Eskimo(t1, "p1");
+        Eskimo p = new Eskimo(t2, "p");
+       
+        //setup
+        t2.accept(p);
+        t1.accept(p1);
+        t1.addNeighbor(t2);
+        t2.addNeighbor(t1);
 
+        p1.fallInWater();
     }
 
     public static void SaveBasicRope() {

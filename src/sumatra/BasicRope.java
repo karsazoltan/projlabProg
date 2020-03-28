@@ -21,9 +21,10 @@ public class BasicRope extends Rope {
      * @param newTile A kötelet birtokló játékos mezője.
      */
     @Override
-    public void save(Player p, Tile t, Tile newTile) {
+    public Boolean save(Player p, Tile t, Tile newTile) {
         Skeleton.printLine(objName, "save()");
         p.move(newTile);
         Skeleton.returned();
+        return false;
     }
 }

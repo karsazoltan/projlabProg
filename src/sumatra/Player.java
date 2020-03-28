@@ -158,13 +158,15 @@ public abstract class Player {
      * A játékos megpróbál menteni egy másik játékost a vízbefulladástól.
      * @param p megmentendő játékos.
      * @param target megmententő játékos mezője.
+     * @return a kimentés sikeressége.
      */ 
-    public void saveMe(Player p, Tile target){
+    public Boolean saveMe(Player p, Tile target){
         Skeleton.printLine(this.objName, "saveMe()");
 
-        rope.save(p, target, tile);
+        Boolean result = rope.save(p, target, tile);
 
         Skeleton.returned();
+        return result;
     }
 
     /**
