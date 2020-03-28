@@ -11,7 +11,7 @@ public class HoleTile extends Tile {
      */
     @Override
     public void accept(Player p) {
-        Skeleton.printLine(this.objName, "accept");
+        Skeleton.printLine(this.objName, "accept()");
         players.add(p);
         p.fallInWater();
         Skeleton.returned();
@@ -32,7 +32,7 @@ public class HoleTile extends Tile {
      */
     @Override
     public boolean placeItem(Item i) {
-        Skeleton.printLine(this.objName, "placeItem");
+        Skeleton.printLine(this.objName, "placeItem()");
         Skeleton.returned();
         return false;
     }
@@ -42,7 +42,7 @@ public class HoleTile extends Tile {
      */
     @Override
     public void buildIgloo() {
-        Skeleton.printLine(this.objName, "buildIgloo");
+        Skeleton.printLine(this.objName, "buildIgloo()");
         Skeleton.returned();
     }
 }
