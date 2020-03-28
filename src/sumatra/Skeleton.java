@@ -28,7 +28,7 @@ public class Skeleton {
         Tile tile1 = new Tile("tile1");
         UnstableTile tile2 = new UnstableTile("unstabletile");
         Eskimo e = new Eskimo(tile1, "eskimo");
-        NoDivingSuit d = new NoDivingSuit("nodivinsuit");
+        NoDivingSuit d = new NoDivingSuit("nodivingsuit");
 
         tile1.accept(e);
         tile1.addNeighbor(tile2);
@@ -47,7 +47,7 @@ public class Skeleton {
         Tile tile1 = new Tile("tile1");
         UnstableTile tile2 = new UnstableTile("unstabletile");
         Eskimo e = new Eskimo(tile1, "eskimo");
-        BasicDivingSuit d = new BasicDivingSuit("basicdivinsuit");
+        BasicDivingSuit d = new BasicDivingSuit("basicdivingsuit");
 
         tile1.accept(e);
         tile1.addNeighbor(tile2);
@@ -116,7 +116,6 @@ public class Skeleton {
         startInit();
         Tile tile = new HoleTile("tile");
         Eskimo e = new Eskimo(tile, "e" );
-        tile.accept(e);
 
         startSequence();
         e.useAbility(tile);
@@ -142,8 +141,8 @@ public class Skeleton {
      * paraméterként adjuk át a tile-t.
      */
     public static void SnowstormNoBuilding() {
-        Tile t = new Tile("t");
-        Eskimo e = new Eskimo(t, "e");
+        Tile t = new Tile("tile");
+        Eskimo e = new Eskimo(t, "eskimo");
         startInit();
         t.accept(e);
         startSequence();
@@ -156,7 +155,7 @@ public class Skeleton {
      * paraméterként adjuk át a tile-t.
      */
     public static void SnowstormIgloo() {
-        Tile t = new Tile("t");
+        Tile t = new Tile("tile");
         startInit();
         t.buildIgloo();
         startSequence();
@@ -168,14 +167,14 @@ public class Skeleton {
      */
     public static void PickUpFood() {
         startInit();
-        Tile t = new Tile("t");
-        Eskimo e = new Eskimo(t, "e");
-        Food f = new Food("f");
-        t.placeItem(f);
-        t.accept(e);
+        Tile tile = new Tile("tile");
+        Eskimo eskimo = new Eskimo(tile, "eskimo");
+        Food food = new Food("food");
+        tile.placeItem(food);
+        tile.accept(eskimo);
 
         startSequence();
-        e.pickUpItem();
+        eskimo.pickUpItem();
     }
 
     /**
@@ -183,14 +182,14 @@ public class Skeleton {
      */
     public static void PickUpBasicRope() {
         startInit();
-        Tile t = new Tile("t");
-        Eskimo e = new Eskimo(t, "e");
-        BasicRope br = new BasicRope("br");
-        t.placeItem(br);
-        t.accept(e);
+        Tile tile = new Tile("tile");
+        Eskimo eskimo = new Eskimo(tile, "eskimo");
+        BasicRope rope = new BasicRope("basicrope");
+        tile.placeItem(rope);
+        tile.accept(eskimo);
 
         startSequence();
-        e.pickUpItem();
+        eskimo.pickUpItem();
     }
 
     /**
@@ -198,14 +197,14 @@ public class Skeleton {
      */
     public static void PickUpBasicDivingSuit() {
         startInit();
-        Tile t = new Tile("t");
-        Eskimo e = new Eskimo(t, "e");
+        Tile tile = new Tile("tile");
+        Eskimo eskimo = new Eskimo(tile, "eskimo");
         BasicDivingSuit bds = new BasicDivingSuit("bds");
-        t.placeItem(bds);
-        t.accept(e);
+        tile.placeItem(bds);
+        tile.accept(eskimo);
 
         startSequence();
-        e.pickUpItem();
+        eskimo.pickUpItem();
     }
 
     /**
@@ -213,14 +212,14 @@ public class Skeleton {
      */
     public static void PickUpShovel() {
         startInit();
-        Tile t = new Tile("t");
-        Eskimo e = new Eskimo(t, "e");
-        Shovel s = new Shovel("s");
-        t.placeItem(s);
-        t.accept(e);
+        Tile tile = new Tile("tile");
+        Eskimo eskimo = new Eskimo(tile, "eskimo");
+        Shovel shovel = new Shovel("shovel");
+        tile.placeItem(shovel);
+        tile.accept(eskimo);
 
         startSequence();
-        e.pickUpItem();
+        eskimo.pickUpItem();
     }
 
     /**
@@ -228,14 +227,14 @@ public class Skeleton {
      */
     public static void PickUpGun() {
         startInit();
-        Tile t = new Tile("t");
-        Eskimo e = new Eskimo(t, "e");
-        Gun g = new Gun("g");
-        t.placeItem(g);
-        t.accept(e);
+        Tile tile = new Tile("tile");
+        Eskimo eskimo = new Eskimo(tile, "eskimo");
+        Gun gun = new Gun("gun");
+        tile.placeItem(gun);
+        tile.accept(eskimo);
 
         startSequence();
-        e.pickUpItem();
+        eskimo.pickUpItem();
     }
 
     /**
@@ -243,28 +242,28 @@ public class Skeleton {
      */
     public static void PickUpCartridge() {
         startInit();
-        Tile t = new Tile("t");
-        Eskimo e = new Eskimo(t, "e");
-        Cartridge c = new Cartridge("c");
-        t.placeItem(c);
-        t.accept(e);
+        Tile tile = new Tile("tile");
+        Eskimo eskimo = new Eskimo(tile, "eskimo");
+        Cartridge cartridge = new Cartridge("cartridge");
+        tile.placeItem(cartridge);
+        tile.accept(eskimo);
 
         startSequence();
-        e.pickUpItem();
+        eskimo.pickUpItem();
     }
     /**
      * Jelzőfényrész felvétele a mezőről
      */
     public static void PickUpBeacon() {
         startInit();
-        Tile t = new Tile("t");
-        Eskimo e = new Eskimo(t, "e");
-        Beacon b = new Beacon("b");
-        t.placeItem(b);
-        t.accept(e);
+        Tile tile = new Tile("tile");
+        Eskimo eskimo = new Eskimo(tile, "eskimo");
+        Beacon beacon = new Beacon("beacon");
+        tile.placeItem(beacon);
+        tile.accept(eskimo);
 
         startSequence();
-        e.pickUpItem();
+        eskimo.pickUpItem();
     }
 
     /**
@@ -310,10 +309,10 @@ public class Skeleton {
      * Kimentési kísérlet kötél nélkül.
      */
     public static void SaveNoRope() {
-        Tile t1 = new Tile("t1");
-        Tile t2 = new Tile("t2");
-        Eskimo p1 = new Eskimo(t1, "p1");
-        Eskimo p = new Eskimo(t2, "p");
+        Tile t1 = new Tile("tile1");
+        Tile t2 = new Tile("tile2");
+        Eskimo p1 = new Eskimo(t1, "eskimo1");
+        Eskimo p = new Eskimo(t2, "eskimo2");
        
         //setup
         startInit();
@@ -330,11 +329,11 @@ public class Skeleton {
      * Kimetnés BasicRope-al.
      */
     public static void SaveBasicRope() {
-        Tile t1 = new Tile("t1");
-        Tile t2 = new Tile("t2");
-        Eskimo p1 = new Eskimo(t1, "p1");
-        Eskimo p = new Eskimo(t2, "p");
-        p.addRope(new BasicRope("br"));
+        Tile t1 = new Tile("tile1");
+        Tile t2 = new Tile("tile2");
+        Eskimo p1 = new Eskimo(t1, "eskimo1");
+        Eskimo p = new Eskimo(t2, "eskimo2");
+        p.addRope(new BasicRope("basicrope"));
        
         //setup
         startInit();
@@ -413,9 +412,14 @@ public class Skeleton {
                     if (idx == 0) scanner.close();
                     commands.get(idx).run();
                 }
+<<<<<<< HEAD
+            } catch (Exception e) {
+                System.out.println("Must be an integer value between 0 and 22!");
+=======
             } catch(Exception e) {
                 System.out.println("Must be an integer value between 0 and 22! (Vagy rossz a kódod xd)");
                 e.printStackTrace();
+>>>>>>> 4c325e36c6c65d5a24078b34d287059d2c026169
             }
         }
     }
@@ -440,6 +444,7 @@ public class Skeleton {
         System.out.print(question + " (I/N) ");
         Scanner sc = new Scanner(System.in);
         String result = sc.next().trim();
+        sc.close();
         return (result.equals("I") || result.equals("i") || result.equals(""));
     }
 
