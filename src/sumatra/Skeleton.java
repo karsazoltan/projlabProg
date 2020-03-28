@@ -414,7 +414,7 @@ public class Skeleton {
                     commands.get(idx).run();
                 }
             } catch(Exception e) {
-                System.out.println("Must be an integer value between 0 and 22!");
+                System.out.println("Must be an integer value between 0 and 22! (Vagy rossz a kódod xd)");
             }
         }
     }
