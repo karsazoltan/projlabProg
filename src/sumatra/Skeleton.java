@@ -339,4 +339,12 @@ public class Skeleton {
         String result = sc.next().trim();
         return (result.equals("I") || result.equals("i"));
     }
+
+    public static void startInit() {
+        System.out.println("Inicializálás:");
+    }
+
+    public static void startSequence() {
+        System.out.println("\nSzekvencia:");
+    }
 }
