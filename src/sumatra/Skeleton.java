@@ -7,6 +7,7 @@ public class Skeleton {
      * Játékos stabil jégtáblára lép szekvenciaindító függvény.
      */
     public static void PlayerStepsOnTile() {
+        startInit();
         Tile tile1 = new Tile("tile1");
         Tile tile2 = new Tile("tile2");
         Eskimo e = new Eskimo(tile1, "eskimo");
@@ -15,6 +16,7 @@ public class Skeleton {
         tile1.addNeighbor(tile2);
         tile2.addNeighbor(tile1);
 
+        startSequence();
         e.move(tile2);
     }
 
@@ -22,6 +24,7 @@ public class Skeleton {
      * Játékos instabil jégtáblára lép búvárruha nélkül szekvenciaindító függvény.
      */
     public static void PlayerStepsOnUnstableTileWithoutDivingSuit() {
+        startInit();
         Tile tile1 = new Tile("tile1");
         UnstableTile tile2 = new UnstableTile("unstabletile");
         Eskimo e = new Eskimo(tile1, "eskimo");
@@ -32,6 +35,7 @@ public class Skeleton {
         tile2.addNeighbor(tile1);
         e.addDivingSuit(d);
 
+        startSequence();
         e.move(tile2);
     }
 
@@ -39,6 +43,7 @@ public class Skeleton {
      * Játékos instabil jégtáblára lép búvárruhával szekvenciaindító függvény.
      */
     public static void PlayerStepsOnUnstableTileWithDivingSuit() {
+        startInit();
         Tile tile1 = new Tile("tile1");
         UnstableTile tile2 = new UnstableTile("unstabletile");
         Eskimo e = new Eskimo(tile1, "eskimo");
@@ -49,6 +54,7 @@ public class Skeleton {
         tile2.addNeighbor(tile1);
         e.addDivingSuit(d);
 
+        startSequence();
         e.move(tile2);
     }
 
@@ -56,6 +62,7 @@ public class Skeleton {
      * Játékos lyukas jégtáblára lép búvárruha nélkül szekvenciaindító függvény.
      */
     public static void PlayerStepsOnHoleWithoutDivingSuit() {
+        startInit();
         Tile tile1 = new Tile("tile1");
         HoleTile tile2 = new HoleTile("holetile");
         Eskimo e = new Eskimo(tile1, "eskimo");
@@ -66,6 +73,7 @@ public class Skeleton {
         tile2.addNeighbor(tile1);
         e.addDivingSuit(d);
 
+        startSequence();
         e.move(tile2);
     }
 
@@ -73,6 +81,7 @@ public class Skeleton {
      * Játékos lyukas jégtáblára lép búvárruhával szekvenciaindító függvény.
      */
     public static void PlayerStepsOnHoleWithDivingSuit() {
+        startInit();
         Tile tile1 = new Tile("tile1");
         HoleTile tile2 = new HoleTile("holetile");
         Eskimo e = new Eskimo(tile1, "eskimo");
@@ -83,6 +92,7 @@ public class Skeleton {
         tile2.addNeighbor(tile1);
         e.addDivingSuit(d);
 
+        startSequence();
         e.move(tile2);
     }
 
@@ -154,31 +164,87 @@ public class Skeleton {
     }
 
     public static void PickUpFood() {
+        startInit();
+        Tile t = new Tile("t");
+        Eskimo e = new Eskimo(t, "e");
+        Food f = new Food("f");
+        t.placeItem(f);
+        t.accept(e);
 
+        startSequence();
+        e.pickUpItem();
     }
 
     public static void PickUpBasicRope() {
+        startInit();
+        Tile t = new Tile("t");
+        Eskimo e = new Eskimo(t, "e");
+        BasicRope br = new BasicRope("br");
+        t.placeItem(br);
+        t.accept(e);
 
+        startSequence();
+        e.pickUpItem();
     }
 
     public static void PickUpBasicDivingSuit() {
+        startInit();
+        Tile t = new Tile("t");
+        Eskimo e = new Eskimo(t, "e");
+        BasicDivingSuit bds = new BasicDivingSuit("bds");
+        t.placeItem(bds);
+        t.accept(e);
 
+        startSequence();
+        e.pickUpItem();
     }
 
     public static void PickUpShovel() {
+        startInit();
+        Tile t = new Tile("t");
+        Eskimo e = new Eskimo(t, "e");
+        Shovel s = new Shovel("s");
+        t.placeItem(s);
+        t.accept(e);
 
+        startSequence();
+        e.pickUpItem();
     }
 
     public static void PickUpGun() {
+        startInit();
+        Tile t = new Tile("t");
+        Eskimo e = new Eskimo(t, "e");
+        Gun g = new Gun("g");
+        t.placeItem(g);
+        t.accept(e);
 
+        startSequence();
+        e.pickUpItem();
     }
 
     public static void PickUpCartridge() {
+        startInit();
+        Tile t = new Tile("t");
+        Eskimo e = new Eskimo(t, "e");
+        Cartridge c = new Cartridge("c");
+        t.placeItem(c);
+        t.accept(e);
 
+        startSequence();
+        e.pickUpItem();
     }
 
     public static void PickUpBeacon() {
+        startInit();
+        Tile t = new Tile("t");
+        Eskimo e = new Eskimo(t, "e");
+        Beacon b = new Beacon("b");
+        t.placeItem(b);
+        t.accept(e);
 
+        startSequence();
+        e.pickUpItem();
     }
 
     /**
