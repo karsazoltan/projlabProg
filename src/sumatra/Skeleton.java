@@ -159,6 +159,9 @@ public class Skeleton {
         World.getInstance().generateSnowstorm(t);
     }
 
+    /**
+     * Étel felvétele a mezőről
+     */
     public static void PickUpFood() {
         startInit();
         Tile t = new Tile("t");
@@ -171,6 +174,9 @@ public class Skeleton {
         e.pickUpItem();
     }
 
+    /**
+     * Kötél felvétele a mezőről
+     */
     public static void PickUpBasicRope() {
         startInit();
         Tile t = new Tile("t");
@@ -183,6 +189,9 @@ public class Skeleton {
         e.pickUpItem();
     }
 
+    /**
+     * Búvárruha felvétele a mezőről
+     */
     public static void PickUpBasicDivingSuit() {
         startInit();
         Tile t = new Tile("t");
@@ -195,6 +204,9 @@ public class Skeleton {
         e.pickUpItem();
     }
 
+    /**
+     * Ásó felvétele a mezőről
+     */
     public static void PickUpShovel() {
         startInit();
         Tile t = new Tile("t");
@@ -207,6 +219,9 @@ public class Skeleton {
         e.pickUpItem();
     }
 
+    /**
+     * Pisztolyrész felvétele a mezőről
+     */
     public static void PickUpGun() {
         startInit();
         Tile t = new Tile("t");
@@ -219,6 +234,9 @@ public class Skeleton {
         e.pickUpItem();
     }
 
+    /**
+     * Patronrész felvétele a mezőről
+     */
     public static void PickUpCartridge() {
         startInit();
         Tile t = new Tile("t");
@@ -230,7 +248,9 @@ public class Skeleton {
         startSequence();
         e.pickUpItem();
     }
-
+    /**
+     * Jelzőfényrész felvétele a mezőről
+     */
     public static void PickUpBeacon() {
         startInit();
         Tile t = new Tile("t");
