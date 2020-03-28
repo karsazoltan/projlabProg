@@ -185,7 +185,8 @@ public abstract class Player {
      * @param amount ennyi testhőt nyer a játékos.
      */ 
     public void heal(int amount){
-        // nem kell még?
+        Skeleton.printLine(objName, "heal()");
+        Skeleton.returned();
     }
 
     /**
