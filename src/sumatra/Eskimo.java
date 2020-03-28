@@ -18,7 +18,7 @@ public class Eskimo extends Player {
      */
     @Override
     public void useAbility(Tile target){
-        Skeleton.printLine(this.objName, "useAbility");
+        Skeleton.printLine(this.objName, "useAbility()");
         
         boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
         if( hasMana ){

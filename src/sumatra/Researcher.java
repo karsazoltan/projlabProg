@@ -18,7 +18,7 @@ public class Researcher extends Player{
      */
     @Override
     public void useAbility(Tile target){
-        Skeleton.printLine(this.objName, "useAbility");
+        Skeleton.printLine(this.objName, "useAbility()");
         
         boolean isTargetValid = Skeleton.askQuestion("Saját vagy szomszédos mező a cél?");
         boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
