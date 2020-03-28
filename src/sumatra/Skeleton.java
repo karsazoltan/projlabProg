@@ -12,6 +12,7 @@ public class Skeleton {
      * Játékos stabil jégtáblára lép szekvenciaindító függvény.
      */
     public static void PlayerStepsOnTile() {
+        startInit();
         Tile tile1 = new Tile("tile1");
         Tile tile2 = new Tile("tile2");
         Eskimo e = new Eskimo(tile1, "eskimo");
@@ -20,6 +21,7 @@ public class Skeleton {
         tile1.addNeighbor(tile2);
         tile2.addNeighbor(tile1);
 
+        startSequence();
         e.move(tile2);
     }
 
@@ -27,6 +29,7 @@ public class Skeleton {
      * Játékos instabil jégtáblára lép búvárruha nélkül szekvenciaindító függvény.
      */
     public static void PlayerStepsOnUnstableTileWithoutDivingSuit() {
+        startInit();
         Tile tile1 = new Tile("tile1");
         UnstableTile tile2 = new UnstableTile("unstabletile");
         Eskimo e = new Eskimo(tile1, "eskimo");
@@ -37,6 +40,7 @@ public class Skeleton {
         tile2.addNeighbor(tile1);
         e.addDivingSuit(d);
 
+        startSequence();
         e.move(tile2);
     }
 
@@ -44,6 +48,7 @@ public class Skeleton {
      * Játékos instabil jégtáblára lép búvárruhával szekvenciaindító függvény.
      */
     public static void PlayerStepsOnUnstableTileWithDivingSuit() {
+        startInit();
         Tile tile1 = new Tile("tile1");
         UnstableTile tile2 = new UnstableTile("unstabletile");
         Eskimo e = new Eskimo(tile1, "eskimo");
@@ -54,6 +59,7 @@ public class Skeleton {
         tile2.addNeighbor(tile1);
         e.addDivingSuit(d);
 
+        startSequence();
         e.move(tile2);
     }
 
@@ -61,6 +67,7 @@ public class Skeleton {
      * Játékos lyukas jégtáblára lép búvárruha nélkül szekvenciaindító függvény.
      */
     public static void PlayerStepsOnHoleWithoutDivingSuit() {
+        startInit();
         Tile tile1 = new Tile("tile1");
         HoleTile tile2 = new HoleTile("holetile");
         Eskimo e = new Eskimo(tile1, "eskimo");
@@ -71,6 +78,7 @@ public class Skeleton {
         tile2.addNeighbor(tile1);
         e.addDivingSuit(d);
 
+        startSequence();
         e.move(tile2);
     }
 
@@ -78,6 +86,7 @@ public class Skeleton {
      * Játékos lyukas jégtáblára lép búvárruhával szekvenciaindító függvény.
      */
     public static void PlayerStepsOnHoleWithDivingSuit() {
+        startInit();
         Tile tile1 = new Tile("tile1");
         HoleTile tile2 = new HoleTile("holetile");
         Eskimo e = new Eskimo(tile1, "eskimo");
@@ -88,6 +97,7 @@ public class Skeleton {
         tile2.addNeighbor(tile1);
         e.addDivingSuit(d);
 
+        startSequence();
         e.move(tile2);
     }
 
