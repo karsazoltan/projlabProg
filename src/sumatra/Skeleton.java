@@ -116,7 +116,6 @@ public class Skeleton {
         startInit();
         Tile tile = new HoleTile("tile");
         Eskimo e = new Eskimo(tile, "e" );
-        tile.accept(e);
 
         startSequence();
         e.useAbility(tile);
