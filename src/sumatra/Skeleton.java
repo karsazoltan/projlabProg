@@ -8,6 +8,9 @@ public class Skeleton {
         System.out.println(s);
     }
 
+    /**
+     * Játékos stabil jégtáblára lép szekvenciaindító függvény.
+     */
     public static void PlayerStepsOnTile() {
         Tile tile1 = new Tile("tile1");
         Tile tile2 = new Tile("tile2");
@@ -20,6 +23,9 @@ public class Skeleton {
         e.move(tile2);
     }
 
+    /**
+     * Játékos instabil jégtáblára lép búvárruha nélkül szekvenciaindító függvény.
+     */
     public static void PlayerStepsOnUnstableTileWithoutDivingSuit() {
         Tile tile1 = new Tile("tile1");
         UnstableTile tile2 = new UnstableTile("unstabletile");
@@ -34,6 +40,9 @@ public class Skeleton {
         e.move(tile2);
     }
 
+    /**
+     * Játékos instabil jégtáblára lép búvárruhával szekvenciaindító függvény.
+     */
     public static void PlayerStepsOnUnstableTileWithDivingSuit() {
         Tile tile1 = new Tile("tile1");
         UnstableTile tile2 = new UnstableTile("unstabletile");
@@ -47,7 +56,10 @@ public class Skeleton {
 
         e.move(tile2);
     }
-    
+
+    /**
+     * Játékos lyukas jégtáblára lép búvárruha nélkül szekvenciaindító függvény.
+     */
     public static void PlayerStepsOnHoleWithoutDivingSuit() {
         Tile tile1 = new Tile("tile1");
         HoleTile tile2 = new HoleTile("holetile");
@@ -62,6 +74,9 @@ public class Skeleton {
         e.move(tile2);
     }
 
+    /**
+     * Játékos lyukas jégtáblára lép búvárruhával szekvenciaindító függvény.
+     */
     public static void PlayerStepsOnHoleWithDivingSuit() {
         Tile tile1 = new Tile("tile1");
         HoleTile tile2 = new HoleTile("holetile");
