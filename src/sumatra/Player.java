@@ -80,7 +80,7 @@ public abstract class Player {
      * @param newTile a mező, ahol a játékos lesz.
      */
     public void forceMove(Tile newTile) {
-        Skeleton.printLine(this.objName, "foceMove()");
+        Skeleton.printLine(this.objName, "forceMove()");
 
         tile.remove(this);
         newTile.accept(this);
