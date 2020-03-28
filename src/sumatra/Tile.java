@@ -122,10 +122,10 @@ public class Tile {
         Skeleton.printLine(this.objName, "placeItem()");
 
         if (item != null) {
-            item = i;
             Skeleton.returned();
             return false;
         }
+        item = i;
         Skeleton.returned();
         return true;
     }

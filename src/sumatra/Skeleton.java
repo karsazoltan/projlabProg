@@ -28,7 +28,7 @@ public class Skeleton {
         Tile tile1 = new Tile("tile1");
         UnstableTile tile2 = new UnstableTile("unstabletile");
         Eskimo e = new Eskimo(tile1, "eskimo");
-        NoDivingSuit d = new NoDivingSuit("nodivinsuit");
+        NoDivingSuit d = new NoDivingSuit("nodivingsuit");
 
         tile1.accept(e);
         tile1.addNeighbor(tile2);
@@ -47,7 +47,7 @@ public class Skeleton {
         Tile tile1 = new Tile("tile1");
         UnstableTile tile2 = new UnstableTile("unstabletile");
         Eskimo e = new Eskimo(tile1, "eskimo");
-        BasicDivingSuit d = new BasicDivingSuit("basicdivinsuit");
+        BasicDivingSuit d = new BasicDivingSuit("basicdivingsuit");
 
         tile1.accept(e);
         tile1.addNeighbor(tile2);
@@ -66,7 +66,7 @@ public class Skeleton {
         Tile tile1 = new Tile("tile1");
         HoleTile tile2 = new HoleTile("holetile");
         Eskimo e = new Eskimo(tile1, "eskimo");
-        NoDivingSuit d = new NoDivingSuit("nodivinsuit");
+        NoDivingSuit d = new NoDivingSuit("nodivingsuit");
 
         tile1.accept(e);
         tile1.addNeighbor(tile2);
@@ -85,7 +85,7 @@ public class Skeleton {
         Tile tile1 = new Tile("tile1");
         HoleTile tile2 = new HoleTile("holetile");
         Eskimo e = new Eskimo(tile1, "eskimo");
-        BasicDivingSuit d = new BasicDivingSuit("basicdivinsuit");
+        BasicDivingSuit d = new BasicDivingSuit("basicdivingsuit");
 
         tile1.accept(e);
         tile1.addNeighbor(tile2);
@@ -116,7 +116,6 @@ public class Skeleton {
         startInit();
         Tile tile = new HoleTile("tile");
         Eskimo e = new Eskimo(tile, "e" );
-        tile.accept(e);
 
         startSequence();
         e.useAbility(tile);
@@ -413,8 +412,14 @@ public class Skeleton {
                     if (idx == 0) scanner.close();
                     commands.get(idx).run();
                 }
+<<<<<<< HEAD
             } catch (Exception e) {
                 System.out.println("Must be an integer value between 0 and 22!");
+=======
+            } catch(Exception e) {
+                System.out.println("Must be an integer value between 0 and 22! (Vagy rossz a kódod xd)");
+                e.printStackTrace();
+>>>>>>> 4c325e36c6c65d5a24078b34d287059d2c026169
             }
         }
     }
