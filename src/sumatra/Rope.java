@@ -30,5 +30,5 @@ public abstract class Rope extends AutomaticItem {
      * @param t A kimentendő játékos mezője.
      * @param newTile A kötelet birtokló játékos mezője.
      */
-    public abstract Boolean save(Player p, Tile t, Tile newTile);
+    public abstract boolean save(Player p, Tile t, Tile newTile);
 }

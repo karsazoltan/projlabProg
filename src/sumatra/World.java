@@ -32,7 +32,7 @@ public class World {
      * A játék indítására szolgáló függvény, körönként lehetőséget ad arra, hogy a játékosok lépjenek
      */
     public void startGame() {
-        Skeleton.printLine("World", "startGame");
+        Skeleton.printLine("World", "startGame()");
         Skeleton.returned();
     }
 
@@ -40,7 +40,7 @@ public class World {
      * Ellenőrzi a játék végét, azaz vagy nyertek a játékosok, vagy veszítettek
      */
     public void checkEndGame() {
-        Skeleton.printLine("World", "checkEndGame");
+        Skeleton.printLine("World", "checkEndGame()");
         if(Skeleton.askQuestion("Minden játékos egy mezőn áll? "))
             if(Skeleton.askQuestion("Minden alkatrész megvan?"))
                 winGame();
@@ -51,14 +51,14 @@ public class World {
      * a játék vége: nyertek a játékosok
      */
     public void winGame() {
-        Skeleton.printLine("World", "winGame");
+        Skeleton.printLine("World", "winGame()");
         Skeleton.returned();
     }
     /**
      * Legenrálja a pályát alkotó táblákat
      */
     public void generateTiles() {
-        Skeleton.printLine("World", "generateTiles");
+        Skeleton.printLine("World", "generateTiles()");
         Skeleton.returned();
     }
 
@@ -76,7 +76,7 @@ public class World {
      * @param fp a megtalált rész
      */
     public void registerFlarePart(FlarePart fp ) {
-        Skeleton.printLine("World", "registerFlarePart");
+        Skeleton.printLine("World", "registerFlarePart()");
         flareParts.add(fp);
         Skeleton.returned();
     }
@@ -85,7 +85,7 @@ public class World {
      * A játékosok vesztettek
      */
     public void loseGame() {
-        Skeleton.printLine("World", "loseGame");
+        Skeleton.printLine("World", "loseGame()");
         Skeleton.returned();
     }
 

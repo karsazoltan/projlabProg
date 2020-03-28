@@ -21,7 +21,7 @@ public class NoRope extends Rope {
      * @param newTile A kötelet birtokló játékos mezője.
      */
     @Override
-    public Boolean save(Player p, Tile t, Tile newTile) {
+    public boolean save(Player p, Tile t, Tile newTile) {
         Skeleton.printLine(objName, "save()");
         Skeleton.returned();
         return false;

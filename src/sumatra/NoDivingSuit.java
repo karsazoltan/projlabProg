@@ -26,10 +26,22 @@ public class NoDivingSuit extends DivingSuit {
         Skeleton.printLine(this.objName, "fallInWater()");
         ArrayList<Player> players = p.getTile().getNeighingPlayers();
         
+        // eleinte úgy vesszük, hogy vízbe esik
+        boolean result = false; 
         for (Player q : players) {
-            Boolean result = q.saveMe(p, p.getTile());
-            //TODO Bool visszatérés
+            // ha valaki kimenti
+            if (q.saveMe(p, p.getTile())) {
+                // akkor a result true
+                result = true;
+            }
+            
         }
+
+        // ha senki sem mentette ki, akkor vége
+        if (!result) {
+            World.getInstance().loseGame();
+        }
+
         Skeleton.returned();
     }
 }

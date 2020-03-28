@@ -163,7 +163,7 @@ public abstract class Player {
     public Boolean saveMe(Player p, Tile target){
         Skeleton.printLine(this.objName, "saveMe()");
 
-        Boolean result = rope.save(p, target, tile);
+        boolean result = rope.save(p, target, tile);
 
         Skeleton.returned();
         return result;
