@@ -313,7 +313,6 @@ public class Skeleton {
                 }
             } catch(Exception e) {
                 print("Must be an integer value between 0 and 22!");
-                print("\n"+e);
             }
         }
     }
