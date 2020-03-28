@@ -14,7 +14,7 @@ public abstract class FlarePart extends Item {
      */
     @Override
     public void giveToPlayer(Player p) {
-        Skeleton.printLine(objName, "startGame");
+        Skeleton.printLine(objName, "giveToPlayer()");
         Skeleton.returned();
     }
 }
