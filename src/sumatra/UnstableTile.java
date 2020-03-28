@@ -13,7 +13,7 @@ public class UnstableTile extends Tile {
      */
     @Override
     public void accept(Player p) {
-        Skeleton.printLine(this.objName, "accept");
+        Skeleton.printLine(this.objName, "accept()");
 
         players.add(p);
         boolean enoughCapacity = Skeleton.askQuestion("Elbírja a jégtábla a játékosokat?");
@@ -36,7 +36,7 @@ public class UnstableTile extends Tile {
      * Az összes rajta álló játékost a vízbe dobja
      */
     public void flip() {
-        Skeleton.printLine(this.objName, "flip");
+        Skeleton.printLine(this.objName, "flip()");
 
         ArrayList<Player> players = getPlayers();
         for (Player p : players)

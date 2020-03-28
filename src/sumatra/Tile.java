@@ -171,7 +171,7 @@ public class Tile {
      * @param t A szomszéd tábla
      */
     public void addNeighbor(Tile t) {
-        Skeleton.printLine(this.objName, "addNeighbor");
+        Skeleton.printLine(this.objName, "addNeighbor()");
 
         neighbors.add(t);
 
