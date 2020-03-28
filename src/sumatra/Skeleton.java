@@ -181,8 +181,10 @@ public class Skeleton {
      * Jelzőrakéta összeszerelése szekvenciaindító függvény
      */
     public static void FlareAssembly() {
+        startInit();
         Eskimo eskimo = new Eskimo(null, "eskimo");
 
+        startSequence();
         eskimo.buildFlare();
     }
 
@@ -190,13 +192,15 @@ public class Skeleton {
      * Player ásóval ás szekvenciaindító függvény
      */
     public static void PlayerDigsWithShovel() {
+        startInit();
         Tile tile = new Tile("tile");
         Eskimo eskimo = new Eskimo(tile, "eskimo");
         Shovel shovel = new Shovel("shovel");
         eskimo.addUsableItem(shovel);
         tile.accept(eskimo);
 
-        eskimo.useItem(0, tile); // TODO Ide kell a tile?
+        startSequence();
+        eskimo.useItem(0, tile);
 
     }
 
@@ -204,10 +208,12 @@ public class Skeleton {
      * Player kézzel ás szekvenciaindító függvény
      */
     public static void PlayerDigsWithHands() {
+        startInit();
         Tile tile = new Tile("tile");
         Eskimo eskimo = new Eskimo(tile, "eskimo");
         tile.accept(eskimo);
 
+        startSequence();
         eskimo.dig();
     }
 
