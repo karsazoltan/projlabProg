@@ -63,7 +63,7 @@ public abstract class Player {
      * @param newTile a mező, ahova a játékos lép.
      */
     public void move(Tile newTile) {
-        Skeleton.printLine(this.objName, "move");
+        Skeleton.printLine(this.objName, "move()");
         boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
         if( hasMana ){
             tile.remove(this);
@@ -79,7 +79,7 @@ public abstract class Player {
      * Ás egyet a játékos, eltüntet egy réteg havat a mezőjéről.
      */ 
     public void dig() {
-        Skeleton.printLine(this.objName, "dig");
+        Skeleton.printLine(this.objName, "dig()");
 
         boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
         if( hasMana ){
@@ -94,7 +94,7 @@ public abstract class Player {
      * A játékos beleesik a vízbe.
      */ 
     public void fallInWater() {     
-        Skeleton.printLine(this.objName, "fallInWater");
+        Skeleton.printLine(this.objName, "fallInWater()");
 
         divingSuit.fallInWater(this);
 
@@ -107,7 +107,7 @@ public abstract class Player {
      * @param target mező amin felhasználja a játékos a tárgyat.
      */ 
     public void useItem(int index, Tile target) {
-        Skeleton.printLine(this.objName, "useItem");
+        Skeleton.printLine(this.objName, "useItem()");
 
         boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
         if( hasMana ){
@@ -121,7 +121,7 @@ public abstract class Player {
      * A játékos felvesz egy tárgyat a mezőjéről.
      */ 
     public void pickUpItem() {        
-        Skeleton.printLine(this.objName, "pickUpItem");
+        Skeleton.printLine(this.objName, "pickUpItem()");
 
         boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
         if( hasMana ){
@@ -135,7 +135,7 @@ public abstract class Player {
      * A játékos összerakja a flare-t, ha ez sikerül befejeződik a játék.
      */ 
     public void buildFlare() {
-        Skeleton.printLine(this.objName, "buildFlare");
+        Skeleton.printLine(this.objName, "buildFlare()");
 
         World.getInstance().checkEndGame();
 
@@ -147,7 +147,7 @@ public abstract class Player {
      * @param item az új tárgy, amit kap a játékos.
      */ 
     public void addUsableItem(UsableItem item) {
-        Skeleton.printLine(this.objName, "addUsableItem");
+        Skeleton.printLine(this.objName, "addUsableItem()");
 
         useableItems.add(item);
 
@@ -160,7 +160,7 @@ public abstract class Player {
      * @param target megmententő játékos mezője.
      */ 
     public void saveMe(Player p, Tile target){
-        Skeleton.printLine(this.objName, "saveMe");
+        Skeleton.printLine(this.objName, "saveMe()");
 
         rope.save(p, target, tile);
 
@@ -172,7 +172,8 @@ public abstract class Player {
      * @param amount ennyi testhőt veszít el a játékos.
      */
     public void damage(int amount){
-        // nem kell még?
+        Skeleton.printLine(objName, "damage()");
+        Skeleton.returned();
     }
 
     /**
@@ -188,7 +189,7 @@ public abstract class Player {
      * @param ds az új búvárruha, amit kap a játékos.
      */
     public void addDivingSuit(DivingSuit ds){
-        Skeleton.printLine(this.objName, "addDivingSuit");
+        Skeleton.printLine(this.objName, "addDivingSuit()");
 
         divingSuit = ds;
 
@@ -199,7 +200,7 @@ public abstract class Player {
      * @param r az új kötél, amit kap a játékos.
      */
     public void addRope(Rope r){
-        Skeleton.printLine(this.objName, "addRope");
+        Skeleton.printLine(this.objName, "addRope()");
         
         rope = r;
 

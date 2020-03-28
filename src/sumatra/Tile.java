@@ -41,13 +41,13 @@ public class Tile {
     /**
      * Az objektum nevét tárolja a skeletonhoz.
      */
-    protected String objectName;
+    protected String objName;
 
     /**
      * Default konstruktor
      */
     public Tile(String objName) {
-        objectName = objName;
+        this.objName = objName;
         snowlayers = 0;
         capacity = -1;
         is_capacity_known = false;
@@ -161,7 +161,7 @@ public class Tile {
      * @param amount A hó mélysége
      */
     public void addSnow(int amount) {
-        Skeleton.printLine(objectName, "addSnow()");
+        Skeleton.printLine(objName, "addSnow()");
         snowlayers += amount;
         Skeleton.returned();
     }
@@ -200,7 +200,7 @@ public class Tile {
      * Vihart csinál a táblán
      */
     public void storm() {
-        Skeleton.printLine(objectName, "storm()");
+        Skeleton.printLine(objName, "storm()");
         addSnow(new Random().nextInt(2));
         building.onStorm(players);
         Skeleton.returned();

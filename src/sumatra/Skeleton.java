@@ -58,7 +58,6 @@ public class Skeleton {
     public static void ResearcherAbility() {
         Tile tile = new Tile("tile");
         Researcher r = new Researcher(tile, "r" );
-
         tile.accept(r);
         r.useAbility(tile);
     }
@@ -70,7 +69,7 @@ public class Skeleton {
      * paraméterként adjuk át a tile-t. 
      */
     public static void SnowstormNoBuilding() {
-        Tile t = new Tile("tile");
+        Tile t = new Tile("t");
         Eskimo e = new Eskimo(t, "e");
         t.accept(e);
         World.getInstance().generateSnowstorm(t);
@@ -82,7 +81,7 @@ public class Skeleton {
      * paraméterként adjuk át a tile-t. 
      */
     public static void SnowstormIgloo() {
-        Tile t = new Tile("tile");
+        Tile t = new Tile("t");
         t.buildIgloo();
         World.getInstance().generateSnowstorm(t);
     }
@@ -129,7 +128,7 @@ public class Skeleton {
      */
     public static void PlayerDigsWithShovel() {
         //Tile tile = new Tile("tile");
-        Tile tile = new Tile("t"); // TODO Jaki FIX THIS
+        Tile tile = new Tile("tile"); 
         Eskimo eskimo = new Eskimo(tile, "eskimo");
         Shovel shovel = new Shovel("shovel");
         eskimo.addUsableItem(shovel);
@@ -144,7 +143,7 @@ public class Skeleton {
      */
     public static void PlayerDigsWithHands() {
         //Tile tile = new Tile("tile");
-        Tile tile = new Tile("t"); // TODO Jaki FIX THIS
+        Tile tile = new Tile("tile");
         Eskimo eskimo = new Eskimo(tile, "eskimo");
         tile.accept(eskimo);
 
