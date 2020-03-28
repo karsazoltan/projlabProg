@@ -2,6 +2,8 @@ package sumatra;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Random;
+
 
 /**
  * A stabil jégtáblát reprezentáló osztály
@@ -37,9 +39,15 @@ public class Tile {
     private Building building;
 
     /**
+     * Az objektum nevét tárolja a skeletonhoz.
+     */
+    protected String objectName;
+
+    /**
      * Default konstruktor
      */
-    public Tile() {
+    public Tile(String objName) {
+        objectName = objName;
         snowlayers = 0;
         capacity = -1;
         is_capacity_known = false;
@@ -153,7 +161,9 @@ public class Tile {
      * @param amount A hó mélysége
      */
     public void addSnow(int amount) {
+        Skeleton.printLine(objectName, "addSnow()");
         snowlayers += amount;
+        Skeleton.returned();
     }
 
     /**
@@ -190,7 +200,10 @@ public class Tile {
      * Vihart csinál a táblán
      */
     public void storm() {
+        Skeleton.printLine(objectName, "storm()");
+        addSnow(new Random().nextInt(2));
         building.onStorm(players);
+        Skeleton.returned();
     }
 
     /**

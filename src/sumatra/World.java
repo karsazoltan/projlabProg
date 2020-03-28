@@ -65,9 +65,8 @@ public class World {
     /**
      * Hóvihar generálására szolgáló függvény
      */
-    public void generateSnowstorm() {
-        Skeleton.printLine("World", "generateSnowstorm");
-        Tile t = new Tile();
+    public void generateSnowstorm(Tile t) {
+        Skeleton.printLine("World", "generateSnowstorm()");
         t.storm();
         Skeleton.returned();
     }

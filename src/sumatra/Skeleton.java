@@ -32,18 +32,20 @@ public class Skeleton {
      * Eszkimó használja a képességét nem lyukon szekvenciaindító függvény.
      */
     public static void EskimoAbilityNoHole() {
-        Tile tile = new Tile();
+        Tile tile = new Tile("t");
         Eskimo e = new Eskimo(tile, "e" );
 
         tile.accept(e);
         e.useAbility(tile);
+
+
     }
 
     /**
      * Eszkimó használja a képességét lyukon szekvenciaindító függvény.
      */
     public static void EskimoAbilityOnHole() {
-        Tile tile = new HoleTile();
+        Tile tile = new HoleTile("tile");
         Eskimo e = new Eskimo(tile, "e" );
 
         tile.accept(e);
@@ -54,19 +56,35 @@ public class Skeleton {
      * Sarkkutató használja a képességét szekvenciaindító függvény.
      */
     public static void ResearcherAbility() {
-        Tile tile = new Tile();
+        Tile tile = new Tile("tile");
         Researcher r = new Researcher(tile, "r" );
 
         tile.accept(r);
         r.useAbility(tile);
     }
 
+
+    /**
+     * Hóvihart generál a pályán. 
+     * Megjegyzés: prezentációs célokból a World generateSnowstorm függvényének
+     * paraméterként adjuk át a tile-t. 
+     */
     public static void SnowstormNoBuilding() {
-
+        Tile t = new Tile("tile");
+        Eskimo e = new Eskimo(t, "e");
+        t.accept(e);
+        World.getInstance().generateSnowstorm(t);
     }
-
+    
+    /**
+     * Hóvihart generál a pályán és érint egy igluval felszerelt Tile-t.
+     * Megjegyzés: prezentációs célokból a World generateSnowstorm függvényének
+     * paraméterként adjuk át a tile-t. 
+     */
     public static void SnowstormIgloo() {
-
+        Tile t = new Tile("tile");
+        t.buildIgloo();
+        World.getInstance().generateSnowstorm(t);
     }
 
     public static void PickUpFood() {
@@ -111,7 +129,7 @@ public class Skeleton {
      */
     public static void PlayerDigsWithShovel() {
         //Tile tile = new Tile("tile");
-        Tile tile = new Tile(); // TODO Jaki FIX THIS
+        Tile tile = new Tile("t"); // TODO Jaki FIX THIS
         Eskimo eskimo = new Eskimo(tile, "eskimo");
         Shovel shovel = new Shovel("shovel");
         eskimo.addUsableItem(shovel);
@@ -126,7 +144,7 @@ public class Skeleton {
      */
     public static void PlayerDigsWithHands() {
         //Tile tile = new Tile("tile");
-        Tile tile = new Tile(); // TODO Jaki FIX THIS
+        Tile tile = new Tile("t"); // TODO Jaki FIX THIS
         Eskimo eskimo = new Eskimo(tile, "eskimo");
         tile.accept(eskimo);
 
