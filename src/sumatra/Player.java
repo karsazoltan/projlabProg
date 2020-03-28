@@ -129,7 +129,6 @@ public abstract class Player {
         if( hasMana ){
             tile.pickUpItem(this);
         }
-
         Skeleton.returned();
     }
 
