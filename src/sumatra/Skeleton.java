@@ -163,6 +163,9 @@ public class Skeleton {
         World.getInstance().generateSnowstorm(t);
     }
 
+    /**
+     * Étel felvétele a mezőről
+     */
     public static void PickUpFood() {
         startInit();
         Tile t = new Tile("t");
@@ -175,6 +178,9 @@ public class Skeleton {
         e.pickUpItem();
     }
 
+    /**
+     * Kötél felvétele a mezőről
+     */
     public static void PickUpBasicRope() {
         startInit();
         Tile t = new Tile("t");
@@ -187,6 +193,9 @@ public class Skeleton {
         e.pickUpItem();
     }
 
+    /**
+     * Búvárruha felvétele a mezőről
+     */
     public static void PickUpBasicDivingSuit() {
         startInit();
         Tile t = new Tile("t");
@@ -199,6 +208,9 @@ public class Skeleton {
         e.pickUpItem();
     }
 
+    /**
+     * Ásó felvétele a mezőről
+     */
     public static void PickUpShovel() {
         startInit();
         Tile t = new Tile("t");
@@ -211,6 +223,9 @@ public class Skeleton {
         e.pickUpItem();
     }
 
+    /**
+     * Pisztolyrész felvétele a mezőről
+     */
     public static void PickUpGun() {
         startInit();
         Tile t = new Tile("t");
@@ -223,6 +238,9 @@ public class Skeleton {
         e.pickUpItem();
     }
 
+    /**
+     * Patronrész felvétele a mezőről
+     */
     public static void PickUpCartridge() {
         startInit();
         Tile t = new Tile("t");
@@ -234,7 +252,9 @@ public class Skeleton {
         startSequence();
         e.pickUpItem();
     }
-
+    /**
+     * Jelzőfényrész felvétele a mezőről
+     */
     public static void PickUpBeacon() {
         startInit();
         Tile t = new Tile("t");
@@ -273,7 +293,6 @@ public class Skeleton {
         eskimo.useItem(0, tile);
 
     }
-
     /**
      * Player kézzel ás szekvenciaindító függvény
      */
@@ -307,6 +326,9 @@ public class Skeleton {
         p1.fallInWater();
     }
 
+    /**
+     * Kimetnés BasicRope-al.
+     */
     public static void SaveBasicRope() {
         Tile t1 = new Tile("t1");
         Tile t2 = new Tile("t2");
@@ -417,7 +439,7 @@ public class Skeleton {
         System.out.print(question + " (I/N) ");
         Scanner sc = new Scanner(System.in);
         String result = sc.next().trim();
-        return (result.equals("I") || result.equals("i"));
+        return (result.equals("I") || result.equals("i") || result.equals(""));
     }
 
     public static void startInit() {
