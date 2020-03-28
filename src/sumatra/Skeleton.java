@@ -90,22 +90,24 @@ public class Skeleton {
      * Eszkimó használja a képességét nem lyukon szekvenciaindító függvény.
      */
     public static void EskimoAbilityNoHole() {
+        startInit();
         Tile tile = new Tile("t");
         Eskimo e = new Eskimo(tile, "e" );
 
+        startSequence();
         tile.accept(e);
         e.useAbility(tile);
-
-
     }
 
     /**
      * Eszkimó használja a képességét lyukon szekvenciaindító függvény.
      */
     public static void EskimoAbilityOnHole() {
+        startInit();
         Tile tile = new HoleTile("tile");
         Eskimo e = new Eskimo(tile, "e" );
 
+        startSequence();
         tile.accept(e);
         e.useAbility(tile);
     }
@@ -114,8 +116,11 @@ public class Skeleton {
      * Sarkkutató használja a képességét szekvenciaindító függvény.
      */
     public static void ResearcherAbility() {
+        startInit();
         Tile tile = new Tile("tile");
         Researcher r = new Researcher(tile, "r" );
+
+        startSequence();
         tile.accept(r);
         r.useAbility(tile);
     }
@@ -176,8 +181,10 @@ public class Skeleton {
      * Jelzőrakéta összeszerelése szekvenciaindító függvény
      */
     public static void FlareAssembly() {
+        startInit();
         Eskimo eskimo = new Eskimo(null, "eskimo");
 
+        startSequence();
         eskimo.buildFlare();
     }
 
@@ -185,13 +192,15 @@ public class Skeleton {
      * Player ásóval ás szekvenciaindító függvény
      */
     public static void PlayerDigsWithShovel() {
+        startInit();
         Tile tile = new Tile("tile");
         Eskimo eskimo = new Eskimo(tile, "eskimo");
         Shovel shovel = new Shovel("shovel");
         eskimo.addUsableItem(shovel);
         tile.accept(eskimo);
 
-        eskimo.useItem(0, tile); // TODO Ide kell a tile?
+        startSequence();
+        eskimo.useItem(0, tile);
 
     }
 
@@ -199,10 +208,12 @@ public class Skeleton {
      * Player kézzel ás szekvenciaindító függvény
      */
     public static void PlayerDigsWithHands() {
+        startInit();
         Tile tile = new Tile("tile");
         Eskimo eskimo = new Eskimo(tile, "eskimo");
         tile.accept(eskimo);
 
+        startSequence();
         eskimo.dig();
     }
 
