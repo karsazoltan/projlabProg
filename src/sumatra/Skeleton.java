@@ -160,31 +160,87 @@ public class Skeleton {
     }
 
     public static void PickUpFood() {
+        startInit();
+        Tile t = new Tile("t");
+        Eskimo e = new Eskimo(t, "e");
+        Food f = new Food("f");
+        t.placeItem(f);
+        t.accept(e);
 
+        startSequence();
+        e.pickUpItem();
     }
 
     public static void PickUpBasicRope() {
+        startInit();
+        Tile t = new Tile("t");
+        Eskimo e = new Eskimo(t, "e");
+        BasicRope br = new BasicRope("br");
+        t.placeItem(br);
+        t.accept(e);
 
+        startSequence();
+        e.pickUpItem();
     }
 
     public static void PickUpBasicDivingSuit() {
+        startInit();
+        Tile t = new Tile("t");
+        Eskimo e = new Eskimo(t, "e");
+        BasicDivingSuit bds = new BasicDivingSuit("bds");
+        t.placeItem(bds);
+        t.accept(e);
 
+        startSequence();
+        e.pickUpItem();
     }
 
     public static void PickUpShovel() {
+        startInit();
+        Tile t = new Tile("t");
+        Eskimo e = new Eskimo(t, "e");
+        Shovel s = new Shovel("s");
+        t.placeItem(s);
+        t.accept(e);
 
+        startSequence();
+        e.pickUpItem();
     }
 
     public static void PickUpGun() {
+        startInit();
+        Tile t = new Tile("t");
+        Eskimo e = new Eskimo(t, "e");
+        Gun g = new Gun("g");
+        t.placeItem(g);
+        t.accept(e);
 
+        startSequence();
+        e.pickUpItem();
     }
 
     public static void PickUpCartridge() {
+        startInit();
+        Tile t = new Tile("t");
+        Eskimo e = new Eskimo(t, "e");
+        Cartridge c = new Cartridge("c");
+        t.placeItem(c);
+        t.accept(e);
 
+        startSequence();
+        e.pickUpItem();
     }
 
     public static void PickUpBeacon() {
+        startInit();
+        Tile t = new Tile("t");
+        Eskimo e = new Eskimo(t, "e");
+        Beacon b = new Beacon("b");
+        t.placeItem(b);
+        t.accept(e);
 
+        startSequence();
+        e.pickUpItem();
     }
 
     /**
