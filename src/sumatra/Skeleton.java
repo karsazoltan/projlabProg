@@ -3,11 +3,6 @@ package sumatra;
 import java.util.*;
 
 public class Skeleton {
-    // TODO ez kell? Ne legyünk lusták :(
-    private static void print(String s) {
-        System.out.println(s);
-    }
-
     /**
      * Játékos stabil jégtáblára lép szekvenciaindító függvény.
      */
@@ -105,22 +100,24 @@ public class Skeleton {
      * Eszkimó használja a képességét nem lyukon szekvenciaindító függvény.
      */
     public static void EskimoAbilityNoHole() {
+        startInit();
         Tile tile = new Tile("t");
         Eskimo e = new Eskimo(tile, "e" );
 
+        startSequence();
         tile.accept(e);
         e.useAbility(tile);
-
-
     }
 
     /**
      * Eszkimó használja a képességét lyukon szekvenciaindító függvény.
      */
     public static void EskimoAbilityOnHole() {
+        startInit();
         Tile tile = new HoleTile("tile");
         Eskimo e = new Eskimo(tile, "e" );
 
+        startSequence();
         tile.accept(e);
         e.useAbility(tile);
     }
@@ -129,8 +126,11 @@ public class Skeleton {
      * Sarkkutató használja a képességét szekvenciaindító függvény.
      */
     public static void ResearcherAbility() {
+        startInit();
         Tile tile = new Tile("tile");
         Researcher r = new Researcher(tile, "r" );
+
+        startSequence();
         tile.accept(r);
         r.useAbility(tile);
     }
@@ -191,8 +191,10 @@ public class Skeleton {
      * Jelzőrakéta összeszerelése szekvenciaindító függvény
      */
     public static void FlareAssembly() {
+        startInit();
         Eskimo eskimo = new Eskimo(null, "eskimo");
 
+        startSequence();
         eskimo.buildFlare();
     }
 
@@ -200,13 +202,15 @@ public class Skeleton {
      * Player ásóval ás szekvenciaindító függvény
      */
     public static void PlayerDigsWithShovel() {
+        startInit();
         Tile tile = new Tile("tile");
         Eskimo eskimo = new Eskimo(tile, "eskimo");
         Shovel shovel = new Shovel("shovel");
         eskimo.addUsableItem(shovel);
         tile.accept(eskimo);
 
-        eskimo.useItem(0, tile); // TODO Ide kell a tile?
+        startSequence();
+        eskimo.useItem(0, tile);
 
     }
 
@@ -214,10 +218,12 @@ public class Skeleton {
      * Player kézzel ás szekvenciaindító függvény
      */
     public static void PlayerDigsWithHands() {
+        startInit();
         Tile tile = new Tile("tile");
         Eskimo eskimo = new Eskimo(tile, "eskimo");
         tile.accept(eskimo);
 
+        startSequence();
         eskimo.dig();
     }
 
@@ -256,28 +262,28 @@ public class Skeleton {
     }
 
     public static void ListFunctions() {
-        print(" 1 - Player steps on stable tile");
-        print(" 2 - Player steps on unstable tile without divingsuit");
-        print(" 3 - Player steps on unstable tile with divingsuit.");
-        print(" 4 - Player steps on hole without divingsuit");
-        print(" 5 - Player steps on hole with divingsuit");
-        print(" 6 - Eskimo uses special ability.");
-        print(" 7 - Eskimo uses special ability on a hole.");
-        print(" 8 - Researcher uses special ability.");
-        print(" 9 - Snowstorm affects a tile without building.");
-        print("10 - Snowstorm affects a tile with an igloo on it.");
-        print("11 - Player picks up food.");
-        print("12 - Player picks up rope.");
-        print("13 - Player picks up divingsuit.");
-        print("14 - Plater picks up shovel.");
-        print("15 - Player picks up gun.");
-        print("16 - Player picks up cartridge.");
-        print("17 - Player picks up beacon.");
-        print("18 - Players assemble the flare.");
-        print("19 - Player digs with a shovel.");
-        print("20 - Player digs with hands.");
-        print("21 - Player asks for help but doesn't get saved.");
-        print("22 - Player gets saved by another player.");
+        System.out.println(" 1 - Player steps on stable tile");
+        System.out.println(" 2 - Player steps on unstable tile without divingsuit");
+        System.out.println(" 3 - Player steps on unstable tile with divingsuit.");
+        System.out.println(" 4 - Player steps on hole without divingsuit");
+        System.out.println(" 5 - Player steps on hole with divingsuit");
+        System.out.println(" 6 - Eskimo uses special ability.");
+        System.out.println(" 7 - Eskimo uses special ability on a hole.");
+        System.out.println(" 8 - Researcher uses special ability.");
+        System.out.println(" 9 - Snowstorm affects a tile without building.");
+        System.out.println("10 - Snowstorm affects a tile with an igloo on it.");
+        System.out.println("11 - Player picks up food.");
+        System.out.println("12 - Player picks up rope.");
+        System.out.println("13 - Player picks up divingsuit.");
+        System.out.println("14 - Plater picks up shovel.");
+        System.out.println("15 - Player picks up gun.");
+        System.out.println("16 - Player picks up cartridge.");
+        System.out.println("17 - Player picks up beacon.");
+        System.out.println("18 - Players assemble the flare.");
+        System.out.println("19 - Player digs with a shovel.");
+        System.out.println("20 - Player digs with hands.");
+        System.out.println("21 - Player asks for help but doesn't get saved.");
+        System.out.println("22 - Player gets saved by another player.");
     }
 
     public static void main(String[] args) throws Exception {
@@ -322,7 +328,7 @@ public class Skeleton {
                     commands.get(idx).run();
                 }
             } catch(Exception e) {
-                print("Must be an integer value between 0 and 22!");
+                System.out.println("Must be an integer value between 0 and 22!");
             }
         }
     }
