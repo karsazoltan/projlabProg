@@ -412,15 +412,10 @@ public class Skeleton {
                     if (idx == 0) scanner.close();
                     commands.get(idx).run();
                 }
-<<<<<<< HEAD
-            } catch (Exception e) {
-                System.out.println("Must be an integer value between 0 and 22!");
-=======
             } catch(Exception e) {
                 System.out.println("Must be an integer value between 0 and 22! (Vagy rossz a kódod xd)");
                 e.printStackTrace();
->>>>>>> 4c325e36c6c65d5a24078b34d287059d2c026169
-            }
+                }
         }
     }
 
@@ -444,8 +439,7 @@ public class Skeleton {
         System.out.print(question + " (I/N) ");
         Scanner sc = new Scanner(System.in);
         String result = sc.next().trim();
-        sc.close();
-        return (result.equals("I") || result.equals("i") || result.equals(""));
+        return (result.equals("I") || result.equals("i"));
     }
 
     public static void startInit() {
