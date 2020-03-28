@@ -103,9 +103,9 @@ public class Skeleton {
         startInit();
         Tile tile = new Tile("t");
         Eskimo e = new Eskimo(tile, "e" );
+        tile.accept(e);
 
         startSequence();
-        tile.accept(e);
         e.useAbility(tile);
     }
 
@@ -116,9 +116,9 @@ public class Skeleton {
         startInit();
         Tile tile = new HoleTile("tile");
         Eskimo e = new Eskimo(tile, "e" );
+        tile.accept(e);
 
         startSequence();
-        tile.accept(e);
         e.useAbility(tile);
     }
 
@@ -129,9 +129,9 @@ public class Skeleton {
         startInit();
         Tile tile = new Tile("tile");
         Researcher r = new Researcher(tile, "r" );
+        tile.accept(r);
 
         startSequence();
-        tile.accept(r);
         r.useAbility(tile);
     }
 
