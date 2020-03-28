@@ -307,6 +307,9 @@ public class Skeleton {
         p1.fallInWater();
     }
 
+    /**
+     * Kimetnés BasicRope-al.
+     */
     public static void SaveBasicRope() {
         Tile t1 = new Tile("t1");
         Tile t2 = new Tile("t2");
@@ -417,7 +420,7 @@ public class Skeleton {
         System.out.print(question + " (I/N) ");
         Scanner sc = new Scanner(System.in);
         String result = sc.next().trim();
-        return (result.equals("I") || result.equals("i"));
+        return (result.equals("I") || result.equals("i") || result.equals(""));
     }
 
     public static void startInit() {
