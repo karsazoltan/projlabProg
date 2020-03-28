@@ -22,26 +22,23 @@ public class NoDivingSuit extends DivingSuit {
      * @param p A ruhát birtokló játékos.
      */
     @Override
-    public void fallInWater(Player p) {
+    public boolean fallInWater(Player p) {
         Skeleton.printLine(this.objName, "fallInWater()");
         ArrayList<Player> players = p.getTile().getNeighingPlayers();
         
         // eleinte úgy vesszük, hogy vízbe esik
-        boolean result = false; 
+        boolean result = true; 
         for (Player q : players) {
             // ha valaki kimenti
             if (q.saveMe(p, p.getTile())) {
-                // akkor a result true
-                result = true;
+                // akkor a result false, mert nem esik bele igazából
+                result = false;
             }
             
         }
 
-        // ha senki sem mentette ki, akkor vége
-        if (!result) {
-            World.getInstance().loseGame();
-        }
-
         Skeleton.returned();
+
+        return result;
     }
 }

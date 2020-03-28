@@ -18,7 +18,7 @@ public abstract class DivingSuit extends AutomaticItem {
      * A leszármazottak írják le az ekkor lefutó eseményeket.
      * @param p A ruhát birtokló játékos.
      */
-    public abstract void fallInWater(Player p);
+    public abstract boolean fallInWater(Player p);
 
     /**
      * A búvárruhát hozzárendeli a paraméterként kapott játékoshoz.

@@ -19,9 +19,10 @@ public class BasicDivingSuit extends DivingSuit {
      * @param p A ruhát birtokló játékos.
      */
     @Override
-    public void fallInWater(Player p) {
+    public boolean fallInWater(Player p) {
         Skeleton.printLine(objName, "fallInWater()");
         Skeleton.returned();
+        return false;
     }
 
 }
