@@ -69,7 +69,7 @@ public abstract class Player {
             tile.remove(this);
             newTile.accept(this);
 
-            tile = newTile; // vagy Tile.accept-be Player.setTile(this); ???
+            tile = newTile;
         }
 
         Skeleton.returned();
