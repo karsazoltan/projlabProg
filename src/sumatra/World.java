@@ -1,5 +1,5 @@
 package sumatra;
-import java.util.*;
+import java.util.ArrayList;
 
 /**
  * A játékot menedzselő singleton osztály. Kezeli a világot alkotó Tile mezőket, generálja a játékteret, illetve néha hóviharokat generál.

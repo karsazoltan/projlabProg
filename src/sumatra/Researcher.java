@@ -7,7 +7,7 @@ public class Researcher extends Player{
 
     /**
      * A sarkkutató játékos konstruktora, meg kell adni mezőt, ahol kezdetben van a játékos.
-     * @param starTile a mező melyen a játékos kezdetben van.
+     * @param startTile a mező melyen a játékos kezdetben van.
      */
     public Researcher(Tile startTile, String pobjName){
         super(startTile, pobjName);
