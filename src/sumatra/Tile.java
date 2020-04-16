@@ -1,5 +1,6 @@
 package sumatra;
 
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -7,7 +8,7 @@ import java.util.Random;
 /**
  * A stabil jégtáblát reprezentáló osztály
  */
-public class Tile {
+public class Tile implements Printable {
     /**
      * A táblán található hó mélysége
      */
@@ -253,5 +254,14 @@ public class Tile {
         building = new Igloo("igloo");
 
         Skeleton.returned();
+    }
+
+    /**
+     * Kiírja a megvalósító osztály adatait az átadott streamre
+     * @param stream ahova kiírjuk az adatokat
+     */
+    @Override
+    public void printData(OutputStream stream) {
+
     }
 }

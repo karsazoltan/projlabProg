@@ -3,7 +3,7 @@ package sumatra;
 /**
  * Általános absztrakt osztály, a játékban található tárgyak modellezésére
  */
-public abstract class Item {
+public abstract class Item implements Printable {
     protected String objName;
 
     public Item() {}

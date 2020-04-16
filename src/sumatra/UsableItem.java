@@ -1,5 +1,7 @@
 package sumatra;
 
+import java.io.OutputStream;
+
 /**
  * Absztrakt osztály a manuálisan használható eszközök modellezésére
  */
@@ -25,5 +27,10 @@ public abstract class UsableItem extends Item {
         Skeleton.printLine(objName, "giveToPlayer()");
         p.addUsableItem(this);
         Skeleton.returned();
+    }
+
+    @Override
+    public void printData(OutputStream stream) {
+
     }
 }

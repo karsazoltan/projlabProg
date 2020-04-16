@@ -1,10 +1,11 @@
 package sumatra;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 /**
  * A játékot menedzselő singleton osztály. Kezeli a világot alkotó Tile mezőket, generálja a játékteret, illetve néha hóviharokat generál.
  */
-public class World {
+public class World implements Printable {
     /**
      * Mezók - Jaki még csinálja :)
      */
@@ -88,4 +89,12 @@ public class World {
         Skeleton.returned();
     }
 
+    /**
+     * Kiírja a megvalósító osztály adatait az átadott streamre, delegálja azokat a tartalmazott elemekre
+     * @param stream ahova kiírjuk az adatokat
+     */
+    @Override
+    public void printData(OutputStream stream) {
+
+    }
 }
