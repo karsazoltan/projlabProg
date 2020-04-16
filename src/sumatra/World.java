@@ -19,7 +19,6 @@ public class World {
      * Singleton megvalósítás, a world példánya
      */
     private static World instance = new World();
-
     /**
      * Singleton megvalósítás, visszatér a singleton példánnyal.
      * @return A singleton példány.

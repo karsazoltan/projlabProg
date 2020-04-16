@@ -4,6 +4,10 @@ package sumatra;
  * 
  */
 public abstract class FlarePart extends Item {
+    /**
+     * default ctor
+     * @param objName az eszköz neve
+     */
     public FlarePart(String objName) {
         super(objName);
     }
@@ -14,6 +18,7 @@ public abstract class FlarePart extends Item {
     @Override
     public void giveToPlayer(Player p) {
         Skeleton.printLine(objName, "giveToPlayer()");
+        World.getInstance().registerFlarePart(this);
         Skeleton.returned();
     }
 }
