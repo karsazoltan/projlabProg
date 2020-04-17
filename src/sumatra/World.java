@@ -1,7 +1,6 @@
 package sumatra;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -17,7 +16,7 @@ public class World implements Printable {
     /** Menedzselt mód-flag, csak akkor fontos, ha van futó játék */
     private boolean managedMode;
     /** Lépésszámláló, csak akkor fontos, ha van futó játék */
-    private int step;
+    private int stepCounter;
     /** Lerakott sátorok, azt tartja számon, hogy az adott sátor melyik körben lett lerakva */
     private HashMap<Tent, Integer> tentplacements;
     /** A játék tábláját alkotó jégtáblák tömbje */
@@ -79,8 +78,8 @@ public class World implements Printable {
             while (!result) {
                 /* TODO A World kezelhetné az exit conditionoket, meg lehetne azt, hogy csak a world
                     fér hozzá a System.in-hez, a creatureök nem :/ */
-                creatures.get(step % creatures.size()).playRound();
-                step++;
+                creatures.get(stepCounter % creatures.size()).playRound();
+                stepCounter++;
             }
         } else {
             while (!result && input.hasNextLine()) {
@@ -94,7 +93,7 @@ public class World implements Printable {
     /**
      * Élőlény-generáló függvény, közvetlenül az inputtal dolgozik.
      */
-    private void generateCreatures() {
+    public void generateCreatures() {
         if (tiles.size() == 0) {
             System.out.println("    > Error: initialize a world before adding creatures!");
             return;
@@ -135,7 +134,7 @@ public class World implements Printable {
     /**
      * Jégtábla-generáló függvény, közvetlenül az inputtal dolgozik.
      */
-    private void generateTiles() {
+    public void generateTiles() {
         System.out.println("    > Enter tiles (<t> <s> [c] where t is S/U/H, s is # of");
         System.out.println("    > snow layers, c is capacity for U), or F to finish:");
         String line = "";
@@ -210,7 +209,7 @@ public class World implements Printable {
     /**
      * Hóvihargeneráló függvény, közvetlenül az inputtal dolgozik.
      */
-    private void generateSnowstorm() {
+    public void generateSnowstorm() {
         HashMap<Integer, Integer> affectedTiles = new HashMap<>();
         if (!managedMode) {
             int amount = ThreadLocalRandom.current().nextInt(0, tiles.size());
@@ -268,11 +267,11 @@ public class World implements Printable {
         return tiles.get(index);
     }
 
-    private void listTiles() {
+    public void listTiles() {
         // TODO
     }
 
-    private void loadConfig(String filename) {
+    public void loadConfig(String filename) {
         // TODO
     }
 
@@ -287,7 +286,7 @@ public class World implements Printable {
     /**
      * Kiírja a standard outputra a pillanatnyi konfigurációt
      */
-    private void printConfig() {
+    public void printConfig() {
         printData(System.out);
     }
 
@@ -305,7 +304,7 @@ public class World implements Printable {
      */
     // TODO A megsemmisítés nincs implementálva
     public void registerTent(Tent t) {
-        tentplacements.put(t, step);
+        tentplacements.put(t, stepCounter);
     }
 
     /**
@@ -326,7 +325,7 @@ public class World implements Printable {
      */
     public void startGame(boolean managed) {
         managedMode = managed;
-        step = 0;
+        stepCounter = 0;
         gameLoop();
     }
 
