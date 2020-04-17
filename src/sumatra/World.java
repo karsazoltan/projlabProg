@@ -119,6 +119,7 @@ public class World implements Printable {
                         // TODO Ilyenkor nem jó a kövi sor beolvasása
                 }
                 t.accept(c);
+                creatures.add(c);
                 loop++;
             } catch (Exception e) {
                 System.out.println("    > Error: Invalid tile ID, skipping line!");
