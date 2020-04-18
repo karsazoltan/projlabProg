@@ -15,6 +15,8 @@ public class World implements Printable {
     private ArrayList<FlarePart> flareParts;
     /** Menedzselt mód-flag, csak akkor fontos, ha van futó játék */
     private boolean managedMode;
+    /** Játék futása flag, igaz, ha éppen fut egy játék */
+    private boolean running;
     /** Lépésszámláló, csak akkor fontos, ha van futó játék */
     private int stepCounter;
     /** Lerakott sátorok, azt tartja számon, hogy az adott sátor melyik körben lett lerakva */
@@ -34,6 +36,7 @@ public class World implements Printable {
         tentplacements = new HashMap<>();
         tiles = new ArrayList<>();
         input = new Scanner(System.in);
+        running = false;
     }
 
     /**
@@ -70,22 +73,28 @@ public class World implements Printable {
     }
 
     /**
+     * Ellenőrzi, hogy az adott lépésben kell-e megsemmisíteni sátrat
+     */
+    private void checkTentDecays() {
+        for (Tent t : tentplacements.keySet()) {
+            if (tentplacements.get(t) + creatures.size() == stepCounter)
+                t.destroy();
+        }
+    }
+
+    /**
      * Ciklusfüggvény, a játék menetét vezérli.
      */
     private void gameLoop() {
-        boolean result = false;
         if (!managedMode) {
-            while (!result) {
-                /* TODO A World kezelhetné az exit conditionoket, meg lehetne azt, hogy csak a world
-                    fér hozzá a System.in-hez, a creatureök nem :/ */
-                creatures.get(stepCounter % creatures.size()).playRound();
-                stepCounter++;
+            while (running) {
+                step(stepCounter % creatures.size());
+                // TODO Hóvihar
             }
         } else {
-            while (!result && input.hasNextLine()) {
+            while (running) {
                 String line = input.nextLine().trim();
-                result = Interpreter.interpretGameplayCommand(line);
-                // TODO A LÉPÉSKEZELÉS HOGY MŰKÖDIK ITT?
+                Interpreter.interpretGameplayCommand(line);
             }
         }
     }
@@ -325,9 +334,32 @@ public class World implements Printable {
      * A játék indítására szolgáló függvény, körönként lehetőséget ad arra, hogy a játékosok lépjenek
      */
     public void startGame(boolean managed) {
+        running = true;
         managedMode = managed;
         stepCounter = 0;
         gameLoop();
+    }
+
+    /**
+     * Lépésindító függvény, lejátszik egy lépést az idx-edik lény
+     * @param idx A léptetendő creature indexe
+     */
+    public void step(int idx) {
+        stepCounter++;
+        checkTentDecays();
+        if (idx >= creatures.size()) {
+            System.out.println("> Error: Invalid creature index!");
+            return;
+        }
+        creatures.get(idx).playRound();
+    }
+
+    /**
+     * Játék-leállító függvény.
+     */
+    public void stop() {
+        System.out.println("Game Stopped.");
+        running = false;
     }
 
     /**
@@ -336,6 +368,6 @@ public class World implements Printable {
      */
     @Override
     public void printData(OutputStream stream) {
-        // TODO
+
     }
 }

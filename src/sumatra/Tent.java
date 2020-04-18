@@ -20,4 +20,7 @@ public class Tent extends Building {
     public void onStorm(ArrayList<Player> ps) {
 
     }
+
+    // TODO Legyen megsemmisítő függvénye, mondjuk destroy()
+    // - Attila
 }

@@ -13,7 +13,7 @@ public class Interpreter {
      * @param cmd A felhasználó által kiadott parancs
      * @return Igaz, ha a kiadott parancs a finish volt
      */
-    public boolean interpretPlayerCommand(Player p, String cmd) {
+    public static boolean interpretPlayerCommand(Player p, String cmd) {
         String[] words = cmd.trim().split(" ");
 
         switch (words[0]) {
@@ -28,11 +28,12 @@ public class Interpreter {
                 p.dig();
                 break;
             case "inventory":
+                // TODO Szerintem ezt szebb lenne a player belsejében csinálni @Peti
                 ArrayList<Item> items = p.getItems();
                 int loop = 0;
                 System.out.println("> Manually usable items:");
                 for (Item i : items) {
-                    System.out.print(loop + ": ");
+                    System.out.print("    " + loop + ": ");
                     i.printData(System.out);
                 }
                 System.out.println("> Automatically used items:");
@@ -68,7 +69,7 @@ public class Interpreter {
      * @param cmd A felhasználó által kiadott parancs.
      * @return Igaz, ha a kiadott parancs a stop volt.
      */
-    public boolean interpretGameplayCommand(String cmd) {
+    public static boolean interpretGameplayCommand(String cmd) {
         String[] words = cmd.trim().split(" ");
 
         switch (words[0]) {
@@ -86,7 +87,8 @@ public class Interpreter {
                 }
                 break;
             case "stop":
-                return false;
+                World.getInstance().stop();
+                return true;
             case "init":
             case "start":
                 System.out.println("> Error: Invalid context for this command!");
@@ -102,7 +104,7 @@ public class Interpreter {
      * @param cmd A felhasználó által kiadott parancs.
      * @return Igaz, ha a kiadott parancs az exit volt.
      */
-    public boolean interpretBasicCommand(String cmd) {
+    public static boolean interpretBasicCommand(String cmd) {
         String[] words = cmd.trim().split(" ");
 
         switch (words[0]) {
