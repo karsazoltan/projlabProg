@@ -1,6 +1,7 @@
 package sumatra;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -21,10 +22,12 @@ public class World implements Printable {
     private int stepCounter;
     /** Lerakott sátorok, azt tartja számon, hogy az adott sátor melyik körben lett lerakva */
     private HashMap<Tent, Integer> tentplacements;
-    /** A játék tábláját alkotó jégtáblák tömbje */
+    /** A játék tábláját alkotó jégtáblák, és linkek tömbje */
     private ArrayList<Tile> tiles;
     /** Az inputfeldolgozó függvények által közösen használt scanner objektum. */
     private Scanner input;
+    /** Az aktív játékos jelzője */
+    private String activeplayer;
 
     /**
      * Privát konstruktor - Mivel a World egy singleton, nem akarunk külsőleg példányt létrehozni
@@ -37,6 +40,7 @@ public class World implements Printable {
         tiles = new ArrayList<>();
         input = new Scanner(System.in);
         running = false;
+        activeplayer = "none";
     }
 
     /**
@@ -338,6 +342,7 @@ public class World implements Printable {
         try {
             FileOutputStream fos = new FileOutputStream(filename);
             printData(fos);
+            fos.close();
         } catch (Exception e) {
             System.out.println("> Error: Couldn't save config! Please try again!");
         }
@@ -364,7 +369,9 @@ public class World implements Printable {
             System.out.println("> Error: Invalid creature index!");
             return;
         }
+        activeplayer = Integer.toString(idx);
         creatures.get(idx).playRound();
+        activeplayer = "none";
     }
 
     /**
@@ -381,6 +388,28 @@ public class World implements Printable {
      */
     @Override
     public void printData(OutputStream stream) {
+        PrintWriter pw = new PrintWriter(stream);
 
+        pw.write("worlddata\n");
+        pw.write("    step " + stepCounter + "\n");
+        pw.write("    activeplayer " + activeplayer + "\n");
+        pw.write("    flareparts " + flareParts.size() + "\n");
+        for (FlarePart fp : flareParts) {
+            fp.printData(stream); //TODO Megfelelő tabulálás?
+        }
+
+        pw.write("tiles " + tiles.size() + "\n");
+        for (Tile t : tiles) {
+            t.printData(stream); //TODO A TentPlacementStepet le kell kérdezze a worldtól
+        }
+
+        // TODO TILELINKS
+
+        pw.write("creatures " + creatures.size() + "\n");
+        for (Creature c : creatures) {
+            c.printData(stream);
+        }
+
+        pw.flush();
     }
 }
