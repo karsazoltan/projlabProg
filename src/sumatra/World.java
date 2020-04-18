@@ -61,7 +61,8 @@ public class World implements Printable {
             return;
         }
         System.out.println("> You have all 3 parts of the flare.");
-        if (!true) {// TODO ELLENŐRIZNI, HOGY UGYANOTT ÁLL-E MINDENKI
+        if (!true) {// TODO ELLENŐRIZNI, HOGY UGYANOTT ÁLL-E MINDENKI - Creature getTile(), ami a medvére nem csinál
+            // Semmit @Peti
             System.out.println("> Not all players are standing on the same tile!");
             System.out.println("> Flare construction unsuccessful!");
             return;
@@ -76,9 +77,13 @@ public class World implements Printable {
      * Ellenőrzi, hogy az adott lépésben kell-e megsemmisíteni sátrat
      */
     private void checkTentDecays() {
-        for (Tent t : tentplacements.keySet()) {
-            if (tentplacements.get(t) + creatures.size() == stepCounter)
+        Iterator<Tent> iter = tentplacements.keySet().iterator();
+        while (iter.hasNext()) {
+            Tent t = iter.next();
+            if (tentplacements.get(t) + creatures.size() == stepCounter) {
+                tentplacements.remove(t);
                 t.destroy();
+            }
         }
     }
 
@@ -109,15 +114,15 @@ public class World implements Printable {
         }
         System.out.println("    > Enter creatures (<tile> <type> where tiles: 0-" + (tiles.size() - 1) + ",");
         System.out.println("    > types are researcher, eskimo, polarbear), or F to finish:");
-        String line = "";
         int loop = 0;
         System.out.print("        0: ");
-        line = (input.nextLine().trim().split(": "))[1];
+        String line = (input.nextLine().trim().split(": "))[1];
         while (!line.equals("F")) {
             String[] words = line.split(" ");
             Creature c;
             Tile t;
             try {
+                boolean skipinit = false;
                 t = tiles.get(Integer.parseInt(words[0]));
                 switch (words[1]) {
                     case "researcher": c = new Researcher(t); break;
@@ -125,17 +130,19 @@ public class World implements Printable {
                     case "polarbear": c = new Bear(t); break;
                     default:
                         System.out.println("    > Error: Invalid type, skipping line!");
-                        // TODO Ilyenkor nem jó a kövi sor beolvasása
+                        skipinit = true;
                 }
-                t.accept(c);
-                creatures.add(c);
-                loop++;
+                if (!skipinit) {
+                    t.accept(c);
+                    creatures.add(c);
+                    loop++;
+                }
             } catch (Exception e) {
                 System.out.println("    > Error: Invalid tile ID, skipping line!");
             }
 
             System.out.print("        " + loop + ": ");
-            /* TODO Vajon ide beszámít a sok sor eleji space, illetve a 0: rész?
+            /* Vajon ide beszámít a sok sor eleji space, illetve a 0: rész?
                 Elvben ez most jó, csak kicsit hack */
             line = (input.nextLine().trim().split(": "))[1];
         }
@@ -156,6 +163,7 @@ public class World implements Printable {
             Tile t;
             int snow = 0, cap = 0;
             try {
+                boolean skipinit = false;
                 snow = Integer.parseInt(words[1]);
                 if (words[0].equals("U"))
                     cap = Integer.parseInt(words[2]);
@@ -163,9 +171,14 @@ public class World implements Printable {
                     case "S": t = new Tile(snow); break;
                     case "U": t = new UnstableTile(snow, cap); break;
                     case "H": t = new HoleTile(snow); break;
+                    default:
+                        System.out.println("> Error: Invalid tile type");
+                        skipinit = true;
                 }
-                tiles.add(t);
-                loop++;
+                if (!skipinit) {
+                    tiles.add(t);
+                    loop++;
+                }
             } catch (Exception e) {
                 System.out.println("    > Error: Invalid syntax!");
             }
@@ -194,6 +207,7 @@ public class World implements Printable {
             String[] words = line.split(" ");
             try {
                 Item i;
+                boolean skipinit = false;
                 switch (words[1]) {
                     case "basicdivingsuit": i = new BasicDivingSuit(); break;
                     case "basicrope": i = new BasicRope(); break;
@@ -206,9 +220,10 @@ public class World implements Printable {
                     case "tent": i = new TentEquipment(); break;
                     default:
                         System.out.println("    > Error: Invalid syntax!");
-                        // TODO Ilyenkor nem kéne a placeItem lefusson. Exception dobása nagyon ronda
+                        skipinit = true;
                 }
-                tiles.get(Integer.parseInt(words[0])).placeItem(i);
+                if (!skipinit)
+                    tiles.get(Integer.parseInt(words[0])).placeItem(i);
             } catch (Exception e) {
                 System.out.println("    > Error: Invalid syntax!");
             }
@@ -264,7 +279,6 @@ public class World implements Printable {
         while (!result && input.hasNextLine()) {
             String line = input.nextLine().trim();
             result = Interpreter.interpretBasicCommand(line);
-            // TODO A LÉPÉSKEZELÉS HOGY MŰKÖDIK ITT?
         }
     }
 
@@ -312,7 +326,6 @@ public class World implements Printable {
      * Regisztrálja a kapott sátrat, hogy egy kör letelte után lehessen neki szólni, hogy semmisítse meg magát
      * @param t A sátor
      */
-    // TODO A megsemmisítés nincs implementálva
     public void registerTent(Tent t) {
         tentplacements.put(t, stepCounter);
     }
