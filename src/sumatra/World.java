@@ -1,7 +1,6 @@
 package sumatra;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.io.*;
+import java.nio.Buffer;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -95,10 +94,14 @@ public class World implements Printable {
      * Ciklusfüggvény, a játék menetét vezérli.
      */
     private void gameLoop() {
+        int nextstormstep = ThreadLocalRandom.current().nextInt(2 * creatures.size());
         if (!managedMode) {
             while (running) {
                 step(stepCounter % creatures.size());
-                // TODO Hóvihar
+                if (stepCounter == nextstormstep) {
+                    generateSnowstorm();
+                    nextstormstep += ThreadLocalRandom.current().nextInt(2 * creatures.size());
+                }
             }
         } else {
             while (running) {
@@ -296,11 +299,57 @@ public class World implements Printable {
     }
 
     public void listTiles() {
-        // TODO
+        /* TODO Igazából nekem nem nagy cucc, de követelményeket támasztok a Creature és a Tile felé
+           - egy-egy új függvény kéne, ami megfelelő syntaxxal kiír infókat (nem a kimeneti nyelv)
+           - Lásd: Sumatra 7, 20. oldal alja */
     }
 
     public void loadConfig(String filename) {
-        // TODO
+        FileReader fis;
+        BufferedReader br = new BufferedReader(Reader.nullReader()); // Java 11 sajátosság, de cserébe szép lesz a finally
+        try {
+            fis = new FileReader(filename);
+            br = new BufferedReader(fis);
+            if (!br.readLine().trim().equals("worlddata"))
+                throw new InputMismatchException("File does not start with \"worlddata\"");
+            stepCounter = Integer.parseInt(br.readLine().trim().split(" ")[1]); // TODO hogy megy a startGame()?
+            activeplayer = br.readLine().trim().split(" ")[1];
+            int fps = Integer.parseInt(br.readLine().trim().split(" ")[1]);
+            for (int i = 0; i < fps; i++) {
+                String name = br.readLine().trim();
+                switch (name) {
+                    case "beacon": flareParts.add(new Beacon()); break;
+                    case "cartridge": flareParts.add(new Cartridge()); break;
+                    case "gun": flareParts.add(new Gun()); break;
+                    default: throw new InputMismatchException("Invalid Flare Part name: \"" + name + "\"");
+                }
+            }
+            int tilenum = Integer.parseInt(br.readLine().trim().split(" ")[1]);
+            for (int i = 0; i < tilenum; i++) {
+                // TODO Load tiles
+            }
+            int tilelinks = Integer.parseInt(br.readLine().trim().split(" ")[1]);
+            for (int i = 0; i < tilelinks; i++) {
+                String[] words = br.readLine().trim().split(" ");
+                int tilea = Integer.parseInt(words[0]);
+                int tileb = Integer.parseInt(words[1]);
+                tiles.get(tilea).addNeighbor(tiles.get(tileb));
+                tiles.get(tileb).addNeighbor(tiles.get(tilea));
+            }
+            int creatnum = Integer.parseInt(br.readLine().trim().split(" ")[1]);
+            for (int i = 0; i < creatnum; i++) {
+                // TODO Load creatures
+            }
+
+        } catch (Exception e) {
+            System.out.println("> Error: Could not load savefile. The file either doesn't exist," +
+                    "or it's not a proper save file.");
+            System.out.println("> Cause: " + e.getMessage());
+        } finally {
+            try {
+                br.close();
+            } catch (Exception ignored) {}
+        }
     }
 
     /**
@@ -355,6 +404,7 @@ public class World implements Printable {
         running = true;
         managedMode = managed;
         stepCounter = 0;
+        System.out.println("> Game Started");
         gameLoop();
     }
 
