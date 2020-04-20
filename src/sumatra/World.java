@@ -380,7 +380,7 @@ public class World implements Printable {
             }
             int creatnum = Integer.parseInt(br.readLine().trim().split(" ")[1]);
             for (int i = 0; i < creatnum; i++) {
-                // TODO Load creatures
+                Creature c = Creature.fromConfig(br);
             }
 
         } catch (Exception e) {

@@ -5,12 +5,12 @@ package sumatra;
  */
 public class BrokenShovel extends UsableItem {
     int use_num;
-    public BrokenShovel(String objName, int maxuse) {
-        super(objName);
+    public BrokenShovel(int maxuse) {
+        super(null); // TODO Sorry, temp fix hogy nekem működjön ~ Attila
         use_num = maxuse;
     }
     public BrokenShovel(String objName) {
-        this(objName, 3);
+        this(3);
     }
     /**
      * Ásó használata függvény. A paraméterként kapott mezőről leás két réteg havat.
