@@ -17,14 +17,10 @@ public class Researcher extends Player{
      * @param target a mező, amiről felfedi, hogy hányan férnek el.
      */
     @Override
-    public void useAbility(Tile target){
-        Skeleton.printLine(this.objName, "useAbility()");
-        
-        boolean isTargetValid = Skeleton.askQuestion("Saját vagy szomszédos mező a cél?");
-        boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
-        if( hasMana && isTargetValid )
+    public void useAbility(Tile target){        
+        if( mana > 0 && ( tile.isNeighbor(target) || target == this.tile ) ){
             target.revealCapacity();
-
-        Skeleton.returned();
+            --mana;
+        }
     }
 }

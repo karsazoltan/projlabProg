@@ -48,6 +48,8 @@ public abstract class Player extends Creature{
             tile.remove(this);
             newTile.accept(this);
             tile = newTile;
+
+            --mana;
         }
     }
 
@@ -67,6 +69,7 @@ public abstract class Player extends Creature{
     public void dig() {
         if( mana > 0 ){
             tile.removeSnow(1);
+            --mana;
         }
     }
 
@@ -88,6 +91,7 @@ public abstract class Player extends Creature{
     public void useItem(int index, Tile target) {
         if( mana > 0 ){
             useableItems.get(index).use(target);
+            --mana;
         }
     }
 
@@ -97,6 +101,7 @@ public abstract class Player extends Creature{
     public void pickUpItem() {        
         if( mana > 0 ){
             tile.pickUpItem(this);
+            --mana;
         }
     }
 
@@ -169,7 +174,7 @@ public abstract class Player extends Creature{
     DivingSuit getDivingSuit(){
         return divingSuit;
     }
-    
+
     void hitBy(Bear b){
         World.getInstance().loseGame();
     }

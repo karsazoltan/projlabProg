@@ -17,13 +17,10 @@ public class Eskimo extends Player {
      * @param target a mező, amire épül az iglu.
      */
     @Override
-    public void useAbility(Tile target){
-        Skeleton.printLine(this.objName, "useAbility()");
-        
-        boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
-        if( hasMana ){
+    public void useAbility(Tile target){        
+        if( mana > 0 ){
             target.buildIgloo();
+            --mana;
         }
-        Skeleton.returned();
     }
 }
