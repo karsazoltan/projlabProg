@@ -1,6 +1,5 @@
 package sumatra;
 
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -8,7 +7,7 @@ import java.util.Random;
 /**
  * A stabil jégtáblát reprezentáló osztály
  */
-public class Tile implements Printable {
+public class Tile {
     /**
      * A táblán található hó mélysége
      */
@@ -28,7 +27,7 @@ public class Tile implements Printable {
     /**
      * A táblán található játékosok
      */
-    protected ArrayList<Player> players;
+    protected ArrayList<Creature> creatures;
     /**
      * A táblán található tárgy
      */
@@ -53,7 +52,7 @@ public class Tile implements Printable {
         is_capacity_known = false;
         building = new NoBuilding("noBuilding");
         neighbors = new ArrayList<>();
-        players = new ArrayList<>();
+        creatures = new ArrayList<>();
     }
 
     /**
@@ -89,16 +88,6 @@ public class Tile implements Printable {
     }
 
     /**
-     * Getter a táblán található játékosokra
-     * @return A táblán található játékosok
-     */
-    public ArrayList<Player> getPlayers() {
-        Skeleton.printLine(this.objName, "getPlayers()");
-        Skeleton.returned();
-        return players;
-    }
-
-    /**
      * Getter a tábln található tárgyra
      * @return A táblán található tárgy
      */
@@ -123,11 +112,9 @@ public class Tile implements Printable {
         Skeleton.printLine(this.objName, "placeItem()");
 
         if (item != null) {
-            Skeleton.returned();
             return false;
         }
         item = i;
-        Skeleton.returned();
         return true;
     }
 
@@ -136,35 +123,23 @@ public class Tile implements Printable {
      * @param p A játékos aki felveszi a tárgyat
      */
     public void pickUpItem(Player p) {
-        Skeleton.printLine(this.objName, "pickUpItem()");
-
         item.giveToPlayer(p);
-
-        Skeleton.returned();
     }
 
     /**
-     * Elfogadja a tábláról lépő játékost
-     * @param p A tábláról lépő játékos
+     * Elfogadja a táblára lépő élőlényt
+     * @param c A táblára lépő élőlény
      */
-    public void accept(Player p) {
-        Skeleton.printLine(this.objName, "accept()");
-
-        players.add(p);
-
-        Skeleton.returned();
+    public void accept(Creature c) {
+        creatures.add(c);
     }
 
     /**
-     * Eltávolítja a Tábláról a játékost
-     * @param p Az eltávolítandő játékos
+     * Eltávolítja a Tábláról a élőlényt
+     * @param c Az eltávolítandő élőlény
      */
-    public void remove(Player p) {
-        Skeleton.printLine(this.objName, "remove()");
-
-        players.remove(p);
-
-        Skeleton.returned();
+    public void remove(Creature c) {
+        creatures.remove(c);
     }
 
     /**
@@ -172,11 +147,7 @@ public class Tile implements Printable {
      * @param t A szomszéd tábla
      */
     public void addNeighbor(Tile t) {
-        Skeleton.printLine(this.objName, "addNeighbor()");
-
         neighbors.add(t);
-
-        Skeleton.returned();
     }
 
     /**
@@ -184,10 +155,7 @@ public class Tile implements Printable {
      * @param amount A hó mélysége
      */
     public void addSnow(int amount) {
-        Skeleton.printLine(objName, "addSnow()");
         snowlayers += amount;
-
-        Skeleton.returned();
     }
 
     /**
@@ -195,73 +163,44 @@ public class Tile implements Printable {
      * @param amount Az eltávolítandó hó mélysége
      */
     public void removeSnow(int amount) {
-        Skeleton.printLine(this.objName, "removeSnow()");
-
         snowlayers -= amount;
         if (snowlayers < 0) {
             snowlayers = 0;
         }
-
-        Skeleton.returned();
     }
 
     /**
-     * Visszaadja a szomszédos táblákon álló játékosokat
-     * @return A szomszédos játékosok
+     * Visszaadja a szomszédos táblákon álló élőlényeket
+     * @return A szomszédos élőlények
      */
-    public ArrayList<Player> getNeighingPlayers() {
-        Skeleton.printLine(this.objName, "getNeighingPlayers()");
-
-        ArrayList<Player> neighingplayer = new ArrayList<>();
+    public ArrayList<Player> getNeighingCreatures() {
+        ArrayList<Player> neighingcreatures = new ArrayList<>();
         for (Tile t : neighbors) {
-            neighingplayer.addAll(t.players);
+            neighingcreatures.addAll(t.creatures);
         }
 
-        Skeleton.returned();
-
-        return neighingplayer;
+        return neighingcreatures;
     }
 
     /**
      * Felfedi a mező teherbírását
      */
     public void revealCapacity() {
-        Skeleton.printLine(this.objName, "revealCapacity()");
-
         is_capacity_known = true;
-
-        Skeleton.returned();
     }
 
     /**
      * Vihart csinál a táblán
      */
     public void storm() {
-        Skeleton.printLine(this.objName, "storm()");
-
         addSnow(new Random().nextInt(2));
-        building.onStorm(players);
-
-        Skeleton.returned();
+        building.onStorm(creatures);
     }
 
     /**
      * A táblára helyez egy Igloo építményt
      */
     public void buildIgloo() {
-        Skeleton.printLine(this.objName, "buildIgloo()");
-
         building = new Igloo("igloo");
-
-        Skeleton.returned();
-    }
-
-    /**
-     * Kiírja a megvalósító osztály adatait az átadott streamre
-     * @param stream ahova kiírjuk az adatokat
-     */
-    @Override
-    public void printData(OutputStream stream) {
-
     }
 }

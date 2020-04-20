@@ -6,15 +6,13 @@ package sumatra;
 public class HoleTile extends Tile {
 
     /**
-     * Elfogadja a táblára lépő játékost
-     * @param p A tábláról lépő játékos
+     * Elfogadja a táblára lépő élőlényt
+     * @param c A táblára lépő élőlény
      */
     @Override
-    public void accept(Player p) {
-        Skeleton.printLine(this.objName, "accept()");
-        players.add(p);
-        p.fallInWater();
-        Skeleton.returned();
+    public void accept(Creature c) {
+        creatures.add(c);
+        c.fallInWater();
     }
 
     /**
@@ -32,8 +30,6 @@ public class HoleTile extends Tile {
      */
     @Override
     public boolean placeItem(Item i) {
-        Skeleton.printLine(this.objName, "placeItem()");
-        Skeleton.returned();
         return false;
     }
 
@@ -42,7 +38,5 @@ public class HoleTile extends Tile {
      */
     @Override
     public void buildIgloo() {
-        Skeleton.printLine(this.objName, "buildIgloo()");
-        Skeleton.returned();
     }
 }

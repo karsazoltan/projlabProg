@@ -8,20 +8,16 @@ import java.util.ArrayList;
 public class UnstableTile extends Tile {
 
     /**
-     * Elfogadja a táblára lépő játékost
-     * @param p A tábláról lépő játékos
+     * Elfogadja a táblára lépő élőlényt
+     * @param c A táblára lépő élőlény
      */
     @Override
-    public void accept(Player p) {
-        Skeleton.printLine(this.objName, "accept()");
-
-        players.add(p);
+    public void accept(Creature c) {
+        creatures.add(c);
         boolean enoughCapacity = Skeleton.askQuestion("Elbírja a jégtábla a játékosokat?");
         if (!enoughCapacity) {
             flip();
         }
-
-        Skeleton.returned();
     }
 
     /**
@@ -33,15 +29,10 @@ public class UnstableTile extends Tile {
     }
 
     /**
-     * Az összes rajta álló játékost a vízbe dobja
+     * Az összes rajta álló élőlényt a vízbe dobja
      */
     public void flip() {
-        Skeleton.printLine(this.objName, "flip()");
-
-        ArrayList<Player> players = getPlayers();
-        for (Player p : players)
-            p.fallInWater();
-
-        Skeleton.returned();
+        for (Creature c : creatures)
+            c.fallInWater();
     }
 }
