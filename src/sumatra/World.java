@@ -305,6 +305,7 @@ public class World implements Printable {
     }
 
     public void loadConfig(String filename) {
+        stop();
         FileReader fis;
         BufferedReader br = new BufferedReader(Reader.nullReader()); // Java 11 sajátosság, de cserébe szép lesz a finally
         try {
@@ -428,7 +429,8 @@ public class World implements Printable {
      * Játék-leállító függvény.
      */
     public void stop() {
-        System.out.println("Game Stopped.");
+        if (running)
+            System.out.println("Game Stopped.");
         running = false;
     }
 
