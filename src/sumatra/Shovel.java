@@ -17,9 +17,6 @@ public class Shovel extends UsableItem {
      */
     @Override
     public void use(Tile t) {
-        Skeleton.printLine(objName, "use()");
         t.removeSnow(2);
-        Skeleton.returned();
     }
-
 }

@@ -1,5 +1,8 @@
 package sumatra;
 
+import java.io.OutputStream;
+import java.io.PrintWriter;
+
 /**
  * Kötél leszármazott, azt reprezentálja, hogy egy játékosnak van kötele.
  */
@@ -22,9 +25,12 @@ public class BasicRope extends Rope {
      */
     @Override
     public boolean save(Player p, Tile t, Tile newTile) {
-        Skeleton.printLine(objName, "save()");
         p.forceMove(newTile);
-        Skeleton.returned();
         return true;
+    }
+    @Override
+    public void printData(OutputStream stream) {
+        PrintWriter pw = new PrintWriter(stream);
+        pw.println("rope basicrope");
     }
 }

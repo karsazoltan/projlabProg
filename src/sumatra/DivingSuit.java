@@ -1,5 +1,8 @@
 package sumatra;
 
+import java.io.OutputStream;
+import java.io.PrintWriter;
+
 /**
  * Búvárruha absztakt osztály. A leszármazottak reprezentálják a tényleges búvárruhát, illetve a hiányzó búvárruhát.
  */
@@ -26,8 +29,6 @@ public abstract class DivingSuit extends AutomaticItem {
      */
     @Override
     public void giveToPlayer(Player p) {
-        Skeleton.printLine(objName, "giveToPlayer()");
         p.addDivingSuit(this);
-        Skeleton.returned();
     }
 }

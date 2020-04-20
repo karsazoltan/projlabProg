@@ -1,5 +1,7 @@
 package sumatra;
 
+import java.io.OutputStream;
+
 /**
  * Az étel tárgyat reprezentáló osztály
  */
