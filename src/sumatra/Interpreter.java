@@ -28,8 +28,7 @@ public class Interpreter {
                 p.dig();
                 break;
             case "inventory":
-                // TODO Szerintem ezt szebb lenne a player belsejében csinálni @Peti
-                ArrayList<Item> items = p.getItems();
+                ArrayList<UsableItem> items = p.getItems();
                 int loop = 0;
                 System.out.println("> Manually usable items:");
                 for (Item i : items) {

@@ -297,6 +297,15 @@ public class World implements Printable {
         return tiles.get(index);
     }
 
+    /**
+     *
+     * @param t
+     * @return
+     */
+    public int getTileIndex(Tile t) {
+        return tiles.indexOf(t);
+    }
+
     public void listTiles() {
         /* TODO Igazából nekem nem nagy cucc, de követelményeket támasztok a Creature és a Tile felé
            - egy-egy új függvény kéne, ami megfelelő syntaxxal kiír infókat (nem a kimeneti nyelv)
@@ -458,7 +467,7 @@ public class World implements Printable {
             t.printData(stream); //TODO A TentPlacementStepet le kell kérdezze a worldtól
         }
 
-        // TODO TILELINKS
+        // TODO TILELINKS - getNeighbors() lekérdezi a szomszéd tileokat
 
         pw.write("creatures " + creatures.size() + "\n");
         for (Creature c : creatures) {
