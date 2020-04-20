@@ -63,8 +63,18 @@ public class World implements Printable {
             return;
         }
         System.out.println("> You have all 3 parts of the flare.");
-        if (!true) {// TODO ELLENŐRIZNI, HOGY UGYANOTT ÁLL-E MINDENKI - Creature getTile(), ami a medvére nem csinál
-            // Semmit @Peti
+
+        boolean sameTile = true;
+        Tile t = null;
+        for (Creature c : creatures) {
+            if (t == null)
+                t = c.getTile();
+            else
+                if (c.getTile() != null && c.getTile() != t)
+                    sameTile = false;
+        }
+
+        if (!sameTile) {
             System.out.println("> Not all players are standing on the same tile!");
             System.out.println("> Flare construction unsuccessful!");
             return;
@@ -131,9 +141,9 @@ public class World implements Printable {
                 boolean skipinit = false;
                 t = tiles.get(Integer.parseInt(words[0]));
                 switch (words[1]) {
-                    case "researcher": c = new Researcher(t); break;
-                    case "eskimo": c = new Eskimo(t); break;
-                    case "polarbear": c = new Bear(t); break;
+                    case "researcher": c = new Researcher(t, creatures.size()); break;
+                    case "eskimo": c = new Eskimo(t, creatures.size()); break;
+                    case "polarbear": c = new Bear(t, creatures.size()); break;
                     default:
                         System.out.println("    > Error: Invalid type, skipping line!");
                         skipinit = true;
@@ -298,18 +308,22 @@ public class World implements Printable {
     }
 
     /**
-     *
-     * @param t
-     * @return
+     * Visszatér a jégtábla globális indexével.
+     * @param t A kérdéses jégtábla, mint Tile
+     * @return A kérdéses jégtábla indexe.
      */
     public int getTileIndex(Tile t) {
         return tiles.indexOf(t);
     }
 
     public void listTiles() {
-        /* TODO Igazából nekem nem nagy cucc, de követelményeket támasztok a Creature és a Tile felé
-           - egy-egy új függvény kéne, ami megfelelő syntaxxal kiír infókat (nem a kimeneti nyelv)
-           - Lásd: Sumatra 7, 20. oldal alja */
+        System.out.println("> Tile list (? if cap unknown, S/U (cap)/H if known):");
+        for (Tile t : tiles) {
+            t.listGameInfo();
+        }
+        for (Creature c : creatures) {
+            c.listGameInfo();
+        }
     }
 
     /**

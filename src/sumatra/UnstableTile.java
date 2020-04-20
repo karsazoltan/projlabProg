@@ -35,4 +35,14 @@ public class UnstableTile extends Tile {
         for (Creature c : creatures)
             c.fallInWater();
     }
+
+    /**
+     * Kiírja a tile adatait felhasználóbarát módon - a tiles parancs kimenetéhez kell.
+     */
+    public void listGameInfo() {
+        int idx = World.getInstance().getTileIndex(this);
+        String type = (is_capacity_known) ? "U (" + capacity + ")" : "?";
+        String visibleitem = (snowlayers == 0 && item != null) ? ", visible item" : "";
+        System.out.println(idx + ": " + type + visibleitem);
+    }
 }

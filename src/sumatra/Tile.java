@@ -23,7 +23,7 @@ public class Tile {
     /**
      * Változó ami megadja, hogy játékosok ismerik-e a tábla teherbírása
      */
-    private boolean is_capacity_known;
+    protected boolean is_capacity_known;
     /**
      * A táblán található játékosok
      */
@@ -45,7 +45,7 @@ public class Tile {
     /**
      * Default konstruktor
      */
-    public Tile(String objName) {
+    public Tile(String objName) { // TODO Jaki snow és Unstablenél capacity paraméterek kellenek konstruktorba ~ Attila
         this.objName = objName;
         snowlayers = 0;
         capacity = -1;
@@ -213,4 +213,14 @@ public class Tile {
         }
 		return result;
 	}
+
+    /**
+     * Kiírja a tile adatait felhasználóbarát módon - a tiles parancs kimenetéhez kell.
+     */
+	public void listGameInfo() {
+        int idx = World.getInstance().getTileIndex(this);
+        String type = (is_capacity_known) ? "S" : "?";
+        String visibleitem = (snowlayers == 0 && item != null) ? ", visible item" : "";
+        System.out.println(idx + ": " + type + visibleitem);
+    }
 }

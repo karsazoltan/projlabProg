@@ -39,4 +39,14 @@ public class HoleTile extends Tile {
     @Override
     public void buildIgloo() {
     }
+
+    /**
+     * Kiírja a tile adatait felhasználóbarát módon - a tiles parancs kimenetéhez kell.
+     */
+    public void listGameInfo() {
+        int idx = World.getInstance().getTileIndex(this);
+        String type = (is_capacity_known) ? "H" : "?";
+        String visibleitem = (snowlayers == 0 && item != null) ? ", visible item" : "";
+        System.out.println(idx + ": " + type + visibleitem);
+    }
 }
