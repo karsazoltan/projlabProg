@@ -104,6 +104,16 @@ public class World implements Printable {
      */
     private void gameLoop() {
         int nextstormstep = ThreadLocalRandom.current().nextInt(2 * creatures.size());
+
+        // Ha load történt, akkor történhet ilyen
+        if (!activeplayer.equals("none")) {
+            try {
+                int idx = Integer.parseInt(activeplayer);
+                if (idx < creatures.size())
+                    step(idx);
+            } catch (Exception ignored) {} // Ha invalid a creature id, ne bajlódjunk vele, induljon rendesen a játék
+        }
+
         if (!managedMode) {
             while (running) {
                 step(stepCounter % creatures.size());
@@ -316,6 +326,10 @@ public class World implements Printable {
         return tiles.indexOf(t);
     }
 
+    /**
+     * A tiles parancsra adott válaszért felelős függvény. Kiíratja az összes tile-lal, és creature-rel
+     * a hozzájuk tartozó, róluk ismert adatokat.
+     */
     public void listTiles() {
         System.out.println("> Tile list (? if cap unknown, S/U (cap)/H if known):");
         for (Tile t : tiles) {
@@ -339,7 +353,8 @@ public class World implements Printable {
             br = new BufferedReader(fis);
             if (!br.readLine().trim().equals("worlddata"))
                 throw new InputMismatchException("File does not start with \"worlddata\"");
-            stepCounter = Integer.parseInt(br.readLine().trim().split(" ")[1]); // TODO hogy megy a startGame()?
+            stepCounter = Integer.parseInt(br.readLine().trim().split(" ")[1]);
+            running = true;
             activeplayer = br.readLine().trim().split(" ")[1];
             int fps = Integer.parseInt(br.readLine().trim().split(" ")[1]);
             for (int i = 0; i < fps; i++) {
@@ -428,9 +443,10 @@ public class World implements Printable {
      * A játék indítására szolgáló függvény, körönként lehetőséget ad arra, hogy a játékosok lépjenek
      */
     public void startGame(boolean managed) {
-        running = true;
         managedMode = managed;
-        stepCounter = 0;
+        if (!running) // Ha loadot hívtunk, akkor lehetséges, hogy running - ekkor ne reseteljük a lépésszámot.
+            stepCounter = 0;
+        running = true;
         System.out.println("> Game Started");
         gameLoop();
     }
@@ -481,7 +497,20 @@ public class World implements Printable {
             t.printData(stream); //TODO A TentPlacementStepet le kell kérdezze a worldtól
         }
 
-        // TODO TILELINKS - getNeighbors() lekérdezi a szomszéd tileokat
+        ArrayList<Integer> links = new ArrayList<>();
+        for (int i = 0; i < tiles.size(); i++) {
+            ArrayList<Tile> nbs = tiles.get(i).getNeighbors();
+            for (Tile t : nbs) {
+                int j = getTileIndex(t);
+                if (j > i) {
+                    links.add(i); links.add(j);
+                }
+            }
+        }
+        pw.write("tilelinks" + links.size() / 2 + "\n");
+        for (int i = 0; i < links.size(); i += 2) {
+            pw.write("    " + links.get(i) + " " + links.get(i + 1) + "\n");
+        }
 
         pw.write("creatures " + creatures.size() + "\n");
         for (Creature c : creatures) {

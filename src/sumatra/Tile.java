@@ -223,4 +223,12 @@ public class Tile {
         String visibleitem = (snowlayers == 0 && item != null) ? ", visible item" : "";
         System.out.println(idx + ": " + type + visibleitem);
     }
+
+    /**
+     * Visszatér a mező szomszédaival.
+     * @return A szomszédos mezők tömbje.
+     */
+    public ArrayList<Tile> getNeighbors() {
+	    return neighbors;
+    }
 }
