@@ -1,6 +1,5 @@
 package sumatra;
 import java.io.*;
-import java.nio.Buffer;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -304,6 +303,10 @@ public class World implements Printable {
            - Lásd: Sumatra 7, 20. oldal alja */
     }
 
+    /**
+     * Betölt egy konfigurációt a kapott fájlból
+     * @param filename A konfigurációt tartalmazó fájl neve.
+     */
     public void loadConfig(String filename) {
         stop();
         FileReader fis;
