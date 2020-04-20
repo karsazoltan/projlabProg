@@ -138,6 +138,8 @@ public abstract class Player extends Creature{
      */
     public void damage(int amount){
         health -= amount;
+        if( health < 0 )
+            World.getInstance().loseGame();
     }
 
     /**
@@ -175,9 +177,17 @@ public abstract class Player extends Creature{
         return divingSuit;
     }
 
+    @Override
     void hitBy(Bear b){
         World.getInstance().loseGame();
     }
 
+    @Override
     void collideWith( Creature c ){}
+
+    @Override
+    void playRound() {
+        // TODO Auto-generated method stub
+        mana = 4;        
+    }
 }
