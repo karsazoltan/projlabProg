@@ -4,6 +4,9 @@ import java.io.OutputStream;
 
 public class Bear extends Creature{
 
+    public Bear(){
+    }
+
     @Override
     public Tile getTile() { 
         return null; 

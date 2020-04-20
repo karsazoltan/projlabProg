@@ -26,10 +26,11 @@ public abstract class Player extends Creature{
      * A játékos konstruktora, meg kell adni mezőt, ahol kezdetben van a játékos.
      * @param startTile a mező melyen a játékos kezdetben van.
      */
-    public Player(Tile startTile, String pobjName){
+    public Player(Tile startTile, int pindex){
+        index = pindex;
         tile = startTile;
-        divingSuit = new NoDivingSuit("noDivingSuit");
-        rope = new NoRope("noRope");
+        divingSuit = new NoDivingSuit();
+        rope = new NoRope();
         useableItems = new ArrayList<UsableItem>();
     }
 
