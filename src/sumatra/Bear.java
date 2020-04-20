@@ -4,7 +4,9 @@ import java.io.OutputStream;
 
 public class Bear extends Creature{
 
-    public Bear(){ //TODO Ide is startTile és index ~ Attila
+    public Bear(Tile startTile, int pindex){
+        super(startTile, pindex);
+        type = "Polar bear";
     }
 
     @Override

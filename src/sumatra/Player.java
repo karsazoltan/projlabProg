@@ -21,15 +21,13 @@ public abstract class Player extends Creature{
 
     private int health;
     protected int mana;
-    private int index;
 
     /**
      * A játékos konstruktora, meg kell adni mezőt, ahol kezdetben van a játékos.
      * @param startTile a mező melyen a játékos kezdetben van.
      */
     public Player(Tile startTile, int pindex){
-        index = pindex;
-        tile = startTile;
+        super(startTile, pindex);
         divingSuit = new NoDivingSuit();
         rope = new NoRope();
         useableItems = new ArrayList<UsableItem>();

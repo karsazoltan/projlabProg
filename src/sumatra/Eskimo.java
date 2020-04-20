@@ -14,10 +14,11 @@ public class Eskimo extends Player {
 
     /**
      * Az eszkimó játékos konstruktora, meg kell adni mezőt, ahol kezdetben van a játékos.
-     * @param starTile a mező melyen a játékos kezdetben van.
+     * @param startTile a mező melyen a játékos kezdetben van.
      */
     public Eskimo(Tile startTile, int pindex){
         super(startTile, pindex);
+        type = "Eskimo";
     }
     /**
      * Az eszkimó játékos épít egy iglut a mezőjére

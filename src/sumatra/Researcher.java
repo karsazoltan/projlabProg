@@ -18,6 +18,7 @@ public class Researcher extends Player{
      */
     public Researcher(Tile startTile, int pindex){
         super(startTile, pindex);
+        type = "Researcher";
     }
     /**
      * A sarkkutató játékos felfedi egy mezőröl, hogy hányan férnek el rajta.
