@@ -1,7 +1,7 @@
 package sumatra;
 
 //public class Creature implements Printable{
-public abstract class Creature {
+public abstract class Creature implements Printable{
     /**
      * A mező melyen a lény jelenleg tartózkodik.
      */

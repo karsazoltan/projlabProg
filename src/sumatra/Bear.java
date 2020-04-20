@@ -1,6 +1,23 @@
 package sumatra;
 
+import java.io.OutputStream;
+
 public class Bear extends Creature{
+
+    public Bear(){
+    }
+
+    @Override
+    public Tile getTile() { 
+        return null; 
+    }
+
+    @Override
+    public void printData(OutputStream stream) {
+        // TODO Auto-generated method stub
+        
+    }
+
     @Override
     void playRound() {       
         // TODO
