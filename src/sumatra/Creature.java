@@ -17,6 +17,14 @@ public abstract class Creature {
         }
     }
 
+    /**
+     * Visszaadja azt a mezőt, amin jelenleg van a lény.
+     * @return mező melyen jelenleg van a lény.
+     */ 
+    public Tile getTile(){
+        return tile;
+    }
+
     abstract void collideWith(Creature c);
     abstract void hitBy(Bear b);
     abstract void fallInWater();

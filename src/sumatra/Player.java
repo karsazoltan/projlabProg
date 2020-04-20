@@ -19,31 +19,20 @@ public abstract class Player extends Creature{
      */ 
     ArrayList<UsableItem> useableItems;
 
-
-    /**
-     * Ez tárolja a válozó nevét, a szkeletonban a kiíráshoz kell.
-     */
-    protected String objName;
+    private int health;
+    protected int mana;
 
     /**
      * A játékos konstruktora, meg kell adni mezőt, ahol kezdetben van a játékos.
      * @param startTile a mező melyen a játékos kezdetben van.
      */
     public Player(Tile startTile, String pobjName){
-        objName = pobjName;
         tile = startTile;
         divingSuit = new NoDivingSuit("noDivingSuit");
         rope = new NoRope("noRope");
         useableItems = new ArrayList<UsableItem>();
     }
 
-    /**
-     * Visszaadja azt a mezőt, amin jelenleg van a játékos.
-     * @return mező melyen jelenleg van a játékos.
-     */ 
-    public Tile getTile(){
-        return tile;
-    }
 
     /**
      * Absztrakt függvény, ezt implementálják a játékos típusok, hogy különböző képességeik legyenek.
@@ -55,44 +44,30 @@ public abstract class Player extends Creature{
      * @param newTile a mező, ahova a játékos lép.
      */
     public void move(Tile newTile) {
-        Skeleton.printLine(this.objName, "move()");
-        boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
-        if( hasMana ){
+        if( mana > 0 && tile.isNeighbor(newTile) ){
             tile.remove(this);
             newTile.accept(this);
-
             tile = newTile;
         }
-
-        Skeleton.returned();
     }
 
     /**
-     * A játékost egy új mezőre teszi, függetlenül attól, hogy van-e munkaegysége.
+     * A játékost egy új mezőre teszi, függetlenül attól, hogy van-e munkaegysége és, hogy szomszédos-e a mező.
      * @param newTile a mező, ahol a játékos lesz.
      */
     public void forceMove(Tile newTile) {
-        Skeleton.printLine(this.objName, "forceMove()");
-
         tile.remove(this);
         newTile.accept(this);
 
         tile = newTile;
-
-        Skeleton.returned();
     }
     /**
      * Ás egyet a játékos, eltüntet egy réteg havat a mezőjéről.
      */ 
     public void dig() {
-        Skeleton.printLine(this.objName, "dig()");
-
-        boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
-        if( hasMana ){
+        if( mana > 0 ){
             tile.removeSnow(1);
         }
-
-        Skeleton.returned();
     }
 
 
@@ -100,13 +75,9 @@ public abstract class Player extends Creature{
      * A játékos beleesik a vízbe.
      */ 
     public void fallInWater() {     
-        Skeleton.printLine(this.objName, "fallInWater()");
-
         if (divingSuit.fallInWater(this)) {
             World.getInstance().loseGame();
         }
-
-        Skeleton.returned();
     }
 
     /**
@@ -115,38 +86,25 @@ public abstract class Player extends Creature{
      * @param target mező amin felhasználja a játékos a tárgyat.
      */ 
     public void useItem(int index, Tile target) {
-        Skeleton.printLine(this.objName, "useItem()");
-
-        boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
-        if( hasMana ){
+        if( mana > 0 ){
             useableItems.get(index).use(target);
         }
-
-        Skeleton.returned();
     }
 
     /**
      * A játékos felvesz egy tárgyat a mezőjéről.
      */ 
     public void pickUpItem() {        
-        Skeleton.printLine(this.objName, "pickUpItem()");
-
-        boolean hasMana = Skeleton.askQuestion("Van-e még munkaegysége?");
-        if( hasMana ){
+        if( mana > 0 ){
             tile.pickUpItem(this);
         }
-        Skeleton.returned();
     }
 
     /**
      * A játékos összerakja a flare-t, ha ez sikerül befejeződik a játék.
      */ 
     public void buildFlare() {
-        Skeleton.printLine(this.objName, "buildFlare()");
-
         World.getInstance().checkEndGame();
-
-        Skeleton.returned();
     }
 
     /**
@@ -154,11 +112,7 @@ public abstract class Player extends Creature{
      * @param item az új tárgy, amit kap a játékos.
      */ 
     public void addUsableItem(UsableItem item) {
-        Skeleton.printLine(this.objName, "addUsableItem()");
-
         useableItems.add(item);
-
-        Skeleton.returned();
     }
 
     /**
@@ -168,11 +122,8 @@ public abstract class Player extends Creature{
      * @return a kimentés sikeressége.
      */ 
     public Boolean saveMe(Player p, Tile target){
-        Skeleton.printLine(this.objName, "saveMe()");
-
         boolean result = rope.save(p, target, tile);
 
-        Skeleton.returned();
         return result;
     }
 
@@ -181,8 +132,7 @@ public abstract class Player extends Creature{
      * @param amount ennyi testhőt veszít el a játékos.
      */
     public void damage(int amount){
-        Skeleton.printLine(objName, "damage()");
-        Skeleton.returned();
+        health -= amount;
     }
 
     /**
@@ -190,8 +140,7 @@ public abstract class Player extends Creature{
      * @param amount ennyi testhőt nyer a játékos.
      */ 
     public void heal(int amount){
-        Skeleton.printLine(objName, "heal()");
-        Skeleton.returned();
+        health += amount;
     }
 
     /**
@@ -199,22 +148,31 @@ public abstract class Player extends Creature{
      * @param ds az új búvárruha, amit kap a játékos.
      */
     public void addDivingSuit(DivingSuit ds){
-        Skeleton.printLine(this.objName, "addDivingSuit()");
-
         divingSuit = ds;
-
-        Skeleton.returned();
     }
     /**
      * A játékos kap egy új kötelet.
      * @param r az új kötél, amit kap a játékos.
      */
     public void addRope(Rope r){
-        Skeleton.printLine(this.objName, "addRope()");
-        
         rope = r;
-
-        Skeleton.returned();
     }
 
+    ArrayList<UsableItem> getItems(){
+        return useableItems;
+    }
+
+    Rope getRope(){
+        return rope;
+    }
+
+    DivingSuit getDivingSuit(){
+        return divingSuit;
+    }
+    
+    void hitBy(Bear b){
+        World.getInstance().loseGame();
+    }
+
+    void collideWith( Creature c ){}
 }
