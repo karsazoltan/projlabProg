@@ -1,5 +1,6 @@
 package sumatra;
 
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -7,7 +8,7 @@ import java.util.Random;
 /**
  * A stabil jégtáblát reprezentáló osztály
  */
-public class Tile {
+public class Tile implements Printable {
     /**
      * A táblán található hó mélysége
      */
@@ -45,9 +46,8 @@ public class Tile {
     /**
      * Default konstruktor
      */
-    public Tile(String objName) {
-        this.objName = objName;
-        snowlayers = 0;
+    public Tile(int snowAmount) {
+        snowlayers = snowAmount;
         capacity = -1;
         is_capacity_known = false;
         building = new NoBuilding("noBuilding");
@@ -101,6 +101,10 @@ public class Tile {
      */
     public Building getBuilding() {
         return building;
+    }
+
+    public ArrayList<Tile> getNeighbors() {
+        return neighbors;
     }
 
     /**
@@ -173,8 +177,8 @@ public class Tile {
      * Visszaadja a szomszédos táblákon álló élőlényeket
      * @return A szomszédos élőlények
      */
-    public ArrayList<Player> getNeighingCreatures() {
-        ArrayList<Player> neighingcreatures = new ArrayList<>();
+    public ArrayList<Creature> getNeighingCreatures() {
+        ArrayList<Creature> neighingcreatures = new ArrayList<>();
         for (Tile t : neighbors) {
             neighingcreatures.addAll(t.creatures);
         }
@@ -213,4 +217,9 @@ public class Tile {
         }
 		return result;
 	}
+
+    @Override
+    public void printData(OutputStream stream) {
+
+    }
 }

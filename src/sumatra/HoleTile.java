@@ -16,11 +16,11 @@ public class HoleTile extends Tile {
     }
 
     /**
-     * Szkeleton konstruktor, meg lehet adni neki az objektum nevét
-     * @param objName Az objektum, mint változó neve
+     * Lyukas jégtábla konstruktora
+     * @param snowAmount A jégtáblán lévő hó mélysége
      */
-    public HoleTile(String objName) {
-        super(objName);
+    public HoleTile(int snowAmount) {
+        super(snowAmount);
     }
 
     /**

@@ -21,11 +21,12 @@ public class UnstableTile extends Tile {
     }
 
     /**
-     * Szkeleton konstruktor, meg lehet adni neki az objektum nevét
-     * @param objName Az objektum, mint változó neve
+     * Instabil tábla konstruktora
+     * @param snowAmount A jégtáblán lévő hó mélysége
      */
-    public UnstableTile(String objName) {
-        super(objName);
+    public UnstableTile(int snowAmount, int cap) {
+        super(snowAmount);
+        capacity = cap;
     }
 
     /**
