@@ -203,4 +203,8 @@ public class Tile {
     public void buildIgloo() {
         building = new Igloo("igloo");
     }
+
+	public boolean isNeighbor(Tile newTile) {
+		return false;
+	}
 }

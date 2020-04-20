@@ -4,16 +4,8 @@ import java.util.ArrayList;
 
 /**
  * <p>Absztrakt osztály, a játéksokat reprezentálja, leszármazottjai a különböző játékos típusok.</p>
- * 
- * <p>Megjegyzés:
- * Az optos részek valószínüleg nem ide fognak kerülni, csak erre azután jöttem rá,
- * miután megcsináltam őket.</p>
  */
-public abstract class Player {
-    /**
-     * A mező melyen a játékos jelenleg tartózkodik.
-     */
-    Tile tile;
+public abstract class Player extends Creature{
     /**
      * A játékos búvárruhája (búvárruha vagy nem búvárruha).
      */ 
