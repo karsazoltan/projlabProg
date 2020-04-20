@@ -204,7 +204,13 @@ public class Tile {
         building = new Igloo("igloo");
     }
 
-	public boolean isNeighbor(Tile newTile) {
-		return false;
+    
+	public boolean isNeighbor(Tile other) {
+        boolean result = false;
+        for( Tile neighbor : neighbors ){
+            if( neighbor == other )
+                result = true;
+        }
+		return result;
 	}
 }
