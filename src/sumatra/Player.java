@@ -21,6 +21,7 @@ public abstract class Player extends Creature{
 
     private int health;
     protected int mana;
+    private int index;
 
     /**
      * A játékos konstruktora, meg kell adni mezőt, ahol kezdetben van a játékos.
