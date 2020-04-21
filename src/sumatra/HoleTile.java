@@ -34,10 +34,11 @@ public class HoleTile extends Tile {
     }
 
     /**
-     * Lyukra Igloot épít
+     * Lyukra épít: semmi sem történik
      */
     @Override
-    public void buildIgloo() {
+    public void setBuilding(Building b) {
+
     }
 
     /**

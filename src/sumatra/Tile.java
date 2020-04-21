@@ -173,8 +173,8 @@ public class Tile {
      * Visszaadja a szomszédos táblákon álló élőlényeket
      * @return A szomszédos élőlények
      */
-    public ArrayList<Player> getNeighingCreatures() {
-        ArrayList<Player> neighingcreatures = new ArrayList<>();
+    public ArrayList<Creature> getNeighingCreatures() {
+        ArrayList<Creature> neighingcreatures = new ArrayList<>();
         for (Tile t : neighbors) {
             neighingcreatures.addAll(t.creatures);
         }
@@ -197,13 +197,17 @@ public class Tile {
         building.onStorm(creatures);
     }
 
-    /**
-     * A táblára helyez egy Igloo építményt
-     */
-    public void buildIgloo() {
-        building = new Igloo("igloo");
-    }
+    //public void buildIgloo() {
+        //building = new Igloo("igloo");
+    //}
 
+    /**
+     * Tent/Igloo hozzáadáshoz függvény
+     * @param build - az épület
+     */
+    public void setBuilding(Building build) {
+        building = build;
+    }
     
 	public boolean isNeighbor(Tile other) {
         boolean result = false;

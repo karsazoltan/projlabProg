@@ -6,7 +6,7 @@ package sumatra;
 public class BrokenShovel extends UsableItem {
     int use_num;
     public BrokenShovel(int maxuse) {
-        super(null); // TODO Sorry, temp fix hogy nekem működjön ~ Attila
+        super("brokenshovel");
         use_num = maxuse;
     }
     public BrokenShovel(String objName) {

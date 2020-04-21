@@ -17,6 +17,13 @@ public class BasicRope extends Rope {
     }
 
     /**
+     * ctor
+     */
+    public BasicRope() {
+        super("basic");
+    }
+
+    /**
      * Játékosmentő függvény. Ebben az esetben a játékos tényleg kimentésre kerül, azaz a paraméterként
      * kapott játékos átkerül az eddigi t mezőjéről az új newTile mezőre, amin a kötél birtokosa áll.
      * @param p A kimentendő játékos.
@@ -31,6 +38,6 @@ public class BasicRope extends Rope {
     @Override
     public void printData(OutputStream stream) {
         PrintWriter pw = new PrintWriter(stream);
-        pw.println("rope basicrope");
+        pw.println("rope basic");
     }
 }

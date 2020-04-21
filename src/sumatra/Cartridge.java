@@ -11,4 +11,5 @@ public class Cartridge extends FlarePart {
     public Cartridge(String objName) {
         super(objName);
     }
+    public Cartridge() {super("cartridge");}
 }

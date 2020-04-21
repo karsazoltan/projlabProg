@@ -13,8 +13,11 @@ public class TentEquipment extends UsableItem {
         super(objName);
     }
 
+    public TentEquipment() { super("tentequipment"); }
+
     @Override
     public void use(Tile t) {
+        t.setBuilding(new Tent("tent"));
 
     }
 }

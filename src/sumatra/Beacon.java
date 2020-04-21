@@ -11,4 +11,5 @@ public class Beacon extends FlarePart {
     public Beacon(String objName) {
         super(objName);
     }
+    public Beacon() {super("beacon");}
 }

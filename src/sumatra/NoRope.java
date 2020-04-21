@@ -16,6 +16,7 @@ public class NoRope extends Rope {
         super(objName);
     }
 
+    public NoRope() { super("rope none"); }
     /**
      * Játékosmentő függvény, a NoRope esetében viszont nem történik semmi, mert ezzel a "kötéllel"
      * nem lehet játékost menteni.

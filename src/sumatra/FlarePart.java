@@ -17,8 +17,6 @@ public abstract class FlarePart extends Item {
      */
     @Override
     public void giveToPlayer(Player p) {
-        Skeleton.printLine(objName, "giveToPlayer()");
         World.getInstance().registerFlarePart(this);
-        Skeleton.returned();
     }
 }

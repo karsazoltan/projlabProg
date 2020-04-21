@@ -22,5 +22,12 @@ public abstract class Building {
      * van hatással, de a konkrét következmények a leszármazottól függenek.
      * @param ps A Buildinget tartalmazó Tile-on álló játékosok tömbje.
      */
-    public abstract void onStorm(ArrayList<Player> ps);
+    public abstract void onStorm(ArrayList<Creature> ps);
+
+    /**
+     * Absztrakt függvény, az épület hogy reagál egy új lény érkezésére
+     * @param newCreature - az új lény
+     * @param creaturs - eddig itt tartózkodott lények
+     */
+    public abstract void newCreature(Creature newCreature, ArrayList<Creature> creaturs);
 }

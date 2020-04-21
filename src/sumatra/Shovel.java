@@ -10,7 +10,7 @@ public class Shovel extends UsableItem {
     public Shovel(String objName) {
         super(objName);
     }
-
+    public Shovel() { super("shovel"); }
     /**
      * Ásó használata függvény. A paraméterként kapott mezőről leás két réteg havat.
      * @param t A mező, amin az eszközt birtokló játékos az eszközt használni kívánja.

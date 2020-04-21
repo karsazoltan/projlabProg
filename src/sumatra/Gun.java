@@ -11,4 +11,5 @@ public class Gun extends FlarePart {
     public Gun(String objName) {
         super(objName);
     }
+    public Gun() { super("gun"); }
 }
