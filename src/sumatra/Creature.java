@@ -54,6 +54,12 @@ public abstract class Creature implements Printable{
         System.out.println("> " + type + " " + index + " is on tile " + World.getInstance().getTileIndex(tile));
     }
 
+    /**
+     * Betölt a bemeneti bufferedreaderből egy lényt.
+     * @param br A bemeneti fájlt tartalmazó, megfelelő állapotban lévő bufferedreader.
+     * @return A létrehozott élőlény.
+     * @throws InputMismatchException Ha nem valid a betöltött fájl tartalma
+     */
     public static Creature fromConfig(BufferedReader br) throws InputMismatchException {
         try {
             String[] firstline = br.readLine().trim().split(" ");

@@ -10,6 +10,16 @@ public class Tent extends Building {
      */
     public Tent(String objName) {
         super(objName);
+        World.getInstance().registerTent(this); // ~ Attila - regisztráljuk magunkat pls
+    }
+
+    /**
+     * Konstruktor adott lépésben létrehozott sátorhoz
+     * @param tps A létrehozás lépése.
+     */
+    public Tent(int tps) {
+        super();
+        World.getInstance().registerTent(this, tps);
     }
 
     /**

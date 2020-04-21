@@ -1,6 +1,9 @@
 package sumatra;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Random;
 
 
@@ -234,5 +237,56 @@ public class Tile {
      */
     public ArrayList<Tile> getNeighbors() {
 	    return neighbors;
+    }
+
+    /**
+     * Betölt a bemeneti bufferedreaderből egy jégtáblát.
+     * @param br A bemeneti fájlt tartalmazó, megfelelő állapotban lévő bufferedreader.
+     * @return A létrehozott jégtábla
+     * @throws InputMismatchException Ha nem valid a betöltött fájl tartalma
+     */
+    public static Tile fromConfig(BufferedReader br) throws InputMismatchException {
+        try {
+            String[] firstline = br.readLine().trim().split(" ");
+            Tile t;
+            int snow = Integer.parseInt(firstline[2]);
+            switch (firstline[1]) {
+                case "stable": t = new Tile(snow); break;
+                case "unstable": t = new UnstableTile(snow, Integer.parseInt(firstline[6])); break;
+                case "hole": t = new HoleTile(snow); break;
+                default: throw new InputMismatchException("Invalid Tile config!");
+            }
+            switch (firstline[3]) {
+                case "y": t.is_capacity_known = true; break;
+                case "n": t.is_capacity_known = false; break;
+                default: throw new InputMismatchException("Invalid Tile config!");
+            }
+            boolean hastent = false;
+            switch (firstline[4]) {
+                case "none": t.setBuilding(new NoBuilding()); break;
+                case "igloo": t.setBuilding(new Igloo()); break;
+                case "tent": hastent = true; break;
+            }
+            switch (firstline[5]) {
+                case "none": break;
+                case "food": t.placeItem(new Food()); break;
+                case "shovel": t.placeItem(new Shovel()); break;
+                case "brokenshovel": t.placeItem(new BrokenShovel()); break;
+                case "beacon": t.placeItem(new Beacon()); break;
+                case "gun": t.placeItem(new Gun()); break;
+                case "cartridge": t.placeItem(new Cartridge()); break;
+                case "tent": t.placeItem(new TentEquipment()); break;
+                case "basicdivingsuit": t.placeItem(new BasicDivingSuit()); break;
+                case "basicrope": t.placeItem(new BasicRope()); break;
+                default: throw new InputMismatchException("Invalid Tile config!");
+            }
+            if (hastent) {
+                int tps = Integer.parseInt(br.readLine().trim().split(" ")[1]);
+                t.setBuilding(new Tent(tps));
+            }
+            return t;
+        } catch (IOException | NumberFormatException e) {
+            throw new InputMismatchException("Invalid Tile config!");
+        }
     }
 }

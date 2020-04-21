@@ -368,7 +368,8 @@ public class World implements Printable {
             }
             int tilenum = Integer.parseInt(br.readLine().trim().split(" ")[1]);
             for (int i = 0; i < tilenum; i++) {
-                // TODO Load tiles
+                Tile t = Tile.fromConfig(br);
+                tiles.add(t);
             }
             int tilelinks = Integer.parseInt(br.readLine().trim().split(" ")[1]);
             for (int i = 0; i < tilelinks; i++) {
@@ -381,6 +382,7 @@ public class World implements Printable {
             int creatnum = Integer.parseInt(br.readLine().trim().split(" ")[1]);
             for (int i = 0; i < creatnum; i++) {
                 Creature c = Creature.fromConfig(br);
+                creatures.add(c);
             }
 
         } catch (Exception e) {
@@ -423,6 +425,14 @@ public class World implements Printable {
      */
     public void registerTent(Tent t) {
         tentplacements.put(t, stepCounter);
+    }
+    /**
+     * Regisztrálja a kapott sátrat, hogy egy kör letelte után lehessen neki szólni, hogy semmisítse meg magát,
+     * csak most adott lépésszámmal.
+     * @param t A sátor
+     */
+    public void registerTent(Tent t, int step) {
+        tentplacements.put(t, step);
     }
 
     /**
