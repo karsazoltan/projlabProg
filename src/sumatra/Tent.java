@@ -3,22 +3,25 @@ package sumatra;
 import java.util.ArrayList;
 
 public class Tent extends Building {
+    Tile owner;
 
     /**
-     * Alap ctor, meg lehet adni neki az objektum nevét
-     * @param objName Az objektum, mint változó neve
+     * // TODO EZT Írd meg pls. ~ Attila
      */
-    public Tent(String objName) {
-        super(objName);
+    public Tent(Tile t) {
+        super();
+        owner = t;
         World.getInstance().registerTent(this); // ~ Attila - regisztráljuk magunkat pls
     }
 
     /**
      * Konstruktor adott lépésben létrehozott sátorhoz
+     * @param t A sátor jégtáblája.
      * @param tps A létrehozás lépése.
      */
-    public Tent(int tps) {
+    public Tent(Tile t, int tps) {
         super();
+        owner = t;
         World.getInstance().registerTent(this, tps);
     }
 
@@ -44,7 +47,7 @@ public class Tent extends Building {
         }
     }
 
-    public void destroy(Tile t) {
-        t.setBuilding(new NoBuilding("nobuilding"));
+    public void destroy() {
+        owner.setBuilding(new NoBuilding("nobuilding"));
     }
 }

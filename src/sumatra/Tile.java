@@ -282,7 +282,7 @@ public class Tile {
             }
             if (hastent) {
                 int tps = Integer.parseInt(br.readLine().trim().split(" ")[1]);
-                t.setBuilding(new Tent(tps));
+                t.setBuilding(new Tent(t, tps));
             }
             return t;
         } catch (IOException | NumberFormatException e) {
