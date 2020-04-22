@@ -1,0 +1,59 @@
+worlddata
+    step 0
+    activeplayer none
+    flareparts 0
+tiles 13
+    0 Unstable 0 n none cartridge 1
+    1 Stable 0 n none none
+    2 Hole 0 n none none
+    3 Hole 0 n none none
+    4 Stable 0 n none gun
+    5 Unstable 0 n none none 1
+    6 Hole 0 n none none 
+    7 Stable 0 n none beacon
+    8 Stable 0 n none shovel
+    9 Hole 0 n none none
+    10 Hole 0 n none none
+    11 Unstable 0 n none none 1
+    12 Stable 0 n none none 1
+tilelinks 26
+    0 1
+    0 3
+    0 7
+    1 2
+    1 3
+    1 4
+    2 5
+    3 4
+    3 7
+    3 8
+    4 5
+    4 8
+    4 9
+    5 6
+    5 9
+    5 12
+    6 12
+    7 8
+    7 10
+    8 9
+    8 10
+    8 11
+    9 11
+    9 12
+    10 11
+    11 12
+creatures 4
+    0 polarbear 1
+    1 eskimo 5 1 4
+        rope none
+        suit none
+        usableitems 0
+    2 researcher 11 1 4
+        rope none
+        suit none
+        usableitems 0
+    3 researcher 12 1 4
+        rope none
+        suit none
+        usableitems 0

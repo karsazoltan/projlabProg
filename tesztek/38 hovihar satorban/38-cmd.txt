@@ -1,0 +1,8 @@
+load 38-in.txt
+start managed
+snowstorm
+0 2
+F
+step 0
+finish
+save 38-out.txt

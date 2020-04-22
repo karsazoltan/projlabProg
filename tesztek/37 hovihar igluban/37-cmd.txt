@@ -1,0 +1,6 @@
+load 37-in.txt
+start managed
+snowstorm
+0 2
+F
+save 37-out.txt
