@@ -5,17 +5,35 @@ import time
 
 succesful = 0
 nr = 44
-path = '' # TODO: set this
+path = ''
+test_folder = 'tesztek'
+this_folder = os.listdir("./")
+directories = []
 
-for i in range(nr):
-    cmd = open(path + str(i) + '-cmd.txt')
+for directory in this_folder:
+  if os.path.isdir(directory):
+      this_folder.append(directories)
 
+
+for directory in directories:
+    index = directory[:2]
+    stdout_ouptut = directory[-1] == '1'
+
+    cmd = open(os.path.join(this_folder + test_folder + index + '-cmd.txt'))
     p = subprocess.Popen(['java -jar', 'game.jar'], stdin=PIPE, stdout=PIPE)
     for command in cmd:
         p.stdin.write(bytes(command + '\n', 'utf-8'))
-
     cmd.close()
-    with open(path + str(i) + '-expected.txt', 'r') as expected, open(path + str(i) + '-out.txt', 'r') as generated:
+
+    
+    expected = None 
+    if stdout_ouptut:
+        expected = p.stdout
+    else:
+        expected = open(os.path.join(this_folder + test_folder + index + '-expected.txt', 'r'))
+
+    okay = True
+    with open(os.path.join(this_folder + test_folder + index + '-expected.txt', 'r')) as generated:
         expected_lines = [line for line in expected]
         generated_lines = [line for line in generated]
 
@@ -30,9 +48,9 @@ for i in range(nr):
 
     if okay:
         succesful += 1
-        print('[INFO] Test Nr. ' + str(i) + ' succeeded.')
+        print('[INFO] Test Nr. ' + index + ' succeeded.')
     else:
-        print('[INFO] Test Nr. ' + str(i) + ' failed.')    
+        print('[INFO] Test Nr. ' + index + ' failed.')    
 
 
 if succesful == nr:

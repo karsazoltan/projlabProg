@@ -1,0 +1,6 @@
+load 3-in.txtstart managed
+step 0
+step 1 
+move 0
+finish
+print
