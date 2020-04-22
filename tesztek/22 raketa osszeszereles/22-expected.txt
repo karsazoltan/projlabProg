@@ -1,0 +1,21 @@
+worlddata
+    step 1
+    activeplayer 1
+    flareparts 3
+        beacon
+        cartridge
+        gun
+tiles 1
+    0 stable 6 y none none
+    1 stable 6 y none gun
+tilelinks 1
+    0 1
+creatures 2
+    0 eskimo 0 1 4
+        rope none
+        suit basicdivingsuit
+        usableitems 0
+    1 eskimo 0 1 4
+        rope none
+        suit basicdivingsuit
+        usableitems 0

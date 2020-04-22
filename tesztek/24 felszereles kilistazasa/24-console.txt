@@ -1,0 +1,5 @@
+> Manually usable items:
+0: Shovel
+1: Tent
+> Automatically used items:
+Basic diving suit
