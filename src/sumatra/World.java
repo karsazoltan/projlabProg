@@ -529,4 +529,8 @@ public class World implements Printable {
 
         pw.flush();
     }
+
+    Scanner getInputScanner(){
+        return input;
+    }
 }

@@ -1,6 +1,7 @@
 package sumatra;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * <p>Absztrakt osztály, a játéksokat reprezentálja, leszármazottjai a különböző játékos típusok.</p>
@@ -189,5 +190,11 @@ public abstract class Player extends Creature{
     void playRound() {
         // TODO Auto-generated method stub
         mana = 4;        
+        boolean exit;
+        Scanner input = World.getInstance().getInputScanner();
+        do{
+            String line = input.nextLine().trim();
+            exit = Interpreter.interpretPlayerCommand(this, line);
+        }while( !exit );
     }
 }
