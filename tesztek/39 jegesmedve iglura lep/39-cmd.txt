@@ -1,0 +1,5 @@
+load 39-in.txt
+start managed
+step 2
+0
+save 39-out.txt

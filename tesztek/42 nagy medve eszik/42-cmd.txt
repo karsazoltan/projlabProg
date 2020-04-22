@@ -1,0 +1,9 @@
+load 42-in.txt
+start managed
+step 2
+move 8
+move 4
+finish
+step 0
+4
+save 42-expected.txt
