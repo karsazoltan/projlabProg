@@ -1,0 +1,4 @@
+load 26-in.txt
+start automated
+ability
+save 26-out.txt
