@@ -1,0 +1,7 @@
+load 36-in.txt
+start managed
+step 0
+1
+step 1
+1
+save 36-expected.txt
