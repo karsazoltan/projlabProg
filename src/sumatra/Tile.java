@@ -130,6 +130,7 @@ public class Tile implements Printable {
      * @param c A táblára lépő élőlény
      */
     public void accept(Creature c) {
+        building.newCreature(c, creatures);
         creatures.add(c);
     }
 
