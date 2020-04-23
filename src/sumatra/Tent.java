@@ -12,6 +12,7 @@ public class Tent extends Building {
         super();
         owner = t;
         World.getInstance().registerTent(this); // ~ Attila - regisztráljuk magunkat pls
+        type = "tent";
     }
 
     /**

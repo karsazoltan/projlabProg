@@ -14,8 +14,7 @@ public class UnstableTile extends Tile {
     @Override
     public void accept(Creature c) {
         creatures.add(c);
-        boolean enoughCapacity = Skeleton.askQuestion("Elbírja a jégtábla a játékosokat?");
-        if (!enoughCapacity) {
+        if (creatures.size() >= capacity) {
             flip();
         }
     }
@@ -27,6 +26,7 @@ public class UnstableTile extends Tile {
     public UnstableTile(int snowAmount, int cap) {
         super(snowAmount);
         capacity = cap;
+        type = "unstable";
     }
 
     /**

@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 public class BasicDivingSuit extends DivingSuit {
     public BasicDivingSuit() {
         type = "basicdiving";
+        itemtype = "basicdivingsuit";
     }
 
     /**

@@ -10,6 +10,7 @@ public class BrokenShovel extends UsableItem {
     int use_num;
     public BrokenShovel(int maxuse) {
         use_num = maxuse;
+        itemtype = "brokenshovel";
     }
     public BrokenShovel() {
         this(3);

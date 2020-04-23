@@ -26,8 +26,6 @@ public abstract class UsableItem extends Item {
         p.addUsableItem(this);
     }
 
-    protected String type;
-
     /**
      * Kiírja a megvalósító osztály adatait az átadott streamre
      *
@@ -37,7 +35,7 @@ public abstract class UsableItem extends Item {
     @Override
     public void printData(OutputStream stream, String prefix) {
         PrintWriter pw = new PrintWriter(stream);
-        pw.println(prefix + type);
+        pw.println(prefix + itemtype);
         pw.flush();
     }
 }

@@ -2,6 +2,8 @@ package sumatra;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Random;
@@ -34,7 +36,7 @@ public class Tile implements Printable {
     /**
      * A táblán található tárgy
      */
-    protected Item item;
+    protected Item item = null;
     /**
      * A táblára épített építmény
      */
@@ -55,6 +57,7 @@ public class Tile implements Printable {
         building = new NoBuilding();
         neighbors = new ArrayList<>();
         creatures = new ArrayList<>();
+        type = "stable";
     }
 
     /**
@@ -278,5 +281,27 @@ public class Tile implements Printable {
         } catch (IOException | NumberFormatException e) {
             throw new InputMismatchException("Invalid Tile config!");
         }
+    }
+
+    protected String type;
+
+    /**
+     * Kiírja a megvalósító osztály adatait az átadott streamre
+     *
+     * @param stream ahova kiírjuk az adatokat
+     * @param prefix Előtag (általában sok space)
+     */
+    @Override
+    public void printData(OutputStream stream, String prefix) {
+        PrintWriter pw = new PrintWriter(stream);
+        String known = (is_capacity_known) ? "y" : "n";
+        String itemstr = (item != null) ? item.toString() : "none";
+        String cap = (capacity != -1) ? Integer.toString(capacity) : "";
+        pw.println(prefix + World.getInstance().getTileIndex(this) + " " + type + " " + snowlayers +
+                " " + known + " " + building.getBuildingType() + " " + itemstr + " " + cap);
+        if (building.getBuildingType().equals("tent")) {
+            pw.println(prefix + "    tentplacementstep " + World.getInstance().getTentPlacementStep((Tent) building));
+        }
+        pw.flush();
     }
 }

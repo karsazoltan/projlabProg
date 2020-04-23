@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 public class BasicRope extends Rope {
     public BasicRope() {
         type = "basic";
+        itemtype = "basicrope";
     }
 
     /**

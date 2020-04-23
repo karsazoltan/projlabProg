@@ -7,7 +7,7 @@ import java.io.OutputStream;
  */
 public class Shovel extends UsableItem {
     public Shovel() {
-        type = "shovel";
+        itemtype = "shovel";
     }
 
     /**
