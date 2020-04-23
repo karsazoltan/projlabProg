@@ -23,6 +23,8 @@ for directory in directories:
     cmd = open(os.path.join(full_path, test_folder, directory, index + '-cmd.txt'))
     p = subprocess.Popen(['java -jar', 'game.jar'], stdin=PIPE, stdout=PIPE)
     for command in cmd:
+        if 'load' in command:
+            command = 'load ' + os.path.join(full_path, test_folder, directory, index + '-in.txt')
         p.stdin.write(bytes(command + '\n', 'utf-8'))
     cmd.close()
 
