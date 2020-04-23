@@ -17,7 +17,7 @@ public class Bear extends Creature{
     }
 
     @Override
-    public void printData(OutputStream stream) {
+    public void printData(OutputStream stream, String prefix) {
         // TODO Auto-generated method stub
         
     }
@@ -43,4 +43,9 @@ public class Bear extends Creature{
 
     @Override
     void hitBy(Bear b) { }
+
+    @Override
+    boolean saveMe(Player p, Tile t) { 
+        return false; 
+    }
 }

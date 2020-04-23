@@ -47,6 +47,7 @@ public abstract class Creature implements Printable{
     abstract void hitBy(Bear b);
     abstract void fallInWater();
     abstract void damage(int amount);
+    abstract boolean saveMe(Player p, Tile t);
 
     /** Sztringként a creature neve. A tiles parancs kimenetéhez kell */
     protected String type;
