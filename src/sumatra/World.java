@@ -484,7 +484,11 @@ public class World implements Printable {
             return;
         }
         activeplayer = Integer.toString(idx);
-        creatures.get(idx).playRound();
+        if( managedMode )
+            creatures.get(idx).playManagedRound();
+        else
+            creatures.get(idx).playRound();
+            
         activeplayer = "none";
     }
 

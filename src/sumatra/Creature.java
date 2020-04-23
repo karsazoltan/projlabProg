@@ -26,6 +26,9 @@ public abstract class Creature implements Printable{
     }
 
     abstract void playRound();
+    void playManagedRound(){
+        playRound();
+    }
 
     void move(Tile newTile){
         if( tile.isNeighbor(newTile) ){
