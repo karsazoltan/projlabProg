@@ -1,0 +1,6 @@
+load 28-in.txt
+start automated
+finish
+finish
+finish
+save 28-out.txt
