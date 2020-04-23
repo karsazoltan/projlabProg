@@ -8,6 +8,10 @@ import java.io.PrintWriter;
  */
 public class BrokenShovel extends UsableItem {
     int use_num;
+    /**
+     * Alap konstruktor a maximáli használati szám beállításával
+     * @param maxuse használati esetek max. száma
+     */
     public BrokenShovel(int maxuse) {
         use_num = maxuse;
         itemtype = "brokenshovel";
@@ -24,12 +28,15 @@ public class BrokenShovel extends UsableItem {
         if(amortization())
             t.removeSnow(2);
     }
+
+    /**
+     * Az ásó kopásának felelőssége
+     * @return még használható/nem
+     */
     private boolean amortization() {
         use_num--;
         return use_num >= 0;
     }
-
-
     /**
      * Kiírja a megvalósító osztály adatait az átadott streamre
      *

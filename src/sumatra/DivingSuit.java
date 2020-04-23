@@ -23,6 +23,9 @@ public abstract class DivingSuit extends AutomaticItem {
         p.addDivingSuit(this);
     }
 
+    /**
+     * a suit típusa(kíráshoz és beolvasáshoz)
+     */
     protected String type;
 
     @Override

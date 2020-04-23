@@ -1,8 +1,5 @@
 package sumatra;
 
-import java.io.OutputStream;
-import java.io.PrintWriter;
-
 /**
  * Búvárruha leszármazott, azt szimbolizálja, hogy a játékosnak van búvárruhája.
  */

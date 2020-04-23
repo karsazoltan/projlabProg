@@ -7,7 +7,6 @@ import java.util.ArrayList;
  * a mezőn álló játékosokkal mi történik. Ez a lehetséges építmények közös őse.
  */
 public abstract class Building {
-
     /**
      * Szkeleton konstruktor, meg lehet adni neki az objektum nevét
      */
