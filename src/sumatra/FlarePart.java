@@ -24,9 +24,9 @@ public abstract class FlarePart extends Item {
      * @param stream ahova kiírjuk az adatokat
      */
     @Override
-    public void printData(OutputStream stream) {
+    public void printData(OutputStream stream, String prefix) {
         PrintWriter pw = new PrintWriter(stream);
-        pw.println(fptype);
+        pw.println(prefix + fptype);
         pw.flush();
     }
 }
