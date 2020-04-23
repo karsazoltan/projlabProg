@@ -8,7 +8,6 @@ public class BasicDivingSuit extends DivingSuit {
         type = "basicdiving";
         itemtype = "basicdivingsuit";
     }
-
     /**
      * A ruhát birtokló játékos vízbeesésekor lefutó függvény. Ha a játékos ruhája ez, akkor
      * nincsen semmi gond, a játékos egyszerűen túléli a vízbeesést.
