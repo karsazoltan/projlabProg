@@ -21,11 +21,22 @@ public class NoBuilding extends Building {
      * @param ps A Buildinget tartalmazó Tile-on álló játékosok tömbje.
      */
     @Override
-    public void onStorm(ArrayList<Player> ps) {
-        Skeleton.printLine(objName, "onStorm()");
-        for (Player p : ps) {
+    public void onStorm(ArrayList<Creature> ps) {
+        for (Creature p : ps) {
             p.damage(1);
         }
-        Skeleton.returned();
+    }
+
+    /**
+     * A lények hatást gyakorolnak egymásra
+     * @param newCreature - az új lény
+     * @param creaturs - eddig itt tartózkodott lények
+     */
+    @Override
+    public void newCreature(Creature newCreature, ArrayList<Creature> creaturs) {
+        for(Creature c : creaturs) {
+            c.collideWith(newCreature);
+            newCreature.collideWith(c);
+        }
     }
 }

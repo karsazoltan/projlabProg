@@ -1,6 +1,7 @@
 package sumatra;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * <p>Absztrakt osztály, a játéksokat reprezentálja, leszármazottjai a különböző játékos típusok.</p>
@@ -26,10 +27,10 @@ public abstract class Player extends Creature{
      * A játékos konstruktora, meg kell adni mezőt, ahol kezdetben van a játékos.
      * @param startTile a mező melyen a játékos kezdetben van.
      */
-    public Player(Tile startTile, String pobjName){
-        tile = startTile;
-        divingSuit = new NoDivingSuit("noDivingSuit");
-        rope = new NoRope("noRope");
+    public Player(Tile startTile, int pindex){
+        super(startTile, pindex);
+        divingSuit = new NoDivingSuit();
+        rope = new NoRope();
         useableItems = new ArrayList<UsableItem>();
     }
 
@@ -189,5 +190,11 @@ public abstract class Player extends Creature{
     void playRound() {
         // TODO Auto-generated method stub
         mana = 4;        
+        boolean exit;
+        Scanner input = World.getInstance().getInputScanner();
+        do{
+            String line = input.nextLine().trim();
+            exit = Interpreter.interpretPlayerCommand(this, line);
+        }while( !exit );
     }
 }

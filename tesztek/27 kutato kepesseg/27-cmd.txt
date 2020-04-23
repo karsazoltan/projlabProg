@@ -1,0 +1,5 @@
+load 27-in.txt
+start automated
+tiles
+ability
+tiles

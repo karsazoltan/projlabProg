@@ -1,5 +1,8 @@
 package sumatra;
 
+import java.io.OutputStream;
+import java.io.PrintWriter;
+
 /**
  * Kötél leszármazott, azt reprezentálja, hogy egy játékosnak van kötele.
  */
@@ -14,6 +17,13 @@ public class BasicRope extends Rope {
     }
 
     /**
+     * ctor
+     */
+    public BasicRope() {
+        super("basic");
+    }
+
+    /**
      * Játékosmentő függvény. Ebben az esetben a játékos tényleg kimentésre kerül, azaz a paraméterként
      * kapott játékos átkerül az eddigi t mezőjéről az új newTile mezőre, amin a kötél birtokosa áll.
      * @param p A kimentendő játékos.
@@ -22,9 +32,12 @@ public class BasicRope extends Rope {
      */
     @Override
     public boolean save(Player p, Tile t, Tile newTile) {
-        Skeleton.printLine(objName, "save()");
         p.forceMove(newTile);
-        Skeleton.returned();
         return true;
+    }
+    @Override
+    public void printData(OutputStream stream) {
+        PrintWriter pw = new PrintWriter(stream);
+        pw.println("rope basic");
     }
 }

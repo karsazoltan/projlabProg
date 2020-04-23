@@ -1,0 +1,4 @@
+load 20-in.txt
+start automated
+pickup
+save 20-out.txt

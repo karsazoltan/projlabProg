@@ -12,13 +12,15 @@ public abstract class FlarePart extends Item {
         super(objName);
     }
 
+    public String getName() {
+        return objName;
+    }
+
     /** Beregisztrálja a felvett rakétarészt
      * @param p a rakétarészt felvevő játékos
      */
     @Override
     public void giveToPlayer(Player p) {
-        Skeleton.printLine(objName, "giveToPlayer()");
         World.getInstance().registerFlarePart(this);
-        Skeleton.returned();
     }
 }

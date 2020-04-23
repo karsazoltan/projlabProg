@@ -1,0 +1,12 @@
+worlddata
+    step 1
+    activeplayer none
+    flareparts 0
+tiles 1
+    0 stable 0 y none none
+tilelinks 0
+creatures 1
+    0 eskimo 0 3 4
+        rope none
+        suit none
+        usableitems none

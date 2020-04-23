@@ -1,0 +1,8 @@
+load 22-in.txt
+start automated
+buildflare
+pickup
+buildflare
+move 0
+buildflare
+save 22-out.txt

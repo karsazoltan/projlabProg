@@ -1,0 +1,7 @@
+load 19-cmd.txt
+start automated
+use 0
+use 0
+use 0
+use 0
+save 19-out.txt

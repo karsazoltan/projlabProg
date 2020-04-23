@@ -22,8 +22,18 @@ public class Igloo extends Building {
      * @param ps A Buildinget tartalmazó Tile-on álló játékosok tömbje.
      */
     @Override
-    public void onStorm(ArrayList<Player> ps) {
+    public void onStorm(ArrayList<Creature> ps) {
         Skeleton.printLine(objName, "onStorm()");
         Skeleton.returned();
+    }
+
+    /**
+     * A lények nem gyakorolnak hatást egymásra
+     * @param newCreature - az új lény
+     * @param creaturs - eddig itt tartózkodott lények
+     */
+    @Override
+    public void newCreature(Creature newCreature, ArrayList<Creature> creaturs) {
+
     }
 }

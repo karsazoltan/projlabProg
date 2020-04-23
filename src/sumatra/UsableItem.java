@@ -24,13 +24,6 @@ public abstract class UsableItem extends Item {
      */
     @Override
     public void giveToPlayer(Player p) {
-        Skeleton.printLine(objName, "giveToPlayer()");
         p.addUsableItem(this);
-        Skeleton.returned();
-    }
-
-    @Override
-    public void printData(OutputStream stream) {
-
     }
 }

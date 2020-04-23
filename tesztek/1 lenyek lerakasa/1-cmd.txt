@@ -1,0 +1,7 @@
+load 0-in.txt
+init creatures
+    0: 1 eskimo
+    1: 2 polarbear
+    2: 0 researcher
+    F
+print

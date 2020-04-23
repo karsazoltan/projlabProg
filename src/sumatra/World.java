@@ -63,8 +63,18 @@ public class World implements Printable {
             return;
         }
         System.out.println("> You have all 3 parts of the flare.");
-        if (!true) {// TODO ELLENŐRIZNI, HOGY UGYANOTT ÁLL-E MINDENKI - Creature getTile(), ami a medvére nem csinál
-            // Semmit @Peti
+
+        boolean sameTile = true;
+        Tile t = null;
+        for (Creature c : creatures) {
+            if (t == null)
+                t = c.getTile();
+            else
+                if (c.getTile() != null && c.getTile() != t)
+                    sameTile = false;
+        }
+
+        if (!sameTile) {
             System.out.println("> Not all players are standing on the same tile!");
             System.out.println("> Flare construction unsuccessful!");
             return;
@@ -94,6 +104,16 @@ public class World implements Printable {
      */
     private void gameLoop() {
         int nextstormstep = ThreadLocalRandom.current().nextInt(2 * creatures.size());
+
+        // Ha load történt, akkor történhet ilyen
+        if (!activeplayer.equals("none")) {
+            try {
+                int idx = Integer.parseInt(activeplayer);
+                if (idx < creatures.size())
+                    step(idx);
+            } catch (Exception ignored) {} // Ha invalid a creature id, ne bajlódjunk vele, induljon rendesen a játék
+        }
+
         if (!managedMode) {
             while (running) {
                 step(stepCounter % creatures.size());
@@ -131,9 +151,9 @@ public class World implements Printable {
                 boolean skipinit = false;
                 t = tiles.get(Integer.parseInt(words[0]));
                 switch (words[1]) {
-                    case "researcher": c = new Researcher(t); break;
-                    case "eskimo": c = new Eskimo(t); break;
-                    case "polarbear": c = new Bear(t); break;
+                    case "researcher": c = new Researcher(t, creatures.size()); break;
+                    case "eskimo": c = new Eskimo(t, creatures.size()); break;
+                    case "polarbear": c = new Bear(t, creatures.size()); break;
                     default:
                         System.out.println("    > Error: Invalid type, skipping line!");
                         skipinit = true;
@@ -297,10 +317,27 @@ public class World implements Printable {
         return tiles.get(index);
     }
 
+    /**
+     * Visszatér a jégtábla globális indexével.
+     * @param t A kérdéses jégtábla, mint Tile
+     * @return A kérdéses jégtábla indexe.
+     */
+    public int getTileIndex(Tile t) {
+        return tiles.indexOf(t);
+    }
+
+    /**
+     * A tiles parancsra adott válaszért felelős függvény. Kiíratja az összes tile-lal, és creature-rel
+     * a hozzájuk tartozó, róluk ismert adatokat.
+     */
     public void listTiles() {
-        /* TODO Igazából nekem nem nagy cucc, de követelményeket támasztok a Creature és a Tile felé
-           - egy-egy új függvény kéne, ami megfelelő syntaxxal kiír infókat (nem a kimeneti nyelv)
-           - Lásd: Sumatra 7, 20. oldal alja */
+        System.out.println("> Tile list (? if cap unknown, S/U (cap)/H if known):");
+        for (Tile t : tiles) {
+            t.listGameInfo();
+        }
+        for (Creature c : creatures) {
+            c.listGameInfo();
+        }
     }
 
     /**
@@ -316,7 +353,8 @@ public class World implements Printable {
             br = new BufferedReader(fis);
             if (!br.readLine().trim().equals("worlddata"))
                 throw new InputMismatchException("File does not start with \"worlddata\"");
-            stepCounter = Integer.parseInt(br.readLine().trim().split(" ")[1]); // TODO hogy megy a startGame()?
+            stepCounter = Integer.parseInt(br.readLine().trim().split(" ")[1]);
+            running = true;
             activeplayer = br.readLine().trim().split(" ")[1];
             int fps = Integer.parseInt(br.readLine().trim().split(" ")[1]);
             for (int i = 0; i < fps; i++) {
@@ -330,7 +368,8 @@ public class World implements Printable {
             }
             int tilenum = Integer.parseInt(br.readLine().trim().split(" ")[1]);
             for (int i = 0; i < tilenum; i++) {
-                // TODO Load tiles
+                Tile t = Tile.fromConfig(br);
+                tiles.add(t);
             }
             int tilelinks = Integer.parseInt(br.readLine().trim().split(" ")[1]);
             for (int i = 0; i < tilelinks; i++) {
@@ -342,7 +381,8 @@ public class World implements Printable {
             }
             int creatnum = Integer.parseInt(br.readLine().trim().split(" ")[1]);
             for (int i = 0; i < creatnum; i++) {
-                // TODO Load creatures
+                Creature c = Creature.fromConfig(br);
+                creatures.add(c);
             }
 
         } catch (Exception e) {
@@ -386,6 +426,14 @@ public class World implements Printable {
     public void registerTent(Tent t) {
         tentplacements.put(t, stepCounter);
     }
+    /**
+     * Regisztrálja a kapott sátrat, hogy egy kör letelte után lehessen neki szólni, hogy semmisítse meg magát,
+     * csak most adott lépésszámmal.
+     * @param t A sátor
+     */
+    public void registerTent(Tent t, int step) {
+        tentplacements.put(t, step);
+    }
 
     /**
      * Elmenti a játék pillanatnyi konfigurációját a kapott fájlnévhez tartozó fájlba
@@ -405,9 +453,10 @@ public class World implements Printable {
      * A játék indítására szolgáló függvény, körönként lehetőséget ad arra, hogy a játékosok lépjenek
      */
     public void startGame(boolean managed) {
-        running = true;
         managedMode = managed;
-        stepCounter = 0;
+        if (!running) // Ha loadot hívtunk, akkor lehetséges, hogy running - ekkor ne reseteljük a lépésszámot.
+            stepCounter = 0;
+        running = true;
         System.out.println("> Game Started");
         gameLoop();
     }
@@ -458,7 +507,20 @@ public class World implements Printable {
             t.printData(stream); //TODO A TentPlacementStepet le kell kérdezze a worldtól
         }
 
-        // TODO TILELINKS
+        ArrayList<Integer> links = new ArrayList<>();
+        for (int i = 0; i < tiles.size(); i++) {
+            ArrayList<Tile> nbs = tiles.get(i).getNeighbors();
+            for (Tile t : nbs) {
+                int j = getTileIndex(t);
+                if (j > i) {
+                    links.add(i); links.add(j);
+                }
+            }
+        }
+        pw.write("tilelinks" + links.size() / 2 + "\n");
+        for (int i = 0; i < links.size(); i += 2) {
+            pw.write("    " + links.get(i) + " " + links.get(i + 1) + "\n");
+        }
 
         pw.write("creatures " + creatures.size() + "\n");
         for (Creature c : creatures) {
@@ -466,5 +528,9 @@ public class World implements Printable {
         }
 
         pw.flush();
+    }
+
+    Scanner getInputScanner(){
+        return input;
     }
 }
