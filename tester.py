@@ -7,19 +7,20 @@ succesful = 0
 nr = 44
 path = ''
 test_folder = 'tesztek'
-this_folder = os.listdir("./")
+tests = os.listdir("tesztek/")
+full_path = os.path.abspath(os.getcwd())
 directories = []
 
-for directory in this_folder:
-  if os.path.isdir(directory):
-      this_folder.append(directories)
+
+for directory in tests:
+    directories.append(directory)
 
 
 for directory in directories:
-    index = directory[:2]
+    index = directory[:2].strip(' ')
     stdout_ouptut = directory[-1] == '1'
-
-    cmd = open(os.path.join(this_folder, test_folder, index + '-cmd.txt'))
+    
+    cmd = open(os.path.join(full_path, test_folder, directory, index + '-cmd.txt'))
     p = subprocess.Popen(['java -jar', 'game.jar'], stdin=PIPE, stdout=PIPE)
     for command in cmd:
         p.stdin.write(bytes(command + '\n', 'utf-8'))
@@ -30,10 +31,10 @@ for directory in directories:
     if stdout_ouptut:
         expected = p.stdout
     else:
-        expected = open(os.path.join(this_folder, test_folder, index + '-expected.txt', 'r'))
+        expected = open(os.path.join(full_path, test_folder, directory, index + '-expected.txt', 'r'))
 
     okay = True
-    with open(os.path.join(this_folder, test_folder, index + '-expected.txt', 'r')) as generated:
+    with open(os.path.join(full_path, test_folder, directory, index + '-expected.txt', 'r')) as generated:
         expected_lines = [line for line in expected]
         generated_lines = [line for line in generated]
 
