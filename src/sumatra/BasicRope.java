@@ -1,7 +1,5 @@
 package sumatra;
 
-import java.io.OutputStream;
-import java.io.PrintWriter;
 
 /**
  * Kötél leszármazott, azt reprezentálja, hogy egy játékosnak van kötele.

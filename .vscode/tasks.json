@@ -6,7 +6,7 @@
         {
             "label": "Python",
             "type": "shell",
-            "command": "python test.py",
+            "command": "python tester.py",
             "problemMatcher": [],
             "group": {
                 "kind": "build",

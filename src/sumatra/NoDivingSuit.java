@@ -1,13 +1,13 @@
 package sumatra;
-
-import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
  * Búvárruha leszármazott, azt szimbolizálja, hogy a játékosnak nincsen búvárruhája.
  */
 public class NoDivingSuit extends DivingSuit {
+    /**
+     * Default ctor
+     */
     public NoDivingSuit() {
         type = "none";
     }

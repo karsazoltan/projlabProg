@@ -12,6 +12,9 @@ public abstract class Item implements Printable {
      */
     public abstract void giveToPlayer(Player p);
 
+    /**
+     * grafikus kezeléshez, vagy nem a játékot leíró fájl során használandó
+     */
     protected String itemtype = "none";
     public String toString() {
         return itemtype;

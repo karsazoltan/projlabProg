@@ -1,7 +1,5 @@
 package sumatra;
 
-import java.io.OutputStream;
-
 /**
  * Ásó manuálisan használható eszköz, használatával egyszerre két réteg hó is letakarítható egy mezőről.
  */

@@ -4,17 +4,16 @@ import java.util.ArrayList;
 
 public class Tent extends Building {
     Tile owner;
-
     /**
-     * // TODO EZT Írd meg pls. ~ Attila
+     * Alap konstruktor a tulajdonos tile átadásával
+     * @param t a tulajdonos mező
      */
     public Tent(Tile t) {
         super();
         owner = t;
-        World.getInstance().registerTent(this); // ~ Attila - regisztráljuk magunkat pls
+        World.getInstance().registerTent(this);
         type = "tent";
     }
-
     /**
      * Konstruktor adott lépésben létrehozott sátorhoz
      * @param t A sátor jégtáblája.
@@ -25,7 +24,6 @@ public class Tent extends Building {
         owner = t;
         World.getInstance().registerTent(this, tps);
     }
-
     /**
      * A tile, sátor viselkedése vihar esetén.
      * @param ps A Buildinget tartalmazó Tile-on álló játékosok tömbje.
@@ -34,7 +32,6 @@ public class Tent extends Building {
     public void onStorm(ArrayList<Creature> ps) {
 
     }
-
     /**
      * A lények hatást gyakorolnak egymásra
      * @param newCreature - az új lény
@@ -47,7 +44,6 @@ public class Tent extends Building {
             newCreature.collideWith(c);
         }
     }
-
     public void destroy() {
         owner.setBuilding(new NoBuilding());
     }
