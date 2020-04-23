@@ -142,7 +142,7 @@ public class World implements Printable {
         System.out.println("    > types are researcher, eskimo, polarbear), or F to finish:");
         int loop = 0;
         System.out.print("        0: ");
-        String line = (input.nextLine().trim().split(": "))[1];
+        String line = input.nextLine().trim();
         while (!line.equals("F")) {
             String[] words = line.split(" ");
             Creature c = null;
@@ -168,10 +168,9 @@ public class World implements Printable {
             }
 
             System.out.print("        " + loop + ": ");
-            /* Vajon ide beszámít a sok sor eleji space, illetve a 0: rész?
-                Elvben ez most jó, csak kicsit hack */
-            line = (input.nextLine().trim().split(": "))[1];
+            line = input.nextLine().trim();
         }
+        System.out.println("> Creature Initialization finished!");
     }
 
     /**
@@ -183,7 +182,7 @@ public class World implements Printable {
         String line = "";
         int loop = 0;
         System.out.print("        0: ");
-        line = (input.nextLine().trim().split(": "))[1];
+        line = input.nextLine().trim();
         while (!line.equals("F")) {
             String[] words = line.split(" ");
             Tile t = null;
@@ -209,10 +208,10 @@ public class World implements Printable {
                 System.out.println("    > Error: Invalid syntax!");
             }
             System.out.print("        " + loop + ": ");
-            line = (input.nextLine().trim().split(": "))[1];
+            line = input.nextLine().trim();
         }
 
-        System.out.println("    > Enter links (<a> <b>), or F to finish:");
+        System.out.print("    > Enter links (<a> <b>), or F to finish:\n        ");
         line = input.nextLine().trim();
         while (!line.equals("F")) {
             try {
@@ -224,10 +223,11 @@ public class World implements Printable {
             } catch (Exception e) {
                 System.out.println("    > Error: Invalid tile IDs!");
             }
+            System.out.print("        ");
             line = (input.nextLine().trim());
         }
 
-        System.out.println("    > Enter items to add (<tile> <item>), or F to finish:");
+        System.out.print("    > Enter items to add (<tile> <item>), or F to finish:\n        ");
         line = input.nextLine().trim();
         while (!line.equals("F")) {
             String[] words = line.split(" ");
@@ -253,8 +253,10 @@ public class World implements Printable {
             } catch (Exception e) {
                 System.out.println("    > Error: Invalid syntax!");
             }
+            System.out.print("        ");
             line = input.nextLine().trim();
         }
+        System.out.println("> World Initialization finished!");
     }
 
     /**
@@ -507,11 +509,13 @@ public class World implements Printable {
         pw.write("    step " + stepCounter + "\n");
         pw.write("    activeplayer " + activeplayer + "\n");
         pw.write("    flareparts " + flareParts.size() + "\n");
+        pw.flush();
         for (FlarePart fp : flareParts) {
             fp.printData(stream, "        ");
         }
 
         pw.write("tiles " + tiles.size() + "\n");
+        pw.flush();
         for (Tile t : tiles) {
             t.printData(stream, "    "); //TODO Ez full üres
         }
@@ -526,12 +530,13 @@ public class World implements Printable {
                 }
             }
         }
-        pw.write("tilelinks" + links.size() / 2 + "\n");
+        pw.write("tilelinks " + links.size() / 2 + "\n");
         for (int i = 0; i < links.size(); i += 2) {
             pw.write("    " + links.get(i) + " " + links.get(i + 1) + "\n");
         }
 
         pw.write("creatures " + creatures.size() + "\n");
+        pw.flush();
         for (Creature c : creatures) {
             c.printData(stream, "    ");
         }
