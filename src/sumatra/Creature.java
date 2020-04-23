@@ -25,8 +25,21 @@ public abstract class Creature implements Printable{
         index = pindex;
     }
 
+    /**
+     * A lény lejátsza a körét, feltételezve, hogy a játék automata módban van.
+     */
     abstract void playRound();
+    /**
+     * A lény lejátsza a körét, feltételezve, hogy a játék managed módban van.
+     */
+    void playManagedRound(){
+        playRound();
+    }
 
+    /**
+     * A lényt egy új mezőre lépteti.
+     * @param newTile a mező, ahova a lény lép.
+     */
     void move(Tile newTile){
         if( tile.isNeighbor(newTile) ){
             tile.remove(this);
@@ -43,10 +56,31 @@ public abstract class Creature implements Printable{
         return tile;
     }
 
+    /**
+     * A lény ütközik egy másik lénnyel.
+     * @param c a másik lény.
+     */ 
     abstract void collideWith(Creature c);
+    /**
+     * Egy medve nekimegy a lénynek.
+     * @param b a medve.
+     */
     abstract void hitBy(Bear b);
+    /**
+     * A lény beleesik a vízbe.
+     */ 
     abstract void fallInWater();
+    /**
+     * Megsebzi a lényt.
+     * @param amount ennyi életerőt veszít el a lény.
+     */
     abstract void damage(int amount);
+    /**
+     * Egy játékos mentést kér a lénytől.
+     * @param p megmentendő játékos.
+     * @param target megmententő játékos mezője.
+     * @return a kimentés sikeressége.
+     */ 
     abstract boolean saveMe(Player p, Tile t);
 
     /** Sztringként a creature neve. A tiles parancs kimenetéhez kell */

@@ -192,7 +192,6 @@ public abstract class Player extends Creature{
 
     @Override
     void playRound() {
-        // TODO Auto-generated method stub
         mana = 4;        
         boolean exit;
         Scanner input = World.getInstance().getInputScanner();

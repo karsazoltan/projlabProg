@@ -32,7 +32,7 @@ public class World implements Printable {
      * belőle. Viszont a tagváltozók inicializálására megfelelő.
      */
     private World() {
-        creatures = new ArrayList<Creature>();
+        creatures = new ArrayList<>();
         flareParts = new ArrayList<>();
         tentplacements = new HashMap<>();
         tiles = new ArrayList<>();
@@ -179,10 +179,9 @@ public class World implements Printable {
     public void generateTiles() {
         System.out.println("    > Enter tiles (<t> <s> [c] where t is S/U/H, s is # of");
         System.out.println("    > snow layers, c is capacity for U), or F to finish:");
-        String line = "";
         int loop = 0;
         System.out.print("        0: ");
-        line = input.nextLine().trim();
+        String line = input.nextLine().trim();
         while (!line.equals("F")) {
             String[] words = line.split(" ");
             Tile t = null;
@@ -249,7 +248,9 @@ public class World implements Printable {
                         skipinit = true;
                 }
                 if (!skipinit)
-                    tiles.get(Integer.parseInt(words[0])).placeItem(i);
+                    if (!tiles.get(Integer.parseInt(words[0])).placeItem(i)) {
+                        System.out.println("    > Error: Couldn't place item!");
+                    }
             } catch (Exception e) {
                 System.out.println("    > Error: Invalid syntax!");
             }
@@ -484,7 +485,11 @@ public class World implements Printable {
             return;
         }
         activeplayer = Integer.toString(idx);
-        creatures.get(idx).playRound();
+        if( managedMode )
+            creatures.get(idx).playManagedRound();
+        else
+            creatures.get(idx).playRound();
+            
         activeplayer = "none";
     }
 

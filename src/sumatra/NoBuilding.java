@@ -6,6 +6,9 @@ import java.util.ArrayList;
  * Építmény leszármazott, azt szimbolizálja, hogy az adott mezőn nincs építmény.
  */
 public class NoBuilding extends Building {
+    /**
+     * Default ctor
+     */
     public NoBuilding() {
         type = "none";
     }

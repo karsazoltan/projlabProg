@@ -53,38 +53,6 @@ public class Tile implements Printable {
     }
 
     /**
-     * Getter ami a hó mélységét adja vissza
-     * @return A hó ménysége
-     */
-    public int getSnowlayers() {
-        return snowlayers;
-    }
-
-    /**
-     * Setter a hó mélységére
-     * @param snowlayers Beállítani kívánt hó mélység
-     */
-    public void setSnowlayers(int snowlayers) {
-        this.snowlayers = snowlayers;
-    }
-
-    /**
-     * Getter a teherbírása
-     * @return A tábla teherbírása
-     */
-    public int getCapacity() {
-        return capacity;
-    }
-
-    /**
-     * Setter a teherbírása
-     * @param capacity Beállítani kívánt teherbírás
-     */
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-    /**
      * Getter a tábln található tárgyra
      * @return A táblán található tárgy
      */
@@ -100,6 +68,10 @@ public class Tile implements Printable {
         return building;
     }
 
+    /**
+     * Visszadja a szomszédos mezőket
+     * @return A szomszédos mezők tömbje
+     */
     public ArrayList<Tile> getNeighbors() {
         return neighbors;
     }
@@ -109,7 +81,7 @@ public class Tile implements Printable {
      * @param i Az elhelyezni kívánt tárgy
      * @return Az elhelyezés sikeressége
      */
-    public boolean placeItem(Item i) { // TODO Mi van, ha van ott már item?
+    public boolean placeItem(Item i) {
         if (item != null) {
             return false;
         }
@@ -130,6 +102,7 @@ public class Tile implements Printable {
      * @param c A táblára lépő élőlény
      */
     public void accept(Creature c) {
+        building.newCreature(c, creatures);
         creatures.add(c);
     }
 
@@ -204,7 +177,11 @@ public class Tile implements Printable {
         building = build;
     }
 
-    
+    /**
+     * Visszaadja a paraméterként kapott mezőről hogy szomszédos-e ezzel a mezővel
+     * @param other A mező amivel szomszádos ez
+     * @return Visszaadja, hogy szomszédosak-e a mezők
+     */
 	public boolean isNeighbor(Tile other) {
         boolean result = false;
         for( Tile neighbor : neighbors ){
@@ -275,6 +252,9 @@ public class Tile implements Printable {
         }
     }
 
+    /**
+     * A tábla típusát tároló attribútum
+     */
     protected String type;
 
     /**

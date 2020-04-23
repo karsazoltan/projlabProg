@@ -3,6 +3,7 @@ package sumatra;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Bear extends Creature{
@@ -36,6 +37,14 @@ public class Bear extends Creature{
         ArrayList<Tile> neighbours = tile.getNeighbors();
         int targetTileIdx = ThreadLocalRandom.current().nextInt(neighbours.size());
         move( neighbours.get( targetTileIdx ) );
+    }
+
+    @Override
+    void playManagedRound() {
+        Scanner input = World.getInstance().getInputScanner();
+        System.out.println(">  Polar bear: choose tile to move to:");
+        String line = input.nextLine().trim();
+        move(World.getInstance().getTileAt(Integer.parseInt(line)));
     }
 
     @Override
