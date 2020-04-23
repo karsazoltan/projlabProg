@@ -122,9 +122,9 @@ public class Interpreter {
                         System.out.println("> Error: Invalid argument!");
                 }
                 break;
-            case "save": World.getInstance().saveConfig(words[1]); break;
+            case "save": World.getInstance().saveConfig(cmd.trim().substring(5)); break;
             case "print": World.getInstance().printConfig(); break;
-            case "load": World.getInstance().loadConfig(words[1]); break;
+            case "load": World.getInstance().loadConfig(cmd.trim().substring(5)); break;
             case "exit": return true;
             default:
                 System.out.println("> Error: Invalid command!");

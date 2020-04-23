@@ -3,7 +3,7 @@ worlddata
     activeplayer none
     flareparts 0
 tiles 1
-    0 Stable 3 y none none
+    0 stable 3 y none none
 tilelinks 0
 creatures 1
     0 eskimo 0 1 4
