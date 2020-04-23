@@ -20,7 +20,7 @@ public abstract class Player extends Creature{
     /**
      * A játékos használható tárgyai.
      */ 
-    ArrayList<UsableItem> useableItems;
+    ArrayList<UsableItem> usableItems;
 
     /** A játékos testhője. */
     protected int health;
@@ -35,7 +35,7 @@ public abstract class Player extends Creature{
         super(startTile, pindex);
         divingSuit = new NoDivingSuit();
         rope = new NoRope();
-        useableItems = new ArrayList<UsableItem>();
+        usableItems = new ArrayList<UsableItem>();
 
         mana = 4;
     }
@@ -97,7 +97,7 @@ public abstract class Player extends Creature{
      */ 
     public void useItem(int index, Tile target) {
         if( mana > 0 ){
-            useableItems.get(index).use(target);
+            usableItems.get(index).use(target);
             --mana;
         }
     }
@@ -124,7 +124,7 @@ public abstract class Player extends Creature{
      * @param item az új tárgy, amit kap a játékos.
      */ 
     public void addUsableItem(UsableItem item) {
-        useableItems.add(item);
+        usableItems.add(item);
     }
 
     /**
@@ -177,7 +177,7 @@ public abstract class Player extends Creature{
      * @return a játékos tárgyait tartalmazó tömb.
      */
     ArrayList<UsableItem> getItems(){
-        return useableItems;
+        return usableItems;
     }
 
     /** 
@@ -242,9 +242,9 @@ public abstract class Player extends Creature{
         pw.flush();
         rope.printData(stream, prefix + "    ");
         divingSuit.printData(stream, prefix + "    ");
-        pw.println(prefix + "    usableitems " + useableItems.size());
+        pw.println(prefix + "    usableitems " + usableItems.size());
         pw.flush();
-        for (UsableItem i : useableItems) {
+        for (UsableItem i : usableItems) {
             i.printData(stream, prefix + "        ");
         }
         pw.flush();
