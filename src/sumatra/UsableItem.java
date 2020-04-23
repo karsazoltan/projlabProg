@@ -7,9 +7,7 @@ import java.io.OutputStream;
  */
 public abstract class UsableItem extends Item {
 
-    public UsableItem(String objName) {
-        super(objName);
-    }
+    public UsableItem() {}
 
     /**
      * Az eszköz használatát reprezentáló függvény. Absztrakt, a leszármazottak ezt

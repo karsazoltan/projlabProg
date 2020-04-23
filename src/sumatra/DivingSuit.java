@@ -7,15 +7,6 @@ import java.io.PrintWriter;
  * Búvárruha absztakt osztály. A leszármazottak reprezentálják a tényleges búvárruhát, illetve a hiányzó búvárruhát.
  */
 public abstract class DivingSuit extends AutomaticItem {
-
-    /**
-     * Szkeleton konstruktor, meg lehet adni neki az objektum nevét
-     * @param objName Az objektum, mint változó neve
-     */
-    public DivingSuit(String objName) {
-        super(objName);
-    }
-
     /**
      * Absztrakt függvény arra az eseményre, amikor a ruhát birtokló játékos vízbe esik.
      * A leszármazottak írják le az ekkor lefutó eseményeket.

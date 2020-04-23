@@ -13,21 +13,12 @@ public class Food extends Item {
 
     /**
      * Bővített ctor
-     * @param objName az élelem, tárgy neve
      * @param heal mennyivel tudja növelni a játékos hőmennyiségét
      */
-    public Food(String objName, int heal) {
-        super(objName);
+    public Food(int heal) {
         healup = heal;
     }
-    /**
-     * Default ctor
-     */
-    public Food(String objName)  {
-        this(objName, 1);
-    }
-    public Food() { this("food", 1); }
-    public Food(int heal) { this("food", heal); }
+    public Food() { this(1); }
     /** Ezen Item hatását rögtön kifejti, és elpusztul: Növeli a játékos életerejét 1-el
      * @param p a tárgyat felveő játékos
      */

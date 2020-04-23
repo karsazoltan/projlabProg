@@ -27,7 +27,7 @@ public class Eskimo extends Player {
     @Override
     public void useAbility(Tile target){        
         if( mana > 0 ){
-            target.setBuilding(new Igloo("igloo"));
+            target.setBuilding(new Igloo());
             --mana;
         }
     }

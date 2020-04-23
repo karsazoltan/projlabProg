@@ -52,7 +52,7 @@ public class Tile implements Printable {
         snowlayers = snowAmount;
         capacity = -1;
         is_capacity_known = false;
-        building = new NoBuilding("noBuilding");
+        building = new NoBuilding();
         neighbors = new ArrayList<>();
         creatures = new ArrayList<>();
     }
@@ -114,9 +114,7 @@ public class Tile implements Printable {
      * @param i Az elhelyezni kívánt tárgy
      * @return Az elhelyezés sikeressége
      */
-    public boolean placeItem(Item i) {
-        Skeleton.printLine(this.objName, "placeItem()");
-
+    public boolean placeItem(Item i) { // TODO Mi van, ha van ott már item?
         if (item != null) {
             return false;
         }

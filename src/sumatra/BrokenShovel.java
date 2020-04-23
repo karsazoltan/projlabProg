@@ -6,10 +6,9 @@ package sumatra;
 public class BrokenShovel extends UsableItem {
     int use_num;
     public BrokenShovel(int maxuse) {
-        super("brokenshovel");
         use_num = maxuse;
     }
-    public BrokenShovel(String objName) {
+    public BrokenShovel() {
         this(3);
     }
     /**
@@ -18,10 +17,8 @@ public class BrokenShovel extends UsableItem {
      */
     @Override
     public void use(Tile t) {
-        Skeleton.printLine(objName, "use()");
         if(amortization())
             t.removeSnow(2);
-        Skeleton.returned();
     }
     private boolean amortization() {
         use_num--;

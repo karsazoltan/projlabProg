@@ -7,22 +7,6 @@ import java.io.PrintWriter;
  * Kötél leszármazott, azt reprezentálja, hogy egy játékosnak van kötele.
  */
 public class BasicRope extends Rope {
-
-    /**
-     * Szkeleton konstruktor, meg lehet adni neki az objektum nevét
-     * @param objName Az objektum, mint változó neve
-     */
-    public BasicRope(String objName) {
-        super(objName);
-    }
-
-    /**
-     * ctor
-     */
-    public BasicRope() {
-        super("basic");
-    }
-
     /**
      * Játékosmentő függvény. Ebben az esetben a játékos tényleg kimentésre kerül, azaz a paraméterként
      * kapott játékos átkerül az eddigi t mezőjéről az új newTile mezőre, amin a kötél birtokosa áll.

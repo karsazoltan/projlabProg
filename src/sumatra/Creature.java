@@ -76,7 +76,7 @@ public abstract class Creature implements Printable{
             if (br.readLine().trim().split(" ")[1].equals("basic"))
                 pc.addRope(new BasicRope());
             if (br.readLine().trim().split(" ")[1].equals("basicdiving"))
-                pc.addDivingSuit(new BasicDivingSuit("basicdiving"));
+                pc.addDivingSuit(new BasicDivingSuit());
             int usableitems = Integer.parseInt(br.readLine().trim().split(" ")[1]);
             for (int i = 0; i < usableitems; i++) {
                 String[] item = br.readLine().trim().split(" ");

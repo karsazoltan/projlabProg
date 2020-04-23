@@ -6,10 +6,7 @@ package sumatra;
 public abstract class AutomaticItem extends Item {
 
     /**
-     * Szkeleton konstruktor, meg lehet adni neki az objektum nevét
-     * @param objName Az objektum, mint változó neve
+     * Default konstruktor. Igazából azért külön osztály, hogy az itemek szebben legyenek kategorizálva.
      */
-    public AutomaticItem(String objName) {
-        super(objName);
-    }
+    public AutomaticItem() {}
 }

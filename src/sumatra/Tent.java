@@ -48,6 +48,6 @@ public class Tent extends Building {
     }
 
     public void destroy() {
-        owner.setBuilding(new NoBuilding("nobuilding"));
+        owner.setBuilding(new NoBuilding());
     }
 }
