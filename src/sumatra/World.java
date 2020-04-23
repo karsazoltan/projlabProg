@@ -249,7 +249,9 @@ public class World implements Printable {
                         skipinit = true;
                 }
                 if (!skipinit)
-                    tiles.get(Integer.parseInt(words[0])).placeItem(i);
+                    if (!tiles.get(Integer.parseInt(words[0])).placeItem(i)) {
+                        System.out.println("    > Error: Couldn't place item!");
+                    }
             } catch (Exception e) {
                 System.out.println("    > Error: Invalid syntax!");
             }
