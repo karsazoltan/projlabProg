@@ -129,7 +129,7 @@ public abstract class Player extends Creature{
      * @param target megmententő játékos mezője.
      * @return a kimentés sikeressége.
      */ 
-    public Boolean saveMe(Player p, Tile target){
+    public boolean saveMe(Player p, Tile target){
         boolean result = rope.save(p, target, tile);
 
         return result;

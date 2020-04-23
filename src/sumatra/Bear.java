@@ -51,4 +51,9 @@ public class Bear extends Creature{
 
     @Override
     void hitBy(Bear b) { }
+
+    @Override
+    boolean saveMe(Player p, Tile t) { 
+        return false; 
+    }
 }
