@@ -1,7 +1,6 @@
 package sumatra;
 
-import java.io.BufferedReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Random;
@@ -39,11 +38,6 @@ public class Tile implements Printable {
      * A táblára épített építmény
      */
     private Building building;
-
-    /**
-     * Ez tárolja a válozó nevét, a szkeletonban a kiíráshoz kell.
-     */
-    protected String objName;
 
     /**
      * Default konstruktor
@@ -280,5 +274,10 @@ public class Tile implements Printable {
         } catch (IOException | NumberFormatException e) {
             throw new InputMismatchException("Invalid Tile config!");
         }
+    }
+
+    public void printData(OutputStream os) {
+        Writer writer = new OutputStreamWriter(os);
+        writer.write(World.getInstance().getTileIndex(this)+" "+" Stable "+ snowlayers + " " + (is_capacity_known ? "y ":"n ") + building.printData(os) + " " + item.printData(os));
     }
 }

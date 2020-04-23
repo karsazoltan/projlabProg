@@ -1,5 +1,8 @@
 package sumatra;
 
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.ArrayList;
 
 /**
@@ -14,8 +17,7 @@ public class UnstableTile extends Tile {
     @Override
     public void accept(Creature c) {
         creatures.add(c);
-        boolean enoughCapacity = Skeleton.askQuestion("Elbírja a jégtábla a játékosokat?");
-        if (!enoughCapacity) {
+        if (creatures.size() > capacity) {
             flip();
         }
     }
@@ -45,5 +47,10 @@ public class UnstableTile extends Tile {
         String type = (is_capacity_known) ? "U (" + capacity + ")" : "?";
         String visibleitem = (snowlayers == 0 && item != null) ? ", visible item" : "";
         System.out.println(idx + ": " + type + visibleitem);
+    }
+
+    public void printData(OutputStream os) {
+        Writer writer = new OutputStreamWriter(os);
+        writer.write(World.getInstance().getTileIndex(this)+" "+" Stable "+ snowlayers + " " + (is_capacity_known ? "y ":"n ") + building.printData(os) + " " + item.printData(os) + " " + capacity);
     }
 }
