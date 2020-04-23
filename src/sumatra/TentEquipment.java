@@ -17,7 +17,6 @@ public class TentEquipment extends UsableItem {
         t.setBuilding(new Tent(t));
 
     }
-
     /**
      * Az eszközt hozzárendeli a paraméterként kapott játékoshoz.
      *

@@ -49,7 +49,7 @@ public class Interpreter {
                 p.useAbility(p.getTile());
                 break;
             case "pickup":
-                p.getTile().pickUpItem(p);
+                p.pickUpItem();
                 break;
             case "buildflare":
                 World.getInstance().checkEndGame();
