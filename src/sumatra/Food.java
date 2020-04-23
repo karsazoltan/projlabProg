@@ -25,4 +25,13 @@ public class Food extends Item {
     public void giveToPlayer(Player p) {
         p.heal(healup);
     }
+
+    /**
+     * Kiírja a megvalósító osztály adatait az átadott streamre
+     *
+     * @param stream ahova kiírjuk az adatokat
+     * @param prefix Előtag (általában sok space)
+     */
+    @Override
+    public void printData(OutputStream stream, String prefix) {}
 }
