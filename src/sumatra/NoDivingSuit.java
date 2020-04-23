@@ -8,13 +8,8 @@ import java.util.ArrayList;
  * Búvárruha leszármazott, azt szimbolizálja, hogy a játékosnak nincsen búvárruhája.
  */
 public class NoDivingSuit extends DivingSuit {
-
-    /**
-     * Szkeleton konstruktor, meg lehet adni neki az objektum nevét
-     * @param objName Az objektum, mint változó neve
-     */
-    public NoDivingSuit(String objName) {
-        super(objName);
+    public NoDivingSuit() {
+        type = "none";
     }
 
     /**
@@ -25,12 +20,11 @@ public class NoDivingSuit extends DivingSuit {
      */
     @Override
     public boolean fallInWater(Player p) {
-        Skeleton.printLine(this.objName, "fallInWater()");
-        ArrayList<Player> players = p.getTile().getNeighingPlayers();
+        ArrayList<Creature> creatures = p.getTile().getNeighingCreatures();
         
         // eleinte úgy vesszük, hogy vízbe esik
         boolean result = true; 
-        for (Player q : players) {
+        for (Creature q : creatures) {
             // ha valaki kimenti
             if (q.saveMe(p, p.getTile())) {
                 // akkor a result false, mert nem esik bele igazából
@@ -39,13 +33,6 @@ public class NoDivingSuit extends DivingSuit {
             
         }
 
-        Skeleton.returned();
-
         return result;
-    }
-    @Override
-    public void printData(OutputStream stream) {
-        PrintWriter pw = new PrintWriter(stream);
-        pw.println("suit none");
     }
 }

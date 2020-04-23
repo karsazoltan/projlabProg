@@ -6,11 +6,6 @@ import java.io.OutputStream;
  * Egy sarkkutató játékost reprezentáló osztály.
  */
 public class Researcher extends Player{
-    @Override
-    public void printData(OutputStream stream) {
-        // TODO Auto-generated method stub
-        
-    }
 
     /**
      * A sarkkutató játékos konstruktora, meg kell adni mezőt, ahol kezdetben van a játékos.
@@ -19,6 +14,8 @@ public class Researcher extends Player{
     public Researcher(Tile startTile, int pindex){
         super(startTile, pindex);
         type = "Researcher";
+        
+        health = 5;
     }
     /**
      * A sarkkutató játékos felfedi egy mezőröl, hogy hányan férnek el rajta.

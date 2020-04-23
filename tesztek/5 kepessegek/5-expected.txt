@@ -3,9 +3,9 @@ worlddata
     activeplayer 0
     flareparts 0
 tiles 2
-    0 Stable 0 y igloo basicrope
-    1 Stable 0 y none shovel
-    2 Unstable 4 y none none 2
+    0 stable 0 y igloo basicrope
+    1 stable 0 y none shovel
+    2 unstable 4 y none none 2
 tilelinks 2
     0 1
     0 2

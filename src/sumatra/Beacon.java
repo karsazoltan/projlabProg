@@ -4,13 +4,7 @@ package sumatra;
  * 
  */
 public class Beacon extends FlarePart {
-
-    /**
-     * Default constructor
-     */
-    public Beacon(String objName) {
-        super(objName);
+    public Beacon() {
+        itemtype = "beacon";
     }
-    
-    public Beacon() {super("beacon");}
 }

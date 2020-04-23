@@ -8,7 +8,6 @@ import java.io.Writer;
  * Lyukas jégtáblát reprezentáló osztály
  */
 public class HoleTile extends Tile {
-
     /**
      * Elfogadja a táblára lépő élőlényt
      * @param c A táblára lépő élőlény
@@ -25,6 +24,7 @@ public class HoleTile extends Tile {
      */
     public HoleTile(int snowAmount) {
         super(snowAmount);
+        type = "hole";
     }
 
     /**

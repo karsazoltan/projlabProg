@@ -142,10 +142,10 @@ public class World implements Printable {
         System.out.println("    > types are researcher, eskimo, polarbear), or F to finish:");
         int loop = 0;
         System.out.print("        0: ");
-        String line = (input.nextLine().trim().split(": "))[1];
+        String line = input.nextLine().trim();
         while (!line.equals("F")) {
             String[] words = line.split(" ");
-            Creature c;
+            Creature c = null;
             Tile t;
             try {
                 boolean skipinit = false;
@@ -168,10 +168,9 @@ public class World implements Printable {
             }
 
             System.out.print("        " + loop + ": ");
-            /* Vajon ide beszámít a sok sor eleji space, illetve a 0: rész?
-                Elvben ez most jó, csak kicsit hack */
-            line = (input.nextLine().trim().split(": "))[1];
+            line = input.nextLine().trim();
         }
+        System.out.println("> Creature Initialization finished!");
     }
 
     /**
@@ -183,11 +182,11 @@ public class World implements Printable {
         String line = "";
         int loop = 0;
         System.out.print("        0: ");
-        line = (input.nextLine().trim().split(": "))[1];
+        line = input.nextLine().trim();
         while (!line.equals("F")) {
             String[] words = line.split(" ");
-            Tile t;
-            int snow = 0, cap = 0;
+            Tile t = null;
+            int snow, cap = 0;
             try {
                 boolean skipinit = false;
                 snow = Integer.parseInt(words[1]);
@@ -209,10 +208,10 @@ public class World implements Printable {
                 System.out.println("    > Error: Invalid syntax!");
             }
             System.out.print("        " + loop + ": ");
-            line = (input.nextLine().trim().split(": "))[1];
+            line = input.nextLine().trim();
         }
 
-        System.out.println("    > Enter links (<a> <b>), or F to finish:");
+        System.out.print("    > Enter links (<a> <b>), or F to finish:\n        ");
         line = input.nextLine().trim();
         while (!line.equals("F")) {
             try {
@@ -224,15 +223,16 @@ public class World implements Printable {
             } catch (Exception e) {
                 System.out.println("    > Error: Invalid tile IDs!");
             }
+            System.out.print("        ");
             line = (input.nextLine().trim());
         }
 
-        System.out.println("    > Enter items to add (<tile> <item>), or F to finish:");
+        System.out.print("    > Enter items to add (<tile> <item>), or F to finish:\n        ");
         line = input.nextLine().trim();
         while (!line.equals("F")) {
             String[] words = line.split(" ");
             try {
-                Item i;
+                Item i = null;
                 boolean skipinit = false;
                 switch (words[1]) {
                     case "basicdivingsuit": i = new BasicDivingSuit(); break;
@@ -253,8 +253,10 @@ public class World implements Printable {
             } catch (Exception e) {
                 System.out.println("    > Error: Invalid syntax!");
             }
+            System.out.print("        ");
             line = input.nextLine().trim();
         }
+        System.out.println("> World Initialization finished!");
     }
 
     /**
@@ -306,6 +308,15 @@ public class World implements Printable {
             String line = input.nextLine().trim();
             result = Interpreter.interpretBasicCommand(line);
         }
+    }
+
+    /**
+     * Visszatér azzal, hogy hányadik lépésben lett lerakva a sátor (a kiíratáshoz kell).
+     * @param t A kérdéses sátor
+     * @return Az, hogy hányadik lépésben lett lerakva.
+     */
+    public int getTentPlacementStep(Tent t) {
+        return tentplacements.get(t);
     }
 
     /**
@@ -408,7 +419,7 @@ public class World implements Printable {
      * Kiírja a standard outputra a pillanatnyi konfigurációt
      */
     public void printConfig() {
-        printData(System.out);
+        printData(System.out, "");
     }
 
     /**
@@ -442,7 +453,7 @@ public class World implements Printable {
     public void saveConfig(String filename) {
         try {
             FileOutputStream fos = new FileOutputStream(filename);
-            printData(fos);
+            printData(fos, "");
             fos.close();
         } catch (Exception e) {
             System.out.println("> Error: Couldn't save config! Please try again!");
@@ -491,20 +502,22 @@ public class World implements Printable {
      * @param stream ahova kiírjuk az adatokat
      */
     @Override
-    public void printData(OutputStream stream) {
+    public void printData(OutputStream stream, String prefix) {
         PrintWriter pw = new PrintWriter(stream);
 
         pw.write("worlddata\n");
         pw.write("    step " + stepCounter + "\n");
         pw.write("    activeplayer " + activeplayer + "\n");
         pw.write("    flareparts " + flareParts.size() + "\n");
+        pw.flush();
         for (FlarePart fp : flareParts) {
-            fp.printData(stream); //TODO Megfelelő tabulálás?
+            fp.printData(stream, "        ");
         }
 
         pw.write("tiles " + tiles.size() + "\n");
+        pw.flush();
         for (Tile t : tiles) {
-            t.printData(stream); //TODO A TentPlacementStepet le kell kérdezze a worldtól
+            t.printData(stream, "    "); //TODO Ez full üres
         }
 
         ArrayList<Integer> links = new ArrayList<>();
@@ -517,14 +530,15 @@ public class World implements Printable {
                 }
             }
         }
-        pw.write("tilelinks" + links.size() / 2 + "\n");
+        pw.write("tilelinks " + links.size() / 2 + "\n");
         for (int i = 0; i < links.size(); i += 2) {
             pw.write("    " + links.get(i) + " " + links.get(i + 1) + "\n");
         }
 
         pw.write("creatures " + creatures.size() + "\n");
+        pw.flush();
         for (Creature c : creatures) {
-            c.printData(stream);
+            c.printData(stream, "    ");
         }
 
         pw.flush();

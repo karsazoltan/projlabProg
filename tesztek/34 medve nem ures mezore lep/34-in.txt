@@ -1,0 +1,15 @@
+worlddata
+    step 0
+    activeplayer none
+    flareparts 0
+tiles 2
+    0 stable 0 n none none
+    1 stable 0 n none none
+tilelinks 1
+    0 1
+creatures 2
+    0 polarbear 0
+    0 researcher 1 2 4
+        rope none
+        suit none
+        usableitems 0

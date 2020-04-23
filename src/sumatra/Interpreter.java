@@ -32,12 +32,11 @@ public class Interpreter {
                 int loop = 0;
                 System.out.println("> Manually usable items:");
                 for (Item i : items) {
-                    System.out.print("    " + loop + ": ");
-                    i.printData(System.out);
+                    i.printData(System.out, "    " + loop + ": ");
                 }
                 System.out.println("> Automatically used items:");
-                    p.getDivingSuit().printData(System.out);
-                    p.getRope().printData(System.out);
+                    p.getDivingSuit().printData(System.out, "    ");
+                    p.getRope().printData(System.out, "    ");
                 break;
             case "use":
                 try {
@@ -123,9 +122,9 @@ public class Interpreter {
                         System.out.println("> Error: Invalid argument!");
                 }
                 break;
-            case "save": World.getInstance().saveConfig(words[1]); break;
+            case "save": World.getInstance().saveConfig(cmd.trim().substring(5)); break;
             case "print": World.getInstance().printConfig(); break;
-            case "load": World.getInstance().loadConfig(words[1]); break;
+            case "load": World.getInstance().loadConfig(cmd.trim().substring(5)); break;
             case "exit": return true;
             default:
                 System.out.println("> Error: Invalid command!");

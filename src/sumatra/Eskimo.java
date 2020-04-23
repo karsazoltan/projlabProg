@@ -6,11 +6,6 @@ import java.io.OutputStream;
  * Egy eszkimó játékost reprezentáló osztály.
  */
 public class Eskimo extends Player {
-    @Override
-    public void printData(OutputStream stream) {
-        // TODO Auto-generated method stub
-        
-    }
 
     /**
      * Az eszkimó játékos konstruktora, meg kell adni mezőt, ahol kezdetben van a játékos.
@@ -19,6 +14,8 @@ public class Eskimo extends Player {
     public Eskimo(Tile startTile, int pindex){
         super(startTile, pindex);
         type = "Eskimo";
+        
+        health = 5;
     }
     /**
      * Az eszkimó játékos épít egy iglut a mezőjére
@@ -27,7 +24,7 @@ public class Eskimo extends Player {
     @Override
     public void useAbility(Tile target){        
         if( mana > 0 ){
-            target.setBuilding(new Igloo("igloo"));
+            target.setBuilding(new Igloo());
             --mana;
         }
     }

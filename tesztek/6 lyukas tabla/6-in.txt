@@ -3,7 +3,7 @@ worlddata
     activeplayer 0
     flareparts 0
 tiles 2
-    0 Stable 0 n none none
+    0 stable 0 n none none
     1 hole 0 n none none
 tilelinks 1
     0 1

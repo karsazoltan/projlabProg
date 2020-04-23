@@ -1,15 +1,18 @@
 package sumatra;
 
+import java.io.OutputStream;
+import java.io.PrintWriter;
+
 /**
  * Ásó manuálisan használható eszköz, használatával egyszerre két réteg hó is letakarítható egy mezőről.
  */
 public class BrokenShovel extends UsableItem {
     int use_num;
     public BrokenShovel(int maxuse) {
-        super("brokenshovel");
         use_num = maxuse;
+        itemtype = "brokenshovel";
     }
-    public BrokenShovel(String objName) {
+    public BrokenShovel() {
         this(3);
     }
     /**
@@ -18,13 +21,25 @@ public class BrokenShovel extends UsableItem {
      */
     @Override
     public void use(Tile t) {
-        Skeleton.printLine(objName, "use()");
         if(amortization())
             t.removeSnow(2);
-        Skeleton.returned();
     }
     private boolean amortization() {
         use_num--;
         return use_num >= 0;
+    }
+
+
+    /**
+     * Kiírja a megvalósító osztály adatait az átadott streamre
+     *
+     * @param stream ahova kiírjuk az adatokat
+     * @param prefix Előtag (általában sok space)
+     */
+    @Override
+    public void printData(OutputStream stream, String prefix) {
+        PrintWriter pw = new PrintWriter(stream);
+        pw.println(prefix + "brokenshovel " + use_num);
+        pw.flush();
     }
 }

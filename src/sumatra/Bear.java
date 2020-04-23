@@ -1,6 +1,7 @@
 package sumatra;
 
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -16,10 +17,17 @@ public class Bear extends Creature{
         return null; 
     }
 
+    /**
+     * Kiírja a megvalósító osztály adatait az átadott streamre
+     *
+     * @param stream ahova kiírjuk az adatokat
+     * @param prefix Előtag (általában sok space)
+     */
     @Override
-    public void printData(OutputStream stream) {
-        // TODO Auto-generated method stub
-        
+    public void printData(OutputStream stream, String prefix) {
+        PrintWriter pw = new PrintWriter(stream);
+        pw.println(prefix + index + " polarbear " + World.getInstance().getTileIndex(tile));
+        pw.flush();
     }
 
     @Override
@@ -43,4 +51,9 @@ public class Bear extends Creature{
 
     @Override
     void hitBy(Bear b) { }
+
+    @Override
+    boolean saveMe(Player p, Tile t) { 
+        return false; 
+    }
 }

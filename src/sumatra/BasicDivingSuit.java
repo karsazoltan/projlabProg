@@ -7,13 +7,9 @@ import java.io.PrintWriter;
  * Búvárruha leszármazott, azt szimbolizálja, hogy a játékosnak van búvárruhája.
  */
 public class BasicDivingSuit extends DivingSuit {
-
-    /**
-     * Szkeleton konstruktor, meg lehet adni neki az objektum nevét
-     * @param objName Az objektum, mint változó neve
-     */
-    public BasicDivingSuit(String objName) {
-        super(objName);
+    public BasicDivingSuit() {
+        type = "basicdiving";
+        itemtype = "basicdivingsuit";
     }
 
     /**
@@ -23,13 +19,6 @@ public class BasicDivingSuit extends DivingSuit {
      */
     @Override
     public boolean fallInWater(Player p) {
-        Skeleton.printLine(objName, "fallInWater()");
-        Skeleton.returned();
         return false;
-    }
-    @Override
-    public void printData(OutputStream stream) {
-        PrintWriter pw = new PrintWriter(stream);
-        pw.println("suit basicdiving");
     }
 }

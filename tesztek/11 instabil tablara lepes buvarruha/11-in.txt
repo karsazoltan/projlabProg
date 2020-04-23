@@ -3,8 +3,8 @@ worlddata
     activeplayer 0
     flareparts 0
 tiles 2
-    0 Stable 0 n none none
-    1 Unstable 0 n none none 2
+    0 stable 0 n none none
+    1 unstable 0 n none none 2
 tilelinks 1
     0 1
 creatures 3

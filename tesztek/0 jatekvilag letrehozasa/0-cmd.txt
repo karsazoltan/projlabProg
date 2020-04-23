@@ -1,11 +1,12 @@
 init world
-    0: S 3
-    1: U 0 2
-    2: H 4 
-    F
-    0 to 1
-    0 to 2
-    F
-    0 none
-    1 shovel
+S 3
+U 0 2
+H 4 
+F
+0 1
+0 2
+F
+1 shovel
+F
 print
+

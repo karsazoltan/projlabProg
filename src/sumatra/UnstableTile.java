@@ -17,7 +17,7 @@ public class UnstableTile extends Tile {
     @Override
     public void accept(Creature c) {
         creatures.add(c);
-        if (creatures.size() > capacity) {
+        if (creatures.size() >= capacity) {
             flip();
         }
     }
@@ -29,6 +29,7 @@ public class UnstableTile extends Tile {
     public UnstableTile(int snowAmount, int cap) {
         super(snowAmount);
         capacity = cap;
+        type = "unstable";
     }
 
     /**

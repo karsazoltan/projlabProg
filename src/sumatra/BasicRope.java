@@ -7,20 +7,9 @@ import java.io.PrintWriter;
  * Kötél leszármazott, azt reprezentálja, hogy egy játékosnak van kötele.
  */
 public class BasicRope extends Rope {
-
-    /**
-     * Szkeleton konstruktor, meg lehet adni neki az objektum nevét
-     * @param objName Az objektum, mint változó neve
-     */
-    public BasicRope(String objName) {
-        super(objName);
-    }
-
-    /**
-     * ctor
-     */
     public BasicRope() {
-        super("basic");
+        type = "basic";
+        itemtype = "basicrope";
     }
 
     /**
@@ -34,10 +23,5 @@ public class BasicRope extends Rope {
     public boolean save(Player p, Tile t, Tile newTile) {
         p.forceMove(newTile);
         return true;
-    }
-    @Override
-    public void printData(OutputStream stream) {
-        PrintWriter pw = new PrintWriter(stream);
-        pw.println("rope basic");
     }
 }

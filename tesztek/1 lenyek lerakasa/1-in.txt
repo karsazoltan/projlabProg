@@ -1,11 +1,11 @@
 worlddata
     step 0
-    activeplayer 0
+    activeplayer none
     flareparts 0
 tiles 3
-    0 Stable 3 y none none
-    1 Unstable 0 n none shovel 2
-    2 Hole 4 n none none 0
+    0 stable 3 y none none
+    1 unstable 0 n none shovel 2
+    2 hole 4 n none none 0
 tilelinks 2
     0 1
     0 2

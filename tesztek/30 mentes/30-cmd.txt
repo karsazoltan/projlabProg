@@ -1,0 +1,9 @@
+init world
+0: S 2
+F
+F
+F
+init creatures
+0: 0 researcher
+F
+save 30-expected.txt

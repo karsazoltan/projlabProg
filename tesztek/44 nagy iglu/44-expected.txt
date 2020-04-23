@@ -3,19 +3,19 @@ worlddata
     activeplayer none
     flareparts 0
 tiles 13
-    0 Unstable 0 n none cartridge 1
-    1 Stable 0 n none none
-    2 Hole 0 n none none
-    3 Hole 0 n none none
-    4 Stable 0 n none gun
-    5 Unstable 0 n igloo none 1
-    6 Hole 0 n none none 
-    7 Stable 0 n none beacon
-    8 Stable 0 n none shovel
-    9 Hole 0 n none none
-    10 Hole 0 n none none
-    11 Unstable 0 n none none 1
-    12 Stable 0 n none none 1
+    0 unstable 0 n none cartridge 1
+    1 stable 0 n none none
+    2 hole 0 n none none
+    3 hole 0 n none none
+    4 stable 0 n none gun
+    5 unstable 0 n igloo none 1
+    6 hole 0 n none none 
+    7 stable 0 n none beacon
+    8 stable 0 n none shovel
+    9 hole 0 n none none
+    10 hole 0 n none none
+    11 unstable 0 n none none 1
+    12 stable 0 n none none 1
 tilelinks 26
     0 1
     0 3

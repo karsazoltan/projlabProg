@@ -1,0 +1,4 @@
+load 29-in.txt
+start automated
+step 2
+save 29-out.txt

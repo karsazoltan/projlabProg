@@ -1,0 +1,19 @@
+worlddata
+    step 1
+    activeplayer none
+    flareparts 0
+tiles 2
+    0 stable 2 y none none
+    1 stable 0 y none none
+tilelinks 1
+    0 1
+creatures 3
+    0 researcher 0 1 4
+        rope none
+        suit basicdiving
+        usableitems 0
+    1 researcher 0 1 4
+        rope none
+        suit basicdiving
+        usableitems 0
+    2 polarbear 1

@@ -1,0 +1,16 @@
+worlddata
+    step 1
+    activeplayer none
+    flareparts 0
+tiles 1
+    0 stable 2 y none none
+tilelinks 0
+creatures 2
+    0 researcher 0 1 4
+        rope none
+        suit basicdiving
+        usableitems 0
+    1 researcher 0 1 4
+        rope none
+        suit basicdiving
+        usableitems 0

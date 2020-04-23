@@ -10,10 +10,9 @@ public class Igloo extends Building {
 
     /**
      * Szkeleton konstruktor, meg lehet adni neki az objektum nevét
-     * @param objName Az objektum, mint változó neve
      */
-    public Igloo(String objName) {
-        super(objName);
+    public Igloo() {
+        type = "igloo";
     }
 
     /**
@@ -22,18 +21,15 @@ public class Igloo extends Building {
      * @param ps A Buildinget tartalmazó Tile-on álló játékosok tömbje.
      */
     @Override
-    public void onStorm(ArrayList<Creature> ps) {
-        Skeleton.printLine(objName, "onStorm()");
-        Skeleton.returned();
-    }
+    public void onStorm(ArrayList<Creature> ps) {}
 
     /**
      * A lények nem gyakorolnak hatást egymásra
      * @param newCreature - az új lény
-     * @param creaturs - eddig itt tartózkodott lények
+     * @param creatures - eddig itt tartózkodott lények
      */
     @Override
-    public void newCreature(Creature newCreature, ArrayList<Creature> creaturs) {
+    public void newCreature(Creature newCreature, ArrayList<Creature> creatures) {
 
     }
 }

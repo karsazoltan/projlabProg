@@ -12,6 +12,7 @@ public class Tent extends Building {
         super();
         owner = t;
         World.getInstance().registerTent(this); // ~ Attila - regisztráljuk magunkat pls
+        type = "tent";
     }
 
     /**
@@ -48,6 +49,6 @@ public class Tent extends Building {
     }
 
     public void destroy() {
-        owner.setBuilding(new NoBuilding("nobuilding"));
+        owner.setBuilding(new NoBuilding());
     }
 }

@@ -1,7 +1,8 @@
-load 0-in.txt
+load 1-in.txt
 init creatures
-    0: 1 eskimo
-    1: 2 polarbear
-    2: 0 researcher
-    F
+1 eskimo
+2 polarbear
+0 researcher
+F
 print
+

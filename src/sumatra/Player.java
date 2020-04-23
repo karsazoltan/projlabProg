@@ -1,5 +1,7 @@
 package sumatra;
 
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -20,7 +22,7 @@ public abstract class Player extends Creature{
      */ 
     ArrayList<UsableItem> useableItems;
 
-    private int health;
+    protected int health;
     protected int mana;
 
     /**
@@ -32,6 +34,8 @@ public abstract class Player extends Creature{
         divingSuit = new NoDivingSuit();
         rope = new NoRope();
         useableItems = new ArrayList<UsableItem>();
+
+        mana = 4;
     }
 
 
@@ -127,7 +131,7 @@ public abstract class Player extends Creature{
      * @param target megmententő játékos mezője.
      * @return a kimentés sikeressége.
      */ 
-    public Boolean saveMe(Player p, Tile target){
+    public boolean saveMe(Player p, Tile target){
         boolean result = rope.save(p, target, tile);
 
         return result;
@@ -196,5 +200,21 @@ public abstract class Player extends Creature{
             String line = input.nextLine().trim();
             exit = Interpreter.interpretPlayerCommand(this, line);
         }while( !exit );
+    }
+
+    @Override
+    public void printData(OutputStream stream, String prefix) {
+        PrintWriter pw = new PrintWriter(stream);
+        pw.println(prefix + index + " " + type.toLowerCase() + " " + World.getInstance().getTileIndex(tile)
+                + " " + health + " " + mana);
+        pw.flush();
+        rope.printData(stream, prefix + "    ");
+        divingSuit.printData(stream, prefix + "    ");
+        pw.println(prefix + "    usableitems " + useableItems.size());
+        pw.flush();
+        for (UsableItem i : useableItems) {
+            i.printData(stream, prefix + "        ");
+        }
+        pw.flush();
     }
 }

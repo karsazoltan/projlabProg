@@ -1,15 +1,14 @@
 package sumatra;
 
 import java.io.OutputStream;
+import java.io.PrintWriter;
 
 /**
  * Absztrakt osztály a manuálisan használható eszközök modellezésére
  */
 public abstract class UsableItem extends Item {
 
-    public UsableItem(String objName) {
-        super(objName);
-    }
+    public UsableItem() {}
 
     /**
      * Az eszköz használatát reprezentáló függvény. Absztrakt, a leszármazottak ezt
@@ -25,5 +24,18 @@ public abstract class UsableItem extends Item {
     @Override
     public void giveToPlayer(Player p) {
         p.addUsableItem(this);
+    }
+
+    /**
+     * Kiírja a megvalósító osztály adatait az átadott streamre
+     *
+     * @param stream ahova kiírjuk az adatokat
+     * @param prefix Előtag (általában sok space)
+     */
+    @Override
+    public void printData(OutputStream stream, String prefix) {
+        PrintWriter pw = new PrintWriter(stream);
+        pw.println(prefix + itemtype);
+        pw.flush();
     }
 }
