@@ -14,6 +14,8 @@ public class Eskimo extends Player {
     public Eskimo(Tile startTile, int pindex){
         super(startTile, pindex);
         type = "Eskimo";
+        
+        health = 5;
     }
     /**
      * Az eszkimó játékos épít egy iglut a mezőjére

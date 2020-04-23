@@ -22,7 +22,7 @@ public abstract class Player extends Creature{
      */ 
     ArrayList<UsableItem> useableItems;
 
-    private int health;
+    protected int health;
     protected int mana;
 
     /**
@@ -34,6 +34,8 @@ public abstract class Player extends Creature{
         divingSuit = new NoDivingSuit();
         rope = new NoRope();
         useableItems = new ArrayList<UsableItem>();
+
+        mana = 4;
     }
 
 
