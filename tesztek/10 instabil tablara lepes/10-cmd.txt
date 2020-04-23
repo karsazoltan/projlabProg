@@ -1,0 +1,4 @@
+load 10-in.txt
+start managed
+move 1
+print

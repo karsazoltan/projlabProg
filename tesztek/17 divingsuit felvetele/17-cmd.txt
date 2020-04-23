@@ -1,0 +1,3 @@
+load 17-in.txt
+start automated
+pickup

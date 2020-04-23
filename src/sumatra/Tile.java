@@ -1,6 +1,9 @@
 package sumatra;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Random;
 
 
@@ -226,14 +229,6 @@ public class Tile implements Printable {
         String type = (is_capacity_known) ? "S" : "?";
         String visibleitem = (snowlayers == 0 && item != null) ? ", visible item" : "";
         System.out.println(idx + ": " + type + visibleitem);
-    }
-
-    /**
-     * Visszatér a mező szomszédaival.
-     * @return A szomszédos mezők tömbje.
-     */
-    public ArrayList<Tile> getNeighbors() {
-	    return neighbors;
     }
 
     /**

@@ -1,0 +1,8 @@
+load 14-cmd.txt
+start automated
+dig
+print
+dig
+print
+dig
+print

@@ -1,0 +1,4 @@
+load 12-in.txt
+start managed
+move 1
+print
