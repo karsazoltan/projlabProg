@@ -27,6 +27,7 @@ public class UnstableTile extends Tile {
     public UnstableTile(int snowAmount, int cap) {
         super(snowAmount);
         capacity = cap;
+        type = "unstable";
     }
 
     /**

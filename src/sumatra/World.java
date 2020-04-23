@@ -309,6 +309,15 @@ public class World implements Printable {
     }
 
     /**
+     * Visszatér azzal, hogy hányadik lépésben lett lerakva a sátor (a kiíratáshoz kell).
+     * @param t A kérdéses sátor
+     * @return Az, hogy hányadik lépésben lett lerakva.
+     */
+    public int getTentPlacementStep(Tent t) {
+        return tentplacements.get(t);
+    }
+
+    /**
      * Visszatér a globálisan index-edik indexű jégtáblával
      * @param index A jégtábla indexe
      * @return A jégtábla

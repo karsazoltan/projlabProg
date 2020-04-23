@@ -26,4 +26,10 @@ public abstract class Building {
      * @param creatures - eddig itt tartózkodott lények
      */
     public abstract void newCreature(Creature newCreature, ArrayList<Creature> creatures);
+
+    protected String type;
+
+    public String getBuildingType() {
+        return type;
+    }
 }

@@ -11,7 +11,9 @@ public class Igloo extends Building {
     /**
      * Szkeleton konstruktor, meg lehet adni neki az objektum nevét
      */
-    public Igloo() {}
+    public Igloo() {
+        type = "igloo";
+    }
 
     /**
      * A birtokos mezőt érintő hóvihar bekövetkezésekor fut le. Nem csinál semmit, ugyanis azokon a mezőkön,
