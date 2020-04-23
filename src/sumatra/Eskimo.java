@@ -6,11 +6,6 @@ import java.io.OutputStream;
  * Egy eszkimó játékost reprezentáló osztály.
  */
 public class Eskimo extends Player {
-    @Override
-    public void printData(OutputStream stream) {
-        // TODO Auto-generated method stub
-        
-    }
 
     /**
      * Az eszkimó játékos konstruktora, meg kell adni mezőt, ahol kezdetben van a játékos.

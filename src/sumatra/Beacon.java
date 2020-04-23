@@ -4,7 +4,7 @@ package sumatra;
  * 
  */
 public class Beacon extends FlarePart {
-    public Beacon {
+    public Beacon() {
         fptype = "beacon";
     }
 }

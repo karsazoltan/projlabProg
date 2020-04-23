@@ -1,5 +1,7 @@
 package sumatra;
 
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -196,5 +198,20 @@ public abstract class Player extends Creature{
             String line = input.nextLine().trim();
             exit = Interpreter.interpretPlayerCommand(this, line);
         }while( !exit );
+    }
+
+    @Override
+    public void printData(OutputStream stream, String prefix) {
+        PrintWriter pw = new PrintWriter(stream);
+        pw.println(prefix + " " + index + " " + type.toLowerCase() + " " + World.getInstance().getTileIndex(tile)
+                + " " + health + " " + mana);
+        pw.println(prefix + "    rope " + rope.printData(stream, "")); // TODO
+        pw.println(prefix + "    suit " + divingSuit.printData(stream, ""));
+        pw.println(prefix + "    usableitems " + useableItems.size());
+        pw.flush();
+        for (UsableItem i : useableItems) {
+            i.printData(stream, prefix + "        ");
+        }
+        pw.flush();
     }
 }

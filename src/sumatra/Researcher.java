@@ -6,11 +6,6 @@ import java.io.OutputStream;
  * Egy sarkkutató játékost reprezentáló osztály.
  */
 public class Researcher extends Player{
-    @Override
-    public void printData(OutputStream stream) {
-        // TODO Auto-generated method stub
-        
-    }
 
     /**
      * A sarkkutató játékos konstruktora, meg kell adni mezőt, ahol kezdetben van a játékos.

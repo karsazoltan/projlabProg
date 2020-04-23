@@ -491,7 +491,7 @@ public class World implements Printable {
      * @param stream ahova kiírjuk az adatokat
      */
     @Override
-    public void printData(OutputStream stream) {
+    public void printData(OutputStream stream, String prefix) {
         PrintWriter pw = new PrintWriter(stream);
 
         pw.write("worlddata\n");
@@ -499,12 +499,12 @@ public class World implements Printable {
         pw.write("    activeplayer " + activeplayer + "\n");
         pw.write("    flareparts " + flareParts.size() + "\n");
         for (FlarePart fp : flareParts) {
-            fp.printData(stream); //TODO Megfelelő tabulálás?
+            fp.printData(stream, "        ");
         }
 
         pw.write("tiles " + tiles.size() + "\n");
         for (Tile t : tiles) {
-            t.printData(stream); //TODO A TentPlacementStepet le kell kérdezze a worldtól
+            t.printData(stream, "    "); //TODO Ez full üres
         }
 
         ArrayList<Integer> links = new ArrayList<>();
@@ -524,7 +524,7 @@ public class World implements Printable {
 
         pw.write("creatures " + creatures.size() + "\n");
         for (Creature c : creatures) {
-            c.printData(stream);
+            c.printData(stream, "    ");
         }
 
         pw.flush();
