@@ -205,8 +205,9 @@ public abstract class Player extends Creature{
         PrintWriter pw = new PrintWriter(stream);
         pw.println(prefix + " " + index + " " + type.toLowerCase() + " " + World.getInstance().getTileIndex(tile)
                 + " " + health + " " + mana);
-        pw.println(prefix + "    rope " + rope.printData(stream, "")); // TODO
-        pw.println(prefix + "    suit " + divingSuit.printData(stream, ""));
+        pw.flush();
+        rope.printData(stream, prefix + "    ");
+        divingSuit.printData(stream, prefix + "    ");
         pw.println(prefix + "    usableitems " + useableItems.size());
         pw.flush();
         for (UsableItem i : useableItems) {

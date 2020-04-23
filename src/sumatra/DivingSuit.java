@@ -22,4 +22,13 @@ public abstract class DivingSuit extends AutomaticItem {
     public void giveToPlayer(Player p) {
         p.addDivingSuit(this);
     }
+
+    protected String type;
+
+    @Override
+    public void printData(OutputStream stream, String prefix) {
+        PrintWriter pw = new PrintWriter(stream);
+        pw.println(prefix + "suit " + type);
+        pw.flush();
+    }
 }

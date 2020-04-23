@@ -7,6 +7,10 @@ import java.io.PrintWriter;
  * Kötél leszármazott, azt reprezentálja, hogy egy játékosnak nincsen kötele.
  */
 public class NoRope extends Rope {
+    public NoRope() {
+        type = "none";
+    }
+
     /**
      * Játékosmentő függvény, a NoRope esetében viszont nem történik semmi, mert ezzel a "kötéllel"
      * nem lehet játékost menteni.
@@ -17,11 +21,5 @@ public class NoRope extends Rope {
     @Override
     public boolean save(Player p, Tile t, Tile newTile) {
         return false;
-    }
-
-    @Override
-    public void printData(OutputStream stream) {
-        PrintWriter pw = new PrintWriter(stream);
-        pw.println("rope none");
     }
 }

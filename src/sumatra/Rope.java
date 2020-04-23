@@ -1,5 +1,8 @@
 package sumatra;
 
+import java.io.OutputStream;
+import java.io.PrintWriter;
+
 /**
  * Absztrakt kötél osztály, a leszármazottak reprezentálják a tényleges kötelet, és a hiányzó kötelet.
  */
@@ -20,4 +23,13 @@ public abstract class Rope extends AutomaticItem {
      * @param newTile A kötelet birtokló játékos mezője.
      */
     public abstract boolean save(Player p, Tile t, Tile newTile);
+
+    protected String type;
+
+    @Override
+    public void printData(OutputStream stream, String prefix) {
+        PrintWriter pw = new PrintWriter(stream);
+        pw.println(prefix + "rope " + type);
+        pw.flush();
+    }
 }
