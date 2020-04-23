@@ -412,7 +412,7 @@ public class World implements Printable {
      * Játék elvesztése függvény, kívülről hívható
      */
     public void loseGame() {
-        System.out.println("You lost!");
+        System.out.println("> You lost!");
         stop();
     }
 
@@ -420,7 +420,7 @@ public class World implements Printable {
      * Kiírja a standard outputra a pillanatnyi konfigurációt
      */
     public void printConfig() {
-        System.out.println("Printing world to standard output...");
+        System.out.println("    > Printing world to standard output...");
         printData(System.out, "");
     }
 
