@@ -20,9 +20,11 @@ public abstract class Player extends Creature{
     /**
      * A játékos használható tárgyai.
      */ 
-    ArrayList<UsableItem> useableItems;
+    ArrayList<UsableItem> usableItems;
 
+    /** A játékos testhője. */
     protected int health;
+    /** A játékos hátralevő munkái. */
     protected int mana;
 
     /**
@@ -33,7 +35,7 @@ public abstract class Player extends Creature{
         super(startTile, pindex);
         divingSuit = new NoDivingSuit();
         rope = new NoRope();
-        useableItems = new ArrayList<UsableItem>();
+        usableItems = new ArrayList<UsableItem>();
 
         mana = 4;
     }
@@ -95,7 +97,7 @@ public abstract class Player extends Creature{
      */ 
     public void useItem(int index, Tile target) {
         if( mana > 0 ){
-            useableItems.get(index).use(target);
+            usableItems.get(index).use(target);
             --mana;
         }
     }
@@ -122,7 +124,7 @@ public abstract class Player extends Creature{
      * @param item az új tárgy, amit kap a játékos.
      */ 
     public void addUsableItem(UsableItem item) {
-        useableItems.add(item);
+        usableItems.add(item);
     }
 
     /**
@@ -170,26 +172,51 @@ public abstract class Player extends Creature{
         rope = r;
     }
 
+    /**
+     * Visszaad egy tömböt, amelyben a játékos használható tárgyai vannak.
+     * @return a játékos tárgyait tartalmazó tömb.
+     */
     ArrayList<UsableItem> getItems(){
-        return useableItems;
+        return usableItems;
     }
 
+    /** 
+     * Visszaadja a játékos kötelét.
+     * @return a játékos kötele.
+     */
     Rope getRope(){
         return rope;
     }
 
+    /**
+     * Visszaadja a játékos búvárruháját.
+     * @return a játékos búvárruhája.
+     */
     DivingSuit getDivingSuit(){
         return divingSuit;
     }
 
+
+    /**
+     * Egy medve nekimegy a játékosnak, vége a játéknak.
+     * @param b a medve.
+     */
     @Override
     void hitBy(Bear b){
         World.getInstance().loseGame();
     }
 
+    /**
+     * A játékos ütközik egy másik lénnyel. Itt nem történik semmi, mert a játékos ha nekimegy valaminek
+     * az eredménytelen, a medve megy neki a játékosoknak.
+     * @param c a másik lény.
+     */ 
     @Override
     void collideWith( Creature c ){}
 
+    /**
+     * A játékos lejátsza a körét.
+     */
     @Override
     void playRound() {
         mana = 4;        
@@ -201,6 +228,12 @@ public abstract class Player extends Creature{
         }while( !exit );
     }
 
+    /**
+     * Kiírja a megvalósító osztály adatait az átadott streamre
+     *
+     * @param stream ahova kiírjuk az adatokat
+     * @param prefix Előtag (általában sok space)
+     */
     @Override
     public void printData(OutputStream stream, String prefix) {
         PrintWriter pw = new PrintWriter(stream);
@@ -209,9 +242,9 @@ public abstract class Player extends Creature{
         pw.flush();
         rope.printData(stream, prefix + "    ");
         divingSuit.printData(stream, prefix + "    ");
-        pw.println(prefix + "    usableitems " + useableItems.size());
+        pw.println(prefix + "    usableitems " + usableItems.size());
         pw.flush();
-        for (UsableItem i : useableItems) {
+        for (UsableItem i : usableItems) {
             i.printData(stream, prefix + "        ");
         }
         pw.flush();
