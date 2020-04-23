@@ -128,6 +128,14 @@ public abstract class Player extends Creature{
     }
 
     /**
+     * A játékostól elvesz egy használható tárgyat.
+     * @param item a használható tárgy, amit elveszünk a játékostól.
+     */
+    public void removeUsableItem(UsableItem item) {
+        usableItems.remove(item);
+    }
+
+    /**
      * A játékos megpróbál menteni egy másik játékost a vízbefulladástól.
      * @param p megmentendő játékos.
      * @param target megmententő játékos mezője.
