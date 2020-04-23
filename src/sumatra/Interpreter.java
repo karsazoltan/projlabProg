@@ -52,7 +52,7 @@ public class Interpreter {
                 p.pickUpItem();
                 break;
             case "buildflare":
-                World.getInstance().checkEndGame();
+                p.buildFlare();
                 break;
             case "finish":
                 return true;
