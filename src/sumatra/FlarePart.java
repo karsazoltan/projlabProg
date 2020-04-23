@@ -16,17 +16,13 @@ public abstract class FlarePart extends Item {
     }
 
     /**
-     * A flare part típusa, kiíráshoz kell.
-     */
-    protected String fptype;
-    /**
      * Kiírja a megvalósító osztály adatait az átadott streamre
      * @param stream ahova kiírjuk az adatokat
      */
     @Override
     public void printData(OutputStream stream, String prefix) {
         PrintWriter pw = new PrintWriter(stream);
-        pw.println(prefix + fptype);
+        pw.println(prefix + itemtype);
         pw.flush();
     }
 }

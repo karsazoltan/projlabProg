@@ -295,7 +295,7 @@ public class Tile implements Printable {
     public void printData(OutputStream stream, String prefix) {
         PrintWriter pw = new PrintWriter(stream);
         String known = (is_capacity_known) ? "y" : "n";
-        String itemstr = (item != null) ? "TODO" : "none";
+        String itemstr = (item != null) ? item.toString() : "none";
         String cap = (capacity != -1) ? Integer.toString(capacity) : "";
         pw.println(prefix + World.getInstance().getTileIndex(this) + " " + type + " " + snowlayers +
                 " " + known + " " + building.getBuildingType() + " " + itemstr + " " + cap);

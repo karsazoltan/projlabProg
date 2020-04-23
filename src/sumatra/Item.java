@@ -11,4 +11,9 @@ public abstract class Item implements Printable {
      * @param p azon játékos, aki a tárgyat birtokolni fogja, vagy a tárgy valamilyen akciót hajt rajta végre
      */
     public abstract void giveToPlayer(Player p);
+
+    protected String itemtype = "none";
+    public String toString() {
+        return itemtype;
+    }
 }

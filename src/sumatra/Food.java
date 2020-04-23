@@ -17,6 +17,7 @@ public class Food extends Item {
      */
     public Food(int heal) {
         healup = heal;
+        itemtype = "food";
     }
     public Food() { this(1); }
     /** Ezen Item hatását rögtön kifejti, és elpusztul: Növeli a játékos életerejét 1-el

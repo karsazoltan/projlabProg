@@ -5,7 +5,7 @@ package sumatra;
  */
 public class TentEquipment extends UsableItem {
     public TentEquipment() {
-        type = "tentequipment";
+        itemtype = "tentequipment";
     }
 
     @Override
