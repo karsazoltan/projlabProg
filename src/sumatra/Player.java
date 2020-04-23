@@ -203,7 +203,7 @@ public abstract class Player extends Creature{
     @Override
     public void printData(OutputStream stream, String prefix) {
         PrintWriter pw = new PrintWriter(stream);
-        pw.println(prefix + " " + index + " " + type.toLowerCase() + " " + World.getInstance().getTileIndex(tile)
+        pw.println(prefix + index + " " + type.toLowerCase() + " " + World.getInstance().getTileIndex(tile)
                 + " " + health + " " + mana);
         pw.flush();
         rope.printData(stream, prefix + "    ");
