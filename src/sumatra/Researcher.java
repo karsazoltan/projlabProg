@@ -1,6 +1,5 @@
 package sumatra;
 
-import java.io.OutputStream;
 
 /**
  * Egy sarkkutató játékost reprezentáló osztály.
