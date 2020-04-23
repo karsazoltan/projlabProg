@@ -20,6 +20,7 @@ public class NoDivingSuit extends DivingSuit {
      */
     @Override
     public boolean fallInWater(Player p) {
+        System.out.println("> You have no diving suit!");
         ArrayList<Creature> creatures = p.getTile().getNeighingCreatures();
         // eleinte úgy vesszük, hogy vízbe esik
         boolean result = true; 
@@ -27,10 +28,12 @@ public class NoDivingSuit extends DivingSuit {
             // ha valaki kimenti
             if (q.saveMe(p, p.getTile())) {
                 // akkor a result false, mert nem esik bele igazából
+                System.out.println("You got saved!");
                 result = false;
             }
             
         }
+        if (result) System.out.println("No players with ropes nearby!");
         return result;
     }
 }

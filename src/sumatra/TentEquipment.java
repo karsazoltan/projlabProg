@@ -16,6 +16,7 @@ public class TentEquipment extends UsableItem {
     public void use(Tile t) {
         t.setBuilding(new Tent(t));
         owner.removeUsableItem(this);
+        System.out.println("    > Tent placed on current tile");
     }
     /**
      * Az eszközt hozzárendeli a paraméterként kapott játékoshoz.

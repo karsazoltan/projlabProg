@@ -94,7 +94,13 @@ public class Tile implements Printable {
      * @param p A játékos aki felveszi a tárgyat
      */
     public void pickUpItem(Player p) {
-        item.giveToPlayer(p);
+        if (item != null) {
+            item.giveToPlayer(p);
+            System.out.println("    > You picked up an item: " + item.toString());
+            item = null;
+        } else {
+            System.out.println("    > This tile has no item on it!");
+        }
     }
 
     /**
@@ -135,9 +141,13 @@ public class Tile implements Printable {
      * @param amount Az eltávolítandó hó mélysége
      */
     public void removeSnow(int amount) {
-        snowlayers -= amount;
-        if (snowlayers < 0) {
+        if (snowlayers > 0) {
+            snowlayers -= amount;
+            System.out.println("    > You removed " + amount + " layer(s) of snow from your current tile");
+        }
+        if (snowlayers <= 0) {
             snowlayers = 0;
+            System.out.println("    > The tile has no snow left on it.");
         }
     }
 
@@ -159,6 +169,7 @@ public class Tile implements Printable {
      */
     public void revealCapacity() {
         is_capacity_known = true;
+        System.out.println("    > Capacity of current tile is: " + ((capacity < 0) ? "infinite" : capacity));
     }
 
     /**

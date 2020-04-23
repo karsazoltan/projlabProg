@@ -170,7 +170,7 @@ public class World implements Printable {
             System.out.print("        " + loop + ": ");
             line = input.nextLine().trim();
         }
-        System.out.println("> Creature Initialization finished!");
+        System.out.println("    > Creature Initialization finished!");
     }
 
     /**
@@ -257,7 +257,7 @@ public class World implements Printable {
             System.out.print("        ");
             line = input.nextLine().trim();
         }
-        System.out.println("> World Initialization finished!");
+        System.out.println("    > World Initialization finished!");
     }
 
     /**
@@ -396,7 +396,7 @@ public class World implements Printable {
                 Creature c = Creature.fromConfig(br);
                 creatures.add(c);
             }
-
+            System.out.println("    > World loaded successfully!");
         } catch (Exception e) {
             System.out.println("> Error: Could not load savefile. The file either doesn't exist," +
                     "or it's not a proper save file.");
@@ -420,6 +420,7 @@ public class World implements Printable {
      * Kiírja a standard outputra a pillanatnyi konfigurációt
      */
     public void printConfig() {
+        System.out.println("Printing world to standard output...");
         printData(System.out, "");
     }
 
@@ -456,8 +457,9 @@ public class World implements Printable {
             FileOutputStream fos = new FileOutputStream(filename);
             printData(fos, "");
             fos.close();
+            System.out.println("    > World saved successfully!");
         } catch (Exception e) {
-            System.out.println("> Error: Couldn't save config! Please try again!");
+            System.out.println("    > Error: Couldn't save config! Please try again!");
         }
     }
 
@@ -498,7 +500,7 @@ public class World implements Printable {
      */
     public void stop() {
         if (running)
-            System.out.println("Game Stopped.");
+            System.out.println("> Game Stopped.");
         running = false;
     }
 

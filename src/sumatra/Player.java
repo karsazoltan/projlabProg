@@ -152,6 +152,7 @@ public abstract class Player extends Creature{
      * @param amount ennyi testhőt veszít el a játékos.
      */
     public void damage(int amount){
+        System.out.println("Player " + index + " lost " + amount + " health");
         health -= amount;
         if( health < 0 )
             World.getInstance().loseGame();
@@ -227,6 +228,7 @@ public abstract class Player extends Creature{
      */
     @Override
     void playRound() {
+        System.out.println("> Player " + index + ", you're up!");
         mana = 4;        
         boolean exit;
         Scanner input = World.getInstance().getInputScanner();
@@ -234,6 +236,7 @@ public abstract class Player extends Creature{
             String line = input.nextLine().trim();
             exit = Interpreter.interpretPlayerCommand(this, line);
         }while( !exit );
+        System.out.println("> Round finished");
     }
 
     /**

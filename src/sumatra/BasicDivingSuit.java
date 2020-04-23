@@ -15,6 +15,7 @@ public class BasicDivingSuit extends DivingSuit {
      */
     @Override
     public boolean fallInWater(Player p) {
+        System.out.println("> You have a diving suit, nothing happens.");
         return false;
     }
 }

@@ -42,6 +42,7 @@ public class Bear extends Creature{
         ArrayList<Tile> neighbours = tile.getNeighbors();
         int targetTileIdx = ThreadLocalRandom.current().nextInt(neighbours.size());
         move( neighbours.get( targetTileIdx ) );
+        System.out.println("> Polar bear " + index + " moved to tile " + targetTileIdx);
     }
 
     /**
@@ -50,9 +51,14 @@ public class Bear extends Creature{
     @Override
     void playManagedRound() {
         Scanner input = World.getInstance().getInputScanner();
-        System.out.println(">  Polar bear: choose tile to move to:");
-        String line = input.nextLine().trim();
-        move(World.getInstance().getTileAt(Integer.parseInt(line)));
+        System.out.println(">  Polar bear: choose tile to move to: ");
+        try {
+            String line = input.nextLine().trim();
+            move(World.getInstance().getTileAt(Integer.parseInt(line)));
+            System.out.println("> Polar bear " + index + " moved to tile " + Integer.parseInt(line));
+        } catch (Exception e) {
+            System.out.println("> Error: Invalid tile index!");
+        }
     }
 
     /**
