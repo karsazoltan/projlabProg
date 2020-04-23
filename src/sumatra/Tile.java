@@ -109,7 +109,7 @@ public class Tile implements Printable {
      * @param i Az elhelyezni kívánt tárgy
      * @return Az elhelyezés sikeressége
      */
-    public boolean placeItem(Item i) { // TODO Mi van, ha van ott már item?
+    public boolean placeItem(Item i) {
         if (item != null) {
             return false;
         }

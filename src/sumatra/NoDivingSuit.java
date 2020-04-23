@@ -21,7 +21,6 @@ public class NoDivingSuit extends DivingSuit {
     @Override
     public boolean fallInWater(Player p) {
         ArrayList<Creature> creatures = p.getTile().getNeighingCreatures();
-        
         // eleinte úgy vesszük, hogy vízbe esik
         boolean result = true; 
         for (Creature q : creatures) {
@@ -32,7 +31,6 @@ public class NoDivingSuit extends DivingSuit {
             }
             
         }
-
         return result;
     }
 }
