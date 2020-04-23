@@ -32,12 +32,11 @@ public class Interpreter {
                 int loop = 0;
                 System.out.println("> Manually usable items:");
                 for (Item i : items) {
-                    System.out.print("    " + loop + ": ");
-                    i.printData(System.out);
+                    i.printData(System.out, "    " + loop + ": ");
                 }
                 System.out.println("> Automatically used items:");
-                    p.getDivingSuit().printData(System.out);
-                    p.getRope().printData(System.out);
+                    p.getDivingSuit().printData(System.out, "    ");
+                    p.getRope().printData(System.out, "    ");
                 break;
             case "use":
                 try {

@@ -145,7 +145,7 @@ public class World implements Printable {
         String line = (input.nextLine().trim().split(": "))[1];
         while (!line.equals("F")) {
             String[] words = line.split(" ");
-            Creature c;
+            Creature c = null;
             Tile t;
             try {
                 boolean skipinit = false;
@@ -186,8 +186,8 @@ public class World implements Printable {
         line = (input.nextLine().trim().split(": "))[1];
         while (!line.equals("F")) {
             String[] words = line.split(" ");
-            Tile t;
-            int snow = 0, cap = 0;
+            Tile t = null;
+            int snow, cap = 0;
             try {
                 boolean skipinit = false;
                 snow = Integer.parseInt(words[1]);
@@ -232,7 +232,7 @@ public class World implements Printable {
         while (!line.equals("F")) {
             String[] words = line.split(" ");
             try {
-                Item i;
+                Item i = null;
                 boolean skipinit = false;
                 switch (words[1]) {
                     case "basicdivingsuit": i = new BasicDivingSuit(); break;
@@ -408,7 +408,7 @@ public class World implements Printable {
      * Kiírja a standard outputra a pillanatnyi konfigurációt
      */
     public void printConfig() {
-        printData(System.out);
+        printData(System.out, "");
     }
 
     /**
@@ -442,7 +442,7 @@ public class World implements Printable {
     public void saveConfig(String filename) {
         try {
             FileOutputStream fos = new FileOutputStream(filename);
-            printData(fos);
+            printData(fos, "");
             fos.close();
         } catch (Exception e) {
             System.out.println("> Error: Couldn't save config! Please try again!");
