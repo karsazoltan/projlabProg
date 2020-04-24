@@ -9,3 +9,4 @@ F
 1 shovel
 F
 save 0-out.txt
+exit

@@ -1,5 +1,5 @@
 worlddata
-    step 4
+    step 3
     activeplayer none
     flareparts 0
 tiles 3
@@ -10,7 +10,7 @@ tilelinks 2
     0 1
     0 2
 creatures 2
-    0 eskimo 0 5 3
+    0 eskimo 1 5 4
         rope none
         suit none
         usableitems 0

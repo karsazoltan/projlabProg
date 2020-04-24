@@ -1,9 +1,8 @@
 load 4-in.txt
 start managed
-step 0
 pickup
 finish
 step 1
 move 1
 finish
-print
+save 4-out.txt
