@@ -127,7 +127,7 @@ public class Interpreter {
             case "save": World.getInstance().saveConfig(cmd.trim().substring(5)); break;
             case "print": World.getInstance().printConfig(); break;
             case "load": World.getInstance().loadConfig(cmd.trim().substring(5)); break;
-            case "exit": return true;
+            case "exit": System.exit(0);
             default:
                 System.out.println("> Error: Invalid command!");
         }
