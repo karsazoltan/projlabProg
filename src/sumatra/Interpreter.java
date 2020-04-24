@@ -20,8 +20,8 @@ public class Interpreter {
             case "move":
                 try {
                     int idx = Integer.parseInt(words[1]);
-                    p.move(World.getInstance().getTileAt(idx));
                     System.out.println("> You moved to tile " + idx);
+                    p.move(World.getInstance().getTileAt(idx));
                 } catch (Exception e) {
                     System.out.println("> Error: Invalid syntax!");
                 }
