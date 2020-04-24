@@ -78,7 +78,7 @@ public abstract class Creature implements Printable{
     /**
      * Egy játékos mentést kér a lénytől.
      * @param p megmentendő játékos.
-     * @param target megmententő játékos mezője.
+     * @param t megmententő játékos mezője.
      * @return a kimentés sikeressége.
      */ 
     abstract boolean saveMe(Player p, Tile t);
@@ -108,6 +108,9 @@ public abstract class Creature implements Printable{
                 default: throw new InputMismatchException("Invalid Creature config!");
             }
             Player pc = (Player) c;
+            pc.health = Integer.parseInt(firstline[3]);
+            pc.mana = Integer.parseInt(firstline[4]);
+
             if (br.readLine().trim().split(" ")[1].equals("basic"))
                 pc.addRope(new BasicRope());
             if (br.readLine().trim().split(" ")[1].equals("basicdiving"))

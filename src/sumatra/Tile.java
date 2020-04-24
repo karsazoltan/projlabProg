@@ -176,7 +176,6 @@ public class Tile implements Printable {
      * Vihart csinál a táblán
      */
     public void storm() {
-        addSnow(new Random().nextInt(2));
         building.onStorm(creatures);
     }
 

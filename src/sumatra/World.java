@@ -274,7 +274,7 @@ public class World implements Printable {
             }
         } else {
             System.out.println("    > Enter affected tiles and layers of snow to generate (<t> <#>),");
-            System.out.println("    > or F to finish:");
+            System.out.print("    > or F to finish:\n        ");
             String line = input.nextLine().trim();
             while (!line.equals("F")) {
                 try {
@@ -285,15 +285,19 @@ public class World implements Printable {
                 } catch (Exception e) {
                     System.out.println("    > Error: Invalid syntax!");
                 }
+                System.out.print("        ");
                 line = input.nextLine().trim();
             }
         }
         System.out.print("> Snowstorm! Tiles affected: ");
+        for (Integer key : affectedTiles.keySet()) {
+            System.out.print(key + " ");
+            System.out.println();
+        }
 
         for (Integer key : affectedTiles.keySet()) {
             try {
                 Tile t = tiles.get(key);
-                System.out.print(key + " ");
                 t.addSnow(affectedTiles.get(key));
                 t.storm();
             } catch (Exception ignored) {} // Csendes kivétel, elvben ilyen nem is történhet
