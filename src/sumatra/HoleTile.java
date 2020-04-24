@@ -15,6 +15,7 @@ public class HoleTile extends Tile {
     @Override
     public void accept(Creature c) {
         creatures.add(c);
+        System.out.println("> It's a hole, you fall into water!");
         c.fallInWater();
     }
 

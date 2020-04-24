@@ -47,11 +47,22 @@ public abstract class Player extends Creature{
     abstract public void useAbility(Tile target);
 
     /**
+     * Ellenőrzi, hogy van-e manája a playernek, ha nincs, kiír egy hibaüzenetet
+     * @return Van-e még manája a playernek
+     */
+    private boolean checkMana() {
+        if (mana == 0) {
+            System.out.println("    > You don't have enough work units left for that action!");
+        }
+        return mana > 0;
+    }
+
+    /**
      * A játékost egy új mezőre lépteti.
      * @param newTile a mező, ahova a játékos lép.
      */
     public void move(Tile newTile) {
-        if( mana > 0 && tile.isNeighbor(newTile) ){
+        if( checkMana() && tile.isNeighbor(newTile) ){
             tile.remove(this);
             newTile.accept(this);
             tile = newTile;
@@ -74,7 +85,7 @@ public abstract class Player extends Creature{
      * Ás egyet a játékos, eltüntet egy réteg havat a mezőjéről.
      */ 
     public void dig() {
-        if( mana > 0 ){
+        if( checkMana() ){
             tile.removeSnow(1);
             --mana;
         }
@@ -96,7 +107,7 @@ public abstract class Player extends Creature{
      * @param target mező amin felhasználja a játékos a tárgyat.
      */ 
     public void useItem(int index, Tile target) {
-        if( mana > 0 ){
+        if( checkMana() ){
             usableItems.get(index).use(target);
             --mana;
         }
@@ -106,7 +117,7 @@ public abstract class Player extends Creature{
      * A játékos felvesz egy tárgyat a mezőjéről.
      */ 
     public void pickUpItem() {        
-        if( mana > 0 ){
+        if( checkMana() ){
             tile.pickUpItem(this);
             --mana;
         }
@@ -152,6 +163,7 @@ public abstract class Player extends Creature{
      * @param amount ennyi testhőt veszít el a játékos.
      */
     public void damage(int amount){
+        System.out.println("Player " + index + " lost " + amount + " health");
         health -= amount;
         if( health < 0 )
             World.getInstance().loseGame();
@@ -227,6 +239,7 @@ public abstract class Player extends Creature{
      */
     @Override
     void playRound() {
+        System.out.println("> Player " + index + ", you're up!");
         mana = 4;        
         boolean exit;
         Scanner input = World.getInstance().getInputScanner();
@@ -234,6 +247,7 @@ public abstract class Player extends Creature{
             String line = input.nextLine().trim();
             exit = Interpreter.interpretPlayerCommand(this, line);
         }while( !exit );
+        System.out.println("> Round finished");
     }
 
     /**

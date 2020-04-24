@@ -19,7 +19,9 @@ public class Interpreter {
         switch (words[0]) {
             case "move":
                 try {
-                    p.move(World.getInstance().getTileAt(Integer.parseInt(words[1])));
+                    int idx = Integer.parseInt(words[1]);
+                    p.move(World.getInstance().getTileAt(idx));
+                    System.out.println("> You moved to tile " + idx);
                 } catch (Exception e) {
                     System.out.println("> Error: Invalid syntax!");
                 }
@@ -52,7 +54,7 @@ public class Interpreter {
                 p.pickUpItem();
                 break;
             case "buildflare":
-                World.getInstance().checkEndGame();
+                p.buildFlare();
                 break;
             case "finish":
                 return true;

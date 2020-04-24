@@ -45,15 +45,15 @@ tilelinks 26
     11 12
 creatures 4
     0 polarbear 4
-    1 eskimo 5 1 4
+    1 eskimo 5 5 4
         rope none
         suit none
         usableitems 0
-    2 researcher 4 1 4
+    2 researcher 4 5 2
         rope none
         suit none
         usableitems 0
-    3 researcher 12 1 4
+    3 researcher 12 5 4
         rope none
         suit none
         usableitems 0

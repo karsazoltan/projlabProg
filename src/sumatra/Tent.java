@@ -45,6 +45,7 @@ public class Tent extends Building {
         }
     }
     public void destroy() {
+        System.out.println("> The tent has fallen apart on tile " + World.getInstance().getTileIndex(owner) + "!");
         owner.setBuilding(new NoBuilding());
     }
 }

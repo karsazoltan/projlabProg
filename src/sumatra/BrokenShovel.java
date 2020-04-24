@@ -35,6 +35,10 @@ public class BrokenShovel extends UsableItem {
      */
     private boolean amortization() {
         use_num--;
+        if (use_num >= 0)
+            System.out.println("    > Uses remaining: " + use_num);
+        else
+            System.out.println("    > This shovel has been used too much, it's completely broken!");
         return use_num >= 0;
     }
     /**

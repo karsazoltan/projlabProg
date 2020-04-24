@@ -25,6 +25,7 @@ public class Eskimo extends Player {
         if( mana > 0 ){
             target.setBuilding(new Igloo());
             --mana;
+            System.out.println("    > Igloo built on current tile");
         }
     }
 }

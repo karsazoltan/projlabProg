@@ -37,6 +37,7 @@ public class UnstableTile extends Tile {
      * Az összes rajta álló élőlényt a vízbe dobja
      */
     public void flip() {
+        System.out.println("> It flips over, you fall into water!");
         for (Creature c : creatures)
             c.fallInWater();
     }
