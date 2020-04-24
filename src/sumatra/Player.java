@@ -62,12 +62,16 @@ public abstract class Player extends Creature{
      * @param newTile a mező, ahova a játékos lép.
      */
     public void move(Tile newTile) {
-        if( checkMana() && tile.isNeighbor(newTile) ){
+        boolean isNearby = tile.isNeighbor(newTile);
+        if( checkMana() && isNearby ){
             tile.remove(this);
             newTile.accept(this);
             tile = newTile;
 
             --mana;
+        }
+        if (!isNearby) {
+            System.out.println("> Error: You can't do this - it's not a neighboring tile");
         }
     }
 
