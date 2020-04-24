@@ -3,10 +3,10 @@ worlddata
     activeplayer none
     flareparts 0
 tiles 1
-    0 stable 0 y none none
+    0 stable 2 y none none
 tilelinks 0
 creatures 1
     0 eskimo 0 3 4
         rope none
         suit none
-        usableitems none
+        usableitems 0

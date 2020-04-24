@@ -8,4 +8,4 @@ tiles 2
 tilelinks 1
     0 1
 creatures 1
-    0 polarbear 0
+    0 polarbear 1

@@ -6,5 +6,4 @@ move 4
 finish
 step 0
 4
-save 42-expected.txt
-
+save 42-out.txt
