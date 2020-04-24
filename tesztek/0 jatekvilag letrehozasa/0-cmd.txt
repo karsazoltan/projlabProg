@@ -8,5 +8,4 @@ F
 F
 1 shovel
 F
-print
-
+save 0-out.txt

@@ -20,23 +20,27 @@ for directory in directories:
     index = directory[:2].strip(' ')
     stdout_ouptut = directory[-1] == '1'
     
-    cmd = open(os.path.join(full_path, test_folder, directory, index + '-cmd.txt'))
-    p = subprocess.Popen(['java -jar', 'game.jar'], stdin=PIPE, stdout=PIPE)
-    for command in cmd:
+    cmd = open(os.path.join(full_path, test_folder, directory, index + '-cmd.txt'), 'r')
+    p = subprocess.Popen('java -jar projlabProg.jar', stdin=PIPE, stdout=PIPE)
+
+    for command in cmd.readlines():
         if 'load' in command:
             command = 'load ' + os.path.join(full_path, test_folder, directory, index + '-in.txt')
+        if 'save' in command:
+            command = 'save ' + '"' + os.path.join(full_path, test_folder, directory, index + '-out.txt') + '"'
+        print(command)
         p.stdin.write(bytes(command + '\n', 'utf-8'))
     cmd.close()
 
     
-    expected = None 
+    generated = None 
     if stdout_ouptut:
-        expected = p.stdout
+        generated = p.stdout
     else:
-        expected = open(os.path.join(full_path, test_folder, directory, index + '-expected.txt', 'r'))
+        generated = open(os.path.join(full_path, test_folder, directory, index + '-out.txt'), 'r')
 
     okay = True
-    with open(os.path.join(full_path, test_folder, directory, index + '-expected.txt', 'r')) as generated:
+    with open(os.path.join(full_path, test_folder, directory, index + '-expected.txt'), 'r') as expected:
         expected_lines = [line for line in expected]
         generated_lines = [line for line in generated]
 
