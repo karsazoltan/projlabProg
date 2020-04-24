@@ -3,9 +3,9 @@ worlddata
     activeplayer none
     flareparts 0
 tiles 3
-    0 stable 3 n none none
+    0 stable 3 n none none 
     1 unstable 0 n none shovel 2
-    2 hole 4 n none none
+    2 hole 4 n none none 
 tilelinks 2
     0 1
     0 2

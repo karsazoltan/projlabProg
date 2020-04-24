@@ -1,6 +1,8 @@
-load 3-in.txtstart managed
-step 0
-step 1 
+load 3-in.txt
+start managed
+step 1
+2
+step 0 
 move 0
 finish
-print
+save 3-out.txt

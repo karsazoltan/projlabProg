@@ -1,6 +1,6 @@
 worlddata
-    step 2
-    activeplayer 0
+    step 4
+    activeplayer none
     flareparts 0
 tiles 3
     0 stable 3 y none none 
@@ -14,4 +14,4 @@ creatures 2
         rope none
         suit none
         usableitems 0
-    1 polarbear 0
+    1 polarbear 2

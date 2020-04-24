@@ -1,6 +1,6 @@
 worlddata
-    step 2
-    activeplayer 0
+    step 0
+    activeplayer none
     flareparts 0
 tiles 3
     0 stable 3 y none none 
@@ -9,9 +9,13 @@ tiles 3
 tilelinks 2
     0 1
     0 2
-creatures 2
-    0 eskimo 0 5 3
+creatures 3
+    0 eskimo 1 5 4
         rope none
         suit none
         usableitems 0
-    1 polarbear 0
+    1 polarbear 2
+    2 researcher 0 5 4
+        rope none
+        suit none
+        usableitems 0

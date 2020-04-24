@@ -1,5 +1,4 @@
 load 2-in.txt
 start automated
 move 0
-finish
-print
+save 2-out.txt
