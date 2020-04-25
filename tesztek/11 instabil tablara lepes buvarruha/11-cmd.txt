@@ -1,4 +1,4 @@
 load 11-in.txt
 start managed
 move 1
-print
+save 11-out.txt
