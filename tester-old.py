@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 import os
 import subprocess
 from subprocess import PIPE, STDOUT
@@ -15,6 +13,8 @@ full_path = os.path.abspath(os.getcwd())
 start = 0
 end = 42
 
+
+
 # This function checks the out.txt file of a given test case.
 def check_save_file(directory, index):
     path = os.path.join(full_path, test_folder, directory, index + '-cmd.txt')
@@ -22,9 +22,9 @@ def check_save_file(directory, index):
     p = subprocess.Popen(['java','-jar', 'projlabProg.jar'], stdin=PIPE, stdout=PIPE, stderr=STDOUT)
     for command in cmd.readlines():
         if 'load' in command:
-            command = 'load ' + os.path.join(test_folder, directory, index + '-in.txt\n')         # Ez változott az előzőhöz képest
+            command = 'load ' + test_folder + '\\' + directory + '\\' + index + '-in.txt\n'
         elif 'save' in command:
-            command = 'save ' + os.path.join(test_folder, directory, index + '-out.txt\n')         # Ez változott az előzőhöz képest
+            command = 'save ' + test_folder + '\\' + directory + '\\' + index + '-out.txt\n'
             p.communicate(bytes(command, 'utf-8'))
             break
         p.stdin.write(bytes(command, 'utf-8'))
@@ -65,7 +65,7 @@ def check_stdout(directory, index):
     p = subprocess.Popen(['java','-jar', 'projlabProg.jar'], stdin=PIPE, stdout=PIPE, stderr=STDOUT)
     for command in cmd.readlines():
         if 'load' in command:
-            command = 'load ' + os.path.join(test_folder, directory, index + '-in.txt\n')         # Ez változott az előzőhöz képest
+            command = 'load ' + test_folder + '\\' + directory + '\\' + index + '-in.txt\n'
         p.stdin.write(bytes(command, 'utf-8'))
     stdout = p.communicate()[0].decode("utf-8").split('\n')
     cmd.close()
@@ -85,6 +85,8 @@ def check_stdout(directory, index):
         return True 
     else:
         return False
+
+
 
 # Main function that iterates on the given test cases.
 def main():
@@ -118,7 +120,6 @@ def main():
         print('[DONE] Every test was succesful.')
     else:
         print('[DONE] Task failed succesfully.')
-        print('Successful: ' + str(succesful) + '/' + str(end - start + 1))   # Csak mert miért is ne?
 
 
 main()
