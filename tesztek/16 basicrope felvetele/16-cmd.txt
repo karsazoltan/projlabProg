@@ -1,3 +1,4 @@
 load 16-in.txt
 start automated
 pickup
+save 16-out.txt

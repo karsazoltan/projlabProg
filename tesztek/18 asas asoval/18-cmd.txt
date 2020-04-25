@@ -5,4 +5,4 @@ print
 use 0
 print
 use 0
-print
+save 18-out.txt
