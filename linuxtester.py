@@ -21,7 +21,7 @@ start = 0
 end = 42
 
 if len(sys.argv) == 3:
-    start = int(sys.argv[1]) - 1   # -1, mert az indexek eltolódnak
+    start = int(sys.argv[1]) - 1   # -1, mert az indexek eltolódnak (arg: 37 40, ekkor eddig lefutott a 38 - 41. teszt :P)
     end = int(sys.argv[2]) - 1     # -1 itt is
 
 
@@ -87,3 +87,4 @@ if succesful == end - start + 1:
     print('[DONE] Every test was succesful.')
 else:
     print('[DONE] Task failed succesfully.')
+    print('Successful: ' + str(succesful) + '/' + str(end - start + 1))   # Csak mert miért is ne?
