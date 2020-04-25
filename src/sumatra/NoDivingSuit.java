@@ -22,14 +22,9 @@ public class NoDivingSuit extends DivingSuit {
     public boolean fallInWater(Player p) {
         System.out.println("> You have no diving suit!");
         ArrayList<Creature> creatures = p.getTile().getNeighingCreatures();
-        System.out.println("p.getTile indexe: " + World.getInstance().getTileIndex(p.getTile()));
-        System.out.println("N of neighing: " + creatures.size());
         // eleinte úgy vesszük, hogy vízbe esik
         boolean result = true; 
         for (Creature q : creatures) {
-            System.out.println("Index of player q: " + q.index);
-            System.out.println("Tile of player q: " + World.getInstance().getTileIndex(q.getTile()));
-            World.getInstance().printConfig();
             // ha valaki kimenti
             if (q.saveMe(p, p.getTile())) {
                 // akkor a result false, mert nem esik bele igazából

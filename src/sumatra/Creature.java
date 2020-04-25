@@ -102,9 +102,9 @@ public abstract class Creature implements Printable{
             Tile t = World.getInstance().getTileAt(Integer.parseInt(firstline[2]));
             int idx = Integer.parseInt(firstline[0]);
             switch (firstline[1]) {
-                case "polarbear": c = new Bear(t, idx); return c;
-                case "researcher": c = new Researcher(t, idx); break;
-                case "eskimo": c = new Eskimo(t, idx); break;
+                case "polarbear": c = new Bear(t, idx); t.accept(c); return c;
+                case "researcher": c = new Researcher(t, idx); t.accept(c); break;
+                case "eskimo": c = new Eskimo(t, idx); t.accept(c); break;
                 default: throw new InputMismatchException("Invalid Creature config!");
             }
             Player pc = (Player) c;
