@@ -1,0 +1,1302 @@
+\fajl
+{ AutomaticItem.java}
+{ 368 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ AutomaticItem programosztály }
+
+\fajl
+{ BasicDivingSuit.java}
+{ 825 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ BasicDivingSuit programosztály }
+
+\fajl
+{ BasicRope.java}
+{ 991 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ BasicRope programosztály }
+
+\fajl
+{ Beacon.java}
+{ 194 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Beacon programosztály }
+
+\fajl
+{ Building.java}
+{ 917 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Building programosztály }
+
+\fajl
+{ Cartridge.java}
+{ 200 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Cartridge programosztály }
+
+\fajl
+{ DivingSuit.java}
+{ 1124 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ DivingSuit programosztály }
+
+\fajl
+{ Eskimo.java}
+{ 844 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Eskimo programosztály }
+
+\fajl
+{ FlarePart.java}
+{ 418 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ FlarePart programosztály }
+
+\fajl
+{ Food.java}
+{ 484 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Food programosztály }
+
+\fajl
+{ Gun.java}
+{ 188 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Gun programosztály }
+
+\fajl
+{ HoleTile.java}
+{ 1164 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ HoleTile programosztály }
+
+\fajl
+{ Igloo.java}
+{ 948 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Igloo programosztály }
+
+\fajl
+{ Item.java}
+{ 515 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Item programosztály }
+
+\fajl
+{ NoBuilding.java}
+{ 893 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ NoBuilding programosztály }
+
+\fajl
+{ NoDivingSuit.java}
+{ 1374 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ NoDivingSuit programosztály }
+
+\fajl
+{ NoRope.java}
+{ 878 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ NoRope programosztály }
+
+\fajl
+{ Player.java}
+{ 6252 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Player programosztály }
+
+\fajl
+{ Researcher.java}
+{ 1010 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Researcher programosztály }
+
+\fajl
+{ Rope.java}
+{ 1147 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Rope programosztály }
+
+\fajl
+{ Shovel.java}
+{ 638 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Shovel programosztály }
+
+\fajl
+{ Skeleton.java}
+{ 14289 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Skeleton programosztály }
+
+\fajl
+{ Tile.java}
+{ 6080 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Tile programosztály }
+
+\fajl
+{ UnstableTile.java}
+{ 1136 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ UnstableTile programosztály }
+
+\fajl
+{ UsableItem.java}
+{ 956 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ UsableItem programosztály }
+
+\fajl
+{ World.java}
+{ 2562 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ World programosztály }
+
+\fajl
+{ AutomaticItem.java}
+{ 310 byte }
+{ Wed Mar 25 20:44:17 2020 byte }
+{ AutomaticItem programosztály }
+
+\fajl
+{ BasicDivingSuit.java}
+{ 696 byte }
+{ Wed Mar 25 20:44:17 2020 byte }
+{ BasicDivingSuit programosztály }
+
+\fajl
+{ BasicRope.java}
+{ 788 byte }
+{ Wed Mar 25 20:44:17 2020 byte }
+{ BasicRope programosztály }
+
+\fajl
+{ Beacon.java}
+{ 173 byte }
+{ Wed Mar 25 10:57:36 2020 byte }
+{ Beacon programosztály }
+
+\fajl
+{ Bear.java}
+{ 3096 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Bear programosztály }
+
+\fajl
+{ BrokenShovel.java}
+{ 1799 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ BrokenShovel programosztály }
+
+\fajl
+{ Building.java}
+{ 1173 byte }
+{ Wed Mar 25 20:44:17 2020 byte }
+{ Building programosztály }
+
+\fajl
+{ Cartridge.java}
+{ 152 byte }
+{ Wed Mar 25 10:57:36 2020 byte }
+{ Cartridge programosztály }
+
+\fajl
+{ Creature.java}
+{ 4685 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Creature programosztály }
+
+\fajl
+{ DivingSuit.java}
+{ 1186 byte }
+{ Wed Mar 25 20:44:17 2020 byte }
+{ DivingSuit programosztály }
+
+\fajl
+{ Eskimo.java}
+{ 832 byte }
+{ Thu Mar 26 13:05:21 2020 byte }
+{ Eskimo programosztály }
+
+\fajl
+{ FlarePart.java}
+{ 712 byte }
+{ Wed Mar 25 10:57:36 2020 byte }
+{ FlarePart programosztály }
+
+\fajl
+{ Food.java}
+{ 1008 byte }
+{ Wed Mar 25 10:57:36 2020 byte }
+{ Food programosztály }
+
+\fajl
+{ Gun.java}
+{ 161 byte }
+{ Wed Mar 25 10:57:36 2020 byte }
+{ Gun programosztály }
+
+\fajl
+{ HoleTile.java}
+{ 1517 byte }
+{ Wed Mar 25 20:44:17 2020 byte }
+{ HoleTile programosztály }
+
+\fajl
+{ Igloo.java}
+{ 1074 byte }
+{ Wed Mar 25 20:44:17 2020 byte }
+{ Igloo programosztály }
+
+\fajl
+{ Interpreter.java}
+{ 5162 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Interpreter programosztály }
+
+\fajl
+{ Item.java}
+{ 677 byte }
+{ Wed Mar 25 10:57:36 2020 byte }
+{ Item programosztály }
+
+\fajl
+{ Main.java}
+{ 305 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Main programosztály }
+
+\fajl
+{ NoBuilding.java}
+{ 1098 byte }
+{ Wed Mar 25 20:44:17 2020 byte }
+{ NoBuilding programosztály }
+
+\fajl
+{ NoDivingSuit.java}
+{ 1348 byte }
+{ Wed Mar 25 20:44:17 2020 byte }
+{ NoDivingSuit programosztály }
+
+\fajl
+{ NoRope.java}
+{ 735 byte }
+{ Wed Mar 25 20:44:17 2020 byte }
+{ NoRope programosztály }
+
+\fajl
+{ Player.java}
+{ 7938 byte }
+{ Thu Mar 26 13:05:21 2020 byte }
+{ Player programosztály }
+
+\fajl
+{ Printable.java}
+{ 334 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Printable programosztály }
+
+\fajl
+{ Researcher.java}
+{ 870 byte }
+{ Thu Mar 26 13:05:21 2020 byte }
+{ Researcher programosztály }
+
+\fajl
+{ Rope.java}
+{ 1144 byte }
+{ Wed Mar 25 20:44:17 2020 byte }
+{ Rope programosztály }
+
+\fajl
+{ Shovel.java}
+{ 550 byte }
+{ Wed Mar 25 20:44:17 2020 byte }
+{ Shovel programosztály }
+
+\fajl
+{ Tent.java}
+{ 1487 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ Tent programosztály }
+
+\fajl
+{ TentEquipment.java}
+{ 948 byte }
+{ Wed Apr 22 14:10:07 2020 byte }
+{ TentEquipment programosztály }
+
+\fajl
+{ Tile.java}
+{ 9299 byte }
+{ Wed Mar 25 20:44:17 2020 byte }
+{ Tile programosztály }
+
+\fajl
+{ UnstableTile.java}
+{ 1501 byte }
+{ Wed Mar 25 20:44:17 2020 byte }
+{ UnstableTile programosztály }
+
+\fajl
+{ UsableItem.java}
+{ 1287 byte }
+{ Wed Mar 25 20:44:17 2020 byte }
+{ UsableItem programosztály }
+
+\fajl
+{ World.java}
+{ 21523 byte }
+{ Wed Mar 25 10:57:36 2020 byte }
+{ World programosztály }
+
+\fajl
+{ latex.txt }
+{ 22086 byte }
+{ Sat Apr 25 19:51:46 2020 }
+{ latex tesztesetfájl }
+
+\fajl
+{ template.txt }
+{ 107 byte }
+{ Sat Apr 25 19:38:19 2020 }
+{ template tesztesetfájl }
+
+\fajl
+{ 0-cmd.txt }
+{ 81 byte }
+{ Wed Apr 22 22:08:48 2020 }
+{ 0-cmd tesztesetfájl }
+
+\fajl
+{ 0-expected.txt }
+{ 205 byte }
+{ Wed Apr 22 22:09:30 2020 }
+{ 0-expected tesztesetfájl }
+
+\fajl
+{ 0-out.txt }
+{ 198 byte }
+{ Fri Apr 24 18:04:25 2020 }
+{ 0-out tesztesetfájl }
+
+\fajl
+{ 1-cmd.txt }
+{ 87 byte }
+{ Wed Apr 22 22:10:08 2020 }
+{ 1-cmd tesztesetfájl }
+
+\fajl
+{ 1-expected.txt }
+{ 390 byte }
+{ Wed Apr 22 22:13:57 2020 }
+{ 1-expected tesztesetfájl }
+
+\fajl
+{ 1-in.txt }
+{ 207 byte }
+{ Wed Apr 22 22:13:44 2020 }
+{ 1-in tesztesetfájl }
+
+\fajl
+{ 1-out.txt }
+{ 383 byte }
+{ Fri Apr 24 17:35:08 2020 }
+{ 1-out tesztesetfájl }
+
+\fajl
+{ 11-cmd.txt }
+{ 54 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 11-cmd tesztesetfájl }
+
+\fajl
+{ 11-expected.txt }
+{ 427 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 11-expected tesztesetfájl }
+
+\fajl
+{ 11-in.txt }
+{ 427 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 11-in tesztesetfájl }
+
+\fajl
+{ 11-out.txt }
+{ 422 byte }
+{ Sat Apr 25 18:47:44 2020 }
+{ 11-out tesztesetfájl }
+
+\fajl
+{ 12-cmd.txt }
+{ 44 byte }
+{ Sat Apr 25 18:47:30 2020 }
+{ 12-cmd tesztesetfájl }
+
+\fajl
+{ 12-expected.txt }
+{ 151 byte }
+{ Sat Apr 25 18:47:30 2020 }
+{ 12-expected tesztesetfájl }
+
+\fajl
+{ 12-in.txt }
+{ 422 byte }
+{ Sat Apr 25 18:47:30 2020 }
+{ 12-in tesztesetfájl }
+
+\fajl
+{ 13-cmd.txt }
+{ 39 byte }
+{ Sat Apr 25 19:12:44 2020 }
+{ 13-cmd tesztesetfájl }
+
+\fajl
+{ 13-expected.txt }
+{ 106 byte }
+{ Sat Apr 25 19:12:44 2020 }
+{ 13-expected tesztesetfájl }
+
+\fajl
+{ 13-in.txt }
+{ 409 byte }
+{ Sat Apr 25 19:12:44 2020 }
+{ 13-in tesztesetfájl }
+
+\fajl
+{ 14-cmd.txt }
+{ 63 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 14-cmd tesztesetfájl }
+
+\fajl
+{ 14-expected.txt }
+{ 212 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 14-expected tesztesetfájl }
+
+\fajl
+{ 14-in.txt }
+{ 213 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 14-in tesztesetfájl }
+
+\fajl
+{ 14-out.txt }
+{ 206 byte }
+{ Sat Apr 25 18:48:54 2020 }
+{ 14-out tesztesetfájl }
+
+\fajl
+{ 15-cmd.txt }
+{ 56 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 15-cmd tesztesetfájl }
+
+\fajl
+{ 15-expected.txt }
+{ 223 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 15-expected tesztesetfájl }
+
+\fajl
+{ 15-in.txt }
+{ 205 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 15-in tesztesetfájl }
+
+\fajl
+{ 15-out.txt }
+{ 219 byte }
+{ Sat Apr 25 18:48:54 2020 }
+{ 15-out tesztesetfájl }
+
+\fajl
+{ 16-cmd.txt }
+{ 56 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 16-cmd tesztesetfájl }
+
+\fajl
+{ 16-expected.txt }
+{ 206 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 16-expected tesztesetfájl }
+
+\fajl
+{ 16-in.txt }
+{ 208 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 16-in tesztesetfájl }
+
+\fajl
+{ 16-out.txt }
+{ 200 byte }
+{ Sat Apr 25 18:48:55 2020 }
+{ 16-out tesztesetfájl }
+
+\fajl
+{ 17-cmd.txt }
+{ 56 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 17-cmd tesztesetfájl }
+
+\fajl
+{ 17-expected.txt }
+{ 210 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 17-expected tesztesetfájl }
+
+\fajl
+{ 17-in.txt }
+{ 213 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 17-in tesztesetfájl }
+
+\fajl
+{ 17-out.txt }
+{ 206 byte }
+{ Sat Apr 25 18:48:55 2020 }
+{ 17-out tesztesetfájl }
+
+\fajl
+{ 18-cmd.txt }
+{ 69 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 18-cmd tesztesetfájl }
+
+\fajl
+{ 18-expected.txt }
+{ 230 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 18-expected tesztesetfájl }
+
+\fajl
+{ 18-in.txt }
+{ 233 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 18-in tesztesetfájl }
+
+\fajl
+{ 18-out.txt }
+{ 226 byte }
+{ Sat Apr 25 18:48:55 2020 }
+{ 18-out tesztesetfájl }
+
+\fajl
+{ 19-cmd.txt }
+{ 76 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 19-cmd tesztesetfájl }
+
+\fajl
+{ 19-expected.txt }
+{ 233 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 19-expected tesztesetfájl }
+
+\fajl
+{ 19-in.txt }
+{ 234 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 19-in tesztesetfájl }
+
+\fajl
+{ 19-out.txt }
+{ 227 byte }
+{ Sat Apr 25 18:46:55 2020 }
+{ 19-out tesztesetfájl }
+
+\fajl
+{ 2-cmd.txt }
+{ 56 byte }
+{ Wed Apr 22 22:18:55 2020 }
+{ 2-cmd tesztesetfájl }
+
+\fajl
+{ 2-expected.txt }
+{ 304 byte }
+{ Wed Apr 22 22:18:00 2020 }
+{ 2-expected tesztesetfájl }
+
+\fajl
+{ 2-in.txt }
+{ 302 byte }
+{ Wed Apr 22 22:17:15 2020 }
+{ 2-in tesztesetfájl }
+
+\fajl
+{ 2-out.txt }
+{ 295 byte }
+{ Fri Apr 24 17:35:12 2020 }
+{ 2-out tesztesetfájl }
+
+\fajl
+{ 20-cmd.txt }
+{ 56 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 20-cmd tesztesetfájl }
+
+\fajl
+{ 20-expected.txt }
+{ 205 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 20-expected tesztesetfájl }
+
+\fajl
+{ 20-in.txt }
+{ 206 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 20-in tesztesetfájl }
+
+\fajl
+{ 20-out.txt }
+{ 199 byte }
+{ Sat Apr 25 18:05:49 2020 }
+{ 20-out tesztesetfájl }
+
+\fajl
+{ 21-cmd.txt }
+{ 56 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 21-cmd tesztesetfájl }
+
+\fajl
+{ 21-expected.txt }
+{ 224 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 21-expected tesztesetfájl }
+
+\fajl
+{ 21-in.txt }
+{ 211 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 21-in tesztesetfájl }
+
+\fajl
+{ 21-out.txt }
+{ 218 byte }
+{ Sat Apr 25 18:38:47 2020 }
+{ 21-out tesztesetfájl }
+
+\fajl
+{ 22-cmd.txt }
+{ 100 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 22-cmd tesztesetfájl }
+
+\fajl
+{ 22-expected.txt }
+{ 369 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 22-expected tesztesetfájl }
+
+\fajl
+{ 22-in.txt }
+{ 377 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 22-in tesztesetfájl }
+
+\fajl
+{ 22-out.txt }
+{ 365 byte }
+{ Sat Apr 25 18:38:48 2020 }
+{ 22-out tesztesetfájl }
+
+\fajl
+{ 23-cmd.txt }
+{ 65 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 23-cmd tesztesetfájl }
+
+\fajl
+{ 23-expected.txt }
+{ 125 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 23-expected tesztesetfájl }
+
+\fajl
+{ 23-in.txt }
+{ 125 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 23-in tesztesetfájl }
+
+\fajl
+{ 23-out.txt }
+{ 121 byte }
+{ Sat Apr 25 18:38:48 2020 }
+{ 23-out tesztesetfájl }
+
+\fajl
+{ 24-cmd.txt }
+{ 42 byte }
+{ Sat Apr 25 18:13:30 2020 }
+{ 24-cmd tesztesetfájl }
+
+\fajl
+{ 24-expected.txt }
+{ 120 byte }
+{ Sat Apr 25 18:13:30 2020 }
+{ 24-expected tesztesetfájl }
+
+\fajl
+{ 24-in.txt }
+{ 244 byte }
+{ Sat Apr 25 18:13:30 2020 }
+{ 24-in tesztesetfájl }
+
+\fajl
+{ 25-cmd.txt }
+{ 55 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 25-cmd tesztesetfájl }
+
+\fajl
+{ 25-expected.txt }
+{ 232 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 25-expected tesztesetfájl }
+
+\fajl
+{ 25-in.txt }
+{ 260 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 25-in tesztesetfájl }
+
+\fajl
+{ 25-out.txt }
+{ 228 byte }
+{ Sat Apr 25 18:38:49 2020 }
+{ 25-out tesztesetfájl }
+
+\fajl
+{ 26-cmd.txt }
+{ 105 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 26-cmd tesztesetfájl }
+
+\fajl
+{ 26-expected.txt }
+{ 206 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 26-expected tesztesetfájl }
+
+\fajl
+{ 26-in.txt }
+{ 206 byte }
+{ Wed Apr 22 23:51:39 2020 }
+{ 26-in tesztesetfájl }
+
+\fajl
+{ 26-out.txt }
+{ 200 byte }
+{ Sat Apr 25 18:38:49 2020 }
+{ 26-out tesztesetfájl }
+
+\fajl
+{ 27-cmd.txt }
+{ 81 byte }
+{ Sat Apr 25 18:13:30 2020 }
+{ 27-cmd tesztesetfájl }
+
+\fajl
+{ 27-expected.txt }
+{ 220 byte }
+{ Sat Apr 25 18:13:30 2020 }
+{ 27-expected tesztesetfájl }
+
+\fajl
+{ 27-in.txt }
+{ 215 byte }
+{ Sat Apr 25 18:13:30 2020 }
+{ 27-in tesztesetfájl }
+
+\fajl
+{ 28-cmd.txt }
+{ 72 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 28-cmd tesztesetfájl }
+
+\fajl
+{ 28-expected.txt }
+{ 308 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 28-expected tesztesetfájl }
+
+\fajl
+{ 28-in.txt }
+{ 309 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 28-in tesztesetfájl }
+
+\fajl
+{ 28-out.txt }
+{ 302 byte }
+{ Sat Apr 25 18:38:50 2020 }
+{ 28-out tesztesetfájl }
+
+\fajl
+{ 29-cmd.txt }
+{ 41 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 29-cmd tesztesetfájl }
+
+\fajl
+{ 29-expected.txt }
+{ 30 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 29-expected tesztesetfájl }
+
+\fajl
+{ 29-in.txt }
+{ 365 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 29-in tesztesetfájl }
+
+\fajl
+{ 3-cmd.txt }
+{ 81 byte }
+{ Wed Apr 22 22:20:27 2020 }
+{ 3-cmd tesztesetfájl }
+
+\fajl
+{ 3-expected.txt }
+{ 307 byte }
+{ Wed Apr 22 22:22:06 2020 }
+{ 3-expected tesztesetfájl }
+
+\fajl
+{ 3-in.txt }
+{ 302 byte }
+{ Wed Apr 22 22:20:11 2020 }
+{ 3-in tesztesetfájl }
+
+\fajl
+{ 3-out.txt }
+{ 298 byte }
+{ Fri Apr 24 17:35:14 2020 }
+{ 3-out tesztesetfájl }
+
+\fajl
+{ 30-cmd.txt }
+{ 74 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 30-cmd tesztesetfájl }
+
+\fajl
+{ 30-expected.txt }
+{ 212 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 30-expected tesztesetfájl }
+
+\fajl
+{ 30-out.txt }
+{ 206 byte }
+{ Sat Apr 25 18:31:16 2020 }
+{ 30-out tesztesetfájl }
+
+\fajl
+{ 31-cmd.txt }
+{ 53 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 31-cmd tesztesetfájl }
+
+\fajl
+{ 31-expected.txt }
+{ 216 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 31-expected tesztesetfájl }
+
+\fajl
+{ 31-in.txt }
+{ 219 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 31-in tesztesetfájl }
+
+\fajl
+{ 31-out.txt }
+{ 210 byte }
+{ Sat Apr 25 18:30:56 2020 }
+{ 31-out tesztesetfájl }
+
+\fajl
+{ 33-cmd.txt }
+{ 73 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 33-cmd tesztesetfájl }
+
+\fajl
+{ 33-expected.txt }
+{ 200 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 33-expected tesztesetfájl }
+
+\fajl
+{ 33-in.txt }
+{ 200 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 33-in tesztesetfájl }
+
+\fajl
+{ 33-out.txt }
+{ 196 byte }
+{ Sat Apr 25 18:38:51 2020 }
+{ 33-out tesztesetfájl }
+
+\fajl
+{ 34-cmd.txt }
+{ 62 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 34-cmd tesztesetfájl }
+
+\fajl
+{ 34-expected.txt }
+{ 266 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 34-expected tesztesetfájl }
+
+\fajl
+{ 34-in.txt }
+{ 266 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 34-in tesztesetfájl }
+
+\fajl
+{ 34-out.txt }
+{ 262 byte }
+{ Sat Apr 25 18:38:52 2020 }
+{ 34-out tesztesetfájl }
+
+\fajl
+{ 35-cmd.txt }
+{ 42 byte }
+{ Sat Apr 25 18:30:31 2020 }
+{ 35-cmd tesztesetfájl }
+
+\fajl
+{ 35-expected.txt }
+{ 30 byte }
+{ Sat Apr 25 18:30:31 2020 }
+{ 35-expected tesztesetfájl }
+
+\fajl
+{ 35-in.txt }
+{ 298 byte }
+{ Sat Apr 25 18:30:31 2020 }
+{ 35-in tesztesetfájl }
+
+\fajl
+{ 36-cmd.txt }
+{ 73 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 36-cmd tesztesetfájl }
+
+\fajl
+{ 36-expected.txt }
+{ 206 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 36-expected tesztesetfájl }
+
+\fajl
+{ 36-in.txt }
+{ 204 byte }
+{ Thu Apr 23 18:05:52 2020 }
+{ 36-in tesztesetfájl }
+
+\fajl
+{ 36-out.txt }
+{ 199 byte }
+{ Sat Apr 25 18:38:53 2020 }
+{ 36-out tesztesetfájl }
+
+\fajl
+{ 37-cmd.txt }
+{ 67 byte }
+{ Wed Apr 22 21:40:49 2020 }
+{ 37-cmd tesztesetfájl }
+
+\fajl
+{ 37-expected.txt }
+{ 209 byte }
+{ Wed Apr 22 21:40:49 2020 }
+{ 37-expected tesztesetfájl }
+
+\fajl
+{ 37-in.txt }
+{ 209 byte }
+{ Wed Apr 22 21:40:49 2020 }
+{ 37-in tesztesetfájl }
+
+\fajl
+{ 37-out.txt }
+{ 203 byte }
+{ Sat Apr 25 18:38:54 2020 }
+{ 37-out tesztesetfájl }
+
+\fajl
+{ 38-cmd.txt }
+{ 83 byte }
+{ Wed Apr 22 21:40:49 2020 }
+{ 38-cmd tesztesetfájl }
+
+\fajl
+{ 38-expected.txt }
+{ 208 byte }
+{ Wed Apr 22 21:40:49 2020 }
+{ 38-expected tesztesetfájl }
+
+\fajl
+{ 38-in.txt }
+{ 237 byte }
+{ Wed Apr 22 21:40:49 2020 }
+{ 38-in tesztesetfájl }
+
+\fajl
+{ 38-out.txt }
+{ 202 byte }
+{ Sat Apr 25 18:38:54 2020 }
+{ 38-out tesztesetfájl }
+
+\fajl
+{ 39-cmd.txt }
+{ 59 byte }
+{ Wed Apr 22 21:40:49 2020 }
+{ 39-cmd tesztesetfájl }
+
+\fajl
+{ 39-expected.txt }
+{ 368 byte }
+{ Wed Apr 22 21:40:49 2020 }
+{ 39-expected tesztesetfájl }
+
+\fajl
+{ 39-in.txt }
+{ 368 byte }
+{ Wed Apr 22 21:40:49 2020 }
+{ 39-in tesztesetfájl }
+
+\fajl
+{ 39-out.txt }
+{ 362 byte }
+{ Sat Apr 25 18:38:55 2020 }
+{ 39-out tesztesetfájl }
+
+\fajl
+{ 4-cmd.txt }
+{ 68 byte }
+{ Wed Apr 22 22:24:28 2020 }
+{ 4-cmd tesztesetfájl }
+
+\fajl
+{ 4-expected.txt }
+{ 382 byte }
+{ Wed Apr 22 22:27:01 2020 }
+{ 4-expected tesztesetfájl }
+
+\fajl
+{ 4-in.txt }
+{ 368 byte }
+{ Wed Apr 22 22:23:45 2020 }
+{ 4-in tesztesetfájl }
+
+\fajl
+{ 4-out.txt }
+{ 382 byte }
+{ Sat Apr 25 12:41:04 2020 }
+{ 4-out tesztesetfájl }
+
+\fajl
+{ 40-cmd.txt }
+{ 59 byte }
+{ Wed Apr 22 21:40:49 2020 }
+{ 40-cmd tesztesetfájl }
+
+\fajl
+{ 40-expected.txt }
+{ 181 byte }
+{ Wed Apr 22 21:40:49 2020 }
+{ 40-expected tesztesetfájl }
+
+\fajl
+{ 40-in.txt }
+{ 181 byte }
+{ Wed Apr 22 21:40:49 2020 }
+{ 40-in tesztesetfájl }
+
+\fajl
+{ 40-out.txt }
+{ 175 byte }
+{ Sat Apr 25 18:38:55 2020 }
+{ 40-out tesztesetfájl }
+
+\fajl
+{ 42-cmd.txt }
+{ 74 byte }
+{ Sat Apr 25 17:04:45 2020 }
+{ 42-cmd tesztesetfájl }
+
+\fajl
+{ 42-expected.txt }
+{ 30 byte }
+{ Sat Apr 25 17:04:45 2020 }
+{ 42-expected tesztesetfájl }
+
+\fajl
+{ 42-in.txt }
+{ 998 byte }
+{ Sat Apr 25 17:04:45 2020 }
+{ 42-in tesztesetfájl }
+
+\fajl
+{ 43-cmd.txt }
+{ 48 byte }
+{ Sat Apr 25 17:04:45 2020 }
+{ 43-cmd tesztesetfájl }
+
+\fajl
+{ 43-expected.txt }
+{ 30 byte }
+{ Sat Apr 25 17:04:45 2020 }
+{ 43-expected tesztesetfájl }
+
+\fajl
+{ 43-in.txt }
+{ 998 byte }
+{ Sat Apr 25 17:04:45 2020 }
+{ 43-in tesztesetfájl }
+
+\fajl
+{ 44-cmd.txt }
+{ 65 byte }
+{ Wed Apr 22 21:40:49 2020 }
+{ 44-cmd tesztesetfájl }
+
+\fajl
+{ 44-expected.txt }
+{ 1003 byte }
+{ Wed Apr 22 21:40:49 2020 }
+{ 44-expected tesztesetfájl }
+
+\fajl
+{ 44-in.txt }
+{ 996 byte }
+{ Wed Apr 22 21:40:49 2020 }
+{ 44-in tesztesetfájl }
+
+\fajl
+{ 44-out.txt }
+{ 970 byte }
+{ Sat Apr 25 18:38:56 2020 }
+{ 44-out tesztesetfájl }
+
+\fajl
+{ 5-cmd.txt }
+{ 70 byte }
+{ Wed Apr 22 22:27:39 2020 }
+{ 5-cmd tesztesetfájl }
+
+\fajl
+{ 5-expected.txt }
+{ 72 byte }
+{ Wed Apr 22 22:29:49 2020 }
+{ 5-expected tesztesetfájl }
+
+\fajl
+{ 5-in.txt }
+{ 368 byte }
+{ Wed Apr 22 22:27:58 2020 }
+{ 5-in tesztesetfájl }
+
+\fajl
+{ 5-out.txt }
+{ 92 byte }
+{ Sat Apr 25 14:57:51 2020 }
+{ 5-out tesztesetfájl }
+
+\fajl
+{ 6-cmd.txt }
+{ 36 byte }
+{ Wed Apr 22 22:30:51 2020 }
+{ 6-cmd tesztesetfájl }
+
+\fajl
+{ 6-expected.txt }
+{ 28 byte }
+{ Wed Apr 22 22:31:49 2020 }
+{ 6-expected tesztesetfájl }
+
+\fajl
+{ 6-in.txt }
+{ 238 byte }
+{ Wed Apr 22 22:31:27 2020 }
+{ 6-in tesztesetfájl }
+
+\fajl
+{ 6-out.txt }
+{ 234 byte }
+{ Sat Apr 25 16:14:32 2020 }
+{ 6-out tesztesetfájl }
+
+\fajl
+{ 7-cmd.txt }
+{ 52 byte }
+{ Wed Apr 22 22:33:17 2020 }
+{ 7-cmd tesztesetfájl }
+
+\fajl
+{ 7-expected.txt }
+{ 235 byte }
+{ Wed Apr 22 22:33:53 2020 }
+{ 7-expected tesztesetfájl }
+
+\fajl
+{ 7-in.txt }
+{ 245 byte }
+{ Wed Apr 22 22:32:39 2020 }
+{ 7-in tesztesetfájl }
+
+\fajl
+{ 7-out.txt }
+{ 241 byte }
+{ Sat Apr 25 16:21:49 2020 }
+{ 7-out tesztesetfájl }
+
+\fajl
+{ 8-cmd.txt }
+{ 38 byte }
+{ Wed Apr 22 22:36:05 2020 }
+{ 8-cmd tesztesetfájl }
+
+\fajl
+{ 8-expected.txt }
+{ 16 byte }
+{ Wed Apr 22 22:36:19 2020 }
+{ 8-expected tesztesetfájl }
+
+\fajl
+{ 8-in.txt }
+{ 320 byte }
+{ Wed Apr 22 22:35:26 2020 }
+{ 8-in tesztesetfájl }
+
+\fajl
+{ 9-cmd.txt }
+{ 36 byte }
+{ Wed Apr 22 22:39:16 2020 }
+{ 9-cmd tesztesetfájl }
+
+\fajl
+{ 9-expected.txt }
+{ 61 byte }
+{ Wed Apr 22 22:40:01 2020 }
+{ 9-expected tesztesetfájl }
+
+\fajl
+{ 9-in.txt }
+{ 406 byte }
+{ Wed Apr 22 22:38:53 2020 }
+{ 9-in tesztesetfájl }
+
