@@ -1,8 +1,6 @@
 load 14-in.txt
 start automated
 dig
-print
 dig
-print
 dig
 save 14-out.txt
