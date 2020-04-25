@@ -1,9 +1,7 @@
 load 5-in.txt
 start managed
-step 0
 ability
 finish
 step 1
 ability
 finish
-save 5-out.txt
