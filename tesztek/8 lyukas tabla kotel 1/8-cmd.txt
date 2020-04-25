@@ -1,4 +1,3 @@
 load 8-in.txt
 start managed
 move 1
-print

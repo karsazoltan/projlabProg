@@ -7,8 +7,8 @@ tiles 2
     1 hole 0 n none none
 tilelinks 1
     0 1
-creatures 2
+creatures 1
     0 eskimo 0 3 3
         rope none
         suit basicdiving
-        usableitems none
+        usableitems 0
