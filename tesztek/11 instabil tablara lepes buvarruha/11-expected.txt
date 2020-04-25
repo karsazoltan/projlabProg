@@ -1,6 +1,6 @@
 worlddata
     step 1
-    activeplayer 1
+    activeplayer 0
     flareparts 0
 tiles 2
     0 stable 0 n none none
@@ -10,13 +10,13 @@ tilelinks 1
 creatures 3
     0 eskimo 1 3 2
         rope none
-        suit basicsuit
-        usableitems none
+        suit basicdiving
+        usableitems 0
     1 eskimo 1 3 3
         rope none
-        suit basicsuit
-        usableitems none
+        suit basicdiving
+        usableitems 0
     2 eskimo 1 3 3
         rope none
-        suit basicsuit
-        usableitems none
+        suit basicdiving
+        usableitems 0
