@@ -1,0 +1,2 @@
+> You lost!
+> Game Stopped.
