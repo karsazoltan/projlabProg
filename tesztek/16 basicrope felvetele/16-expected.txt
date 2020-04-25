@@ -9,3 +9,4 @@ creatures 1
     0 eskimo 0 4 3
         rope basic
         suit none
+        useableitem 0
