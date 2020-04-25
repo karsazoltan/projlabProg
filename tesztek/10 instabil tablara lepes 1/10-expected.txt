@@ -1,5 +1,0 @@
-> You moved to tile 1
-> It flips over, you fall into water!
-> You have no diving suit!
-> No players with ropes nearby!
-> Game over, you lost!
