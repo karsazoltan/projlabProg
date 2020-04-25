@@ -4,4 +4,4 @@ init creatures
 2 polarbear
 0 researcher
 F
-save 1-in.txt
+save 1-out.txt

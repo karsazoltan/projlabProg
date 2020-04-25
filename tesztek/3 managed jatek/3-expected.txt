@@ -14,4 +14,4 @@ creatures 2
         rope none
         suit none
         usableitems 0
-    1 polarbear 0
+    1 polarbear 2
