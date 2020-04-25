@@ -19,7 +19,7 @@ end = 41
 def check_save_file(directory, index):
     path = os.path.join(full_path, test_folder, directory, index + '-cmd.txt')
     cmd = open(path, 'r')
-    p = subprocess.Popen(['java','-jar', 'projlabProg.jar'], stdin=PIPE, stdout=PIPE, stderr=STDOUT)
+    p = subprocess.Popen(['java','-jar', 'sumatra.jar'], stdin=PIPE, stdout=PIPE, stderr=STDOUT)
     for command in cmd.readlines():
         if 'load' in command:
             command = 'load ' + os.path.join(test_folder, directory, index + '-in.txt\n')         # Ez változott az előzőhöz képest
@@ -62,7 +62,7 @@ def check_stdout(directory, index):
     expected_lines = [line for line in expected]
     
     cmd = open(path, 'r')
-    p = subprocess.Popen(['java','-jar', 'projlabProg.jar'], stdin=PIPE, stdout=PIPE, stderr=STDOUT)
+    p = subprocess.Popen(['java','-jar', 'sumatra.jar'], stdin=PIPE, stdout=PIPE, stderr=STDOUT)
     for command in cmd.readlines():
         if 'load' in command:
             command = 'load ' + os.path.join(test_folder, directory, index + '-in.txt\n')         # Ez változott az előzőhöz képest
