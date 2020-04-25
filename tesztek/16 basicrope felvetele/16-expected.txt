@@ -6,7 +6,7 @@ tiles 1
     0 stable 3 n none none
 tilelinks 0
 creatures 1
-    0 eskimo 0 4 3
+    0 eskimo 0 2 3
         rope basic
         suit none
-        useableitem 0
+        usableitems 0
