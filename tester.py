@@ -75,7 +75,9 @@ def check_stdout(directory, index):
     for pc in problematic_chars:
         stdout = [x.replace(pc, '') for x in stdout]
         expected_lines = [x.replace(pc, '') for x in expected_lines]
-    
+    stdout = [x.upper() for x in stdout]
+    expected_lines = [x.upper() for x in expected_lines]
+   
     inside = 0
     for el in expected_lines:
         if el in stdout:
