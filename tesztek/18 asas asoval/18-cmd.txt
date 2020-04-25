@@ -1,8 +1,6 @@
 load 18-in.txt
 start automated
 use 0
-print
 use 0
-print
 use 0
 save 18-out.txt
