@@ -1,4 +1,4 @@
-load 26-in.txt
+load tesztek/26 igloo epites/26-in.txt
 start automated
 ability
-save 26-out.txt
+save tesztek/26 igloo epites/26-out.txt

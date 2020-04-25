@@ -34,12 +34,16 @@ public class BrokenShovel extends UsableItem {
      * @return még használható/nem
      */
     private boolean amortization() {
-        use_num--;
-        if (use_num >= 0)
+        if (use_num > 0){
+            use_num--;    
             System.out.println("    > Uses remaining: " + use_num);
+            return true;
+        }
         else
+        {
             System.out.println("    > This shovel has been used too much, it's completely broken!");
-        return use_num >= 0;
+            return false;
+        }
     }
     /**
      * Kiírja a megvalósító osztály adatait az átadott streamre

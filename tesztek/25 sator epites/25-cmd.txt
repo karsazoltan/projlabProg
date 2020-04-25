@@ -1,4 +1,4 @@
 load 25-in.txt
 start automated
 use 0
-save 25-expected.txt
+save 25-out.txt
