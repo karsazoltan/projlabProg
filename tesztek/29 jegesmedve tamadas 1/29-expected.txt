@@ -1,3 +1,2 @@
-Polar bear 0 moved to tile 0
-Polar bear 0 killed a player
-Game over, you lost!
+> You lost!
+> Game Stopped.

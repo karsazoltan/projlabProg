@@ -1,6 +1,6 @@
 worlddata
     step 1
-    activeplayer none
+    activeplayer 0
     flareparts 0
 tiles 1
     0 stable 2 y none none
