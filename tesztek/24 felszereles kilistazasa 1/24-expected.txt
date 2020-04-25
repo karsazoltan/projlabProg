@@ -1,0 +1,6 @@
+> Manually usable items:
+    0: shovel
+    0: tentequipment
+> Automatically used items:
+    suit none
+    rope none

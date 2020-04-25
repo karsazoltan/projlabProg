@@ -1,0 +1,7 @@
+> Tile list (? if cap unknown, S/U (cap)/H if known):
+0: ?
+> Researcher 0 is on tile 0
+    > Capacity of current tile is: 3
+> Tile list (? if cap unknown, S/U (cap)/H if known):
+0: U (3)
+> Researcher 0 is on tile 0
