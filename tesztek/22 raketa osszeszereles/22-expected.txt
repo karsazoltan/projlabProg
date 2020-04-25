@@ -5,17 +5,17 @@ worlddata
         beacon
         cartridge
         gun
-tiles 1
+tiles 2
     0 stable 6 y none none
-    1 stable 6 y none gun
+    1 stable 6 y none none
 tilelinks 1
     0 1
 creatures 2
     0 eskimo 0 1 4
         rope none
-        suit basicdivingsuit
+        suit none
         usableitems 0
-    1 eskimo 0 1 4
+    1 eskimo 0 1 2
         rope none
-        suit basicdivingsuit
+        suit none
         usableitems 0

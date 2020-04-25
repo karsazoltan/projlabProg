@@ -1,7 +1,7 @@
-load tesztek/19 asas torekeny aso/19-in.txt
+load 19-in.txt
 start automated
 use 0
 use 0
 use 0
 use 0
-save tesztek/19 asas torekeny aso/19-out.txt
+save 19-out.txt

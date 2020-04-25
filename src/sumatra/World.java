@@ -103,7 +103,7 @@ public class World implements Printable {
      * Ciklusfüggvény, a játék menetét vezérli.
      */
     private void gameLoop() {
-        int nextstormstep = ThreadLocalRandom.current().nextInt(2 * creatures.size());
+        int nextstormstep = ThreadLocalRandom.current().nextInt(Math.max(2 * creatures.size(),1));
 
         // Ha load történt, akkor történhet ilyen
         if (!activeplayer.equals("none")) {
@@ -119,7 +119,7 @@ public class World implements Printable {
                 step(stepCounter % creatures.size());
                 if (stepCounter == nextstormstep) {
                     generateSnowstorm();
-                    nextstormstep += ThreadLocalRandom.current().nextInt(2 * creatures.size());
+                    nextstormstep += ThreadLocalRandom.current().nextInt(Math.max(2 * creatures.size(),1));
                 }
             }
         } else {
