@@ -15,7 +15,7 @@ tiles 13
     9 hole 0 n none none
     10 hole 0 n none none
     11 unstable 0 n none none 1
-    12 stable 0 n none none 1
+    12 stable 0 n none none
 tilelinks 26
     0 1
     0 3

@@ -28,12 +28,12 @@ public class NoDivingSuit extends DivingSuit {
             // ha valaki kimenti
             if (q.saveMe(p, p.getTile())) {
                 // akkor a result false, mert nem esik bele igazából
-                System.out.println("You got saved!");
+                System.out.println("> You got saved!");
                 result = false;
             }
             
         }
-        if (result) System.out.println("No players with ropes nearby!");
+        if (result) System.out.println("> No players with ropes nearby!");
         return result;
     }
 }

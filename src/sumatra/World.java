@@ -123,7 +123,7 @@ public class World implements Printable {
                 }
             }
         } else {
-            while (running) {
+            while (running && input.hasNextLine()) {
                 String line = input.nextLine().trim();
                 Interpreter.interpretGameplayCommand(line);
             }

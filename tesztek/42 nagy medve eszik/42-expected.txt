@@ -4,18 +4,18 @@ worlddata
     flareparts 0
 tiles 13
     0 unstable 0 n none cartridge 1
-    1 stable 0 n none none
-    2 hole 0 n none none
-    3 hole 0 n none none
-    4 stable 0 n none gun
+    1 stable 0 n none none 
+    2 hole 0 n none none 
+    3 hole 0 n none none 
+    4 stable 0 n none gun 
     5 unstable 0 n none none 1
     6 hole 0 n none none 
-    7 stable 0 n none beacon
-    8 stable 0 n none shovel
-    9 hole 0 n none none
-    10 hole 0 n none none
+    7 stable 0 n none beacon 
+    8 stable 0 n none shovel 
+    9 hole 0 n none none 
+    10 hole 0 n none none 
     11 unstable 0 n none none 1
-    12 stable 0 n none none 1
+    12 stable 0 n none none 
 tilelinks 26
     0 1
     0 3
@@ -45,15 +45,15 @@ tilelinks 26
     11 12
 creatures 4
     0 polarbear 4
-    1 eskimo 5 5 4
+    1 eskimo 5 1 4
         rope none
         suit none
         usableitems 0
-    2 researcher 4 5 2
+    2 researcher 4 1 2
         rope none
         suit none
         usableitems 0
-    3 researcher 12 5 4
+    3 researcher 12 1 4
         rope none
         suit none
         usableitems 0

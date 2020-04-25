@@ -1,4 +1,5 @@
 load 40-in.txt
 start managed
 step 0
+1
 save 40-out.txt

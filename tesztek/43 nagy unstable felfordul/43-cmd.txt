@@ -2,4 +2,4 @@ load 43-in.txt
 start managed
 step 3
 move 11
-save 43-expected.txt
+save 43-out.txt
