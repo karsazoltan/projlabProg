@@ -65,8 +65,8 @@ public abstract class Player extends Creature{
         boolean isNearby = tile.isNeighbor(newTile);
         if( checkMana() && isNearby ){
             tile.remove(this);
-            newTile.accept(this);
             tile = newTile;
+            newTile.accept(this);
 
             --mana;
         }
@@ -81,9 +81,8 @@ public abstract class Player extends Creature{
      */
     public void forceMove(Tile newTile) {
         tile.remove(this);
-        newTile.accept(this);
-
         tile = newTile;
+        newTile.accept(this);
     }
     /**
      * Ás egyet a játékos, eltüntet egy réteg havat a mezőjéről.
