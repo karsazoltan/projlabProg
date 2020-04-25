@@ -1,4 +1,4 @@
-load 27-in.txt
+load tesztek/27 kutato kepesseg/27-in.txt
 start automated
 tiles
 ability

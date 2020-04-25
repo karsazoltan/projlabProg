@@ -1,5 +1,5 @@
 worlddata
-    step 1
+    step 0
     activeplayer none
     flareparts 0
     tiles 1
@@ -8,6 +8,6 @@ worlddata
     creatures 1
         0 eskimo 0 1 4
             rope none
-            suit basicdivingsuit
+            suit none
             usableitems 1
                 tent
