@@ -15,7 +15,11 @@ tests = os.listdir("tesztek/")
 full_path = os.path.abspath(os.getcwd())
 directories = []
 start = 0
-end = 4
+end = 42
+
+if len(sys.argv) == 3:
+    start = int(sys.argv[1])
+    end = int(sys.argv[2])
 
 
 tests = sorted(tests, key = lambda x:int(x[:2]))
@@ -29,21 +33,24 @@ for directory in directories[start:end + 1]:
 
     path = os.path.join(full_path, test_folder, directory, index + '-cmd.txt')
     cmd = open(path, 'r')
+    full_cmd = ''
     p = subprocess.Popen('java -jar projlabProg.jar', stdin=PIPE, stdout=PIPE, stderr=STDOUT)
     for command in cmd.readlines():
         if 'load' in command:
             command = 'load ' + test_folder + '\\' + directory + '\\' + index + '-in.txt'
         elif 'save' in command:
             command = 'save ' + test_folder + '\\' + directory + '\\' + index + '-out.txt'
-        time.sleep(0.01)
+            p.communicate(bytes(command, 'utf-8'))
+            break
         p.stdin.write(bytes(command + '\n', 'utf-8'))
     cmd.close()
+
+
+
 
     okay = True
     ep = os.path.join(full_path, test_folder, directory, index + '-expected.txt')
     gp = os.path.join(full_path, test_folder, directory, index + '-out.txt')
-
-
 
 
     with open(ep, 'r') as expected, open(gp, 'r') as generated:    
