@@ -1,3 +1,0 @@
-load 24-in.txt
-start automated
-inventory
