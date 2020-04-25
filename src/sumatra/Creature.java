@@ -42,8 +42,8 @@ public abstract class Creature implements Printable{
      */
     void move(Tile newTile){
         if( tile.isNeighbor(newTile) ){
-            tile = newTile;
             tile.remove(this);
+            tile = newTile;
             newTile.accept(this);
         }
     }
