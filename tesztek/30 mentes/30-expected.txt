@@ -6,7 +6,7 @@ tiles 1
     0 stable 2 y none none
 tilelinks 0
 creatures 1
-    0 researcher 0 1 4
+    0 researcher 0 5 4
         rope none
-        suit basicdiving
+        suit none
         usableitems 0
