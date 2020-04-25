@@ -15,6 +15,7 @@ public class Interpreter {
      */
     public static boolean interpretPlayerCommand(Player p, String cmd) {
         String[] words = cmd.trim().split(" ");
+        if (words[0].length() == 0) return false;
 
         switch (words[0]) {
             case "move":
@@ -71,6 +72,7 @@ public class Interpreter {
      */
     public static boolean interpretGameplayCommand(String cmd) {
         String[] words = cmd.trim().split(" ");
+        if (words[0].length() == 0) return false;
 
         switch (words[0]) {
             case "tiles":
@@ -106,6 +108,7 @@ public class Interpreter {
      */
     public static boolean interpretBasicCommand(String cmd) {
         String[] words = cmd.trim().split(" ");
+        if (words[0].length() == 0) return false;
 
         switch (words[0]) {
             case "init":

@@ -1,5 +1,5 @@
 worlddata
-    step 1
+    step 2
     activeplayer 0
     flareparts 1
         cartridge

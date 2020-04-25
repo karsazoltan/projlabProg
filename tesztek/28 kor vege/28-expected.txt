@@ -1,5 +1,5 @@
 worlddata
-    step 3
+    step 5
     activeplayer 0
     flareparts 0
 tiles 1
