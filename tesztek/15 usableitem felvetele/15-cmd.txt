@@ -1,3 +1,4 @@
 load 15-in.txt
 start automated
 pickup
+save 15-out.txt
