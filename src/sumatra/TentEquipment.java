@@ -20,7 +20,6 @@ public class TentEquipment extends UsableItem {
     }
     /**
      * Az eszközt hozzárendeli a paraméterként kapott játékoshoz.
-     *
      * @param p azon játékos, aki a tárgyat birtokolni fogja, vagy a tárgy valamilyen akciót hajt rajta végre
      */
     @Override
