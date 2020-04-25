@@ -1,0 +1,5 @@
+\fajl
+{Main.java} % Kezdet
+{250 byte} % Idptartam
+{2009.10.10~18:05~} % Résztvevők
+{...} % Leírás
