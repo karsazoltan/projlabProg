@@ -13,7 +13,7 @@ test_folder = 'tesztek'
 tests = os.listdir("tesztek/")
 full_path = os.path.abspath(os.getcwd())
 start = 0
-end = 0
+end = 42
 
 # This function checks the out.txt file of a given test case.
 def check_save_file(directory, index):
@@ -99,7 +99,6 @@ def main():
     tests = sorted(tests, key = lambda x:int(x[:2]))
     for directory in tests:
         directories.append(directory)
-
 
     for directory in directories[start:end + 1]:
         index = directory[:2].strip(' ')
