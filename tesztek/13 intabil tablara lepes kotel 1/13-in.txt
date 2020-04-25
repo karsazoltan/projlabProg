@@ -4,7 +4,7 @@ worlddata
     flareparts 0
 tiles 2
     0 stable 0 n none none
-    1 unstable 0 n none none 2
+    1 unstable 0 n none none 1
 tilelinks 1
     0 1
 creatures 3
