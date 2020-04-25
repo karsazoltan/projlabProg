@@ -22,15 +22,9 @@ def check_save_file(directory, index):
     p = subprocess.Popen(['java','-jar', 'projlabProg.jar'], stdin=PIPE, stdout=PIPE, stderr=STDOUT)
     for command in cmd.readlines():
         if 'load' in command:
-<<<<<<< HEAD
             command = 'load ' + os.path.join(test_folder, directory, index + '-in.txt\n')         # Ez változott az előzőhöz képest
         elif 'save' in command:
             command = 'save ' + os.path.join(test_folder, directory, index + '-out.txt\n')         # Ez változott az előzőhöz képest
-=======
-            command = 'load ' + os.path.join(test_folder, directory, index + '-in.txt\n')
-        elif 'save' in command:
-            command = 'save ' + os.path.join(test_folder, directory, index + '-out.txt\n')
->>>>>>> 1a0a07799a6e65b97f750d43e0ac595a62999a4c
             p.communicate(bytes(command, 'utf-8'))
             break
         p.stdin.write(bytes(command, 'utf-8'))
@@ -71,7 +65,7 @@ def check_stdout(directory, index):
     p = subprocess.Popen(['java','-jar', 'projlabProg.jar'], stdin=PIPE, stdout=PIPE, stderr=STDOUT)
     for command in cmd.readlines():
         if 'load' in command:
-            command = 'load ' + os.path.join(test_folder, directory, index + '-in.txt\n')
+            command = 'load ' + os.path.join(test_folder, directory, index + '-in.txt\n')         # Ez változott az előzőhöz képest
         p.stdin.write(bytes(command, 'utf-8'))
     stdout = p.communicate()[0].decode("utf-8").split('\n')
     cmd.close()
@@ -124,11 +118,7 @@ def main():
         print('[DONE] Every test was succesful.')
     else:
         print('[DONE] Task failed succesfully.')
-<<<<<<< HEAD
         print('Successful: ' + str(succesful) + '/' + str(end - start + 1))   # Csak mert miért is ne?
-=======
-        print('Successful: ' + str(succesful) + '/' + str(end - start + 1))
->>>>>>> 1a0a07799a6e65b97f750d43e0ac595a62999a4c
 
 
 main()
