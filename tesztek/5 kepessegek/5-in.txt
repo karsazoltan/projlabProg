@@ -3,9 +3,9 @@ worlddata
     activeplayer 0
     flareparts 0
 tiles 2
-    0 stable 0 y tent basicrope
-    1 stable 0 y none shovel
-    2 unstable 4 n none none 2
+    0 stable 3 y none none 
+    1 unstable 0 n none shovel 2
+    2 hole 4 n none none 
 tilelinks 2
     0 1
     0 2

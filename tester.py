@@ -3,9 +3,6 @@ import subprocess
 from subprocess import PIPE, STDOUT
 import time
 import sys
-from threading import Thread
-import threading
-
 
 succesful = 0
 nr = 44
@@ -16,6 +13,7 @@ full_path = os.path.abspath(os.getcwd())
 directories = []
 start = 0
 end = 42
+
 
 if len(sys.argv) == 3:
     start = int(sys.argv[1])
@@ -37,12 +35,12 @@ for directory in directories[start:end + 1]:
     p = subprocess.Popen('java -jar projlabProg.jar', stdin=PIPE, stdout=PIPE, stderr=STDOUT)
     for command in cmd.readlines():
         if 'load' in command:
-            command = 'load ' + test_folder + '\\' + directory + '\\' + index + '-in.txt'
+            command = 'load ' + test_folder + '\\' + directory + '\\' + index + '-in.txt\n'
         elif 'save' in command:
-            command = 'save ' + test_folder + '\\' + directory + '\\' + index + '-out.txt'
+            command = 'save ' + test_folder + '\\' + directory + '\\' + index + '-out.txt\n'
             p.communicate(bytes(command, 'utf-8'))
             break
-        p.stdin.write(bytes(command + '\n', 'utf-8'))
+        p.stdin.write(bytes(command, 'utf-8'))
     cmd.close()
 
 

@@ -5,7 +5,7 @@ worlddata
 tiles 3
     0 stable 3 y none none 
     1 unstable 0 n none shovel 2
-    2 hole 4 n none none
+    2 hole 4 n none none 
 tilelinks 2
     0 1
     0 2

@@ -1,0 +1,7 @@
+worlddata
+    step 0
+    activeplayer none
+    flareparts 0
+tiles 0
+tilelinks 0
+creatures 0
