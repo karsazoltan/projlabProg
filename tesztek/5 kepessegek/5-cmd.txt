@@ -6,4 +6,4 @@ finish
 step 1
 ability
 finish
-print
+save 5-out.txt
