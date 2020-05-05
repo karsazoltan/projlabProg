@@ -10,6 +10,6 @@ public class Main {
      * @param args Kapott argumentumok
      */
     public static void main(String[] args) {
-        World.getInstance().initialLoop();
+        MainWindow mw = new MainWindow();
     }
 }
