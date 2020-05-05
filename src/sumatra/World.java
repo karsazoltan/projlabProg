@@ -558,4 +558,17 @@ public class World implements Printable {
     Scanner getInputScanner(){
         return input;
     }
+
+    // TODO COMMENT
+    public boolean isRunning() {
+        return running;
+    }
+
+    public String getActivePlayer() {
+        return activeplayer;
+    }
+
+    public Creature getCreatureAt(int index) {
+        return creatures.get(index);
+    }
 }

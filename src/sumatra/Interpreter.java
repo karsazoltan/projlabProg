@@ -136,4 +136,29 @@ public class Interpreter {
         }
         return false;
     }
+
+    // TODO COMMENT, VAJON JÓ-E EZ ÍGY
+    public static void interpretCommand(String cmd) {
+        if (World.getInstance().isRunning()) {
+            String activePlayer = World.getInstance().getActivePlayer();
+            if (!activePlayer.equals("none"))
+                interpretPlayerCommand((Player) World.getInstance().getCreatureAt(Integer.parseInt(activePlayer)), cmd);
+            else
+                interpretGameplayCommand(cmd);
+        } else {
+            interpretBasicCommand(cmd);
+        }
+    }
+
+    public static void generateTilesFrom(ArrayList<String> info) {
+
+    }
+
+    public static void generateCreaturesFrom(ArrayList<String> info) {
+
+    }
+
+    public static ArrayList<Command> validCommands() {
+        return null;
+    }
 }
