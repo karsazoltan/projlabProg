@@ -12,8 +12,9 @@ import java.util.ArrayList;
 public class FlarePartsPanel extends JPanel implements IView {
     private JTextPane textPane;
     private ArrayList<JLabel> pLabels = new ArrayList<JLabel>();
-    // TODO STUB
+
     public FlarePartsPanel(){        
+        // TODO Make this look a little bit better maybe?
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         JLabel fLabel = new JLabel("Flareparts");
         Font labelFont = fLabel.getFont();
