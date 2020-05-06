@@ -571,4 +571,6 @@ public class World implements Printable {
     public Creature getCreatureAt(int index) {
         return creatures.get(index);
     }
+
+    public boolean isManaged() { return managedMode; }
 }
