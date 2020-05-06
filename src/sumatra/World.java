@@ -629,4 +629,13 @@ public class World implements Printable {
     }
 
     public boolean isManaged() { return managedMode; }
+
+
+    public ArrayList<String> getFlarepartNames(){
+        ArrayList<String> names = new ArrayList<String>();
+        for( FlarePart fp : flareParts ){
+            names.add(fp.toString());
+        }
+        return names;
+    }
 }
