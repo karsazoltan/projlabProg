@@ -2,10 +2,7 @@ package sumatra;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 
 public class GameAreaPanel extends JPanel {
@@ -15,7 +12,10 @@ public class GameAreaPanel extends JPanel {
     private static ArrayList<TileView> tiles;
 
     private GameAreaPanel() {
+        super();
         tiles = new ArrayList<>();
+        setBackground(Color.WHITE);
+        setVisible(true);
     }
 
     public static void saveLayout(String filename) throws IOException {
@@ -32,10 +32,24 @@ public class GameAreaPanel extends JPanel {
     }
 
     public static void attachTileViews() {
-
+        // TODO
     }
 
-    public static void loadTileViewsFromFile(String path) {
+    public static void loadTileViewsFromFile(String filename) throws IOException {
+        FileReader fis = new FileReader(filename);
+        BufferedReader br = new BufferedReader(fis);
 
+        String[] dataline = br.readLine().trim().split(" ");
+        if (!dataline[0].equals("datafile")) throw new IOException("Hibás első sor!");
+
+        World.getInstance().loadConfig(dataline[1]);
+
+        int count = Integer.parseInt(br.readLine().trim().split(" ")[1]);
+
+        for (int i = 0; i < count; i++) {
+            // TODO
+        }
+
+        br.close();
     }
 }

@@ -18,12 +18,12 @@ public class MainWindow extends JFrame {
         leftPanel.add(new CreaturesPanel());
         leftPanel.setPreferredSize(new Dimension(200, 600));
         JSeparator leftSeparator = new JSeparator(SwingConstants.VERTICAL);
-        leftSeparator.setPreferredSize(new Dimension(10, 600));
+        leftSeparator.setPreferredSize(new Dimension(5, 600));
         leftOuterPanel.add(leftPanel, BorderLayout.CENTER);
         leftOuterPanel.add(leftSeparator, BorderLayout.LINE_END);
 
         add(leftOuterPanel, BorderLayout.LINE_START);
-        add(new GameAreaPanel(), BorderLayout.CENTER);
+        add(GameAreaPanel.getInstance(), BorderLayout.CENTER);
         add(new CommandPanel(), BorderLayout.LINE_END);
 
         setVisible(true);
