@@ -152,12 +152,14 @@ public class Interpreter {
         }
     }
 
-    public static void generateTilesFrom(ArrayList<String> info) {
-
+    public static void generateTilesFrom(ArrayList<String> info, int tileCount, int linkCount) {
+        // INPUT: stable 3 none / unstable 5 shovel 3 / type snow item [cap]
+        World.getInstance().generateTilesFrom(info, tileCount, linkCount);
     }
 
     public static void generateCreaturesFrom(ArrayList<String> info) {
-
+        // Itt bőven elég, ha soronként a következő: 0 polarbear / 1 researcher / tileidx creature
+        World.getInstance().generateCreaturesFrom(info);
     }
 
     public static List<Command> validCommands() {
