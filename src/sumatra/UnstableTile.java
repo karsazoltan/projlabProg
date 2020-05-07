@@ -21,6 +21,7 @@ public class UnstableTile extends Tile {
         if (creatures.size() > capacity) {
             flip();
         }
+        updateViews();
     }
 
     /**

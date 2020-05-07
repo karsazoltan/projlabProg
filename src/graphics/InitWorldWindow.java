@@ -1,6 +1,8 @@
 package graphics;
 
 import javax.swing.*;
+
+import sumatra.Interpreter;
 import sumatra.World;
 import java.awt.*;
 import java.awt.event.*;
@@ -185,7 +187,7 @@ public class InitWorldWindow extends JFrame {
                     setup.add(l);
                 }
 
-                World.getInstance().generateTilesFrom(setup, tileID.size(), link.size());
+                Interpreter.generateTilesFrom(setup, tileID.size(), link.size());
                 dispose();
 			}
         });

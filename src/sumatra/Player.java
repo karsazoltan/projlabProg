@@ -58,6 +58,14 @@ public abstract class Player extends Creature{
     }
 
     /**
+     * Csökkenti a munkaegységek számát, és szól a nézeteknek, hogy ez megváltozott.
+     */
+    protected void decreaseMana() {
+        mana--;
+        updateViews();
+    }
+
+    /**
      * A játékost egy új mezőre lépteti.
      * @param newTile a mező, ahova a játékos lép.
      */
@@ -68,7 +76,7 @@ public abstract class Player extends Creature{
             tile = newTile;
             newTile.accept(this);
 
-            --mana;
+            decreaseMana();
         }
         if (!isNearby) {
             System.out.println("> Error: You can't do this - it's not a neighboring tile");
@@ -83,6 +91,7 @@ public abstract class Player extends Creature{
         tile.remove(this);
         tile = newTile;
         newTile.accept(this);
+        updateViews();
     }
     /**
      * Ás egyet a játékos, eltüntet egy réteg havat a mezőjéről.
@@ -90,7 +99,7 @@ public abstract class Player extends Creature{
     public void dig() {
         if( checkMana() ){
             tile.removeSnow(1);
-            --mana;
+            decreaseMana();
         }
     }
 
@@ -112,7 +121,7 @@ public abstract class Player extends Creature{
     public void useItem(int index, Tile target) {
         if( checkMana() ){
             usableItems.get(index).use(target);
-            --mana;
+            decreaseMana();
         }
     }
 
@@ -122,7 +131,7 @@ public abstract class Player extends Creature{
     public void pickUpItem() {        
         if( checkMana() ){
             tile.pickUpItem(this);
-            --mana;
+            decreaseMana();
         }
     }
 
@@ -139,6 +148,7 @@ public abstract class Player extends Creature{
      */ 
     public void addUsableItem(UsableItem item) {
         usableItems.add(item);
+        updateViews();
     }
 
     /**
@@ -147,6 +157,7 @@ public abstract class Player extends Creature{
      */
     public void removeUsableItem(UsableItem item) {
         usableItems.remove(item);
+        updateViews();
     }
 
     /**
@@ -156,9 +167,7 @@ public abstract class Player extends Creature{
      * @return a kimentés sikeressége.
      */ 
     public boolean saveMe(Player p, Tile target){
-        boolean result = rope.save(p, target, tile);
-
-        return result;
+        return rope.save(p, target, tile);
     }
 
     /**
@@ -168,6 +177,7 @@ public abstract class Player extends Creature{
     public void damage(int amount){
         System.out.println("Player " + index + " lost " + amount + " health");
         health -= amount;
+        updateViews();
         if( health < 0 )
             World.getInstance().loseGame();
     }
@@ -178,6 +188,7 @@ public abstract class Player extends Creature{
      */ 
     public void heal(int amount){
         health += amount;
+        updateViews();
     }
 
     /**
@@ -186,6 +197,7 @@ public abstract class Player extends Creature{
      */
     public void addDivingSuit(DivingSuit ds){
         divingSuit = ds;
+        updateViews();
     }
     /**
      * A játékos kap egy új kötelet.
@@ -193,6 +205,7 @@ public abstract class Player extends Creature{
      */
     public void addRope(Rope r){
         rope = r;
+        updateViews();
     }
 
     /**

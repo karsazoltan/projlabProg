@@ -24,7 +24,7 @@ public class Researcher extends Player{
     public void useAbility(Tile target){        
         if( mana > 0 && ( tile.isNeighbor(target) || target == this.tile ) ){
             target.revealCapacity();
-            --mana;
+            decreaseMana();
         }
     }
 }
