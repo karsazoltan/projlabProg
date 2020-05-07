@@ -41,6 +41,7 @@ public class MainWindow extends JFrame {
             if (jfk.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
                 try {
                     GameAreaPanel.getInstance().saveLayout(jfk.getSelectedFile().getAbsolutePath());
+                    CommandPanel.getInstance().updateButtons();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -53,6 +54,7 @@ public class MainWindow extends JFrame {
             if (jfk.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
                 try {
                     GameAreaPanel.getInstance().loadTileViewsFromFile(jfk.getSelectedFile().getAbsolutePath());
+                    CommandPanel.getInstance().updateButtons();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -74,7 +76,7 @@ public class MainWindow extends JFrame {
         // Regisztrálás //
         add(leftOuterPanel, BorderLayout.LINE_START);
         add(GameAreaPanel.getInstance(), BorderLayout.CENTER);
-        add(new CommandPanel(), BorderLayout.LINE_END);
+        add(CommandPanel.getInstance(), BorderLayout.LINE_END);
         setJMenuBar(menuBar);
 
         setVisible(true);
