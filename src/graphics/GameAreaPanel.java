@@ -37,6 +37,7 @@ public class GameAreaPanel extends JPanel {
 
     public void attachTileViews() {
         int x = 10, y = 10;
+        tiles.clear();
         for (int i = 0; i < World.getInstance().getTileCount(); i++) {
             tiles.add(new TileView(World.getInstance().getTileAt(i), x, y));
             x += 60;
@@ -65,6 +66,7 @@ public class GameAreaPanel extends JPanel {
 
         int count = Integer.parseInt(br.readLine().trim().split(" ")[1]);
 
+        tiles.clear();
         for (int i = 0; i < count; i++) {
             String[] info = br.readLine().trim().split(" ");
             tiles.add(new TileView(World.getInstance().getTileAt(Integer.parseInt(info[1])),
