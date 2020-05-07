@@ -3,6 +3,7 @@ package graphics;
 import sumatra.Interpreter;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class CommandPanel extends JPanel {
     public static CommandPanel getInstance() { return instance; }
 
     private CommandPanel() {
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setLayout(new GridLayout(0, 1));
         commandButtons = new ArrayList<>();
         updateButtons();
     }
@@ -33,6 +34,8 @@ public class CommandPanel extends JPanel {
             cb.setText(cb.getCommand().getMessage());
             this.add(cb);
         }
+
+        setPreferredSize(new Dimension(250, c.size() * 40));
         revalidate();
     }
 

@@ -9,7 +9,7 @@ import java.io.IOException;
 public class MainWindow extends JFrame {
     public MainWindow() {
         super("Sumatra :: Jégmező");
-        setSize(600, 600);
+        setSize(900, 600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
@@ -20,12 +20,23 @@ public class MainWindow extends JFrame {
         leftPanel.add(new FlarePartsPanel());
         leftPanel.add(CreaturesPanel.getInstance());
         leftPanel.setPreferredSize(new Dimension(200, 600));
-        JSeparator leftSeparator = new JSeparator(SwingConstants.VERTICAL);
-        leftSeparator.setPreferredSize(new Dimension(5, 600));
-        leftOuterPanel.add(leftPanel, BorderLayout.CENTER);
-        leftOuterPanel.add(leftSeparator, BorderLayout.LINE_END);
+        leftOuterPanel.add(leftPanel, BorderLayout.PAGE_START);
+
+        JPanel rightOuterPanel = new JPanel();
+        rightOuterPanel.add(CommandPanel.getInstance(), BorderLayout.PAGE_START);
 
         // Menüsor //
+        createMenuStrip();
+
+        // Regisztrálás //
+        add(leftOuterPanel, BorderLayout.LINE_START);
+        add(GameAreaPanel.getInstance(), BorderLayout.CENTER);
+        add(rightOuterPanel, BorderLayout.LINE_END);
+
+        setVisible(true);
+    }
+
+    private void createMenuStrip() {
         JMenuBar menuBar = new JMenuBar();
 
         JMenu fileMenu = new JMenu("File");
@@ -73,13 +84,6 @@ public class MainWindow extends JFrame {
         worldInitMI.addActionListener(e -> new InitWorldWindow());
         creatInitMI.addActionListener(e -> new InitCreatureWindow(World.getInstance().getTileCount()));
 
-
-        // Regisztrálás //
-        add(leftOuterPanel, BorderLayout.LINE_START);
-        add(GameAreaPanel.getInstance(), BorderLayout.CENTER);
-        add(CommandPanel.getInstance(), BorderLayout.LINE_END);
         setJMenuBar(menuBar);
-
-        setVisible(true);
     }
 }
