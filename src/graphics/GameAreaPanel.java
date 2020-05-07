@@ -78,6 +78,8 @@ public class GameAreaPanel extends JPanel {
     private void displayTileViews() {
         for (TileView tv : tiles) {
             tv.setBounds(tv.getPosition().x, tv.getPosition().y, 50, 50);
+            // TODO Linkek
+            // TODO Rearrange?
             this.add(tv);
         }
     }
