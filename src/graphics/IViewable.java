@@ -1,8 +1,11 @@
 package graphics;
 
+/**
+ * Obszerválható objektumok interfésze
+ */
 public interface IViewable {
     /**
-     * Hozzád a tárolt nézetek közé még egyet.
+     * Hozzáad a tárolt nézetek közé még egyet.
      * @param v - a hozzáadott View
      */
     void addView(IView v);
