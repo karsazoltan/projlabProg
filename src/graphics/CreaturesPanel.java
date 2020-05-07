@@ -28,6 +28,7 @@ public class CreaturesPanel extends JPanel {
     }
 
     public void attachViews(){
+        
         ArrayList<Creature> creatures = World.getInstance().getCreatures();
 
         /*/
@@ -54,7 +55,7 @@ public class CreaturesPanel extends JPanel {
         for( Creature c : creatures ){
             OneCreaturePanel ocp = new OneCreaturePanel(c);
             panel.add( ocp );
-            // do view thing too here TODO
+            c.addView(ocp);
         }
     }
 }
