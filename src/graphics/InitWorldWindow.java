@@ -186,6 +186,11 @@ public class InitWorldWindow extends JFrame {
                 }
 
                 Interpreter.generateTilesFrom(setup, tileID.size(), link.size());
+<<<<<<< HEAD
+=======
+                CommandPanel.getInstance().updateButtons();
+                GameAreaPanel.getInstance().attachTileViews();
+>>>>>>> 5606141fbb7c4c69824ad5e22a4bef136ae1e994
                 dispose();
 			}
         });

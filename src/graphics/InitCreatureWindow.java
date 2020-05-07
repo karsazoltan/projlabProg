@@ -73,6 +73,7 @@ public class InitCreatureWindow extends JFrame {
                 Interpreter.generateCreaturesFrom(addedCreatures);
                 CommandPanel.getInstance().updateButtons();
                 CreaturesPanel.getInstance().attachViews();
+                GameAreaPanel.getInstance().attachTileViews();
                 dispose();
 			}
         });
