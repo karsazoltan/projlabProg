@@ -19,7 +19,7 @@ public class CommandPanel extends JPanel {
             commandButtons.clear();
 
         for (Command comm : c) {
-            commandButtons.add(new CommandButton(comm.getCommand()));
+            commandButtons.add(new CommandButton(comm.getCommand(), this));
         }
 
         for (CommandButton cb : commandButtons) {

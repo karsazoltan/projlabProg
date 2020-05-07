@@ -79,7 +79,8 @@ public class MainWindow extends JFrame {
 
         //TODO Valaki szépítse meg aki ért ehhez a szarhoz
         JPanel rightPanel = new JPanel();
-        rightPanel.setPreferredSize(new Dimension(200, 600));
+        rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
+        rightPanel.setPreferredSize(new Dimension(100, 600));
         add(rightPanel, BorderLayout.EAST);
 
         setVisible(true);

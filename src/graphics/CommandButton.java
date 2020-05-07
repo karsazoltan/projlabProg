@@ -7,10 +7,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class CommandButton extends JButton implements ActionListener {
+    private CommandPanel cp;
     private String command;
 
-    public CommandButton(String comm) {
+    public CommandButton(String comm, CommandPanel cp) {
         command = comm;
+        this.cp = cp;
     }
 
     public String getCommand() {
@@ -19,6 +21,6 @@ public class CommandButton extends JButton implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         Interpreter.interpretCommand(command);
-
+        cp.updateButtons();
     }
 }
