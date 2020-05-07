@@ -288,4 +288,23 @@ public abstract class Player extends Creature{
         }
         pw.flush();
     }
+
+
+
+    @Override
+    public ArrayList<String> getDisplayData() {
+        ArrayList<String> data = new ArrayList<String>();
+        data.add( "HP: " + health );
+        data.add( "WU: " + mana );
+        if( !divingSuit.toString().equals("none") )
+            data.add( divingSuit.toString() );
+        if( !rope.toString().equals("none") )
+            data.add( rope.toString() );
+
+        for( Item i : usableItems ){
+            data.add( i.toString() );
+        }
+        
+        return data;
+    }
 }

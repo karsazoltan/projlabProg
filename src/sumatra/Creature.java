@@ -111,6 +111,12 @@ public abstract class Creature implements Printable, IViewable {
     }
 
     /**
+     * Visszaad egy lista sztringet a lény állapotáról, a megjelenítéshez kell.
+     * @return egy lista sztring.
+     */
+    abstract public ArrayList<String> getDisplayData();
+
+    /**
      * Betölt a bemeneti bufferedreaderből egy lényt.
      * @param br A bemeneti fájlt tartalmazó, megfelelő állapotban lévő bufferedreader.
      * @return A létrehozott élőlény.

@@ -6,11 +6,10 @@ import java.awt.Font;
 import java.util.ArrayList;
 
 import sumatra.Creature;
+import sumatra.Bear;
 
 public class OneCreaturePanel extends JPanel implements IView{
-    JLabel hpLabel = new JLabel();
-    JLabel manaLabel = new JLabel();
-    ArrayList<JLabel> iLabels = new ArrayList<JLabel>();
+    ArrayList<JLabel> labels = new ArrayList<JLabel>();
     Creature creature;
 
     public OneCreaturePanel(Creature pcreature){
@@ -21,12 +20,21 @@ public class OneCreaturePanel extends JPanel implements IView{
         Font labelFont = nameLabel.getFont();
         nameLabel.setFont(new Font(labelFont.getName(), Font.BOLD, 20));
         add(nameLabel);
-        add(hpLabel);
-        add(manaLabel);
+    
         subjectChanged();
     }
 
     public void subjectChanged(){
-        // TODO 
+        for( JLabel label : labels ){
+            remove( label );
+        }
+        labels.clear();
+
+        ArrayList<String> data = creature.getDisplayData();
+        for( String str : data ){
+            JLabel nLabel = new JLabel(str);
+            add(nLabel);
+            labels.add(nLabel);
+        }
     }
 }

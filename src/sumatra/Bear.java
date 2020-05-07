@@ -33,6 +33,13 @@ public class Bear extends Creature{
         pw.println(prefix + index + " polarbear " + World.getInstance().getTileIndex(tile));
         pw.flush();
     }
+
+    @Override
+    public ArrayList<String> getDisplayData() {
+        ArrayList<String> data = new ArrayList<String>();
+        return data;
+    }
+
     /**
      * A medve lejátsza a körét, feltételezve, hogy a játék automata módban van.
      */
