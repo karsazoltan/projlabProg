@@ -62,6 +62,7 @@ public class Interpreter {
                 p.buildFlare();
                 break;
             case "finish":
+                World.getInstance().playerFinished();
                 return true;
             default:
                 return interpretGameplayCommand(cmd);

@@ -127,8 +127,9 @@ public class World implements Printable, IViewable {
             }
         } else {
             while (running && input.hasNextLine()) {
-                String line = input.nextLine().trim();
-                Interpreter.interpretGameplayCommand(line);
+                //String line = input.nextLine().trim();
+                //Interpreter.interpretGameplayCommand(line);
+                // TODO SZKENNERKISZEDÉS
             }
         }
     }
@@ -555,8 +556,8 @@ public class World implements Printable, IViewable {
             creatures.get(idx).playManagedRound();
         else
             creatures.get(idx).playRound();
-            
-        activeplayer = "none";
+
+        //activeplayer = "none";
     }
 
     /**
@@ -656,6 +657,10 @@ public class World implements Printable, IViewable {
 
     public int getTileCount() {
         return tiles.size();
+    }
+
+    public void playerFinished() {
+        activeplayer = "none";
     }
 
     /**
