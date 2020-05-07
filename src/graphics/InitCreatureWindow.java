@@ -71,6 +71,7 @@ public class InitCreatureWindow extends JFrame {
 			public void actionPerformed(ActionEvent e)
 			{
                 Interpreter.generateCreaturesFrom(addedCreatures);
+                CommandPanel.getInstance().updateButtons();
                 dispose();
 			}
         });
