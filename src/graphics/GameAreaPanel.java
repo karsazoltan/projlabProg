@@ -46,7 +46,7 @@ public class GameAreaPanel extends JPanel {
         String[] dataline = br.readLine().trim().split(" ");
 
         if (dataline[0].equals("worlddata")) {
-            World.getInstance().loadConfig(dataline[0]);
+            World.getInstance().loadConfig(filename);
             attachTileViews();
             return;
         } else if (!dataline[0].equals("datafile"))
