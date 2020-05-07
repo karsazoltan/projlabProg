@@ -10,7 +10,7 @@ public class Main {
      * @param args Kapott argumentumok
      */
     public static void main(String[] args) {
-        //MainWindow mw = new MainWindow();
+        MainWindow mw = new MainWindow();
 
         
     }
