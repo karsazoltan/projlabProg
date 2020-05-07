@@ -176,7 +176,8 @@ public class Interpreter {
                         new Command("Use character ability", "ability", 0),
                         new Command("Pick up item from current tile", "pickup", 0),
                         new Command("Build flare", "buildflare", 0),
-                        new Command("Finish round", "finish", 0)
+                        new Command("Finish round", "finish", 0),
+                        new Command("Stop game", "stop", 0)
                 );
             else if (World.getInstance().isManaged())
                 return Arrays.asList(
