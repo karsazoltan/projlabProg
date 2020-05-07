@@ -13,7 +13,7 @@ public class CreaturesPanel extends JPanel {
     public static CreaturesPanel getInstance() { return instance; }
 
     JPanel panel = new JPanel();
-    public CreaturesPanel(){        
+    private CreaturesPanel(){
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         
         JLabel cLabel = new JLabel("Creatures");

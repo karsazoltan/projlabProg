@@ -12,8 +12,6 @@ public class CommandPanel extends JPanel {
     private static CommandPanel instance = new CommandPanel();
     public static CommandPanel getInstance() { return instance; }
 
-    private static ArrayList<TileView> tiles;
-
     private CommandPanel() {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         commandButtons = new ArrayList<>();
@@ -24,11 +22,11 @@ public class CommandPanel extends JPanel {
         if (!commandButtons.isEmpty())
             commandButtons.clear();
 
+        this.removeAll();
+
         for (Command comm : c) {
             commandButtons.add(new CommandButton(comm, this));
         }
-
-        this.removeAll();
 
         for (CommandButton cb : commandButtons) {
             cb.addActionListener(cb);
@@ -39,9 +37,6 @@ public class CommandPanel extends JPanel {
     }
 
     public void updateButtons() {
-        List<Command> commands = new ArrayList<>();
-        commands = Interpreter.validCommands();
-
-        setButtons(commands);
+        setButtons(Interpreter.validCommands());
     }
 }
