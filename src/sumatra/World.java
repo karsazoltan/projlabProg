@@ -1,4 +1,7 @@
 package sumatra;
+import graphics.IView;
+import graphics.IViewable;
+
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -7,7 +10,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * A játékot menedzselő singleton osztály. Kezeli a világot alkotó Tile mezőket, generálja a játékteret,
  * illetve néha hóviharokat generál.
  */
-public class World implements Printable {
+public class World implements Printable, IViewable {
     /** A játékban résztvevő lények tömbje */
     private ArrayList<Creature> creatures;
     /** A játék során összegyűjtött jelzőrakéta-alkatrészek */
@@ -490,6 +493,7 @@ public class World implements Printable {
      */
     public void registerFlarePart(FlarePart fp) {
         flareParts.add(fp);
+        updateViews();
     }
 
     /**
@@ -648,5 +652,34 @@ public class World implements Printable {
      */
     public ArrayList<Creature> getCreatures(){
         return creatures;
+    }
+
+    public int getTileCount() {
+        return tiles.size();
+    }
+
+    /**
+     * Nézeti lista
+     */
+    private ArrayList<IView> views = new ArrayList<>();
+
+    /**
+     * Hozzáad a tárolt nézetek közé még egyet.
+     *
+     * @param v - a hozzáadott View
+     */
+    @Override
+    public void addView(IView v) {
+        views.add(v);
+    }
+
+    /**
+     * Frissíti a nézeteket.
+     */
+    @Override
+    public void updateViews() {
+        for (IView v : views) {
+            v.subjectChanged();
+        }
     }
 }

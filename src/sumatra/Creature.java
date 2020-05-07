@@ -1,11 +1,15 @@
 package sumatra;
 
+import graphics.IView;
+import graphics.IViewable;
+
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 //public class Creature implements Printable{
-public abstract class Creature implements Printable{
+public abstract class Creature implements Printable, IViewable {
     /**
      * A mező melyen a lény jelenleg tartózkodik.
      */
@@ -45,6 +49,7 @@ public abstract class Creature implements Printable{
             tile.remove(this);
             tile = newTile;
             newTile.accept(this);
+            updateViews();
         }
     }
 
@@ -128,6 +133,32 @@ public abstract class Creature implements Printable{
             return pc;
         } catch (IOException e) {
             throw new InputMismatchException("Invalid Creature config!");
+        }
+    }
+
+
+    /**
+     * Nézeti lista
+     */
+    private ArrayList<IView> views = new ArrayList<>();
+
+    /**
+     * Hozzáad a tárolt nézetek közé még egyet.
+     *
+     * @param v - a hozzáadott View
+     */
+    @Override
+    public void addView(IView v) {
+        views.add(v);
+    }
+
+    /**
+     * Frissíti a nézeteket.
+     */
+    @Override
+    public void updateViews() {
+        for (IView v : views) {
+            v.subjectChanged();
         }
     }
 }

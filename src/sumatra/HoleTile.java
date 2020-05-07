@@ -17,6 +17,7 @@ public class HoleTile extends Tile {
         creatures.add(c);
         System.out.println("> It's a hole, you fall into water!");
         c.fallInWater();
+        updateViews();
     }
 
     /**

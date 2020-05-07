@@ -20,38 +20,65 @@ public class GameAreaPanel extends JPanel {
         setVisible(true);
     }
 
-    public static void saveLayout(String filename) throws IOException {
+    public void saveLayout(String filename) throws IOException {
         FileOutputStream fos = new FileOutputStream(filename);
         PrintWriter pw = new PrintWriter(fos);
         pw.write("datafile " + filename + ".data.txt\n");
         pw.write("tiles " + tiles.size() + "\n");
         for (int i = 0; i < tiles.size(); i++) {
-            Point p = tiles.get(i).getLayout();
-            pw.write("tile " + i + " " + p.x + " " + p.y + "\n");
+            Point p = tiles.get(i).getPosition();
+            pw.write("    tile " + i + " " + p.x + " " + p.y + "\n");
         }
         pw.flush();
         pw.close();
+
+        World.getInstance().saveConfig(filename + ".data.txt");
     }
 
-    public static void attachTileViews() {
-        // TODO
+    public void attachTileViews() {
+        int x = 10, y = 10;
+        for (int i = 0; i < World.getInstance().getTileCount(); i++) {
+            tiles.add(new TileView(World.getInstance().getTileAt(i), x, y));
+            x += 60;
+            if (x >= this.getWidth()) {
+                y += 60;
+                x = 10;
+            }
+        }
+        displayTileViews();
     }
 
-    public static void loadTileViewsFromFile(String filename) throws IOException {
+    public void loadTileViewsFromFile(String filename) throws IOException {
         FileReader fis = new FileReader(filename);
         BufferedReader br = new BufferedReader(fis);
 
         String[] dataline = br.readLine().trim().split(" ");
-        if (!dataline[0].equals("datafile")) throw new IOException("Hibás első sor!");
+
+        if (dataline[0].equals("worlddata")) {
+            World.getInstance().loadConfig(filename);
+            attachTileViews();
+            return;
+        } else if (!dataline[0].equals("datafile"))
+            throw new IOException("Hibás első sor!");
 
         World.getInstance().loadConfig(dataline[1]);
 
         int count = Integer.parseInt(br.readLine().trim().split(" ")[1]);
 
         for (int i = 0; i < count; i++) {
-            // TODO
+            String[] info = br.readLine().trim().split(" ");
+            tiles.add(new TileView(World.getInstance().getTileAt(Integer.parseInt(info[1])),
+                    Integer.parseInt(info[2]), Integer.parseInt(info[3])));
         }
+        displayTileViews();
 
         br.close();
+    }
+
+    private void displayTileViews() {
+        for (TileView tv : tiles) {
+            tv.setBounds(tv.getPosition().x, tv.getPosition().y, 50, 50);
+            this.add(tv);
+        }
     }
 }
