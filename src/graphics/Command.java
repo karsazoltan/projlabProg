@@ -1,4 +1,4 @@
-package sumatra;
+package graphics;
 
 public class Command {
     // TODO STUB

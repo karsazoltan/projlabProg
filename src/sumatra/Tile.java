@@ -3,7 +3,6 @@ package sumatra;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.Random;
 
 
 /**

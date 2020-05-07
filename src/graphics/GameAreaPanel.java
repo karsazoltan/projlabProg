@@ -1,4 +1,4 @@
-package sumatra;
+package graphics;
 
 import javax.swing.*;
 import java.awt.*;

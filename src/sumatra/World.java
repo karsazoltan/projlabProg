@@ -629,4 +629,24 @@ public class World implements Printable {
     }
 
     public boolean isManaged() { return managedMode; }
+
+    /**
+     * Visszaadja a jelenleg megszerzet jelzőrakéta darabok neveit.
+     * @return a begyűjtött darabok nevei egy String listában.
+     */
+    public ArrayList<String> getFlarepartNames(){
+        ArrayList<String> names = new ArrayList<String>();
+        for( FlarePart fp : flareParts ){
+            names.add(fp.toString());
+        }
+        return names;
+    }
+
+    /**
+     * Visszaadja a lényeket a játékban.
+     * @return a lények egy listában.
+     */
+    public ArrayList<Creature> getCreatures(){
+        return creatures;
+    }
 }

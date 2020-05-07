@@ -1,5 +1,7 @@
 package sumatra;
 
+import graphics.Command;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
