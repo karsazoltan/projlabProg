@@ -19,6 +19,10 @@ public class MainWindow extends JFrame {
         leftOuterPanel.add(CreaturesPanel.getInstance(), BorderLayout.CENTER);
         leftOuterPanel.setPreferredSize(new Dimension(200, 0));
 
+        JPanel centerPanel = new JPanel(new BorderLayout());
+        centerPanel.add(GameAreaPanel.getInstance(), BorderLayout.CENTER);
+        centerPanel.add((new ConsoleLogger()).getComponent(), BorderLayout.PAGE_END);
+
         JPanel rightOuterPanel = new JPanel(new BorderLayout());
         rightOuterPanel.add(CommandPanel.getInstance(), BorderLayout.PAGE_START);
 
@@ -27,7 +31,7 @@ public class MainWindow extends JFrame {
 
         // Regisztrálás //
         add(leftOuterPanel, BorderLayout.LINE_START);
-        add(GameAreaPanel.getInstance(), BorderLayout.CENTER);
+        add(centerPanel, BorderLayout.CENTER);
         add(rightOuterPanel, BorderLayout.LINE_END);
 
         setVisible(true);
