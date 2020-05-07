@@ -21,6 +21,8 @@ public class TileView extends JPanel implements IView {
         views.add(new ItemView());
         for(int i = 0; i < 6; i++)
             views.add(new CreatureView(i));
+
+        subjectChanged();
     }
 
     @Override
