@@ -3,6 +3,7 @@ package graphics;
 import javax.swing.*;
 
 import sumatra.Interpreter;
+import sumatra.World;
 import java.awt.*;
 import java.awt.event.*;
 import java.text.NumberFormat;
@@ -185,7 +186,6 @@ public class InitWorldWindow extends JFrame {
                 }
 
                 Interpreter.generateTilesFrom(setup, tileID.size(), link.size());
-                CommandPanel.getInstance().updateButtons();
                 dispose();
 			}
         });
