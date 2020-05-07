@@ -24,14 +24,14 @@ public class CommandButton extends JButton implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (command.getParameters() != 0) {
             JDialog d = new JDialog();
-            d.setSize(50, 200);
-            ArrayList<JTextField> tfs = new ArrayList<>();
+            d.setSize(200, 30 * (command.getParameters() + 2));
             d.setTitle("Enter parameters");
-            d.setLayout(new GridLayout(command.getParameters()+1, 1));
+            d.setLayout(new GridLayout(0, 1));
 
+            ArrayList<JTextField> tfs = new ArrayList<>();
             for (int i = 0; i < command.getParameters(); i++) {
                 JTextField tf = new JTextField();
-                tf.setSize(new Dimension( 50,20));
+                tf.setSize(new Dimension(200,30));
                 tfs.add(tf);
                 d.add(tf);
             }
@@ -40,18 +40,18 @@ public class CommandButton extends JButton implements ActionListener {
             okButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String cmd = command.getCommand();
+                    StringBuilder cmd = new StringBuilder(command.getCommand());
                     for (JTextField tf : tfs) {
-                        cmd += " "+tf.getText();
+                        cmd.append(" ").append(tf.getText());
                     }
-                    d.setVisible(false);
-                    Interpreter.interpretCommand(cmd);
+                    Interpreter.interpretCommand(cmd.toString());
                     cp.updateButtons();
+                    d.dispose();
                 }
             });
 
             d.add(okButton);
-            d.pack();
+            d.setLocationRelativeTo(null);
             d.setVisible(true);
         }
         else {
