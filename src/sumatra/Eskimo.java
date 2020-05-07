@@ -24,7 +24,7 @@ public class Eskimo extends Player {
     public void useAbility(Tile target){        
         if( mana > 0 ){
             target.setBuilding(new Igloo());
-            --mana;
+            decreaseMana();
             System.out.println("    > Igloo built on current tile");
         }
     }
