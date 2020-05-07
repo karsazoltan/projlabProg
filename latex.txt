@@ -1,368 +1,200 @@
 \fajl
 { AutomaticItem.java}
-{ 368 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ AutomaticItem programosztály }
-
-\fajl
-{ BasicDivingSuit.java}
-{ 825 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ BasicDivingSuit programosztály }
-
-\fajl
-{ BasicRope.java}
-{ 991 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ BasicRope programosztály }
-
-\fajl
-{ Beacon.java}
-{ 194 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ Beacon programosztály }
-
-\fajl
-{ Building.java}
-{ 917 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ Building programosztály }
-
-\fajl
-{ Cartridge.java}
-{ 200 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ Cartridge programosztály }
-
-\fajl
-{ DivingSuit.java}
-{ 1124 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ DivingSuit programosztály }
-
-\fajl
-{ Eskimo.java}
-{ 844 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ Eskimo programosztály }
-
-\fajl
-{ FlarePart.java}
-{ 418 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ FlarePart programosztály }
-
-\fajl
-{ Food.java}
-{ 484 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ Food programosztály }
-
-\fajl
-{ Gun.java}
-{ 188 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ Gun programosztály }
-
-\fajl
-{ HoleTile.java}
-{ 1164 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ HoleTile programosztály }
-
-\fajl
-{ Igloo.java}
-{ 948 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ Igloo programosztály }
-
-\fajl
-{ Item.java}
-{ 515 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ Item programosztály }
-
-\fajl
-{ NoBuilding.java}
-{ 893 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ NoBuilding programosztály }
-
-\fajl
-{ NoDivingSuit.java}
-{ 1374 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ NoDivingSuit programosztály }
-
-\fajl
-{ NoRope.java}
-{ 878 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ NoRope programosztály }
-
-\fajl
-{ Player.java}
-{ 6252 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ Player programosztály }
-
-\fajl
-{ Researcher.java}
-{ 1010 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ Researcher programosztály }
-
-\fajl
-{ Rope.java}
-{ 1147 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ Rope programosztály }
-
-\fajl
-{ Shovel.java}
-{ 638 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ Shovel programosztály }
-
-\fajl
-{ Skeleton.java}
-{ 14289 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ Skeleton programosztály }
-
-\fajl
-{ Tile.java}
-{ 6080 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ Tile programosztály }
-
-\fajl
-{ UnstableTile.java}
-{ 1136 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ UnstableTile programosztály }
-
-\fajl
-{ UsableItem.java}
-{ 956 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ UsableItem programosztály }
-
-\fajl
-{ World.java}
-{ 2562 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
-{ World programosztály }
-
-\fajl
-{ AutomaticItem.java}
 { 310 byte }
-{ Wed Mar 25 20:44:17 2020 byte }
+{ Wed Mar 25 20:44:17 2020 }
 { AutomaticItem programosztály }
 
 \fajl
 { BasicDivingSuit.java}
 { 696 byte }
-{ Wed Mar 25 20:44:17 2020 byte }
+{ Wed Mar 25 20:44:17 2020 }
 { BasicDivingSuit programosztály }
 
 \fajl
 { BasicRope.java}
 { 788 byte }
-{ Wed Mar 25 20:44:17 2020 byte }
+{ Wed Mar 25 20:44:17 2020 }
 { BasicRope programosztály }
 
 \fajl
 { Beacon.java}
 { 173 byte }
-{ Wed Mar 25 10:57:36 2020 byte }
+{ Wed Mar 25 10:57:36 2020 }
 { Beacon programosztály }
 
 \fajl
 { Bear.java}
 { 3096 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
+{ Wed Apr 22 14:10:07 2020 }
 { Bear programosztály }
 
 \fajl
 { BrokenShovel.java}
 { 1799 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
+{ Wed Apr 22 14:10:07 2020 }
 { BrokenShovel programosztály }
 
 \fajl
 { Building.java}
 { 1173 byte }
-{ Wed Mar 25 20:44:17 2020 byte }
+{ Wed Mar 25 20:44:17 2020 }
 { Building programosztály }
 
 \fajl
 { Cartridge.java}
 { 152 byte }
-{ Wed Mar 25 10:57:36 2020 byte }
+{ Wed Mar 25 10:57:36 2020 }
 { Cartridge programosztály }
 
 \fajl
 { Creature.java}
 { 4685 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
+{ Wed Apr 22 14:10:07 2020 }
 { Creature programosztály }
 
 \fajl
 { DivingSuit.java}
 { 1186 byte }
-{ Wed Mar 25 20:44:17 2020 byte }
+{ Wed Mar 25 20:44:17 2020 }
 { DivingSuit programosztály }
 
 \fajl
 { Eskimo.java}
 { 832 byte }
-{ Thu Mar 26 13:05:21 2020 byte }
+{ Thu Mar 26 13:05:21 2020 }
 { Eskimo programosztály }
 
 \fajl
 { FlarePart.java}
 { 712 byte }
-{ Wed Mar 25 10:57:36 2020 byte }
+{ Wed Mar 25 10:57:36 2020 }
 { FlarePart programosztály }
 
 \fajl
 { Food.java}
 { 1008 byte }
-{ Wed Mar 25 10:57:36 2020 byte }
+{ Wed Mar 25 10:57:36 2020 }
 { Food programosztály }
 
 \fajl
 { Gun.java}
 { 161 byte }
-{ Wed Mar 25 10:57:36 2020 byte }
+{ Wed Mar 25 10:57:36 2020 }
 { Gun programosztály }
 
 \fajl
 { HoleTile.java}
 { 1517 byte }
-{ Wed Mar 25 20:44:17 2020 byte }
+{ Wed Mar 25 20:44:17 2020 }
 { HoleTile programosztály }
 
 \fajl
 { Igloo.java}
 { 1074 byte }
-{ Wed Mar 25 20:44:17 2020 byte }
+{ Wed Mar 25 20:44:17 2020 }
 { Igloo programosztály }
 
 \fajl
 { Interpreter.java}
 { 5162 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
+{ Wed Apr 22 14:10:07 2020 }
 { Interpreter programosztály }
 
 \fajl
 { Item.java}
 { 677 byte }
-{ Wed Mar 25 10:57:36 2020 byte }
+{ Wed Mar 25 10:57:36 2020 }
 { Item programosztály }
 
 \fajl
 { Main.java}
 { 305 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
+{ Wed Apr 22 14:10:07 2020 }
 { Main programosztály }
 
 \fajl
 { NoBuilding.java}
 { 1098 byte }
-{ Wed Mar 25 20:44:17 2020 byte }
+{ Wed Mar 25 20:44:17 2020 }
 { NoBuilding programosztály }
 
 \fajl
 { NoDivingSuit.java}
 { 1348 byte }
-{ Wed Mar 25 20:44:17 2020 byte }
+{ Wed Mar 25 20:44:17 2020 }
 { NoDivingSuit programosztály }
 
 \fajl
 { NoRope.java}
 { 735 byte }
-{ Wed Mar 25 20:44:17 2020 byte }
+{ Wed Mar 25 20:44:17 2020 }
 { NoRope programosztály }
 
 \fajl
 { Player.java}
 { 7938 byte }
-{ Thu Mar 26 13:05:21 2020 byte }
+{ Thu Mar 26 13:05:21 2020 }
 { Player programosztály }
 
 \fajl
 { Printable.java}
 { 334 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
+{ Wed Apr 22 14:10:07 2020 }
 { Printable programosztály }
 
 \fajl
 { Researcher.java}
 { 870 byte }
-{ Thu Mar 26 13:05:21 2020 byte }
+{ Thu Mar 26 13:05:21 2020 }
 { Researcher programosztály }
 
 \fajl
 { Rope.java}
 { 1144 byte }
-{ Wed Mar 25 20:44:17 2020 byte }
+{ Wed Mar 25 20:44:17 2020 }
 { Rope programosztály }
 
 \fajl
 { Shovel.java}
 { 550 byte }
-{ Wed Mar 25 20:44:17 2020 byte }
+{ Wed Mar 25 20:44:17 2020 }
 { Shovel programosztály }
 
 \fajl
 { Tent.java}
 { 1487 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
+{ Wed Apr 22 14:10:07 2020 }
 { Tent programosztály }
 
 \fajl
 { TentEquipment.java}
 { 948 byte }
-{ Wed Apr 22 14:10:07 2020 byte }
+{ Wed Apr 22 14:10:07 2020 }
 { TentEquipment programosztály }
 
 \fajl
 { Tile.java}
 { 9299 byte }
-{ Wed Mar 25 20:44:17 2020 byte }
+{ Wed Mar 25 20:44:17 2020 }
 { Tile programosztály }
 
 \fajl
 { UnstableTile.java}
 { 1501 byte }
-{ Wed Mar 25 20:44:17 2020 byte }
+{ Wed Mar 25 20:44:17 2020 }
 { UnstableTile programosztály }
 
 \fajl
 { UsableItem.java}
 { 1287 byte }
-{ Wed Mar 25 20:44:17 2020 byte }
+{ Wed Mar 25 20:44:17 2020 }
 { UsableItem programosztály }
 
 \fajl
 { World.java}
 { 21523 byte }
-{ Wed Mar 25 10:57:36 2020 byte }
+{ Wed Mar 25 10:57:36 2020 }
 { World programosztály }
-
-\fajl
-{ latex.txt }
-{ 22086 byte }
-{ Sat Apr 25 19:51:46 2020 }
-{ latex tesztesetfájl }
-
-\fajl
-{ template.txt }
-{ 107 byte }
-{ Sat Apr 25 19:38:19 2020 }
-{ template tesztesetfájl }
 
 \fajl
 { 0-cmd.txt }

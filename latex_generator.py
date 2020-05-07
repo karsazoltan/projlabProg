@@ -19,7 +19,7 @@ txt_sizes = [os.path.getsize(x) for x in txt_files]
 java_created = [os.path.getctime(x) for x in java_files]
 txt_created = [os.path.getctime(x) for x in txt_files]
 java_files = [x.split('\\')[len(x.split('\\'))-1] for x in java_files]
-txt_files = [x.split('\\')[len(x.split('\\'))-1] for x in txt_files]
+txt_files = [x.split('\\')[len(x.split('\\'))-1] for x in txt_files] 
 
 
 file = open('latex.txt', 'w', encoding='utf-8')
