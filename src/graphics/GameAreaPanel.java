@@ -44,7 +44,13 @@ public class GameAreaPanel extends JPanel {
         BufferedReader br = new BufferedReader(fis);
 
         String[] dataline = br.readLine().trim().split(" ");
-        if (!dataline[0].equals("datafile")) throw new IOException("Hibás első sor!");
+
+        if (dataline[0].equals("worlddata")) {
+            World.getInstance().loadConfig(dataline[0]);
+            attachTileViews();
+            return;
+        } else if (!dataline[0].equals("datafile"))
+            throw new IOException("Hibás első sor!");
 
         World.getInstance().loadConfig(dataline[1]);
 
