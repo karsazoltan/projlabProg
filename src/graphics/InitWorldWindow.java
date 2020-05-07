@@ -1,6 +1,7 @@
 package graphics;
 
 import javax.swing.*;
+import sumatra.World;
 import java.awt.*;
 import java.awt.event.*;
 import java.text.NumberFormat;
