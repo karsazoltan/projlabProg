@@ -13,7 +13,8 @@ public class FlarePartsPanel extends JPanel implements IView {
     private JTextPane textPane;
     private ArrayList<JLabel> pLabels = new ArrayList<JLabel>();
 
-    public FlarePartsPanel(){        
+    public FlarePartsPanel(){      
+        World.getInstance().addView(this);
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         
         JLabel fLabel = new JLabel("Flareparts");
