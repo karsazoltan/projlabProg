@@ -27,7 +27,7 @@ public class CommandButton extends JButton implements ActionListener {
             d.setSize(50, 200);
             ArrayList<JTextField> tfs = new ArrayList<>();
             d.setTitle("Enter parameters");
-            d.setLayout(new BoxLayout(d, BoxLayout.Y_AXIS));
+            d.setLayout(new GridLayout(command.getParameters()+1, 1));
 
             for (int i = 0; i < command.getParameters(); i++) {
                 JTextField tf = new JTextField();
