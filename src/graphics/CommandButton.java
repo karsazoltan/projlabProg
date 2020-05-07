@@ -45,7 +45,7 @@ public class CommandButton extends JButton implements ActionListener {
                         cmd += " "+tf.getText();
                     }
                     d.setVisible(false);
-                    System.out.println(cmd);
+                    Interpreter.interpretCommand(cmd);
                 }
             });
 
