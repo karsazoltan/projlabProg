@@ -3,6 +3,7 @@ package graphics;
 import sumatra.Interpreter;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -24,14 +25,17 @@ public class CommandButton extends JButton implements ActionListener {
         String cmd = command.getCommand();
         if (command.getParameters() != 0) {
             JDialog d = new JDialog();
+            d.setPreferredSize(new Dimension(50, 80));
             ArrayList<JTextField> tfs = new ArrayList<>();
             d.setTitle("Enter parameters");
 
             for (int i = 0; i < command.getParameters(); i++) {
                 JTextField tf = new JTextField();
+                tf.setPreferredSize(new Dimension( 50,20));
                 tfs.add(tf);
                 d.add(tf);
             }
+
             JButton okButton = new JButton("Ok");
             okButton.addActionListener(new ActionListener() {
                 @Override
@@ -42,6 +46,7 @@ public class CommandButton extends JButton implements ActionListener {
                     d.setVisible(false);
                 }
             });
+
             d.add(okButton);
             d.pack();
             d.setVisible(true);
