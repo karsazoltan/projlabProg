@@ -20,7 +20,7 @@ public class GameAreaPanel extends JPanel {
         setVisible(true);
     }
 
-    public static void saveLayout(String filename) throws IOException {
+    public void saveLayout(String filename) throws IOException {
         FileOutputStream fos = new FileOutputStream(filename);
         PrintWriter pw = new PrintWriter(fos);
         pw.write("datafile " + filename + ".data.txt\n");
@@ -33,11 +33,11 @@ public class GameAreaPanel extends JPanel {
         pw.close();
     }
 
-    public static void attachTileViews() {
+    public void attachTileViews() {
         // TODO
     }
 
-    public static void loadTileViewsFromFile(String filename) throws IOException {
+    public void loadTileViewsFromFile(String filename) throws IOException {
         FileReader fis = new FileReader(filename);
         BufferedReader br = new BufferedReader(fis);
 

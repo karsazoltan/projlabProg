@@ -1,7 +1,10 @@
 package graphics;
 
+import sumatra.World;
+
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class MainWindow extends JFrame {
     public MainWindow() {
@@ -24,6 +27,27 @@ public class MainWindow extends JFrame {
 
         // Menüsor //
         JMenuBar menuBar = new JMenuBar();
+
+        JMenu fileMenu = new JMenu("File");
+        menuBar.add(fileMenu);
+        JMenuItem saveMI = new JMenuItem("Save");
+        JMenuItem loadMI = new JMenuItem("Load");
+        fileMenu.add(saveMI);
+        fileMenu.add(loadMI);
+
+        saveMI.addActionListener(e -> {
+            JFileChooser jfk = new JFileChooser();
+
+            if (jfk.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+                try {
+                    GameAreaPanel.getInstance().saveLayout(jfk.getSelectedFile().getAbsolutePath());
+                    World.getInstance().saveConfig(jfk.getSelectedFile().getAbsolutePath() + ".data.txt");
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
         JMenu initMenu = new JMenu("Initialization");
         menuBar.add(initMenu);
 
@@ -33,6 +57,7 @@ public class MainWindow extends JFrame {
         initMenu.add(creatInitMI);
 
         worldInitMI.addActionListener(e -> new InitWorldWindow());
+
 
 
         // Regisztrálás //
