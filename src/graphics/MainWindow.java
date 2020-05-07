@@ -18,9 +18,7 @@ public class MainWindow extends JFrame {
         JPanel leftPanel = new JPanel();
         leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
         leftPanel.add(new FlarePartsPanel());
-        CreaturesPanel cp = new CreaturesPanel();
-        cp.attachViews();
-        leftPanel.add(cp);
+        leftPanel.add(CreaturesPanel.getInstance());
         leftPanel.setPreferredSize(new Dimension(200, 600));
         JSeparator leftSeparator = new JSeparator(SwingConstants.VERTICAL);
         leftSeparator.setPreferredSize(new Dimension(5, 600));
@@ -57,6 +55,7 @@ public class MainWindow extends JFrame {
                 try {
                     GameAreaPanel.getInstance().loadTileViewsFromFile(jfk.getSelectedFile().getAbsolutePath());
                     CommandPanel.getInstance().updateButtons();
+                    CreaturesPanel.getInstance().attachViews();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
