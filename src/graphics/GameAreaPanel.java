@@ -51,10 +51,7 @@ public class GameAreaPanel extends JPanel {
     }
 
     public void loadTileViewsFromFile(String filename) throws IOException {
-        FileReader fis = new FileReader(filename);
-        BufferedReader br = new BufferedReader(fis);
-
-        tiles.clear();
+        BufferedReader br = new BufferedReader(new FileReader(filename));
 
         String[] dataline = br.readLine().trim().split(" ");
 
@@ -62,21 +59,23 @@ public class GameAreaPanel extends JPanel {
             World.getInstance().loadConfig(filename);
             attachTileViews();
             return;
-        } else if (!dataline[0].equals("datafile"))
+        } else if (!dataline[0].equals("datafile")) {
             throw new IOException("Hibás első sor!");
+        }
 
         World.getInstance().loadConfig(dataline[1]);
 
         int count = Integer.parseInt(br.readLine().trim().split(" ")[1]);
 
+        tiles.clear();
         for (int i = 0; i < count; i++) {
             String[] info = br.readLine().trim().split(" ");
             tiles.add(new TileView(World.getInstance().getTileAt(Integer.parseInt(info[1])),
                     Integer.parseInt(info[2]), Integer.parseInt(info[3])));
         }
-        displayTileViews();
-
         br.close();
+
+        displayTileViews();
     }
 
     private void displayTileViews() {

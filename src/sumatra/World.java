@@ -449,6 +449,11 @@ public class World implements Printable, IViewable {
      */
     public void loadConfig(String filename) {
         stop();
+
+        tiles.clear();
+        creatures.clear();
+        flareParts.clear();
+
         FileReader fis;
         BufferedReader br = new BufferedReader(Reader.nullReader()); // Java 11 sajátosság, de cserébe szép lesz a finally
         try {
@@ -457,7 +462,7 @@ public class World implements Printable, IViewable {
             if (!br.readLine().trim().equals("worlddata"))
                 throw new InputMismatchException("File does not start with \"worlddata\"");
             stepCounter = Integer.parseInt(br.readLine().trim().split(" ")[1]);
-            running = true;
+            running = (stepCounter != 0);
             activeplayer = br.readLine().trim().split(" ")[1];
             int fps = Integer.parseInt(br.readLine().trim().split(" ")[1]);
             for (int i = 0; i < fps; i++) {
