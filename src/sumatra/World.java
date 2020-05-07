@@ -104,9 +104,8 @@ public class World implements Printable, IViewable {
 
     private static int nextstormstep = -1;
 
-    // TODO
+    // TODO COMMENT
     public void advanceGame() {
-
         // Ha load történt, akkor történhet ilyen
         if (!activeplayer.equals("none")) {
             try {
@@ -122,7 +121,7 @@ public class World implements Printable, IViewable {
                 generateSnowstorm();
             }
             if (nextstormstep <= stepCounter) {
-                nextstormstep += ThreadLocalRandom.current().nextInt(Math.max(2 * creatures.size(), 1));
+                nextstormstep += ThreadLocalRandom.current().nextInt(Math.max(3 * creatures.size(), 2));
             }
             step(stepCounter % creatures.size());
         }
@@ -569,8 +568,6 @@ public class World implements Printable, IViewable {
             stepCounter = 0;
         running = true;
         System.out.println("> Game Started");
-        //gameLoop();
-        // TODO
         advanceGame();
     }
 

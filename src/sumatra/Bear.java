@@ -50,6 +50,7 @@ public class Bear extends Creature{
         int targetTileIdx = ThreadLocalRandom.current().nextInt(neighbours.size());
         move( neighbours.get( targetTileIdx ) );
         System.out.println("> Polar bear " + index + " moved to tile " + targetTileIdx);
+        World.getInstance().playerFinished();
     }
 
     /**
@@ -74,6 +75,7 @@ public class Bear extends Creature{
     @Override
     void playManagedRound() {
         Interpreter.requestBearMovement(this, tile);
+        World.getInstance().playerFinished();
     }
 
     /**
