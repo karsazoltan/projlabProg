@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import sumatra.*;
 
 public class CreaturesPanel extends JPanel {
+    private static CreaturesPanel instance = new CreaturesPanel();
+    public static CreaturesPanel getInstance() { return instance; }
+
     JPanel panel = new JPanel();
     public CreaturesPanel(){        
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
