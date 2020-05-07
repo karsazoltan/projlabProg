@@ -14,15 +14,12 @@ public class MainWindow extends JFrame {
         setLayout(new BorderLayout());
 
         // Belső layout //
-        JPanel leftOuterPanel = new JPanel();
-        JPanel leftPanel = new JPanel();
-        leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
-        leftPanel.add(new FlarePartsPanel());
-        leftPanel.add(CreaturesPanel.getInstance());
-        leftPanel.setPreferredSize(new Dimension(200, 600));
-        leftOuterPanel.add(leftPanel, BorderLayout.PAGE_START);
+        JPanel leftOuterPanel = new JPanel(new BorderLayout());
+        leftOuterPanel.add(new FlarePartsPanel(), BorderLayout.PAGE_START);
+        leftOuterPanel.add(CreaturesPanel.getInstance(), BorderLayout.CENTER);
+        leftOuterPanel.setPreferredSize(new Dimension(200, 0));
 
-        JPanel rightOuterPanel = new JPanel();
+        JPanel rightOuterPanel = new JPanel(new BorderLayout());
         rightOuterPanel.add(CommandPanel.getInstance(), BorderLayout.PAGE_START);
 
         // Menüsor //
