@@ -72,7 +72,7 @@ public class MainWindow extends JFrame {
         initMenu.add(creatInitMI);
 
         worldInitMI.addActionListener(e -> new InitWorldWindow());
-
+        creatInitMI.addActionListener(e -> new InitCreatureWindow(World.getInstance().getTileCount()));
 
 
         // Regisztrálás //
