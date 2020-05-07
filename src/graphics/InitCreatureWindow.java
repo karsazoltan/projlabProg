@@ -58,8 +58,6 @@ public class InitCreatureWindow extends JFrame {
 			{
                 
                 String new_creature = Integer.toString(tileSelector.getSelectedIndex()) + " " + creatures[creatureSelector.getSelectedIndex()];
-                if (addedCreatures.contains(new_creature)) 
-                    return;
                 creature_list += new_creature + "\n";
                 addedCreatures.add(new_creature.toLowerCase());
                 creaturesList.setText(creature_list);

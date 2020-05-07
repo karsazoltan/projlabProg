@@ -3,7 +3,6 @@ package graphics;
 import sumatra.Interpreter;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,14 +25,14 @@ public class CommandPanel extends JPanel {
             commandButtons.clear();
 
         for (Command comm : c) {
-            commandButtons.add(new CommandButton(comm.getCommand(), this));
+            commandButtons.add(new CommandButton(comm, this));
         }
 
         this.removeAll();
 
         for (CommandButton cb : commandButtons) {
             cb.addActionListener(cb);
-            cb.setText(cb.getCommand());
+            cb.setText(cb.getCommand().getMessage());
             this.add(cb);
         }
         revalidate();
