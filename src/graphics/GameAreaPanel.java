@@ -36,8 +36,9 @@ public class GameAreaPanel extends JPanel {
     }
 
     public void attachTileViews() {
-        int x = 10, y = 10;
         tiles.clear();
+
+        int x = 10, y = 10;
         for (int i = 0; i < World.getInstance().getTileCount(); i++) {
             tiles.add(new TileView(World.getInstance().getTileAt(i), x, y));
             x += 60;
@@ -53,6 +54,8 @@ public class GameAreaPanel extends JPanel {
         FileReader fis = new FileReader(filename);
         BufferedReader br = new BufferedReader(fis);
 
+        tiles.clear();
+
         String[] dataline = br.readLine().trim().split(" ");
 
         if (dataline[0].equals("worlddata")) {
@@ -66,7 +69,6 @@ public class GameAreaPanel extends JPanel {
 
         int count = Integer.parseInt(br.readLine().trim().split(" ")[1]);
 
-        tiles.clear();
         for (int i = 0; i < count; i++) {
             String[] info = br.readLine().trim().split(" ");
             tiles.add(new TileView(World.getInstance().getTileAt(Integer.parseInt(info[1])),
@@ -79,6 +81,7 @@ public class GameAreaPanel extends JPanel {
 
     private void displayTileViews() {
         this.removeAll();
+
         for (TileView tv : tiles) {
             tv.setBounds(tv.getPosition().x, tv.getPosition().y, 50, 50);
             this.add(tv);
