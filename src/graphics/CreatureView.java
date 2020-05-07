@@ -20,8 +20,9 @@ public class CreatureView extends UpdateJPanel {
         //hogyha ...
         try {
             Creature c = t.getCreature(index);
-            //TODO
+            label.setText(c.getType());
         } catch (IndexOutOfBoundsException ea) {
+
             label.setText("");
         }
     }

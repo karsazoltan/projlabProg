@@ -690,6 +690,7 @@ public class World implements Printable, IViewable {
 
     public void playerFinished() {
         activeplayer = "none";
+        advanceGame();
     }
 
     /**
