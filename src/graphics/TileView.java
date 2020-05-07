@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
-public class TileView implements IView {
+public class TileView extends JPanel implements IView {
     private int x, y;
     private GridLayout layout;
     private List<CreatureView> creaturesV;
@@ -23,7 +23,7 @@ public class TileView implements IView {
         //TODO
     }
 
-    public Point getLayout() {
+    public Point getPosition() {
         return new Point(x, y);
     }
 }

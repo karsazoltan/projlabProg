@@ -26,8 +26,8 @@ public class GameAreaPanel extends JPanel {
         pw.write("datafile " + filename + ".data.txt\n");
         pw.write("tiles " + tiles.size() + "\n");
         for (int i = 0; i < tiles.size(); i++) {
-            Point p = tiles.get(i).getLayout();
-            pw.write("tile " + i + " " + p.x + " " + p.y + "\n");
+            Point p = tiles.get(i).getPosition();
+            pw.write("    tile " + i + " " + p.x + " " + p.y + "\n");
         }
         pw.flush();
         pw.close();
@@ -36,7 +36,16 @@ public class GameAreaPanel extends JPanel {
     }
 
     public void attachTileViews() {
-        // TODO
+        int x = 10, y = 10;
+        for (int i = 0; i < World.getInstance().getTileCount(); i++) {
+            tiles.add(new TileView(World.getInstance().getTileAt(i), x, y));
+            x += 60;
+            if (x >= this.getWidth()) {
+                y += 60;
+                x = 10;
+            }
+        }
+        displayTileViews();
     }
 
     public void loadTileViewsFromFile(String filename) throws IOException {
@@ -57,9 +66,19 @@ public class GameAreaPanel extends JPanel {
         int count = Integer.parseInt(br.readLine().trim().split(" ")[1]);
 
         for (int i = 0; i < count; i++) {
-            // TODO
+            String[] info = br.readLine().trim().split(" ");
+            tiles.add(new TileView(World.getInstance().getTileAt(Integer.parseInt(info[1])),
+                    Integer.parseInt(info[2]), Integer.parseInt(info[3])));
         }
+        displayTileViews();
 
         br.close();
+    }
+
+    private void displayTileViews() {
+        for (TileView tv : tiles) {
+            tv.setBounds(tv.getPosition().x, tv.getPosition().y, 50, 50);
+            this.add(tv);
+        }
     }
 }
