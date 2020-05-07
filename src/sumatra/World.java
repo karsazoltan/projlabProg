@@ -102,6 +102,32 @@ public class World implements Printable, IViewable {
         }
     }
 
+    private static int nextstormstep = -1;
+
+    // TODO
+    public void advanceGame() {
+
+        // Ha load történt, akkor történhet ilyen
+        if (!activeplayer.equals("none")) {
+            try {
+                int idx = Integer.parseInt(activeplayer);
+                if (idx < creatures.size())
+                    step(idx);
+            } catch (Exception ignored) {} // Ha invalid a creature id, ne bajlódjunk vele, induljon rendesen a játék
+        }
+
+        if (!running) return;
+        if (!managedMode) {
+            if (nextstormstep == stepCounter) {
+                generateSnowstorm();
+            }
+            if (nextstormstep <= stepCounter) {
+                nextstormstep += ThreadLocalRandom.current().nextInt(Math.max(2 * creatures.size(), 1));
+            }
+            step(stepCounter % creatures.size());
+        }
+    }
+
     /**
      * Ciklusfüggvény, a játék menetét vezérli.
      */
@@ -127,8 +153,9 @@ public class World implements Printable, IViewable {
             }
         } else {
             while (running && input.hasNextLine()) {
-                String line = input.nextLine().trim();
-                Interpreter.interpretGameplayCommand(line);
+                //String line = input.nextLine().trim();
+                //Interpreter.interpretGameplayCommand(line);
+                // TODO SZKENNERKISZEDÉS
             }
         }
     }
@@ -536,7 +563,9 @@ public class World implements Printable, IViewable {
             stepCounter = 0;
         running = true;
         System.out.println("> Game Started");
-        gameLoop();
+        //gameLoop();
+        // TODO
+        advanceGame();
     }
 
     /**
@@ -551,12 +580,12 @@ public class World implements Printable, IViewable {
             return;
         }
         activeplayer = Integer.toString(idx);
-        if( managedMode )
-            creatures.get(idx).playManagedRound();
-        else
-            creatures.get(idx).playRound();
-            
-        activeplayer = "none";
+        //if( managedMode )
+        //    creatures.get(idx).playManagedRound();
+        //else
+        //    creatures.get(idx).playRound();
+
+        //activeplayer = "none";
     }
 
     /**
@@ -656,6 +685,10 @@ public class World implements Printable, IViewable {
 
     public int getTileCount() {
         return tiles.size();
+    }
+
+    public void playerFinished() {
+        activeplayer = "none";
     }
 
     /**

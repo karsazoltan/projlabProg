@@ -14,22 +14,16 @@ public class FlarePartsPanel extends JPanel implements IView {
     private ArrayList<JLabel> pLabels = new ArrayList<JLabel>();
 
     public FlarePartsPanel(){        
-        // TODO Make this look a little bit better maybe?
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+        
         JLabel fLabel = new JLabel("Flareparts");
         Font labelFont = fLabel.getFont();
         fLabel.setFont(new Font(labelFont.getName(), Font.PLAIN, 20));
         add( fLabel);
         
         JLabel newLabel = new JLabel("ez a swing kurvaszar");
-        add( newLabel );
+        add( newLabel );        
         pLabels.add(newLabel);
-        /*/
-        textPane = new JTextPane();
-        textPane.setEditable(false);
-        textPane.setSelectionColor(Color.WHITE);
-        //add(textPane);
-        //*/
     }
 
     public void subjectChanged(){
@@ -43,9 +37,9 @@ public class FlarePartsPanel extends JPanel implements IView {
             if( isNew ){
                 JLabel newLabel = new JLabel(name);
                 add( newLabel );
-                pLabels.add(newLabel);
-                repaint();
+                pLabels.add(newLabel);                
             }
         }
+        repaint();
     }
 }

@@ -79,6 +79,7 @@ public class GameAreaPanel extends JPanel {
         for (TileView tv : tiles) {
             tv.setBounds(tv.getPosition().x, tv.getPosition().y, 50, 50);
             this.add(tv);
+            tv.setVisible(true);
         }
     }
 }

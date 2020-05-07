@@ -93,6 +93,14 @@ public class Tile implements Printable, IViewable {
     }
 
     /**
+     * Visszaadja a mezőn álló adott indexű szereplőt
+     * @return az egyik szereplő a táblán
+     */
+    public Creature getCreature(int i) {
+        return creatures.get(i);
+    }
+
+    /**
      * Átadja a játékosnak a tárgyat
      * @param p A játékos aki felveszi a tárgyat
      */

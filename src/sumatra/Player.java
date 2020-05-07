@@ -258,12 +258,13 @@ public abstract class Player extends Creature{
         System.out.println("> Player " + index + ", you're up!");
         mana = 4;        
         boolean exit;
-        Scanner input = World.getInstance().getInputScanner();
-        do{
-            String line = input.nextLine().trim();
-            exit = Interpreter.interpretPlayerCommand(this, line);
-        }while( !exit );
-        System.out.println("> Round finished");
+        // TODO SZKENNERKIKAPCSOLÁS
+        //Scanner input = World.getInstance().getInputScanner();
+        //do{
+        //    String line = input.nextLine().trim();
+        //    exit = Interpreter.interpretPlayerCommand(this, line);
+        //}while( !exit );
+        //System.out.println("> Round finished");
     }
 
     /**
@@ -286,5 +287,24 @@ public abstract class Player extends Creature{
             i.printData(stream, prefix + "        ");
         }
         pw.flush();
+    }
+
+
+
+    @Override
+    public ArrayList<String> getDisplayData() {
+        ArrayList<String> data = new ArrayList<String>();
+        data.add( "HP: " + health );
+        data.add( "WU: " + mana );
+        if( !divingSuit.toString().equals("none") )
+            data.add( divingSuit.toString() );
+        if( !rope.toString().equals("none") )
+            data.add( rope.toString() );
+
+        for( Item i : usableItems ){
+            data.add( i.toString() );
+        }
+        
+        return data;
     }
 }

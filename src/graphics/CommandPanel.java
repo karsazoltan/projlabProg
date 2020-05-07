@@ -3,13 +3,20 @@ package graphics;
 import sumatra.Interpreter;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CommandPanel extends JPanel {
     private ArrayList<CommandButton> commandButtons;
 
-    public CommandPanel() {
+    private static CommandPanel instance = new CommandPanel();
+    public static CommandPanel getInstance() { return instance; }
+
+    private static ArrayList<TileView> tiles;
+
+    private CommandPanel() {
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         commandButtons = new ArrayList<>();
         updateButtons();
     }
@@ -22,11 +29,14 @@ public class CommandPanel extends JPanel {
             commandButtons.add(new CommandButton(comm.getCommand(), this));
         }
 
+        this.removeAll();
+
         for (CommandButton cb : commandButtons) {
             cb.addActionListener(cb);
             cb.setText(cb.getCommand());
             this.add(cb);
         }
+        revalidate();
     }
 
     public void updateButtons() {

@@ -62,6 +62,7 @@ public class Interpreter {
                 p.buildFlare();
                 break;
             case "finish":
+                World.getInstance().playerFinished();
                 return true;
             default:
                 return interpretGameplayCommand(cmd);
@@ -188,13 +189,16 @@ public class Interpreter {
                         new Command("Stop game", "stop", 0)
                 );
         } else {
-            return Arrays.asList(
-                    // TODO Vajon initek ide jöjjenek?
-                    new Command("Start managed game", "start managed", 0),
-                    new Command("Start automated game", "start automated", 0),
-                    // TODO Vajon save / load ide jöjjön?
-                    new Command("Quit application", "exit", 0)
-            );
+            if (World.getInstance().getCreatures().size() == 0)
+                return Arrays.asList(
+                        new Command("Quit application", "exit", 0)
+                );
+            else
+                return Arrays.asList(
+                        new Command("Start managed game", "start managed", 0),
+                        new Command("Start automated game", "start automated", 0),
+                        new Command("Quit application", "exit", 0)
+                );
         }
     }
 }

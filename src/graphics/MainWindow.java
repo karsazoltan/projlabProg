@@ -18,7 +18,9 @@ public class MainWindow extends JFrame {
         JPanel leftPanel = new JPanel();
         leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
         leftPanel.add(new FlarePartsPanel());
-        leftPanel.add(new CreaturesPanel());
+        CreaturesPanel cp = new CreaturesPanel();
+        cp.attachViews();
+        leftPanel.add(cp);
         leftPanel.setPreferredSize(new Dimension(200, 600));
         JSeparator leftSeparator = new JSeparator(SwingConstants.VERTICAL);
         leftSeparator.setPreferredSize(new Dimension(5, 600));
@@ -41,6 +43,7 @@ public class MainWindow extends JFrame {
             if (jfk.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
                 try {
                     GameAreaPanel.getInstance().saveLayout(jfk.getSelectedFile().getAbsolutePath());
+                    CommandPanel.getInstance().updateButtons();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -53,6 +56,7 @@ public class MainWindow extends JFrame {
             if (jfk.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
                 try {
                     GameAreaPanel.getInstance().loadTileViewsFromFile(jfk.getSelectedFile().getAbsolutePath());
+                    CommandPanel.getInstance().updateButtons();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -74,14 +78,8 @@ public class MainWindow extends JFrame {
         // Regisztrálás //
         add(leftOuterPanel, BorderLayout.LINE_START);
         add(GameAreaPanel.getInstance(), BorderLayout.CENTER);
-        add(new CommandPanel(), BorderLayout.LINE_END);
+        add(CommandPanel.getInstance(), BorderLayout.LINE_END);
         setJMenuBar(menuBar);
-
-        //TODO Valaki szépítse meg aki ért ehhez a szarhoz
-        JPanel rightPanel = new JPanel();
-        rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
-        rightPanel.setPreferredSize(new Dimension(100, 600));
-        add(rightPanel, BorderLayout.EAST);
 
         setVisible(true);
     }

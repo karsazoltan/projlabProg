@@ -94,6 +94,28 @@ public abstract class Creature implements Printable, IViewable {
         System.out.println("> " + type + " " + index + " is on tile " + World.getInstance().getTileIndex(tile));
     }
 
+    /**  
+     * Visszaadja Sztringként a lény típusát.
+     * @return a lény típusa (Eskimo, Researcher vagy Polar bear)
+     */
+    public String getType(){
+        return type;
+    }
+
+    /**
+     * Visszaadja a lény globális indexét.
+     * @return a lénty globális indexe.
+     */
+    public int getIndex(){
+        return index;
+    }
+
+    /**
+     * Visszaad egy lista sztringet a lény állapotáról, a megjelenítéshez kell.
+     * @return egy lista sztring.
+     */
+    abstract public ArrayList<String> getDisplayData();
+
     /**
      * Betölt a bemeneti bufferedreaderből egy lényt.
      * @param br A bemeneti fájlt tartalmazó, megfelelő állapotban lévő bufferedreader.
