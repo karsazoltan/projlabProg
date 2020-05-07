@@ -16,9 +16,9 @@ public class OneCreaturePanel extends JPanel implements IView{
         creature = pcreature;
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 
-        JLabel nameLabel = new JLabel(creature.getType() + creature.getIndex());
+        JLabel nameLabel = new JLabel(creature.getType() + " " + creature.getIndex());
         Font labelFont = nameLabel.getFont();
-        nameLabel.setFont(new Font(labelFont.getName(), Font.BOLD, 20));
+        nameLabel.setFont(new Font(labelFont.getName(), Font.BOLD, 15));
         add(nameLabel);
     
         subjectChanged();
@@ -36,5 +36,7 @@ public class OneCreaturePanel extends JPanel implements IView{
             add(nLabel);
             labels.add(nLabel);
         }
+
+        repaint();
     }
 }

@@ -3,7 +3,6 @@ package graphics;
 import javax.swing.*;
 
 import sumatra.Interpreter;
-import sumatra.World;
 import java.awt.*;
 import java.awt.event.*;
 import java.text.NumberFormat;
@@ -15,8 +14,6 @@ public class InitWorldWindow extends JFrame {
      * ID for serialization (not used)
      */
     private static final long serialVersionUID = 1L;
-
-    ArrayList<String> commands;
 
     ArrayList<Integer> tileID = new ArrayList<Integer>();
     ArrayList<String> item = new ArrayList<String>();
