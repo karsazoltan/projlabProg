@@ -1,4 +1,4 @@
-package sumatra;
+package graphics;
 
 import javax.swing.*;
 import java.awt.*;
@@ -177,7 +177,7 @@ public class InitWorldWindow extends JFrame {
                         new_tile += " " + capacity.get(i);
                     }
 
-                    setup.add(new_tile);
+                    setup.add(new_tile);    
                 }
 
                 for (String l : link) {

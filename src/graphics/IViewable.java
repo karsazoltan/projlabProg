@@ -1,4 +1,4 @@
-package sumatra;
+package graphics;
 
 public interface IViewable {
     /**
