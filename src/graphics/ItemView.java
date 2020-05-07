@@ -3,14 +3,14 @@ package graphics;
 import sumatra.Tile;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 
-public class ItemView extends JPanel implements IUpdate{
+public class ItemView extends UpdateJPanel {
     JLabel label;
     public ItemView() {
         label = new JLabel("");
         add(label);
+        setVisible(true);
     }
     @Override
     public void Update(Tile t) {
