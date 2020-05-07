@@ -17,7 +17,7 @@ public class TileView extends JPanel implements IView {
         this.x = x;
         this.y = y;
         tile = t;
-        views.add(new BuldingView());
+        views.add(new BuildingView());
         views.add(new ItemView());
         for(int i = 0; i < 6; i++)
             views.add(new CreatureView(i));

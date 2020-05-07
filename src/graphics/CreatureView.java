@@ -13,7 +13,7 @@ public class CreatureView extends JPanel implements IUpdate {
     }
     @Override
     public void Update(Tile t) {
-        setBorder(new LineBorder(new Color(149, 19, 29)));
+        setBorder(BorderFactory.createTitledBorder("title"));
         //hogyha ...
 
         //TODO
