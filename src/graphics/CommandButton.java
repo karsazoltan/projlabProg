@@ -46,6 +46,7 @@ public class CommandButton extends JButton implements ActionListener {
                     }
                     d.setVisible(false);
                     Interpreter.interpretCommand(cmd);
+                    cp.updateButtons();
                 }
             });
 
@@ -53,9 +54,9 @@ public class CommandButton extends JButton implements ActionListener {
             d.pack();
             d.setVisible(true);
         }
-        else
-        Interpreter.interpretCommand(command.getCommand());
-
-        cp.updateButtons();
+        else {
+            Interpreter.interpretCommand(command.getCommand());
+            cp.updateButtons();
+        }
     }
 }
