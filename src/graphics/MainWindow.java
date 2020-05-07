@@ -18,7 +18,9 @@ public class MainWindow extends JFrame {
         JPanel leftPanel = new JPanel();
         leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
         leftPanel.add(new FlarePartsPanel());
-        leftPanel.add(new CreaturesPanel());
+        CreaturesPanel cp = new CreaturesPanel();
+        cp.attachViews();
+        leftPanel.add(cp);
         leftPanel.setPreferredSize(new Dimension(200, 600));
         JSeparator leftSeparator = new JSeparator(SwingConstants.VERTICAL);
         leftSeparator.setPreferredSize(new Dimension(5, 600));

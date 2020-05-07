@@ -37,9 +37,9 @@ public class FlarePartsPanel extends JPanel implements IView {
             if( isNew ){
                 JLabel newLabel = new JLabel(name);
                 add( newLabel );
-                pLabels.add(newLabel);
-                repaint();
+                pLabels.add(newLabel);                
             }
         }
+        repaint();
     }
 }
