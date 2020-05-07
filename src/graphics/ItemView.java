@@ -12,6 +12,7 @@ public class ItemView extends JPanel implements IUpdate{
         setBorder(new LineBorder(new Color(20, 40, 140)));
         //hogyha ...
         t.getItem();
+
         //TODO
     }
 }
