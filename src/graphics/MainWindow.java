@@ -41,7 +41,18 @@ public class MainWindow extends JFrame {
             if (jfk.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
                 try {
                     GameAreaPanel.getInstance().saveLayout(jfk.getSelectedFile().getAbsolutePath());
-                    World.getInstance().saveConfig(jfk.getSelectedFile().getAbsolutePath() + ".data.txt");
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        loadMI.addActionListener(e -> {
+            JFileChooser jfk = new JFileChooser();
+
+            if (jfk.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+                try {
+                    GameAreaPanel.getInstance().loadTileViewsFromFile(jfk.getSelectedFile().getAbsolutePath());
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }

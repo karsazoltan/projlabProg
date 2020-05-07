@@ -31,6 +31,8 @@ public class GameAreaPanel extends JPanel {
         }
         pw.flush();
         pw.close();
+
+        World.getInstance().saveConfig(filename + ".data.txt");
     }
 
     public void attachTileViews() {
