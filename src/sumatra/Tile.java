@@ -1,5 +1,8 @@
 package sumatra;
 
+import graphics.IView;
+import graphics.IViewable;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -8,7 +11,7 @@ import java.util.InputMismatchException;
 /**
  * A stabil jégtáblát reprezentáló osztály
  */
-public class Tile implements Printable {
+public class Tile implements Printable, IViewable {
     /**
      * A táblán található hó mélysége
      */
@@ -85,6 +88,7 @@ public class Tile implements Printable {
             return false;
         }
         item = i;
+        updateViews();
         return true;
     }
 
@@ -95,6 +99,7 @@ public class Tile implements Printable {
     public void pickUpItem(Player p) {
         if (item != null) {
             item.giveToPlayer(p);
+            updateViews();
             System.out.println("    > You picked up an item: " + item.toString());
             item = null;
         } else {
@@ -109,6 +114,7 @@ public class Tile implements Printable {
     public void accept(Creature c) {
         building.newCreature(c, creatures);
         creatures.add(c);
+        updateViews();
     }
 
     /**
@@ -117,6 +123,7 @@ public class Tile implements Printable {
      */
     public void remove(Creature c) {
         creatures.remove(c);
+        updateViews();
     }
 
     /**
@@ -125,6 +132,7 @@ public class Tile implements Printable {
      */
     public void addNeighbor(Tile t) {
         neighbors.add(t);
+        updateViews();
     }
 
     /**
@@ -133,6 +141,7 @@ public class Tile implements Printable {
      */
     public void addSnow(int amount) {
         snowlayers += amount;
+        updateViews();
     }
 
     /**
@@ -142,6 +151,7 @@ public class Tile implements Printable {
     public void removeSnow(int amount) {
         if (snowlayers > 0) {
             snowlayers -= amount;
+            updateViews();
             System.out.println("    > You removed " + amount + " layer(s) of snow from your current tile");
         }
         if (snowlayers <= 0) {
@@ -168,6 +178,7 @@ public class Tile implements Printable {
      */
     public void revealCapacity() {
         is_capacity_known = true;
+        updateViews();
         System.out.println("    > Capacity of current tile is: " + ((capacity < 0) ? "infinite" : capacity));
     }
 
@@ -184,6 +195,7 @@ public class Tile implements Printable {
      */
     public void setBuilding(Building build) {
         building = build;
+        updateViews();
     }
 
     /**
@@ -284,5 +296,30 @@ public class Tile implements Printable {
             pw.println(prefix + "    tentplacementstep " + World.getInstance().getTentPlacementStep((Tent) building));
         }
         pw.flush();
+    }
+
+    /**
+     * Nézeti lista
+     */
+    private ArrayList<IView> views = new ArrayList<>();
+
+    /**
+     * Hozzáad a tárolt nézetek közé még egyet.
+     *
+     * @param v - a hozzáadott View
+     */
+    @Override
+    public void addView(IView v) {
+        views.add(v);
+    }
+
+    /**
+     * Frissíti a nézeteket.
+     */
+    @Override
+    public void updateViews() {
+        for (IView v : views) {
+            v.subjectChanged();
+        }
     }
 }

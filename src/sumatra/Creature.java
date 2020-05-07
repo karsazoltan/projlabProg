@@ -143,7 +143,7 @@ public abstract class Creature implements Printable, IViewable {
     private ArrayList<IView> views = new ArrayList<>();
 
     /**
-     * Hozzád a tárolt nézetek közé még egyet.
+     * Hozzáad a tárolt nézetek közé még egyet.
      *
      * @param v - a hozzáadott View
      */
