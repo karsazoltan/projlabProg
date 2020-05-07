@@ -23,11 +23,14 @@ public class CommandPanel extends JPanel {
             commandButtons.add(new CommandButton(comm.getCommand(), this));
         }
 
+        this.removeAll();
+
         for (CommandButton cb : commandButtons) {
             cb.addActionListener(cb);
             cb.setText(cb.getCommand());
             this.add(cb);
         }
+        revalidate();
     }
 
     public void updateButtons() {
