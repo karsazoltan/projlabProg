@@ -335,6 +335,7 @@ public class World implements Printable, IViewable {
                 assert t != null;
                 t.placeItem(item);
             }
+            tiles.add(t);
         }
 
         for (int i = tileCount; i < tileCount + linkCount; i++) {
