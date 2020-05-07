@@ -37,6 +37,6 @@ public class OneCreaturePanel extends JPanel implements IView{
             labels.add(nLabel);
         }
 
-        repaint();
+        revalidate();
     }
 }

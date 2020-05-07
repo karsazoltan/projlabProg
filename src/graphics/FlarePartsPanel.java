@@ -41,6 +41,6 @@ public class FlarePartsPanel extends JPanel implements IView {
                 pLabels.add(newLabel);                
             }
         }
-        repaint();
+        revalidate();
     }
 }
