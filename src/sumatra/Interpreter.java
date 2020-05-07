@@ -2,9 +2,11 @@ package sumatra;
 
 import graphics.BearTileChooserWindow;
 import graphics.Command;
+import graphics.SnowstormGeneratorWindow;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -207,5 +209,10 @@ public class Interpreter {
     public static void requestBearMovement(Bear b, Tile t) {
         BearTileChooserWindow btcw = new BearTileChooserWindow(t);
         b.move(World.getInstance().getTileAt(btcw.showDialog()));
+    }
+
+    public static HashMap<Integer, Integer> requestSnowstormGeneration(int tileCount) {
+        SnowstormGeneratorWindow sgw = new SnowstormGeneratorWindow(tileCount);
+        return sgw.showDialog();
     }
 }

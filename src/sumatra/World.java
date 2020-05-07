@@ -359,6 +359,9 @@ public class World implements Printable, IViewable {
                 affectedTiles.put(tile, snow);
             }
         } else {
+            affectedTiles = Interpreter.requestSnowstormGeneration(tiles.size());
+
+            /* INPUTOS MÓD, ez nem kell
             System.out.println("    > Enter affected tiles and layers of snow to generate (<t> <#>),");
             System.out.print("    > or F to finish:\n        ");
             String line = input.nextLine().trim();
@@ -374,6 +377,7 @@ public class World implements Printable, IViewable {
                 System.out.print("        ");
                 line = input.nextLine().trim();
             }
+             */
         }
         System.out.print("> Snowstorm! Tiles affected: ");
         for (Integer key : affectedTiles.keySet()) {
