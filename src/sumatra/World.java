@@ -173,6 +173,22 @@ public class World implements Printable {
         System.out.println("    > Creature Initialization finished!");
     }
 
+    // TODO COMMENT
+    public void generateCreaturesFrom(ArrayList<String> list) {
+        for (int i = 0; i < list.size(); i++) {
+            String[] words = list.get(i).trim().split(" ");
+            Tile t = tiles.get(Integer.parseInt(words[0]));
+            Creature c = null;
+            switch (words[1]) {
+                case "researcher": c = new Researcher(t, creatures.size()); break;
+                case "eskimo": c = new Eskimo(t, creatures.size()); break;
+                case "polarbear": c = new Bear(t, creatures.size()); break;
+            }
+            t.accept(c);
+            creatures.add(c);
+        }
+    }
+
     /**
      * Jégtábla-generáló függvény, közvetlenül az inputtal dolgozik.
      */
@@ -258,6 +274,46 @@ public class World implements Printable {
             line = input.nextLine().trim();
         }
         System.out.println("    > World Initialization finished!");
+    }
+
+    // TODO COMMENT
+    public void generateTilesFrom(ArrayList<String> list, int tileCount, int linkCount) {
+        for (int i = 0; i < tileCount; i++) {
+            String[] words = list.get(i).trim().split(" ");
+            int snow = 0, cap = 0;
+            Tile t = null;
+            if (words[0].equals("U"))
+                cap = Integer.parseInt(words[3]);
+            switch(words[0]) {
+                case "S": t = new Tile(snow); break;
+                case "U": t = new UnstableTile(snow, cap); break;
+                case "H": t = new HoleTile(snow); break;
+            }
+            Item item = null;
+            switch (words[2]) {
+                case "basicdivingsuit": item = new BasicDivingSuit(); break;
+                case "basicrope": item = new BasicRope(); break;
+                case "beacon": item = new Beacon(); break;
+                case "brokenshovel": item = new BrokenShovel(); break;
+                case "cartridge": item = new Cartridge(); break;
+                case "food": item = new Food(); break;
+                case "gun": item = new Gun(); break;
+                case "shovel": item = new Shovel(); break;
+                case "tent": item = new TentEquipment(); break;
+            }
+            if (!words[2].equals("none")) {
+                assert t != null;
+                t.placeItem(item);
+            }
+        }
+
+        for (int i = tileCount; i < tileCount + linkCount; i++) {
+            String[] words = list.get(i).trim().split(" ");
+            int idxa = Integer.parseInt(words[0]);
+            int idxb = Integer.parseInt(words[1]);
+            tiles.get(idxa).addNeighbor(tiles.get(idxb));
+            tiles.get(idxb).addNeighbor(tiles.get(idxa));
+        }
     }
 
     /**
@@ -570,5 +626,27 @@ public class World implements Printable {
 
     public Creature getCreatureAt(int index) {
         return creatures.get(index);
+    }
+
+    public boolean isManaged() { return managedMode; }
+
+    /**
+     * Visszaadja a jelenleg megszerzet jelzőrakéta darabok neveit.
+     * @return a begyűjtött darabok nevei egy String listában.
+     */
+    public ArrayList<String> getFlarepartNames(){
+        ArrayList<String> names = new ArrayList<String>();
+        for( FlarePart fp : flareParts ){
+            names.add(fp.toString());
+        }
+        return names;
+    }
+
+    /**
+     * Visszaadja a lényeket a játékban.
+     * @return a lények egy listában.
+     */
+    public ArrayList<Creature> getCreatures(){
+        return creatures;
     }
 }

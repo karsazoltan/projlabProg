@@ -1,6 +1,10 @@
 package sumatra;
 
+import graphics.Command;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Parancsértelmező osztály. A függvényei statikusak, kapnak egy-egy parancs sort, és értelmezik azt.
@@ -150,15 +154,47 @@ public class Interpreter {
         }
     }
 
-    public static void generateTilesFrom(ArrayList<String> info) {
-
+    public static void generateTilesFrom(ArrayList<String> info, int tileCount, int linkCount) {
+        // INPUT: stable 3 none / unstable 5 shovel 3 / type snow item [cap]
+        World.getInstance().generateTilesFrom(info, tileCount, linkCount);
     }
 
     public static void generateCreaturesFrom(ArrayList<String> info) {
-
+        // Itt bőven elég, ha soronként a következő: 0 polarbear / 1 researcher / tileidx creature
+        World.getInstance().generateCreaturesFrom(info);
     }
 
-    public static ArrayList<Command> validCommands() {
-        return null;
+    public static List<Command> validCommands() {
+        if (World.getInstance().isRunning()) {
+            String activePlayer = World.getInstance().getActivePlayer();
+            if (!activePlayer.equals("none"))
+                return Arrays.asList(
+                        new Command("Move", "move", 1),
+                        new Command("Dig", "dig", 0),
+                        new Command("Use manual tool", "use", 1),
+                        new Command("Use character ability", "ability", 0),
+                        new Command("Pick up item from current tile", "pickup", 0),
+                        new Command("Build flare", "buildflare", 0),
+                        new Command("Finish round", "finish", 0)
+                );
+            else if (World.getInstance().isManaged())
+                return Arrays.asList(
+                        new Command("Generate snowstorm", "snowstorm", 0), // TODO EZT HOGY A FENÉBE
+                        new Command("Step creature", "step", 1),
+                        new Command("Stop game", "stop", 0)
+                );
+            else
+                return Arrays.asList(
+                        new Command("Stop game", "stop", 0)
+                );
+        } else {
+            return Arrays.asList(
+                    // TODO Vajon initek ide jöjjenek?
+                    new Command("Start managed game", "start managed", 0),
+                    new Command("Start automated game", "start automated", 0),
+                    // TODO Vajon save / load ide jöjjön?
+                    new Command("Quit application", "exit", 0)
+            );
+        }
     }
 }

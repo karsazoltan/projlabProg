@@ -1,4 +1,4 @@
-package sumatra;
+package graphics;
 
 /**
  * Main osztály, itt indul az alkalmazás
