@@ -22,16 +22,16 @@ public class CommandButton extends JButton implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        String cmd = command.getCommand();
         if (command.getParameters() != 0) {
             JDialog d = new JDialog();
-            d.setPreferredSize(new Dimension(50, 80));
+            d.setSize(50, 200);
             ArrayList<JTextField> tfs = new ArrayList<>();
             d.setTitle("Enter parameters");
+            d.setLayout(new BoxLayout(d, BoxLayout.Y_AXIS));
 
             for (int i = 0; i < command.getParameters(); i++) {
                 JTextField tf = new JTextField();
-                tf.setPreferredSize(new Dimension( 50,20));
+                tf.setSize(new Dimension( 50,20));
                 tfs.add(tf);
                 d.add(tf);
             }
@@ -40,10 +40,12 @@ public class CommandButton extends JButton implements ActionListener {
             okButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
+                    String cmd = command.getCommand();
                     for (JTextField tf : tfs) {
-                        cmd.concat(" "+tf.getText());
+                        cmd += " "+tf.getText();
                     }
                     d.setVisible(false);
+                    System.out.println(cmd);
                 }
             });
 
@@ -51,8 +53,8 @@ public class CommandButton extends JButton implements ActionListener {
             d.pack();
             d.setVisible(true);
         }
-
-        Interpreter.interpretCommand(cmd);
+        else
+        Interpreter.interpretCommand(command.getCommand());
 
         cp.updateButtons();
     }
