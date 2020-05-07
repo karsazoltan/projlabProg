@@ -10,8 +10,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 public class FlarePartsPanel extends JPanel implements IView {
-    private JTextPane textPane;
-    private ArrayList<JLabel> pLabels = new ArrayList<JLabel>();
+    private ArrayList<JLabel> pLabels = new ArrayList<>();
 
     public FlarePartsPanel(){      
         World.getInstance().addView(this);
@@ -28,7 +27,7 @@ public class FlarePartsPanel extends JPanel implements IView {
         for( String name : names ){
             boolean isNew = true;
             for( JLabel label : pLabels ){
-                if( label.getText() == name ) isNew = false;
+                if(label.getText().equals(name)) isNew = false;
             }
 
             if( isNew ){
