@@ -78,6 +78,7 @@ public class GameAreaPanel extends JPanel {
     }
 
     private void displayTileViews() {
+        this.removeAll();
         for (TileView tv : tiles) {
             tv.setBounds(tv.getPosition().x, tv.getPosition().y, 50, 50);
             this.add(tv);
