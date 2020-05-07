@@ -21,10 +21,6 @@ public class FlarePartsPanel extends JPanel implements IView {
         Font labelFont = fLabel.getFont();
         fLabel.setFont(new Font(labelFont.getName(), Font.PLAIN, 20));
         add( fLabel);
-        
-        JLabel newLabel = new JLabel("ez a swing kurvaszar");
-        add( newLabel );        
-        pLabels.add(newLabel);
     }
 
     public void subjectChanged(){
