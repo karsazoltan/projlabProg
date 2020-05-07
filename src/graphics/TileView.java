@@ -22,4 +22,8 @@ public class TileView implements IView {
     public void subjectChanged() {
         //TODO
     }
+
+    public Point getLayout() {
+        return new Point(x, y);
+    }
 }

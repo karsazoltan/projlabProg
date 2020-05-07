@@ -1,5 +1,7 @@
 package graphics;
 
+import sumatra.World;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
