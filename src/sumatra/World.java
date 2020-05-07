@@ -580,10 +580,10 @@ public class World implements Printable, IViewable {
             return;
         }
         activeplayer = Integer.toString(idx);
-        //if( managedMode )
-        //    creatures.get(idx).playManagedRound();
-        //else
-        //    creatures.get(idx).playRound();
+        if( managedMode )
+            creatures.get(idx).playManagedRound();
+        else
+            creatures.get(idx).playRound();
 
         //activeplayer = "none";
     }
