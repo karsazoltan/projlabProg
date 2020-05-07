@@ -654,6 +654,10 @@ public class World implements Printable, IViewable {
         return creatures;
     }
 
+    public int getTileCount() {
+        return tiles.size();
+    }
+
     /**
      * Nézeti lista
      */
