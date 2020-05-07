@@ -25,6 +25,11 @@ public class MainWindow extends JFrame {
         add(GameAreaPanel.getInstance(), BorderLayout.CENTER);
         add(new CommandPanel(), BorderLayout.LINE_END);
 
+        //TODO Valaki szépítse meg aki ért ehhez a szarhoz
+        JPanel rightPanel = new JPanel();
+        rightPanel.setPreferredSize(new Dimension(200, 600));
+        add(rightPanel, BorderLayout.EAST);
+
         setVisible(true);
     }
 }
