@@ -26,6 +26,11 @@ public class TileView extends JPanel implements IView {
     }
 
     @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(50, 50);
+    };
+
+    @Override
     public void subjectChanged() {
         for(IUpdate up : views) {
             up.Update(tile);
