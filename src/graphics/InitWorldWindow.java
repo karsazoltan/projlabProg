@@ -186,6 +186,7 @@ public class InitWorldWindow extends JFrame {
 
                 Interpreter.generateTilesFrom(setup, tileID.size(), link.size());
                 CommandPanel.getInstance().updateButtons();
+                GameAreaPanel.getInstance().attachTileViews();
                 dispose();
 			}
         });
