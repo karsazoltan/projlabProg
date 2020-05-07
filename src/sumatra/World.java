@@ -291,8 +291,8 @@ public class World implements Printable {
             }
             Item item = null;
             switch (words[2]) {
-                case "basicdivingsuit": item = new BasicDivingSuit(); break;
-                case "basicrope": item = new BasicRope(); break;
+                case "divingsuit": item = new BasicDivingSuit(); break;
+                case "rope": item = new BasicRope(); break;
                 case "beacon": item = new Beacon(); break;
                 case "brokenshovel": item = new BrokenShovel(); break;
                 case "cartridge": item = new Cartridge(); break;
