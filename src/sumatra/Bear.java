@@ -55,8 +55,8 @@ public class Bear extends Creature{
     /**
      * A medve lejátsza a körét, feltételezve, hogy a játék managed módban van.
      */
-    @Override
-    void playManagedRound() {
+    //@Override
+    void playManagedRoundTextVersion() {
         Scanner input = World.getInstance().getInputScanner();
         System.out.print("> Polar bear: choose tile to move to: ");
         try {
@@ -66,6 +66,14 @@ public class Bear extends Creature{
         } catch (Exception e) {
             System.out.println("> Error: Invalid tile index!");
         }
+    }
+
+    /**
+     * A lény lejátsza a körét, feltételezve, hogy a játék managed módban van.
+     */
+    @Override
+    void playManagedRound() {
+        Interpreter.requestBearMovement(this, tile);
     }
 
     /**

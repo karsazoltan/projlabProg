@@ -1,5 +1,6 @@
 package sumatra;
 
+import graphics.BearTileChooserWindow;
 import graphics.Command;
 
 import java.util.ArrayList;
@@ -201,5 +202,10 @@ public class Interpreter {
                         new Command("Quit application", "exit", 0)
                 );
         }
+    }
+
+    public static void requestBearMovement(Bear b, Tile t) {
+        BearTileChooserWindow btcw = new BearTileChooserWindow(t);
+        b.move(World.getInstance().getTileAt(btcw.showDialog()));
     }
 }
