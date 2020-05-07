@@ -16,8 +16,6 @@ public class InitWorldWindow extends JFrame {
      */
     private static final long serialVersionUID = 1L;
 
-    ArrayList<String> commands;
-
     ArrayList<Integer> tileID = new ArrayList<Integer>();
     ArrayList<String> item = new ArrayList<String>();
     ArrayList<String> capacity = new ArrayList<String>();
@@ -189,6 +187,7 @@ public class InitWorldWindow extends JFrame {
 
                 Interpreter.generateTilesFrom(setup, tileID.size(), link.size());
                 CommandPanel.getInstance().updateButtons();
+                GameAreaPanel.getInstance().attachTileViews();
                 dispose();
 			}
         });

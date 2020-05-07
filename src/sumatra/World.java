@@ -335,6 +335,7 @@ public class World implements Printable, IViewable {
                 assert t != null;
                 t.placeItem(item);
             }
+            tiles.add(t);
         }
 
         for (int i = tileCount; i < tileCount + linkCount; i++) {
@@ -580,10 +581,10 @@ public class World implements Printable, IViewable {
             return;
         }
         activeplayer = Integer.toString(idx);
-        //if( managedMode )
-        //    creatures.get(idx).playManagedRound();
-        //else
-        //    creatures.get(idx).playRound();
+        if( managedMode )
+            creatures.get(idx).playManagedRound();
+        else
+            creatures.get(idx).playRound();
 
         //activeplayer = "none";
     }

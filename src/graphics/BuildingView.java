@@ -1,17 +1,16 @@
 package graphics;
 
-import sumatra.Building;
 import sumatra.Tile;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 
-public class BuildingView extends JPanel implements IUpdate {
+public class BuildingView extends UpdateJPanel {
     JLabel label;
     public BuildingView() {
         label = new JLabel("");
         add(label);
+        setVisible(true);
     }
     @Override
     public void Update(Tile t) {
