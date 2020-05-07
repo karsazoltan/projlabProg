@@ -10,6 +10,7 @@ public class CommandPanel extends JPanel {
     private ArrayList<CommandButton> commandButtons;
 
     public CommandPanel() {
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         commandButtons = new ArrayList<>();
         updateButtons();
     }
