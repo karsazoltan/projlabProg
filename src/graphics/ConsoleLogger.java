@@ -8,13 +8,15 @@ import java.io.PrintStream;
 
 public class ConsoleLogger extends OutputStream {
     private JTextArea console;
+    private JScrollPane wrapper;
 
     public ConsoleLogger() {
         console = new JTextArea();
-        console.setPreferredSize(new Dimension(0, 150));
+        wrapper = new JScrollPane(console);
+
+        wrapper.setPreferredSize(new Dimension(0, 150));
         console.setEditable(false);
         console.setBackground(UIManager.getColor("Panel.background"));
-        console.setBorder(BorderFactory.createMatteBorder(1, 0, 1, 1, Color.LIGHT_GRAY));
 
         System.setOut(new PrintStream(this));
     }
@@ -25,7 +27,7 @@ public class ConsoleLogger extends OutputStream {
         SwingUtilities.invokeLater(() -> console.append(text));
     }
 
-    public JTextArea getComponent() {
-        return console;
+    public JComponent getComponent() {
+        return wrapper;
     }
 }
