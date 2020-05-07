@@ -4,15 +4,16 @@ import sumatra.Tile;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TileView extends JPanel implements IView {
     private int x, y;
-    private GridLayout layout;
     private List<IUpdate> views;
     private Tile tile;
     public TileView(Tile t, int x, int y) {
-        layout = new GridLayout(4, 2);
+        setLayout(new GridLayout(4, 2));
+        views = new ArrayList<IUpdate>();
         this.x = x;
         this.y = y;
         tile = t;
