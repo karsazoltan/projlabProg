@@ -27,7 +27,7 @@ public class GameAreaPanel extends JPanel {
         pw.write("tiles " + tiles.size() + "\n");
         for (int i = 0; i < tiles.size(); i++) {
             Point p = tiles.get(i).getPosition();
-            pw.write("tile " + i + " " + p.x + " " + p.y + "\n");
+            pw.write("    tile " + i + " " + p.x + " " + p.y + "\n");
         }
         pw.flush();
         pw.close();
