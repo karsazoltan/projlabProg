@@ -90,7 +90,12 @@ public class MainWindow extends JFrame {
         initMenu.add(creatInitMI);
 
         worldInitMI.addActionListener(e -> new InitWorldWindow());
-        creatInitMI.addActionListener(e -> new InitCreatureWindow(World.getInstance().getTileCount()));
+        creatInitMI.addActionListener(e -> {
+            if (World.getInstance().getTileCount() == 0)
+                JOptionPane.showMessageDialog(null, "Error: Initialize a world first!", "Error!", JOptionPane.ERROR_MESSAGE);
+            else
+                new InitCreatureWindow(World.getInstance().getTileCount());
+        });
 
         setJMenuBar(menuBar);
     }
