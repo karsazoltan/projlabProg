@@ -34,7 +34,7 @@ public class InitWorldWindow extends JFrame {
     public InitWorldWindow() {
         super("World Creator");
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLayout(new BorderLayout());
 
         JPanel mainPanel = new JPanel();

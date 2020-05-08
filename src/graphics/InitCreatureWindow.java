@@ -24,7 +24,7 @@ public class InitCreatureWindow extends JFrame {
         }
 
         setSize(166, 300);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLayout(new BorderLayout());
 
         JPanel mainPanel = new JPanel();
