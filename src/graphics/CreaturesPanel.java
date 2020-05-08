@@ -14,17 +14,17 @@ public class CreaturesPanel extends JPanel {
 
     JPanel panel = new JPanel();
     private CreaturesPanel(){
-        setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+        setLayout(new BorderLayout());
         
         JLabel cLabel = new JLabel("Creatures");
         Font labelFont = cLabel.getFont();
         cLabel.setFont(new Font(labelFont.getName(), Font.PLAIN, 20));
-        add( cLabel);
+        add(cLabel, BorderLayout.PAGE_START);
         
         JScrollPane scrollPane = new JScrollPane(panel);
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
-        add( scrollPane );
+        add(scrollPane, BorderLayout.CENTER);
     }
 
     public void attachViews(){
