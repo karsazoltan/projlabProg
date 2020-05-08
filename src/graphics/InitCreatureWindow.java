@@ -70,7 +70,7 @@ public class InitCreatureWindow extends JFrame {
         OK.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)
 			{
-                Interpreter.generateCreaturesFrom(addedCreatures);
+                World.getInstance().generateCreaturesFrom(addedCreatures);
                 CommandPanel.getInstance().updateButtons();
                 CreaturesPanel.getInstance().attachViews();
                 GameAreaPanel.getInstance().attachTileViews();
