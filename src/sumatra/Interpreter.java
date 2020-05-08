@@ -183,7 +183,7 @@ public class Interpreter {
                 );
             else if (World.getInstance().isManaged())
                 return Arrays.asList(
-                        new Command("Generate snowstorm", "snowstorm", 0), // TODO EZT HOGY A FENÉBE
+                        new Command("Generate snowstorm", "snowstorm", 0),
                         new Command("Step creature", "step", 1),
                         new Command("Stop game", "stop", 0)
                 );

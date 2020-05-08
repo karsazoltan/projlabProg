@@ -636,7 +636,7 @@ public class World implements Printable, IViewable {
         pw.write("tiles " + tiles.size() + "\n");
         pw.flush();
         for (Tile t : tiles) {
-            t.printData(stream, "    "); //TODO Ez full üres
+            t.printData(stream, "    ");
         }
 
         ArrayList<Integer> links = new ArrayList<>();
