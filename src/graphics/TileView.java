@@ -30,7 +30,7 @@ public class TileView extends JPanel implements IView {
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(160, 500);
+        return new Dimension(80, 160);
     };
 
     @Override

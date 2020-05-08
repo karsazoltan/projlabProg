@@ -1,5 +1,6 @@
 package graphics;
 
+import sumatra.Building;
 import sumatra.Tile;
 
 import javax.swing.*;
@@ -14,8 +15,12 @@ public class BuildingView extends UpdateJPanel {
     }
     @Override
     public void Update(Tile t) {
-        setBorder(BorderFactory.createTitledBorder("Building"));
-        //hogyha ...
-        t.getBuilding();
+        Building b = t.getBuilding();
+        if(b != null) {
+            if(b.getBuildingType().compareTo("igloo") == 0)
+                label.setText("I");
+            else if(b.getBuildingType().compareTo("tent") == 0)
+                label.setText("T");
+        }
     }
 }

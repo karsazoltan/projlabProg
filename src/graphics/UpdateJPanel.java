@@ -9,6 +9,6 @@ public abstract class UpdateJPanel extends JPanel {
     public abstract void Update(Tile t);
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(80, 80);
+        return new Dimension(20, 20);
     };
 }

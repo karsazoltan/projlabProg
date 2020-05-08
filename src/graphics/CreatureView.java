@@ -5,25 +5,28 @@ import sumatra.Tile;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 public class CreatureView extends UpdateJPanel {
+    static Dictionary<String, Color> viewMap = new Hashtable<String, Color>();
+    static {
+        viewMap.put("Polar bear", new Color(20, 100, 200));
+        viewMap.put("Eskimo", new Color(200, 134, 20));
+        viewMap.put("Researcher", new Color(200, 20, 20));
+    }
     private int index;
-    JLabel label;
     public CreatureView(int index) {
         this.index = index;
-        label = new JLabel("");
         setVisible(true);
     }
     @Override
     public void Update(Tile t) {
-        setBorder(BorderFactory.createTitledBorder("Creature"));
-        //hogyha ...
         try {
             Creature c = t.getCreature(index);
-            label.setText(c.getType());
+            setBackground(viewMap.get(c.getType()));
         } catch (IndexOutOfBoundsException ea) {
-
-            label.setText("");
+            setBackground(new Color(255, 255, 255));
         }
     }
 }
