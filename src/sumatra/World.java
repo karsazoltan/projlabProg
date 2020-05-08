@@ -364,7 +364,7 @@ public class World implements Printable, IViewable {
     public void generateSnowstorm() {
         HashMap<Integer, Integer> affectedTiles = new HashMap<>();
         if (!managedMode) {
-            int amount = ThreadLocalRandom.current().nextInt(0, tiles.size());
+            int amount = ThreadLocalRandom.current().nextInt(1, tiles.size());
             for (int i = 0; i < amount; i++) {
                 int tile = ThreadLocalRandom.current().nextInt(0, tiles.size());
                 int snow = ThreadLocalRandom.current().nextInt(1, 5);
@@ -394,8 +394,8 @@ public class World implements Printable, IViewable {
         System.out.print("> Snowstorm! Tiles affected: ");
         for (Integer key : affectedTiles.keySet()) {
             System.out.print(key + " ");
-            System.out.println();
         }
+        System.out.println();
 
         for (Integer key : affectedTiles.keySet()) {
             try {
