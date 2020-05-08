@@ -172,35 +172,35 @@ public class Interpreter {
             String activePlayer = World.getInstance().getActivePlayer();
             if (!activePlayer.equals("none"))
                 return Arrays.asList(
-                        new Command("Move", "move", 1),
-                        new Command("Dig", "dig", 0),
-                        new Command("Use manual tool", "use", 1),
-                        new Command("Use character ability", "ability", 0),
-                        new Command("Pick up item from current tile", "pickup", 0),
-                        new Command("Build flare", "buildflare", 0),
-                        new Command("Finish round", "finish", 0),
-                        new Command("Stop game", "stop", 0)
+                        new Command("Move", "move", 1, "Enter tile to move to: "),
+                        new Command("Dig", "dig"),
+                        new Command("Use manual tool", "use", 1, "Enter tool to use: "),
+                        new Command("Use character ability", "ability"),
+                        new Command("Pick up item from current tile", "pickup"),
+                        new Command("Build flare", "buildflare"),
+                        new Command("Finish round", "finish"),
+                        new Command("Stop game", "stop")
                 );
             else if (World.getInstance().isManaged())
                 return Arrays.asList(
-                        new Command("Generate snowstorm", "snowstorm", 0),
-                        new Command("Step creature", "step", 1),
-                        new Command("Stop game", "stop", 0)
+                        new Command("Generate snowstorm", "snowstorm"),
+                        new Command("Step creature", "step", 1, "Enter creature index: "),
+                        new Command("Stop game", "stop")
                 );
             else
                 return Arrays.asList(
-                        new Command("Stop game", "stop", 0)
+                        new Command("Stop game", "stop")
                 );
         } else {
             if (World.getInstance().getCreatures().size() == 0)
                 return Arrays.asList(
-                        new Command("Quit application", "exit", 0)
+                        new Command("Quit application", "exit")
                 );
             else
                 return Arrays.asList(
-                        new Command("Start managed game", "start managed", 0),
-                        new Command("Start automated game", "start automated", 0),
-                        new Command("Quit application", "exit", 0)
+                        new Command("Start managed game", "start managed"),
+                        new Command("Start automated game", "start automated"),
+                        new Command("Quit application", "exit")
                 );
         }
     }
