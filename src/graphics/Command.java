@@ -47,4 +47,12 @@ public class Command {
     public String getParameterInfo() {
         return parameterinfo;
     }
+
+    public boolean hasValidOptions() {
+        return hasValidOptions;
+    }
+
+    public ArrayList<Integer> getValidOptions() {
+        return validOptions;
+    }
 }
