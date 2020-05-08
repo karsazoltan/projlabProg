@@ -178,7 +178,7 @@ public abstract class Player extends Creature{
         System.out.println("Player " + index + " lost " + amount + " health");
         health -= amount;
         updateViews();
-        if( health < 0 )
+        if( health <= 0 )
             World.getInstance().loseGame();
     }
 
