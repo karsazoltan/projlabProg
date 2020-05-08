@@ -34,79 +34,90 @@ public class InitWorldWindow extends JFrame {
     public InitWorldWindow() {
         super("World Creator");
 
-        setSize(498, 300);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
         JPanel mainPanel = new JPanel();
-        JPanel setupPanel = new JPanel();
-        JPanel tilesPanel = new JPanel();
-        JPanel linksPanel = new JPanel();
-        JPanel itemsPanel = new JPanel();
 
 
         // Left Panel
-        tilesPanel.setLayout(new BoxLayout(tilesPanel, BoxLayout.Y_AXIS));
+        mainPanel.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(1, 2, 1, 2);
+        gbc.fill = GridBagConstraints.BOTH;
+
         JFormattedTextField snowField = new JFormattedTextField(NumberFormat.getNumberInstance());
         JFormattedTextField capacityField = new JFormattedTextField(NumberFormat.getNumberInstance());
         JTextArea tilesList = new JTextArea();       
         JComboBox<String> typeList = new JComboBox<String>(types);
         JScrollPane tilesListScroll = new JScrollPane(tilesList);
-        tilesListScroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         JButton addTile = new JButton("Add Tile");
         typeList.setSelectedIndex(0);
         tilesList.setEditable(false);
         capacityField.setValue(0);
         snowField.setValue(0);
-        capacityField.setPreferredSize(new Dimension(166, 19));
-        snowField.setPreferredSize(new Dimension(166, 19));
-        tilesListScroll.setPreferredSize(new Dimension(166, 200));
-        addTile.setPreferredSize(new Dimension(166, 19));
-        tilesPanel.add(typeList, BorderLayout.NORTH);
-        tilesPanel.add(snowField, BorderLayout.NORTH);
-        tilesPanel.add(capacityField, BorderLayout.NORTH);
-        tilesPanel.add(addTile, BorderLayout.NORTH);
-        tilesPanel.add(tilesListScroll, BorderLayout.SOUTH);
+        typeList.setPreferredSize(new Dimension(166, 30));
+        capacityField.setPreferredSize(new Dimension(83, 30));
+        snowField.setPreferredSize(new Dimension(83, 30));
+        addTile.setPreferredSize(new Dimension(166, 30));
+        tilesListScroll.setPreferredSize(new Dimension(166, 210));
+
+        gbc.gridx = 0; gbc.gridy = 0; gbc.gridwidth = 2;
+        mainPanel.add(typeList, gbc);
+        gbc.gridwidth = 1; gbc.gridy++;
+        mainPanel.add(snowField, gbc);
+        gbc.gridx = 1;
+        mainPanel.add(capacityField, gbc);
+        gbc.gridx = 0; gbc.gridy++; gbc.gridwidth = 2;
+        mainPanel.add(addTile, gbc);
+        gbc.gridy++;
+        mainPanel.add(tilesListScroll, gbc);
+        gbc.gridwidth = 1;
 
 
         // Center Panel
-        linksPanel.setLayout(new BoxLayout(linksPanel, BoxLayout.Y_AXIS));
+        gbc.gridx = 2; gbc.gridy = GridBagConstraints.RELATIVE;
+
         JComboBox<Integer> t1 = new JComboBox<Integer>(tileID.toArray(new Integer[0]));
         JComboBox<Integer> t2 = new JComboBox<Integer>(tileID.toArray(new Integer[0]));
         JButton addLink = new JButton("Add Link");
         JTextArea linksList = new JTextArea();
         linksList.setEditable(false);
         JScrollPane linksListScroll = new JScrollPane(linksList);
-        addLink.setPreferredSize(new Dimension(166, 19));
-        t1.setPreferredSize(new Dimension(166, 19));
-        t2.setPreferredSize(new Dimension(166, 19));
-        linksListScroll.setPreferredSize(new Dimension(166, 200));
-        linksPanel.add(t1, BorderLayout.NORTH);
-        linksPanel.add(t2, BorderLayout.NORTH);
-        linksPanel.add(addLink, BorderLayout.NORTH);
-        linksPanel.add(linksListScroll);
+        t1.setPreferredSize(new Dimension(166, 30));
+        t2.setPreferredSize(new Dimension(166, 30));
+        addLink.setPreferredSize(new Dimension(166, 30));
+        linksListScroll.setPreferredSize(new Dimension(166, 210));
+        mainPanel.add(t1, gbc);
+        mainPanel.add(t2, gbc);
+        mainPanel.add(addLink, gbc);
+        mainPanel.add(linksListScroll, gbc);
 
 
-        // Right Panel 
-        itemsPanel.setLayout(new BoxLayout(itemsPanel, BoxLayout.Y_AXIS));
+        // Right Panel
+        gbc.gridx = 3;
+
         JComboBox<Integer> tileSelector = new JComboBox<Integer>(tileID.toArray(new Integer[0]));
         JComboBox<String> itemSelector = new JComboBox<String>(items);
         JButton addItem = new JButton("Add Item");
         JTextArea itemsList = new JTextArea();
         itemsList.setEditable(false);
         JScrollPane itemsListScroll = new JScrollPane(itemsList);
-        addItem.setPreferredSize(new Dimension(166, 19));
-        tileSelector.setPreferredSize(new Dimension(166, 19));
-        itemSelector.setPreferredSize(new Dimension(166, 19));
-        itemsListScroll.setPreferredSize(new Dimension(166, 200));
-        itemsPanel.add(tileSelector, BorderLayout.NORTH);
-        itemsPanel.add(itemSelector, BorderLayout.NORTH);
-        itemsPanel.add(addItem, BorderLayout.NORTH);
-        itemsPanel.add(itemsListScroll);
+        addItem.setPreferredSize(new Dimension(166, 30));
+        tileSelector.setPreferredSize(new Dimension(166, 30));
+        itemSelector.setPreferredSize(new Dimension(166, 30));
+        itemsListScroll.setPreferredSize(new Dimension(166, 210));
+        mainPanel.add(tileSelector, gbc);
+        mainPanel.add(itemSelector, gbc);
+        mainPanel.add(addItem, gbc);
+        mainPanel.add(itemsListScroll, gbc);
 
 
         // OK Button
         JButton OK = new JButton("OK");
+        OK.setPreferredSize(new Dimension(166, 30));
+        gbc.gridx = 2; gbc.gridy = 4;
+        mainPanel.add(OK, gbc);
 
         // Action Listeners
         addTile.addActionListener(new ActionListener() {
@@ -192,18 +203,10 @@ public class InitWorldWindow extends JFrame {
 			}
         });
 
-        
-        tilesPanel.setPreferredSize(new Dimension(166, 300));
-        linksPanel.setPreferredSize(new Dimension(166, 300));
-        itemsPanel.setPreferredSize(new Dimension(166, 300));
-        setupPanel.add(tilesPanel, BorderLayout.CENTER);
-        setupPanel.add(linksPanel, BorderLayout.CENTER);
-        setupPanel.add(itemsPanel, BorderLayout.CENTER);
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-        mainPanel.add(setupPanel, BorderLayout.NORTH);
-        mainPanel.add(OK, BorderLayout.SOUTH);
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         add(mainPanel);
         pack();
+        setResizable(false);
         setVisible(true);
     }
 }
