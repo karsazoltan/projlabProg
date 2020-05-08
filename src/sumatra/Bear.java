@@ -6,8 +6,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
+/** Medve osztály */
 public class Bear extends Creature{
 
+    /**
+     * Konstruktor
+     * @param startTile A medve kezdő jégtáblája
+     * @param pindex A medve indexe
+     */
     public Bear(Tile startTile, int pindex){
         super(startTile, pindex);
         type = "Polar bear";
@@ -34,6 +40,7 @@ public class Bear extends Creature{
         pw.flush();
     }
 
+    // TODO COMMENT
     @Override
     public ArrayList<String> getDisplayData() {
         ArrayList<String> data = new ArrayList<String>();
@@ -55,6 +62,8 @@ public class Bear extends Creature{
 
     /**
      * A medve lejátsza a körét, feltételezve, hogy a játék managed módban van.
+     * Nem használt függvény, mert az inputról olvas, és az alkalmazás már
+     * grafikus felülettel rendelkezik.
      */
     //@Override
     void playManagedRoundTextVersion() {
@@ -70,7 +79,7 @@ public class Bear extends Creature{
     }
 
     /**
-     * A lény lejátsza a körét, feltételezve, hogy a játék managed módban van.
+     * A medve lejátsza a körét, feltételezve, hogy a játék managed módban van.
      */
     @Override
     void playManagedRound() {

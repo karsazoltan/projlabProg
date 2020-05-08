@@ -6,7 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
+/** A fő ablak osztálya */
 public class MainWindow extends JFrame {
+    /** Konstruktor, létrehoz és elindít mindent */
     public MainWindow() {
         super("Sumatra :: Jégmező");
         setSize(900, 600);
@@ -38,6 +40,10 @@ public class MainWindow extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Létrehozza a menüsort. Külön függvény, mert elég hosszú, és így
+     * olvashatóbb a konstruktor
+     */
     private void createMenuStrip() {
         JMenuBar menuBar = new JMenuBar();
 

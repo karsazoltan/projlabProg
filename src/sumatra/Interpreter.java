@@ -145,7 +145,12 @@ public class Interpreter {
         return false;
     }
 
-    // TODO COMMENT, VAJON JÓ-E EZ ÍGY
+    /**
+     * Globális parancsértelmező - a szövegalapú verzióban a World kezelte, hogy mikor melyik interpreter
+     * függvény volt meghívva, viszont a grafikus verziónál a World állapotgépként funkcionál - itt az
+     * állapot függvényében hívjuk a megfelelő parancsértelmezőt.
+     * @param cmd Az értelmezendő parancs.
+     */
     public static void interpretCommand(String cmd) {
         if (World.getInstance().isRunning()) {
             String activePlayer = World.getInstance().getActivePlayer();
@@ -156,16 +161,6 @@ public class Interpreter {
         } else {
             interpretBasicCommand(cmd);
         }
-    }
-
-    public static void generateTilesFrom(ArrayList<String> info, int tileCount, int linkCount) {
-        // INPUT: stable 3 none / unstable 5 shovel 3 / type snow item [cap]
-        World.getInstance().generateTilesFrom(info, tileCount, linkCount);
-    }
-
-    public static void generateCreaturesFrom(ArrayList<String> info) {
-        // Itt bőven elég, ha soronként a következő: 0 polarbear / 1 researcher / tileidx creature
-        World.getInstance().generateCreaturesFrom(info);
     }
 
     public static List<Command> validCommands() {

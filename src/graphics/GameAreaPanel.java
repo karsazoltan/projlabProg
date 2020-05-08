@@ -7,12 +7,17 @@ import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
 
+/** A játéktér komponense */
 public class GameAreaPanel extends JPanel {
+    /** Singleton megvalósítás: példány */
     private static GameAreaPanel instance = new GameAreaPanel();
+    /** Singleton megvalósítás: függvény */
     public static GameAreaPanel getInstance() { return instance; }
 
+    /** Hivatkozás a megjelenítendő TileViewekre */
     private static ArrayList<TileView> tiles;
 
+    /** Singleton megvalósítás: privát konstruktor */
     private GameAreaPanel() {
         super();
         tiles = new ArrayList<>();
@@ -20,6 +25,12 @@ public class GameAreaPanel extends JPanel {
         setVisible(true);
     }
 
+    /**
+     * A grafikus felület pályakiíró függvénye. Kiírja a TileViewek layoutját,
+     * és szól a Worldnek, hogy írja ki a modellt
+     * @param filename A cél fájl neve
+     * @throws IOException Ha nem tudunk írni az adott területre
+     */
     public void saveLayout(String filename) throws IOException {
         FileOutputStream fos = new FileOutputStream(filename);
         PrintWriter pw = new PrintWriter(fos);
@@ -35,6 +46,7 @@ public class GameAreaPanel extends JPanel {
         World.getInstance().saveConfig(filename + ".data.txt");
     }
 
+    /** Létrehozza, és elrendezi a TileVieweket a már létező Tile-ok alapján */
     public void attachTileViews() {
         tiles.clear();
 
@@ -50,6 +62,12 @@ public class GameAreaPanel extends JPanel {
         displayTileViews();
     }
 
+    /**
+     * A grafikus felület pályabeolvasó függvénye. Beolvassa a modellt, illetve a
+     * layoutot is. Ha modellfájlt kap, akkor automatikusan generál hozzá layoutot
+     * @param filename A forrásfájl neve
+     * @throws IOException Ha nem tudunk olvasni az adott területről, vagy hibás a fájl
+     */
     public void loadTileViewsFromFile(String filename) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filename));
 
@@ -78,6 +96,7 @@ public class GameAreaPanel extends JPanel {
         displayTileViews();
     }
 
+    /** Megjeleníti a már elkészített TileView-eket */
     private void displayTileViews() {
         this.removeAll();
 
