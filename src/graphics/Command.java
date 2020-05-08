@@ -18,6 +18,10 @@ public class Command {
         this(message, command, true, parameterinfo, false, null);
     }
 
+    public Command(String message, String command, String parameterinfo, ArrayList<Integer> validOptions) {
+        this(message, command, true, parameterinfo, true, validOptions);
+    }
+
     private Command(String message, String command, boolean hasParameters, String parameterinfo,
                     boolean hasValidOptions, ArrayList<Integer> validOptions) {
         this.message = message;

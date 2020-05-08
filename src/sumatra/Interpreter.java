@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * Parancsértelmező osztály. A függvényei statikusak, kapnak egy-egy parancs sort, és értelmezik azt.
@@ -170,24 +172,37 @@ public class Interpreter {
     public static List<Command> validCommands() {
         if (World.getInstance().isRunning()) {
             String activePlayer = World.getInstance().getActivePlayer();
-            if (!activePlayer.equals("none"))
+            if (!activePlayer.equals("none")) {
+                Player active = (Player) World.getInstance().getCreatures().get(Integer.parseInt(activePlayer));
+                ArrayList<Integer> tiles = new ArrayList<>();
+                for (Tile t : active.getTile().getNeighbors()) {
+                    tiles.add(World.getInstance().getTileIndex(t));
+                }
+
+                ArrayList<Integer> items = (ArrayList<Integer>) IntStream
+                        .range(0, active.getItems().size()).boxed().collect(Collectors.toList());
+
                 return Arrays.asList(
-                        new Command("Move", "move", "Enter tile to move to: "),
+                        new Command("Move", "move", "Enter tile to move to: ", tiles),
                         new Command("Dig", "dig"),
-                        new Command("Use manual tool", "use", "Enter tool to use: "),
+                        new Command("Use manual tool", "use", "Enter tool to use: ", items),
                         new Command("Use character ability", "ability"),
                         new Command("Pick up item from current tile", "pickup"),
                         new Command("Build flare", "buildflare"),
                         new Command("Finish round", "finish"),
                         new Command("Stop game", "stop")
                 );
-            else if (World.getInstance().isManaged())
+            } else if (World.getInstance().isManaged()) {
+                ArrayList<Integer> creatures = (ArrayList<Integer>) IntStream
+                        .range(0, World.getInstance().getCreatures().size()).boxed().collect(Collectors.toList());
+
+
                 return Arrays.asList(
                         new Command("Generate snowstorm", "snowstorm"),
-                        new Command("Step creature", "step", "Enter creature index: "),
+                        new Command("Step creature", "step", "Enter creature index: ", creatures),
                         new Command("Stop game", "stop")
                 );
-            else
+            } else
                 return Arrays.asList(
                         new Command("Stop game", "stop")
                 );
