@@ -163,6 +163,10 @@ public class Interpreter {
         }
     }
 
+    /**
+     * Visszatér a valid parancsok listájával.
+     * @return A valid parancsok listája.
+     */
     public static List<Command> validCommands() {
         if (World.getInstance().isRunning()) {
             String activePlayer = World.getInstance().getActivePlayer();
@@ -201,11 +205,23 @@ public class Interpreter {
         }
     }
 
+    /**
+     * Medve-léptető delegáló függvény - A modell nem közvetlenül a grafikus felületre hivatkozik, hanem erre,
+     * és cserébe ez az, ami meghívja a grafikus felület kezelőjét.
+     * @param b A léptetendő medve
+     * @param t A medve táblája
+     */
     public static void requestBearMovement(Bear b, Tile t) {
         BearTileChooserWindow btcw = new BearTileChooserWindow(t);
         b.move(World.getInstance().getTileAt(btcw.showDialog()));
     }
 
+    /**
+     * Hóvihar-generáló delegáló függvény - A modell nem közvetlenül a grafikus felületre hivatkozik, hanem erre,
+     * és cserébe ez az, ami meghívja a grafikus felület kezelőjét.
+     * @param tileCount A jégtáblák száma a mezőn
+     * @return Egy int-int összerendelés - melyik jégtáblán mennyi havat generáljunk
+     */
     public static HashMap<Integer, Integer> requestSnowstormGeneration(int tileCount) {
         SnowstormGeneratorWindow sgw = new SnowstormGeneratorWindow(tileCount);
         return sgw.showDialog();

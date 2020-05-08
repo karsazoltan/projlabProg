@@ -102,9 +102,13 @@ public class World implements Printable, IViewable {
         }
     }
 
-    private static int nextstormstep = -1;
+    /** Tárolja az utolsó hóvihar bekövetkeztét */
+    private int nextstormstep = -1;
 
-    // TODO COMMENT
+    /**
+     * A World a grafikus felület hozzáadásával végtelen ciklusrendszer helyett egy állapotgéppé vált -
+     * Ez a függvény ezt az állapotgépet lépteti
+     */
     public void advanceGame() {
         // Ha load történt, akkor történhet ilyen
         if (!activeplayer.equals("none")) {
@@ -128,7 +132,7 @@ public class World implements Printable, IViewable {
     }
 
     /**
-     * Ciklusfüggvény, a játék menetét vezérli.
+     * Ciklusfüggvény, a játék menetét vezérli. A grafikus felület bevezetése óta nem használt
      */
     private void gameLoop() {
         int nextstormstep = ThreadLocalRandom.current().nextInt(Math.max(2 * creatures.size(),1));
@@ -202,7 +206,10 @@ public class World implements Printable, IViewable {
         System.out.println("    > Creature Initialization finished!");
     }
 
-    // TODO COMMENT
+    /**
+     * Létrehoz lényeket a kapott input tömbből
+     * @param list Tömb, soronként egy-egy élőlény információival
+     */
     public void generateCreaturesFrom(ArrayList<String> list) {
         for (int i = 0; i < list.size(); i++) {
             String[] words = list.get(i).trim().split(" ");
@@ -305,7 +312,12 @@ public class World implements Printable, IViewable {
         System.out.println("    > World Initialization finished!");
     }
 
-    // TODO COMMENT
+    /**
+     * Létrehoz jégtáblákat a kapott input tömbből.
+     * @param list Tömb, elemenként egy jégtábla információival, vagy egy linkkel.
+     * @param tileCount Az első hány elem jégtáblaleíró
+     * @param linkCount Az utolsó hány elem linkleíró
+     */
     public void generateTilesFrom(ArrayList<String> list, int tileCount, int linkCount) {
         for (int i = 0; i < tileCount; i++) {
             String[] words = list.get(i).trim().split(" ");
@@ -651,23 +663,43 @@ public class World implements Printable, IViewable {
         pw.flush();
     }
 
+    /**
+     * Visszatér a World input szkennerével - nem szerencsés több szkennert tenni az STDIN-re
+     * @return Az input szkennere.
+     */
     Scanner getInputScanner(){
         return input;
     }
 
-    // TODO COMMENT
+    /**
+     * Visszatér azzal, hogy fut-e egy játék.
+     * @return Fut-e éppen játék
+     */
     public boolean isRunning() {
         return running;
     }
 
+    /**
+     * Visszatér az aktív játékossal, "none", ha nincs ilyen
+     * @return Az aktív játékos
+     */
     public String getActivePlayer() {
         return activeplayer;
     }
 
+    /**
+     * Visszatér az index-edik élőlénnyel.
+     * @param index Az élőlény sorszáma
+     * @return Az élőlény
+     */
     public Creature getCreatureAt(int index) {
         return creatures.get(index);
     }
 
+    /**
+     * Visszatér azzal, hogy menedzselt-e az aktív játék. Irreleváns, ha nem fut épp játék
+     * @return Menedzselt-e a játék
+     */
     public boolean isManaged() { return managedMode; }
 
     /**

@@ -2,6 +2,9 @@ package sumatra;
 
 import java.util.ArrayList;
 
+/**
+ * Sátor osztály.
+ */
 public class Tent extends Building {
     Tile owner;
     /**
@@ -44,6 +47,10 @@ public class Tent extends Building {
             newCreature.collideWith(c);
         }
     }
+
+    /**
+     * Szétrombolja önmagát
+     */
     public void destroy() {
         System.out.println("> The tent has fallen apart on tile " + World.getInstance().getTileIndex(owner) + "!");
         owner.setBuilding(new NoBuilding());
