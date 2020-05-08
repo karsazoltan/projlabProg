@@ -22,29 +22,21 @@ public class CommandButton extends JButton implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (command.getParameters() != 0) {
+        if (command.hasParameters()) {
             JDialog d = new JDialog();
-            d.setSize(200, 30 * (command.getParameters() + 2));
+            d.setSize(200, 90);
             d.setTitle(command.getParameterInfo());
             d.setLayout(new GridLayout(0, 1));
 
-            ArrayList<JTextField> tfs = new ArrayList<>();
-            for (int i = 0; i < command.getParameters(); i++) {
-                JTextField tf = new JTextField();
-                tf.setSize(new Dimension(200,30));
-                tfs.add(tf);
-                d.add(tf);
-            }
+            JTextField tf = new JTextField();
+            tf.setSize(new Dimension(200,30));
+            d.add(tf);
 
             JButton okButton = new JButton("Ok");
             okButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    StringBuilder cmd = new StringBuilder(command.getCommand());
-                    for (JTextField tf : tfs) {
-                        cmd.append(" ").append(tf.getText());
-                    }
-                    Interpreter.interpretCommand(cmd.toString());
+                    Interpreter.interpretCommand(command.getCommand() + " " + tf.getText());
                     cp.updateButtons();
                     d.dispose();
                 }
@@ -53,8 +45,7 @@ public class CommandButton extends JButton implements ActionListener {
             d.add(okButton);
             d.setLocationRelativeTo(null);
             d.setVisible(true);
-        }
-        else {
+        } else {
             Interpreter.interpretCommand(command.getCommand());
             cp.updateButtons();
         }

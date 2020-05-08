@@ -125,7 +125,7 @@ public class World implements Printable, IViewable {
                 generateSnowstorm();
             }
             if (nextstormstep <= stepCounter) {
-                nextstormstep += ThreadLocalRandom.current().nextInt(Math.max(3 * creatures.size(), 2));
+                nextstormstep += ThreadLocalRandom.current().nextInt(1, 3 * creatures.size());
             }
             step(stepCounter % creatures.size());
         }
@@ -364,7 +364,7 @@ public class World implements Printable, IViewable {
     public void generateSnowstorm() {
         HashMap<Integer, Integer> affectedTiles = new HashMap<>();
         if (!managedMode) {
-            int amount = ThreadLocalRandom.current().nextInt(1, tiles.size());
+            int amount = ThreadLocalRandom.current().nextInt(1, tiles.size() + 1);
             for (int i = 0; i < amount; i++) {
                 int tile = ThreadLocalRandom.current().nextInt(0, tiles.size());
                 int snow = ThreadLocalRandom.current().nextInt(1, 5);

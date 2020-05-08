@@ -172,9 +172,9 @@ public class Interpreter {
             String activePlayer = World.getInstance().getActivePlayer();
             if (!activePlayer.equals("none"))
                 return Arrays.asList(
-                        new Command("Move", "move", 1, "Enter tile to move to: "),
+                        new Command("Move", "move", "Enter tile to move to: "),
                         new Command("Dig", "dig"),
-                        new Command("Use manual tool", "use", 1, "Enter tool to use: "),
+                        new Command("Use manual tool", "use", "Enter tool to use: "),
                         new Command("Use character ability", "ability"),
                         new Command("Pick up item from current tile", "pickup"),
                         new Command("Build flare", "buildflare"),
@@ -184,7 +184,7 @@ public class Interpreter {
             else if (World.getInstance().isManaged())
                 return Arrays.asList(
                         new Command("Generate snowstorm", "snowstorm"),
-                        new Command("Step creature", "step", 1, "Enter creature index: "),
+                        new Command("Step creature", "step", "Enter creature index: "),
                         new Command("Stop game", "stop")
                 );
             else
