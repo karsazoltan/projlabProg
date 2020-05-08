@@ -23,34 +23,36 @@ public class InitCreatureWindow extends JFrame {
             tiles.add(i);
         }
 
-        setSize(166, 300);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        JPanel mainPanel = new JPanel();
-        JPanel setupPanel = new JPanel();
-        JPanel creaturesPanel = new JPanel();
+        JPanel mainPanel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0; gbc.gridy = GridBagConstraints.RELATIVE;
+        gbc.insets = new Insets(1, 2, 1, 2);
+        gbc.fill = GridBagConstraints.BOTH;
 
-        creaturesPanel.setLayout(new BoxLayout(creaturesPanel, BoxLayout.Y_AXIS));
         JTextArea creaturesList = new JTextArea();
         creaturesList.setEditable(false);
         JScrollPane creaturesListScroll = new JScrollPane(creaturesList);
-        creaturesListScroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         JButton addCreature = new JButton("Add Creature");
         JComboBox<String> creatureSelector = new JComboBox<String>(creatures);
         JComboBox<Integer> tileSelector = new JComboBox<Integer>(tiles.toArray(new Integer[0]));
         creatureSelector.setSelectedIndex(0);
         tileSelector.setSelectedIndex(0);
-        creatureSelector.setPreferredSize(new Dimension(166, 19));
-        tileSelector.setPreferredSize(new Dimension(166, 19));
-        addCreature.setPreferredSize(new Dimension(166, 19));
-        creaturesListScroll.setPreferredSize(new Dimension(166, 200));
-        creaturesPanel.add(creatureSelector);
-        creaturesPanel.add(tileSelector);
-        creaturesPanel.add(addCreature);
-        creaturesPanel.add(creaturesListScroll);
-        creaturesPanel.setPreferredSize(new Dimension(166, 300));
+        creatureSelector.setPreferredSize(new Dimension(166, 30));
+        tileSelector.setPreferredSize(new Dimension(166, 30));
+        addCreature.setPreferredSize(new Dimension(166, 30));
+        creaturesListScroll.setPreferredSize(new Dimension(166, 210));
+
         JButton OK = new JButton("OK");
+        OK.setPreferredSize(new Dimension(166, 30));
+
+        mainPanel.add(creatureSelector, gbc);
+        mainPanel.add(tileSelector, gbc);
+        mainPanel.add(addCreature, gbc);
+        mainPanel.add(creaturesListScroll, gbc);
+        mainPanel.add(OK, gbc);
 
 
         addCreature.addActionListener(new ActionListener() {
@@ -76,14 +78,11 @@ public class InitCreatureWindow extends JFrame {
 			}
         });
 
-
-
-        setupPanel.add(creaturesPanel, BorderLayout.CENTER);
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-        mainPanel.add(setupPanel, BorderLayout.NORTH);
-        mainPanel.add(OK, BorderLayout.SOUTH);
         add(mainPanel);
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         pack();
+        setResizable(false);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 }

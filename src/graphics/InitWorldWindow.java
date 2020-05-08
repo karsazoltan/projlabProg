@@ -37,14 +37,12 @@ public class InitWorldWindow extends JFrame {
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        JPanel mainPanel = new JPanel();
-
-
-        // Left Panel
-        mainPanel.setLayout(new GridBagLayout());
+        JPanel mainPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(1, 2, 1, 2);
         gbc.fill = GridBagConstraints.BOTH;
+
+        // Left Panel
 
         JFormattedTextField snowField = new JFormattedTextField(NumberFormat.getNumberInstance());
         JFormattedTextField capacityField = new JFormattedTextField(NumberFormat.getNumberInstance());
@@ -207,6 +205,7 @@ public class InitWorldWindow extends JFrame {
         add(mainPanel);
         pack();
         setResizable(false);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 }

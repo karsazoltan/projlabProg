@@ -34,6 +34,7 @@ public class MainWindow extends JFrame {
         add(centerPanel, BorderLayout.CENTER);
         add(rightOuterPanel, BorderLayout.LINE_END);
 
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
