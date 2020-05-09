@@ -37,8 +37,6 @@ public class TileView extends JPanel implements IView {
         info.setPreferredSize(new Dimension(140, 40));
         info.setLayout(new FlowLayout());
 
-
-
         capLabel = new JLabel();
         JPanel capPanel = new JPanel();
         capPanel.setBorder(new LineBorder(new Color(0, 0, 0)));

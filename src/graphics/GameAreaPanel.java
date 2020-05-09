@@ -20,6 +20,7 @@ public class GameAreaPanel extends JPanel {
     /** Singleton megvalósítás: privát konstruktor */
     private GameAreaPanel() {
         super();
+        setLayout(null);
         tiles = new ArrayList<>();
         setBackground(Color.WHITE);
         setVisible(true);
@@ -53,7 +54,7 @@ public class GameAreaPanel extends JPanel {
         int x = 10, y = 10;
         for (int i = 0; i < World.getInstance().getTileCount(); i++) {
             tiles.add(new TileView(World.getInstance().getTileAt(i), x, y));
-            x += 60;
+            x += 145;
             if (x >= this.getWidth()) {
                 y += 60;
                 x = 10;
@@ -101,7 +102,7 @@ public class GameAreaPanel extends JPanel {
         this.removeAll();
 
         for (TileView tv : tiles) {
-            tv.setBounds(tv.getPosition().x, tv.getPosition().y, 50, 50);
+            tv.setBounds(tv.getPosition().x, tv.getPosition().y, 140, 160);
             this.add(tv);
             tv.setVisible(true);
         }
