@@ -17,7 +17,6 @@ public class BearTileChooserWindow extends JFrame {
         setLayout(new GridLayout(0, 1));
 
         JButton okButton = new JButton("Ok");
-        Component generic;
         ActionListener lambda;
 
         ArrayList<Integer> optionsList = new ArrayList<>();
@@ -27,13 +26,16 @@ public class BearTileChooserWindow extends JFrame {
         final Integer[] options = (Integer[])(optionsList.toArray());
 
         JComboBox<Integer> jcb = new JComboBox<Integer>(options);
-        generic = jcb;
         lambda = (arg) -> {
             int index = jcb.getSelectedIndex();
             if (index < 0) return;
             where = options[index];
             dispose();
         };
+        add(jcb);
+        okButton.addActionListener(lambda);
+        add(okButton);
+        setVisible(true);
     }
 
     public int showDialog() {
