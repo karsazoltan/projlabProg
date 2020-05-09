@@ -22,7 +22,8 @@ public class MainWindow extends JFrame {
         leftOuterPanel.setPreferredSize(new Dimension(200, 0));
 
         JPanel centerPanel = new JPanel(new BorderLayout());
-        centerPanel.add(GameAreaPanel.getInstance(), BorderLayout.CENTER);
+        JScrollPane scrollPane = new JScrollPane(GameAreaPanel.getInstance());
+        centerPanel.add(scrollPane, BorderLayout.CENTER);
         centerPanel.add((new ConsoleLogger()).getComponent(), BorderLayout.PAGE_END);
 
         JPanel rightOuterPanel = new JPanel(new BorderLayout());
