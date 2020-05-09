@@ -17,8 +17,8 @@ public class CreatureView extends UpdateJPanel {
     }
     private int index;
     public CreatureView(int index) {
+        super(new JLabel());
         this.index = index;
-        setVisible(true);
     }
     @Override
     public void Update(Tile t) {

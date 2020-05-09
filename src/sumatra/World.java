@@ -237,16 +237,17 @@ public class World implements Printable, IViewable {
         while (!line.equals("F")) {
             String[] words = line.split(" ");
             Tile t = null;
-            int snow, cap = 0;
+            int snow, cap = 0, id;
             try {
                 boolean skipinit = false;
                 snow = Integer.parseInt(words[1]);
+                id = Integer.parseInt(words[0]);
                 if (words[0].equals("U"))
                     cap = Integer.parseInt(words[2]);
                 switch(words[0]) {
-                    case "S": t = new Tile(snow); break;
-                    case "U": t = new UnstableTile(snow, cap); break;
-                    case "H": t = new HoleTile(snow); break;
+                    case "S": t = new Tile(id, snow); break;
+                    case "U": t = new UnstableTile(id, snow, cap); break;
+                    case "H": t = new HoleTile(id, snow); break;
                     default:
                         System.out.println("> Error: Invalid tile type");
                         skipinit = true;
@@ -326,9 +327,9 @@ public class World implements Printable, IViewable {
             if (words[0].equals("U"))
                 cap = Integer.parseInt(words[3]);
             switch(words[0]) {
-                case "S": t = new Tile(snow); break;
-                case "U": t = new UnstableTile(snow, cap); break;
-                case "H": t = new HoleTile(snow); break;
+                case "S": t = new Tile(i, snow); break;
+                case "U": t = new UnstableTile(i, snow, cap); break;
+                case "H": t = new HoleTile(i, snow); break;
             }
             Item item = null;
             switch (words[2]) {

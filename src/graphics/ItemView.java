@@ -6,18 +6,18 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ItemView extends UpdateJPanel {
-    JLabel label;
-    public ItemView() {
-        label = new JLabel("");
-        add(label);
-        setVisible(true);
+    public ItemView(JLabel reflabel) {
+        super(reflabel);
     }
     @Override
     public void Update(Tile t) {
-        setBorder(BorderFactory.createTitledBorder("Item"));
         if(t.getItem() != null)
             label.setText("I");
         else
             label.setText("");
     }
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(10, 10);
+    };
 }

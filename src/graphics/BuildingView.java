@@ -7,20 +7,21 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BuildingView extends UpdateJPanel {
-    JLabel label;
-    public BuildingView() {
-        label = new JLabel("");
-        add(label);
-        setVisible(true);
+    public BuildingView(JLabel reflabel) {
+        super(reflabel);
     }
     @Override
     public void Update(Tile t) {
         Building b = t.getBuilding();
-        if(b != null) {
+        if(b != null && b.getBuildingType() != null) {
             if(b.getBuildingType().compareTo("igloo") == 0)
                 label.setText("I");
             else if(b.getBuildingType().compareTo("tent") == 0)
                 label.setText("T");
         }
     }
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(10, 10);
+    };
 }

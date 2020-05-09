@@ -28,8 +28,8 @@ public class UnstableTile extends Tile {
      * Instabil tábla konstruktora
      * @param snowAmount A jégtáblán lévő hó mélysége
      */
-    public UnstableTile(int snowAmount, int cap) {
-        super(snowAmount);
+    public UnstableTile(int id, int snowAmount, int cap) {
+        super(id, snowAmount);
         capacity = cap;
         type = "unstable";
     }

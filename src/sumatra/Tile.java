@@ -42,9 +42,23 @@ public class Tile implements Printable, IViewable {
     private Building building;
 
     /**
+     * a mezőt azonosító szám
+     */
+    private int ID;
+
+    /**
+     * id
+     * @return visszaadja az azonosítót
+     */
+    public Integer getID() {
+        return ID;
+    }
+
+    /**
      * Default konstruktor
      */
-    public Tile(int snowAmount) {
+    public Tile(int id, int snowAmount) {
+        ID = id;
         snowlayers = snowAmount;
         capacity = -1;
         is_capacity_known = false;
@@ -54,6 +68,26 @@ public class Tile implements Printable, IViewable {
         type = "stable";
     }
 
+    /**
+     *
+     */
+    public Character getTypeChar() {
+        return type.charAt(0);
+    }
+
+    /**
+     *
+     */
+    public Integer getCapacity() {
+        return capacity;
+    }
+
+    /**
+     *
+     */
+    public Integer getSnow() {
+        return snowlayers;
+    }
     /**
      * Getter a tábln található tárgyra
      * @return A táblán található tárgy
@@ -241,10 +275,11 @@ public class Tile implements Printable, IViewable {
             String[] firstline = br.readLine().trim().split(" ");
             Tile t;
             int snow = Integer.parseInt(firstline[2]);
+            int id = Integer.parseInt(firstline[0]);
             switch (firstline[1]) {
-                case "stable": t = new Tile(snow); break;
-                case "unstable": t = new UnstableTile(snow, Integer.parseInt(firstline[6])); break;
-                case "hole": t = new HoleTile(snow); break;
+                case "stable": t = new Tile(id, snow); break;
+                case "unstable": t = new UnstableTile(id, snow, Integer.parseInt(firstline[6])); break;
+                case "hole": t = new HoleTile(id, snow); break;
                 default: throw new InputMismatchException("Invalid Tile config!");
             }
             switch (firstline[3]) {

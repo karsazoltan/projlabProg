@@ -24,8 +24,8 @@ public class HoleTile extends Tile {
      * Lyukas jégtábla konstruktora
      * @param snowAmount A jégtáblán lévő hó mélysége
      */
-    public HoleTile(int snowAmount) {
-        super(snowAmount);
+    public HoleTile(int id, int snowAmount) {
+        super(id, snowAmount);
         type = "hole";
     }
 
