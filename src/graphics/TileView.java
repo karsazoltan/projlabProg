@@ -88,4 +88,8 @@ public class TileView extends JPanel implements IView {
     public Point getPosition() {
         return new Point(x, y);
     }
+
+    public Tile getTile(){
+        return tile;
+    }
 }
