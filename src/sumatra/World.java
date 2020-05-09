@@ -392,10 +392,12 @@ public class World implements Printable, IViewable {
             }
              */
         }
+
         System.out.print("> Snowstorm! Tiles affected: ");
         for (Integer key : affectedTiles.keySet()) {
             System.out.print(key + " ");
         }
+        
         System.out.println();
 
         for (Integer key : affectedTiles.keySet()) {

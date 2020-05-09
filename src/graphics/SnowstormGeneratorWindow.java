@@ -8,21 +8,22 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 
 
-public class SnowstormGeneratorWindow extends JFrame {
+public class SnowstormGeneratorWindow extends Dialog {
     private static final long serialVersionUID = 1L;
 
     HashMap<Integer, Integer> addedSnowyTiles = new HashMap<Integer, Integer>();
 
     String snow_ammunt_list = "";
     ArrayList<Integer> tiles = new ArrayList<Integer>();
+    Boolean done = false;
 
     public SnowstormGeneratorWindow(int tileCount) {
-        super("Snowstorm Generator"); 
+        super(Main.getMw(), "Snowstorm Generator"); 
         for (int i = 0; i < tileCount; ++i) {
             tiles.add(i);
         }
 
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        //setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLayout(new BorderLayout());
 
         JPanel mainPanel = new JPanel(new GridBagLayout());
@@ -40,6 +41,7 @@ public class SnowstormGeneratorWindow extends JFrame {
         JComboBox<Integer> tileSelector = new JComboBox<Integer>(tiles.toArray(new Integer[0]));
         tileSelector.setSelectedIndex(0);
         snowField.setPreferredSize(new Dimension(166, 30));
+        snowField.setValue(1);
         tileSelector.setPreferredSize(new Dimension(166, 30));
         addSnow.setPreferredSize(new Dimension(166, 30));
         snowListScroll.setPreferredSize(new Dimension(166, 210));
@@ -71,6 +73,9 @@ public class SnowstormGeneratorWindow extends JFrame {
         OK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
+                CommandPanel.getInstance().updateButtons();
+                CreaturesPanel.getInstance().attachViews();
+                GameAreaPanel.getInstance().attachTileViews();
                 dispose();
             }
         });
@@ -79,11 +84,12 @@ public class SnowstormGeneratorWindow extends JFrame {
         mainPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         pack();
         setResizable(false);
+        setModal(true);
         setLocationRelativeTo(null);
-        setVisible(true);
     }
 
     public HashMap<Integer,Integer> showDialog() {
+        setVisible(true);
         return addedSnowyTiles;
     }
 }
