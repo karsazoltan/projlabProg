@@ -5,6 +5,8 @@ import sumatra.Tile;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Flow;
@@ -69,6 +71,17 @@ public class TileView extends JPanel implements IView {
 
         add(creatures, BorderLayout.CENTER);
         subjectChanged();
+
+        final TileView tvObject = this;
+        this.addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                if (e.getSource() == tvObject) {
+                    tvObject.setPosition(e.getX(), e.getY());
+                    GameAreaPanel.getInstance().displayTileViews();
+                }
+            }
+        });
     }
 
     @Override
@@ -87,6 +100,10 @@ public class TileView extends JPanel implements IView {
 
     public Point getPosition() {
         return new Point(x, y);
+    }
+
+    public void setPosition(int x, int y) {
+        this.x = x; this.y = y;
     }
 
     public Tile getTile(){
