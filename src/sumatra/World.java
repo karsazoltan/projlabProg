@@ -211,6 +211,7 @@ public class World implements Printable, IViewable {
      * @param list Tömb, soronként egy-egy élőlény információival
      */
     public void generateCreaturesFrom(ArrayList<String> list) {
+        creatures.clear();
         for (int i = 0; i < list.size(); i++) {
             String[] words = list.get(i).trim().split(" ");
             Tile t = tiles.get(Integer.parseInt(words[0]));
@@ -320,6 +321,8 @@ public class World implements Printable, IViewable {
      * @param linkCount Az utolsó hány elem linkleíró
      */
     public void generateTilesFrom(ArrayList<String> list, int tileCount, int linkCount) {
+        tiles.clear();
+
         for (int i = 0; i < tileCount; i++) {
             String[] words = list.get(i).trim().split(" ");
             int snow = 0, cap = 0;
