@@ -19,7 +19,12 @@ public class BearTileChooserWindow extends JDialog {
         JButton okButton = new JButton("Ok");
         ActionListener lambda;
 
-        final Integer[] options = t.getNeighbors().toArray(new Integer[0]);
+        ArrayList<Integer> il = new ArrayList<>();
+        for (Tile tile : t.getNeighbors()) {
+            il.add(tile.getID());
+        }
+
+        final Integer[] options = il.toArray(new Integer[0]);
 
         JComboBox<Integer> jcb = new JComboBox<Integer>(options);
         lambda = (arg) -> {
@@ -32,6 +37,7 @@ public class BearTileChooserWindow extends JDialog {
         okButton.addActionListener(lambda);
         add(okButton);
         setModal(true);
+        setLocationRelativeTo(null);
     }
 
     public int showDialog() {
