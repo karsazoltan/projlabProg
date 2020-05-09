@@ -102,11 +102,17 @@ public class GameAreaPanel extends JPanel {
     public void displayTileViews() {
         this.removeAll();
 
+        int largestX = 600, largestY = 400;
+
         for (TileView tv : tiles) {
             tv.setBounds(tv.getPosition().x, tv.getPosition().y, 140, 160);
             this.add(tv);
             tv.setVisible(true);
+            if (tv.getPosition().x > largestX) largestX = tv.getPosition().x + 150;
+            if (tv.getPosition().x > largestY) largestY = tv.getPosition().y + 170;
         }
+
+        setPreferredSize(new Dimension(largestX, largestY));
 
         repaint();
     }
