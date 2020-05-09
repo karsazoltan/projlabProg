@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class BearTileChooserWindow extends JFrame {
+public class BearTileChooserWindow extends JDialog {
     int where;
 
     public BearTileChooserWindow(Tile t) {
@@ -19,11 +19,7 @@ public class BearTileChooserWindow extends JFrame {
         JButton okButton = new JButton("Ok");
         ActionListener lambda;
 
-        ArrayList<Integer> optionsList = new ArrayList<>();
-        for (Tile tile : t.getNeighbors()) {
-            optionsList.add(tile.getID());
-        }
-        final Integer[] options = (Integer[])(optionsList.toArray());
+        final Integer[] options = t.getNeighbors().toArray(new Integer[0]);
 
         JComboBox<Integer> jcb = new JComboBox<Integer>(options);
         lambda = (arg) -> {
@@ -35,10 +31,11 @@ public class BearTileChooserWindow extends JFrame {
         add(jcb);
         okButton.addActionListener(lambda);
         add(okButton);
-        setVisible(true);
+        setModal(true);
     }
 
     public int showDialog() {
-        return where; // MELYIK TILE-RA MOZOGJON
+        setVisible(true);
+        return where;
     }
 }
