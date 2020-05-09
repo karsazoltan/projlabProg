@@ -56,7 +56,7 @@ public class GameAreaPanel extends JPanel {
             tiles.add(new TileView(World.getInstance().getTileAt(i), x, y));
             x += 145;
             if (x >= this.getWidth()) {
-                y += 60;
+                y += 165;
                 x = 10;
             }
         }
@@ -105,6 +105,17 @@ public class GameAreaPanel extends JPanel {
             tv.setBounds(tv.getPosition().x, tv.getPosition().y, 140, 160);
             this.add(tv);
             tv.setVisible(true);
+        }
+    }
+
+    public void paintComponent(Graphics graphics){
+        super.paintComponent(graphics);
+
+        //graphics.drawLine(5, 5, 200, 200);
+        //graphics.drawLine(5, 5, 200, 200);
+
+        for( TileView tile : tiles ){
+            Point p1 = tile.getPosition();            
         }
     }
 }
