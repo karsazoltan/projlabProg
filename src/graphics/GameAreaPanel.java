@@ -97,7 +97,7 @@ public class GameAreaPanel extends JPanel {
     }
 
     /** Megjeleníti a már elkészített TileView-eket */
-    private void displayTileViews() {
+    public void displayTileViews() {
         this.removeAll();
 
         for (TileView tv : tiles) {
