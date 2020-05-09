@@ -16,7 +16,6 @@ public class BuildingView extends UpdateJPanel {
     public void Update(Tile t) {
         Building b = t.getBuilding();
         if(b != null && b.getBuildingType() != null) {
-            System.out.println(b.getBuildingType());
             if(b.getBuildingType().compareTo("igloo") == 0)
                 label.setText("I");
             else if(b.getBuildingType().compareTo("tent") == 0)
