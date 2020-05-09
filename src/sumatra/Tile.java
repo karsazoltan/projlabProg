@@ -71,8 +71,10 @@ public class Tile implements Printable, IViewable {
     /**
      *
      */
-    public Character getTypeChar() {
-        return type.charAt(0);
+    public String getInfo() {
+        if(!is_capacity_known)
+            return "??";
+        return  ((Character) type.charAt(0)).toString() + "(" + getCapacity().toString() + ")";
     }
 
     /**

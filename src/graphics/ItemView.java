@@ -3,11 +3,13 @@ package graphics;
 import sumatra.Tile;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class ItemView extends UpdateJPanel {
     public ItemView(JLabel reflabel) {
         super(reflabel);
+        setBorder(new LineBorder(new Color(0, 0, 0)));
     }
     @Override
     public void Update(Tile t) {
@@ -18,6 +20,6 @@ public class ItemView extends UpdateJPanel {
     }
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(10, 10);
+        return new Dimension(30, 30);
     };
 }

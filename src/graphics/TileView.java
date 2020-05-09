@@ -3,6 +3,7 @@ package graphics;
 import sumatra.Tile;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class TileView extends JPanel implements IView {
         add(idLabel, BorderLayout.PAGE_START);
 
         JPanel creatures = new JPanel();
-        creatures.setPreferredSize(new Dimension(160, 160));
+        creatures.setPreferredSize(new Dimension(140, 120));
         creatures.setLayout(new GridLayout(3, 3));
 
         views = new ArrayList<UpdateJPanel>();
@@ -32,18 +33,30 @@ public class TileView extends JPanel implements IView {
         tile = t;
 
         JPanel info = new JPanel();
-        info.setPreferredSize(new Dimension(160, 40));
+        info.setPreferredSize(new Dimension(140, 40));
         info.setLayout(new FlowLayout());
-        capLabel = new JLabel();
-        snowLabel = new JLabel();
-        info.add(capLabel);
-        info.add(snowLabel);
 
-        BuildingView bv = new BuildingView(new JLabel());
+
+
+        capLabel = new JLabel();
+        JPanel capPanel = new JPanel();
+        capPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
+        capPanel.setPreferredSize(new Dimension(30, 30));
+        capPanel.add(capLabel);
+        snowLabel = new JLabel();
+        JPanel snowPanel = new JPanel();
+        snowPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
+        snowPanel.setPreferredSize(new Dimension(30, 30));
+        snowPanel.add(snowLabel);
+
+        info.add(capPanel);
+        info.add(snowPanel);
+
+        BuildingView bv = new BuildingView(new JLabel(""));
         info.add(bv);
         views.add(bv);
 
-        ItemView iv = new ItemView(new JLabel());
+        ItemView iv = new ItemView(new JLabel(""));
         views.add(iv);
         info.add(iv);
 
@@ -56,13 +69,12 @@ public class TileView extends JPanel implements IView {
         }
 
         add(creatures, BorderLayout.CENTER);
-
         subjectChanged();
     }
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(80, 160);
+        return new Dimension(140, 160);
     };
 
     @Override
@@ -70,7 +82,7 @@ public class TileView extends JPanel implements IView {
         for(UpdateJPanel up : views) {
             up.Update(tile);
         }
-        capLabel.setText(tile.getTypeChar().toString() + "(" + tile.getCapacity().toString() + ")");
+        capLabel.setText(tile.getInfo());
         snowLabel.setText(tile.getSnow().toString());
     }
 
