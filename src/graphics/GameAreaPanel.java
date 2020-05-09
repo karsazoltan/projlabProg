@@ -1,5 +1,6 @@
 package graphics;
 
+import sumatra.Tile;
 import sumatra.World;
 
 import javax.swing.*;
@@ -54,7 +55,7 @@ public class GameAreaPanel extends JPanel {
         int x = 10, y = 10;
         for (int i = 0; i < World.getInstance().getTileCount(); i++) {
             tiles.add(new TileView(World.getInstance().getTileAt(i), x, y));
-            x += 145;
+            x += 170;
             if (x >= this.getWidth()) {
                 y += 165;
                 x = 10;
@@ -106,16 +107,37 @@ public class GameAreaPanel extends JPanel {
             this.add(tv);
             tv.setVisible(true);
         }
+
+        repaint();
+    }
+
+    public TileView findTileView(Tile tile){
+        for( TileView tileView : tiles ){
+            if( tile == tileView.getTile() )
+                return tileView;
+        }
+        return null;
     }
 
     public void paintComponent(Graphics graphics){
         super.paintComponent(graphics);
+        Graphics2D g = (Graphics2D) graphics;
 
-        //graphics.drawLine(5, 5, 200, 200);
-        //graphics.drawLine(5, 5, 200, 200);
+        g.setStroke(new BasicStroke(10));
 
-        for( TileView tile : tiles ){
-            Point p1 = tile.getPosition();            
+        for( TileView tileView : tiles ){
+            Point p1 = tileView.getPosition();
+            p1.translate(140/2, 160/2);            
+
+            ArrayList<Tile> neighbors = tileView.getTile().getNeighbors();
+            for( Tile tile : neighbors ){
+                
+                TileView neighTileView = findTileView(tile);
+                Point p2 = neighTileView.getPosition();
+                p2.translate(140/2, 160/2);
+                            
+                g.drawLine(p1.x, p1.y, p2.x, p2.y);
+            }
         }
     }
 }
