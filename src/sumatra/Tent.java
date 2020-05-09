@@ -26,6 +26,7 @@ public class Tent extends Building {
         super();
         owner = t;
         World.getInstance().registerTent(this, tps);
+        type = "tent";
     }
     /**
      * A tile, sátor viselkedése vihar esetén.
