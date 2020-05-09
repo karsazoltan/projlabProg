@@ -19,6 +19,7 @@ public class TileView extends JPanel implements IView {
     private JLabel snowLabel;
 
     public TileView(Tile t, int x, int y) {
+        t.addView(this);
         setLayout(new BorderLayout());
         idLabel = new JLabel(t.getID().toString());
         add(idLabel, BorderLayout.PAGE_START);
