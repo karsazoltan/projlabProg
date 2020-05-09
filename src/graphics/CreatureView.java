@@ -25,8 +25,10 @@ public class CreatureView extends UpdateJPanel {
         try {
             Creature c = t.getCreature(index);
             setBackground(viewMap.get(c.getType()));
+            label.setText(((Integer) c.getIndex()).toString());
         } catch (IndexOutOfBoundsException ea) {
             setBackground(new Color(255, 255, 255));
+            label.setText("");
         }
     }
 }
