@@ -1,6 +1,7 @@
 package graphics;
 
 import javax.swing.*;
+import javax.swing.text.NumberFormatter;
 
 import sumatra.Interpreter;
 import sumatra.World;
@@ -43,9 +44,14 @@ public class InitWorldWindow extends JFrame {
         gbc.fill = GridBagConstraints.BOTH;
 
         // Left Panel
+        NumberFormat nformat = NumberFormat.getIntegerInstance();
+        nformat.setGroupingUsed(false);
+        NumberFormatter nf = new NumberFormatter(nformat);
+        nf.setAllowsInvalid(false);
+        nf.setMinimum(0);
 
-        JFormattedTextField snowField = new JFormattedTextField(NumberFormat.getNumberInstance());
-        JFormattedTextField capacityField = new JFormattedTextField(NumberFormat.getNumberInstance());
+        JFormattedTextField snowField = new JFormattedTextField(nf);
+        JFormattedTextField capacityField = new JFormattedTextField(nf);
         JTextArea tilesList = new JTextArea();       
         JComboBox<String> typeList = new JComboBox<String>(types);
         JScrollPane tilesListScroll = new JScrollPane(tilesList);
