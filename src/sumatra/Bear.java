@@ -54,6 +54,10 @@ public class Bear extends Creature{
     void playRound() {       
         // Move in random direction.
         ArrayList<Tile> neighbours = tile.getNeighbors();
+        if (neighbours.size() == 0) {
+            System.out.println("> Polar bear did not move, as it didn't find any neighbouring tiles");
+            return;
+        }
         int targetTileIdx = ThreadLocalRandom.current().nextInt(neighbours.size());
         move( neighbours.get( targetTileIdx ) );
         System.out.println("> Polar bear " + index + " moved to tile " + targetTileIdx);
