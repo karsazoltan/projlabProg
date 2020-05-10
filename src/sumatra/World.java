@@ -327,6 +327,7 @@ public class World implements Printable, IViewable {
             String[] words = list.get(i).trim().split(" ");
             int snow = 0, cap = 0;
             Tile t = null;
+            snow = Integer.parseInt(words[1]);
             if (words[0].equals("U"))
                 cap = Integer.parseInt(words[3]);
             switch(words[0]) {
