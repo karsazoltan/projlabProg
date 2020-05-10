@@ -141,11 +141,13 @@ public class Tile implements Printable, IViewable {
      * @param p A játékos aki felveszi a tárgyat
      */
     public void pickUpItem(Player p) {
-        if (item != null) {
+        if (item != null && snowlayers == 0) {
             item.giveToPlayer(p);
             updateViews();
             System.out.println("    > You picked up an item: " + item.toString());
             item = null;
+        } else if( snowlayers > 0 ) {
+            System.out.println("    > This tile is covered by snow, you can't pick up items from it!");
         } else {
             System.out.println("    > This tile has no item on it!");
         }
