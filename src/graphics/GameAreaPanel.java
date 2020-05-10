@@ -108,11 +108,11 @@ public class GameAreaPanel extends JPanel {
             tv.setBounds(tv.getPosition().x, tv.getPosition().y, 140, 160);
             this.add(tv);
             tv.setVisible(true);
-            if (tv.getPosition().x > largestX) largestX = tv.getPosition().x + 150;
-            if (tv.getPosition().y > largestY) largestY = tv.getPosition().y + 170;
+            if (tv.getPosition().x > largestX) largestX = tv.getPosition().x;
+            if (tv.getPosition().y > largestY) largestY = tv.getPosition().y;
         }
 
-        setPreferredSize(new Dimension(largestX, largestY));
+        setPreferredSize(new Dimension(largestX + 150, largestY + 170));
 
         revalidate();
         repaint();
