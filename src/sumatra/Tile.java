@@ -149,6 +149,8 @@ public class Tile implements Printable, IViewable {
         } else {
             System.out.println("    > This tile has no item on it!");
         }
+
+        updateViews();
     }
 
     /**
