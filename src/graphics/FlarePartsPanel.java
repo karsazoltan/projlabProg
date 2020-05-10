@@ -24,17 +24,14 @@ public class FlarePartsPanel extends JPanel implements IView {
 
     public void subjectChanged(){
         ArrayList<String> names = World.getInstance().getFlarepartNames();
-        for( String name : names ){
-            boolean isNew = true;
-            for( JLabel label : pLabels ){
-                if(label.getText().equals(name)) isNew = false;
-            }
+        for( JLabel lab : pLabels ){
+            remove( lab );
+        }
 
-            if( isNew ){
-                JLabel newLabel = new JLabel(name);
-                add( newLabel );
-                pLabels.add(newLabel);                
-            }
+        for( String name : names ){
+            JLabel newLabel = new JLabel(name);
+            add( newLabel );
+            pLabels.add(newLabel);                
         }
         revalidate();
     }

@@ -77,6 +77,7 @@ public class MainWindow extends JFrame {
                     GameAreaPanel.getInstance().loadTileViewsFromFile(jfk.getSelectedFile().getAbsolutePath());
                     CommandPanel.getInstance().updateButtons();
                     CreaturesPanel.getInstance().attachViews();
+                    World.getInstance().updateViews();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
