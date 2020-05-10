@@ -56,6 +56,7 @@ public class Bear extends Creature{
         ArrayList<Tile> neighbours = tile.getNeighbors();
         if (neighbours.size() == 0) {
             System.out.println("> Polar bear did not move, as it didn't find any neighbouring tiles");
+            World.getInstance().playerFinished();
             return;
         }
         int targetTileIdx = ThreadLocalRandom.current().nextInt(neighbours.size());
