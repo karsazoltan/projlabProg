@@ -3,7 +3,6 @@ package sumatra;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 /** Medve osztály */
@@ -46,8 +45,7 @@ public class Bear extends Creature{
      */
     @Override
     public ArrayList<String> getDisplayData() {
-        ArrayList<String> data = new ArrayList<String>();
-        return data;
+        return new ArrayList<>();
     }
 
     /**
@@ -66,24 +64,6 @@ public class Bear extends Creature{
         move( neighbours.get( targetTileIdx ) );
         System.out.println("> Polar bear " + index + " moved to tile " + targetTileIdx);
         World.getInstance().playerFinished();
-    }
-
-    /**
-     * A medve lejátsza a körét, feltételezve, hogy a játék managed módban van.
-     * Nem használt függvény, mert az inputról olvas, és az alkalmazás már
-     * grafikus felülettel rendelkezik.
-     */
-    //@Override
-    void playManagedRoundTextVersion() {
-        Scanner input = World.getInstance().getInputScanner();
-        System.out.print("> Polar bear: choose tile to move to: ");
-        try {
-            String line = input.nextLine().trim();
-            System.out.println("    > Polar bear " + index + " moved to tile " + Integer.parseInt(line));
-            move(World.getInstance().getTileAt(Integer.parseInt(line)));
-        } catch (Exception e) {
-            System.out.println("> Error: Invalid tile index!");
-        }
     }
 
     /**
