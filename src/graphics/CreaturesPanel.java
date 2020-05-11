@@ -29,6 +29,7 @@ public class CreaturesPanel extends JPanel {
 
     public void attachViews(){
         panel.removeAll();
+        repaint();
         ArrayList<Creature> creatures = World.getInstance().getCreatures();
 
         for( Creature c : creatures ){
