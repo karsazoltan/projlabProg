@@ -637,6 +637,8 @@ public class World implements Printable, IViewable {
         if (running)
             System.out.println("> Game Stopped.");
         running = false;
+        activeplayer = "none";
+
     }
 
     /**
