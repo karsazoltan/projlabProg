@@ -1,6 +1,5 @@
 package graphics;
 
-import sumatra.Interpreter;
 import sumatra.Tile;
 
 import javax.swing.*;
@@ -8,9 +7,16 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * A medve mozgásdialógus ablakának osztálya
+ */
 public class BearTileChooserWindow extends JDialog {
     int where;
 
+    /**
+     * Konstruktor
+     * @param t A mező amin a medve áll
+     */
     public BearTileChooserWindow(Tile t) {
         setSize(200, 90);
         setTitle("Hova mozogjon a medve?");
@@ -40,6 +46,10 @@ public class BearTileChooserWindow extends JDialog {
         setLocationRelativeTo(null);
     }
 
+    /**
+     * A dialógus panel megjelenítése
+     * @return A mező ID-je ahová lép
+     */
     public int showDialog() {
         setVisible(true);
         return where;
