@@ -175,6 +175,13 @@ public class Tile implements Printable, IViewable {
     }
 
     /**
+     * Loadnál töröljük a lények listáját.
+     */
+    public void clearCreatures() {
+        creatures.clear();
+    }
+
+    /**
      * Hozzáad egy táblát a szomszédokhoZ
      * @param t A szomszéd tábla
      */

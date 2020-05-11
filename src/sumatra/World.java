@@ -170,6 +170,12 @@ public class World implements Printable, IViewable {
             System.out.println("    > Error: initialize a world before adding creatures!");
             return;
         }
+
+        creatures.clear();
+        for (Tile t : tiles) {
+            t.clearCreatures();
+        }
+
         System.out.println("    > Enter creatures (<tile> <type> where tiles: 0-" + (tiles.size() - 1) + ",");
         System.out.println("    > types are researcher, eskimo, polarbear), or F to finish:");
         int loop = 0;
@@ -211,6 +217,11 @@ public class World implements Printable, IViewable {
      */
     public void generateCreaturesFrom(ArrayList<String> list) {
         creatures.clear();
+
+        for (Tile t : tiles) {
+            t.clearCreatures();
+        }
+
         for (int i = 0; i < list.size(); i++) {
             String[] words = list.get(i).trim().split(" ");
             Tile t = tiles.get(Integer.parseInt(words[0]));
