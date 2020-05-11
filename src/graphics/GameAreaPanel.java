@@ -78,6 +78,7 @@ public class GameAreaPanel extends JPanel {
         if (dataline[0].equals("worlddata")) {
             World.getInstance().loadConfig(filename);
             attachTileViews();
+            br.close();
             return;
         } else if (!dataline[0].equals("datafile")) {
             throw new IOException("Hibás első sor!");

@@ -6,7 +6,6 @@ import java.awt.Font;
 import java.util.ArrayList;
 
 import sumatra.Creature;
-import sumatra.Bear;
 
 /**
  * Egy darab lénynek, a játék bal oldalán levő megjelenítésével foglalkozó panel.

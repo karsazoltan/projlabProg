@@ -1,10 +1,5 @@
 package sumatra;
 
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.io.Writer;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**

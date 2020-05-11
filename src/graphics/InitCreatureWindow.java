@@ -1,11 +1,10 @@
 package graphics;
 
 import javax.swing.*;
-import sumatra.Interpreter;
+
 import sumatra.World;
 import java.awt.*;
 import java.awt.event.*;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class InitCreatureWindow extends JFrame {

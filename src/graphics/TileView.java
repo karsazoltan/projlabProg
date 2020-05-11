@@ -7,7 +7,6 @@ import javax.swing.border.LineBorder;
 import javax.swing.event.MouseInputAdapter;
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,10 +27,6 @@ public class TileView extends JPanel implements IView {
      */
     private Tile tile;
     /**
-     * a Label azonosító megjelenítéséhez
-     */
-    private JLabel idLabel;
-    /**
      * a kapacitás megjelenítése
      */
     private JLabel capLabel;
@@ -49,7 +44,7 @@ public class TileView extends JPanel implements IView {
     public TileView(Tile t, int x, int y) {
         t.addView(this);
         setLayout(new BorderLayout());
-        idLabel = new JLabel(t.getID().toString());
+        JLabel idLabel = new JLabel(t.getID().toString());
         add(idLabel, BorderLayout.PAGE_START);
 
         JPanel creatures = new JPanel();

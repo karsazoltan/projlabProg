@@ -2,7 +2,6 @@ package sumatra;
 
 import graphics.BearTileChooserWindow;
 import graphics.Command;
-import graphics.MainWindow;
 import graphics.SnowstormGeneratorWindow;
 
 import java.util.ArrayList;

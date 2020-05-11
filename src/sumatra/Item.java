@@ -1,8 +1,5 @@
 package sumatra;
 
-import java.io.OutputStream;
-import java.io.PrintWriter;
-
 /**
  * Általános absztrakt osztály, a játékban található tárgyak modellezésére
  */

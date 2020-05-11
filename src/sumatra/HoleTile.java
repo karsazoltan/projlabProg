@@ -1,9 +1,5 @@
 package sumatra;
 
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-
 /**
  * Lyukas jégtáblát reprezentáló osztály
  */

@@ -3,7 +3,6 @@ package graphics;
 import javax.swing.*;
 import javax.swing.text.NumberFormatter;
 
-import sumatra.Interpreter;
 import sumatra.World;
 import java.awt.*;
 import java.awt.event.*;
