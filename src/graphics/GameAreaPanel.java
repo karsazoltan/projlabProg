@@ -119,6 +119,11 @@ public class GameAreaPanel extends JPanel {
         repaint();
     }
 
+    /**
+     * Megkeresi egy tile-hoz a hozzátartozó tileView-ot.
+     * @param tile tile, aminek a tileViewját meg akarjuk kapni.
+     * @return a keresett tileView.
+     */
     public TileView findTileView(Tile tile){
         for( TileView tileView : tiles ){
             if( tile == tileView.getTile() )
@@ -127,6 +132,11 @@ public class GameAreaPanel extends JPanel {
         return null;
     }
 
+    /**
+     * A mezők közti összekötések (élek) kirajzolása.
+     * Ez a függvény, akkor hívódik meg, ha meghívjuk a panel repaint() függvényét.
+     */
+    @Override
     public void paintComponent(Graphics graphics){
         super.paintComponent(graphics);
         Graphics2D g = (Graphics2D) graphics;

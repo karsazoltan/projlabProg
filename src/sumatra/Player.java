@@ -282,7 +282,10 @@ public abstract class Player extends Creature{
     }
 
 
-    // TODO COMMENT
+    /**
+     * Visszaad egy lista sztringet a játékos állapotáról, a megjelenítéshez kell.
+     * @return egy lista sztring.
+     */
     @Override
     public ArrayList<String> getDisplayData() {
         ArrayList<String> data = new ArrayList<String>();
