@@ -11,15 +11,41 @@ import java.awt.event.MouseMotionAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A tile-ok és az ott tartalmazottak (creature, item, building) megjelenítésére használható grafikus interfész
+ */
 public class TileView extends JPanel implements IView {
+    /**
+     * A vásznon a tile pozíciója
+     */
     private int x, y;
+    /**
+     * A tartalmazott nézetek
+     */
     private List<UpdateJPanel> views;
+    /**
+     * Modell-re való referencia
+     */
     private Tile tile;
-
+    /**
+     * a Label azonosító megjelenítéséhez
+     */
     private JLabel idLabel;
+    /**
+     * a kapacitás megjelenítése
+     */
     private JLabel capLabel;
+    /**
+     * a hó ha van, különben item megjelenítése
+     */
     private JLabel snow_itemLabel;
 
+    /**
+     * Alap konstruktor
+     * @param t hivatkozás a modellbeli mezőre
+     * @param x 1. koordináta
+     * @param y 2. koordináta
+     */
     public TileView(Tile t, int x, int y) {
         t.addView(this);
         setLayout(new BorderLayout());
@@ -86,12 +112,14 @@ public class TileView extends JPanel implements IView {
         this.addMouseListener(maa);
         this.addMouseMotionListener(maa);
     }
-
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(140, 160);
     };
 
+    /**
+     * A nézet és tartalmazott nézetek frissítése
+     */
     @Override
     public void subjectChanged() {
         for(UpdateJPanel up : views) {
@@ -102,14 +130,27 @@ public class TileView extends JPanel implements IView {
             snow_itemLabel.setText(tile.getSnow().toString());
     }
 
+    /**
+     * Visszadja a jelenlegi pozícióját
+     * @return Point
+     */
     public Point getPosition() {
         return new Point(x, y);
     }
 
+    /**
+     * Beállítja a grafikus nézet helyzetét a vásznon
+     * @param x első
+     * @param y második koordináta
+     */
     public void setPosition(int x, int y) {
         this.x = x; this.y = y;
     }
 
+    /**
+     * Visszaadja a referált játékmodell mezőjét
+     * @return
+     */
     public Tile getTile(){
         return tile;
     }
