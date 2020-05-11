@@ -332,6 +332,9 @@ public class World implements Printable, IViewable {
      */
     public void generateTilesFrom(ArrayList<String> list, int tileCount, int linkCount) {
         tiles.clear();
+        flareParts.clear();
+        creatures.clear();
+        updateViews();
 
         for (int i = 0; i < tileCount; i++) {
             String[] words = list.get(i).trim().split(" ");
