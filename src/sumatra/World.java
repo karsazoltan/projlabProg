@@ -114,8 +114,10 @@ public class World implements Printable, IViewable {
         if (!activeplayer.equals("none")) {
             try {
                 int idx = Integer.parseInt(activeplayer);
-                if (idx < creatures.size())
+                if (idx < creatures.size()) {
                     step(idx);
+                    return;
+                }
             } catch (Exception ignored) {} // Ha invalid a creature id, ne bajlódjunk vele, induljon rendesen a játék
         }
 
