@@ -32,5 +32,5 @@ public abstract class UpdateJPanel extends JPanel {
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(30, 30);
-    };
+    }
 }

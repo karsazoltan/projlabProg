@@ -28,5 +28,5 @@ public class BuildingView extends UpdateJPanel {
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(30, 30);
-    };
+    }
 }

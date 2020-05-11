@@ -110,7 +110,7 @@ public class TileView extends JPanel implements IView {
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(140, 160);
-    };
+    }
 
     /**
      * A nézet és tartalmazott nézetek frissítése
