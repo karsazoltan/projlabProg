@@ -12,7 +12,7 @@ import sumatra.Creature;
  */
 public class OneCreaturePanel extends JPanel implements IView{
     /* A lény adatait megjelenítő szövegek */
-    ArrayList<JLabel> labels = new ArrayList<JLabel>();
+    ArrayList<JLabel> labels = new ArrayList<>();
     /* Referencia a hozzátartozó lényre. */
     Creature creature;
 

@@ -32,7 +32,7 @@ public class BearTileChooserWindow extends JDialog {
 
         final Integer[] options = il.toArray(new Integer[0]);
 
-        JComboBox<Integer> jcb = new JComboBox<Integer>(options);
+        JComboBox<Integer> jcb = new JComboBox<>(options);
         lambda = (arg) -> {
             int index = jcb.getSelectedIndex();
             if (index < 0) return;

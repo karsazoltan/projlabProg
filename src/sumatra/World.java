@@ -734,7 +734,7 @@ public class World implements Printable, IViewable {
      * @return a begyűjtött darabok nevei egy String listában.
      */
     public ArrayList<String> getFlarepartNames(){
-        ArrayList<String> names = new ArrayList<String>();
+        ArrayList<String> names = new ArrayList<>();
         for( FlarePart fp : flareParts ){
             names.add(fp.toString());
         }

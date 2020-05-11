@@ -11,10 +11,10 @@ import java.util.ArrayList;
 public class SnowstormGeneratorWindow extends Dialog {
     private static final long serialVersionUID = 1L;
 
-    HashMap<Integer, Integer> addedSnowyTiles = new HashMap<Integer, Integer>();
+    HashMap<Integer, Integer> addedSnowyTiles = new HashMap<>();
 
     String snow_ammunt_list = "";
-    ArrayList<Integer> tiles = new ArrayList<Integer>();
+    ArrayList<Integer> tiles = new ArrayList<>();
     Boolean done = false;
 
     /**
@@ -42,7 +42,7 @@ public class SnowstormGeneratorWindow extends Dialog {
         JButton addSnow = new JButton("Add Snow");
         JFormattedTextField snowField = new JFormattedTextField(NumberFormat.getNumberInstance());
 
-        JComboBox<Integer> tileSelector = new JComboBox<Integer>(tiles.toArray(new Integer[0]));
+        JComboBox<Integer> tileSelector = new JComboBox<>(tiles.toArray(new Integer[0]));
         tileSelector.setSelectedIndex(0);
         snowField.setPreferredSize(new Dimension(166, 30));
         snowField.setValue(1);

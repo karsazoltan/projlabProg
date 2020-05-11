@@ -10,11 +10,11 @@ import java.util.ArrayList;
 public class InitCreatureWindow extends JFrame {
     private static final long serialVersionUID = 1L;
 
-    ArrayList<String> addedCreatures = new ArrayList<String>();
+    ArrayList<String> addedCreatures = new ArrayList<>();
 
     String[] creatures = { "Eskimo", "Researcher", "Polarbear"};
     String creature_list = "";
-    ArrayList<Integer> tiles = new ArrayList<Integer>();
+    ArrayList<Integer> tiles = new ArrayList<>();
 
     /**
      * Creates a creature initializer window then adds the specified creatures to the game.
@@ -39,8 +39,8 @@ public class InitCreatureWindow extends JFrame {
         creaturesList.setEditable(false);
         JScrollPane creaturesListScroll = new JScrollPane(creaturesList);
         JButton addCreature = new JButton("Add Creature");
-        JComboBox<String> creatureSelector = new JComboBox<String>(creatures);
-        JComboBox<Integer> tileSelector = new JComboBox<Integer>(tiles.toArray(new Integer[0]));
+        JComboBox<String> creatureSelector = new JComboBox<>(creatures);
+        JComboBox<Integer> tileSelector = new JComboBox<>(tiles.toArray(new Integer[0]));
         creatureSelector.setSelectedIndex(0);
         tileSelector.setSelectedIndex(0);
         creatureSelector.setPreferredSize(new Dimension(166, 30));

@@ -15,7 +15,7 @@ public class CreatureView extends UpdateJPanel {
     /**
      * Az egyes típusok és megjelnítés összerendeltje
      */
-    static Dictionary<String, Color> viewMap = new Hashtable<String, Color>();
+    static Dictionary<String, Color> viewMap = new Hashtable<>();
     static {
         viewMap.put("Polar bear", new Color(20, 100, 200));
         viewMap.put("Eskimo", new Color(200, 134, 20));

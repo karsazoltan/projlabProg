@@ -51,7 +51,7 @@ public class TileView extends JPanel implements IView {
         creatures.setPreferredSize(new Dimension(140, 120));
         creatures.setLayout(new GridLayout(3, 3));
 
-        views = new ArrayList<UpdateJPanel>();
+        views = new ArrayList<>();
         this.x = x;
         this.y = y;
         tile = t;

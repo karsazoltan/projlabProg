@@ -34,7 +34,7 @@ public abstract class Player extends Creature{
         super(startTile, pindex);
         divingSuit = new NoDivingSuit();
         rope = new NoRope();
-        usableItems = new ArrayList<UsableItem>();
+        usableItems = new ArrayList<>();
 
         mana = 4;
     }
@@ -288,7 +288,7 @@ public abstract class Player extends Creature{
      */
     @Override
     public ArrayList<String> getDisplayData() {
-        ArrayList<String> data = new ArrayList<String>();
+        ArrayList<String> data = new ArrayList<>();
         data.add( "HP: " + health );
         data.add( "WU: " + mana );
         if( !divingSuit.toString().equals("none") )

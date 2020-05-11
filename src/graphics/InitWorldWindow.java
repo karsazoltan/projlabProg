@@ -16,12 +16,12 @@ public class InitWorldWindow extends JFrame {
      */
     private static final long serialVersionUID = 1L;
 
-    ArrayList<Integer> tileID = new ArrayList<Integer>();
-    ArrayList<String> item = new ArrayList<String>();
-    ArrayList<String> capacity = new ArrayList<String>();
-    ArrayList<String> snow = new ArrayList<String>();
-    ArrayList<String> type = new ArrayList<String>();
-    ArrayList<String> link = new ArrayList<String>();
+    ArrayList<Integer> tileID = new ArrayList<>();
+    ArrayList<String> item = new ArrayList<>();
+    ArrayList<String> capacity = new ArrayList<>();
+    ArrayList<String> snow = new ArrayList<>();
+    ArrayList<String> type = new ArrayList<>();
+    ArrayList<String> link = new ArrayList<>();
 
     String[] types = { "Stable", "Unstable", "Hole"};
     String[] items = { "Beacon", "Cartridge", "Gun", "Rope", "Divingsuit", "Shovel", "Brokenshovel", "Tent", "Food"};
@@ -55,7 +55,7 @@ public class InitWorldWindow extends JFrame {
         JFormattedTextField snowField = new JFormattedTextField(nf);
         JFormattedTextField capacityField = new JFormattedTextField(nf);
         JTextArea tilesList = new JTextArea();       
-        JComboBox<String> typeList = new JComboBox<String>(types);
+        JComboBox<String> typeList = new JComboBox<>(types);
         JScrollPane tilesListScroll = new JScrollPane(tilesList);
         JButton addTile = new JButton("Add Tile");
         typeList.setSelectedIndex(0);
@@ -84,8 +84,8 @@ public class InitWorldWindow extends JFrame {
         // Center Panel
         gbc.gridx = 2; gbc.gridy = GridBagConstraints.RELATIVE;
 
-        JComboBox<Integer> t1 = new JComboBox<Integer>(tileID.toArray(new Integer[0]));
-        JComboBox<Integer> t2 = new JComboBox<Integer>(tileID.toArray(new Integer[0]));
+        JComboBox<Integer> t1 = new JComboBox<>(tileID.toArray(new Integer[0]));
+        JComboBox<Integer> t2 = new JComboBox<>(tileID.toArray(new Integer[0]));
         JButton addLink = new JButton("Add Link");
         JTextArea linksList = new JTextArea();
         linksList.setEditable(false);
@@ -103,8 +103,8 @@ public class InitWorldWindow extends JFrame {
         // Right Panel
         gbc.gridx = 3;
 
-        JComboBox<Integer> tileSelector = new JComboBox<Integer>(tileID.toArray(new Integer[0]));
-        JComboBox<String> itemSelector = new JComboBox<String>(items);
+        JComboBox<Integer> tileSelector = new JComboBox<>(tileID.toArray(new Integer[0]));
+        JComboBox<String> itemSelector = new JComboBox<>(items);
         JButton addItem = new JButton("Add Item");
         JTextArea itemsList = new JTextArea();
         itemsList.setEditable(false);
@@ -147,9 +147,9 @@ public class InitWorldWindow extends JFrame {
                 }
                 tile_list += "\n";
                 tilesList.setText(tile_list);
-                t1.setModel(new DefaultComboBoxModel<Integer>(tileID.toArray(new Integer[0])));
-                t2.setModel(new DefaultComboBoxModel<Integer>(tileID.toArray(new Integer[0])));
-                tileSelector.setModel(new DefaultComboBoxModel<Integer>(tileID.toArray(new Integer[0])));
+                t1.setModel(new DefaultComboBoxModel<>(tileID.toArray(new Integer[0])));
+                t2.setModel(new DefaultComboBoxModel<>(tileID.toArray(new Integer[0])));
+                tileSelector.setModel(new DefaultComboBoxModel<>(tileID.toArray(new Integer[0])));
 			}
         });
         
@@ -185,7 +185,7 @@ public class InitWorldWindow extends JFrame {
         OK.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)
 			{
-                ArrayList<String> setup = new ArrayList<String>();
+                ArrayList<String> setup = new ArrayList<>();
 
                 for (int i = 0; i < tileID.size(); ++i) {
                     String new_tile = type.get(i).charAt(0) + " ";
