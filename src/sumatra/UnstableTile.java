@@ -4,6 +4,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.Writer;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -40,7 +41,8 @@ public class UnstableTile extends Tile {
      */
     public void flip() {
         System.out.println("> It flips over, you fall into water!");
-        for (Creature c : creatures)
+        ArrayList<Creature> copy = new ArrayList<>(creatures);
+        for (Creature c : copy)
             c.fallInWater();
     }
 
