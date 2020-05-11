@@ -203,6 +203,7 @@ public class InitWorldWindow extends JFrame {
                 World.getInstance().generateTilesFrom(setup, tileID.size(), link.size());
                 CommandPanel.getInstance().updateButtons();
                 GameAreaPanel.getInstance().attachTileViews();
+                CreaturesPanel.getInstance().attachViews();
                 dispose();
 			}
         });
