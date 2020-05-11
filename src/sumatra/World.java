@@ -464,12 +464,15 @@ public class World implements Printable, IViewable {
         }
     }
 
+    /** Betöltéskor használjuk, hogy ne veszítsük el a körszámlálót */
+    private int loadedStepCounter = 0;
+
     /**
      * Betölt egy konfigurációt a kapott fájlból
      * @param filename A konfigurációt tartalmazó fájl neve.
      */
     public void loadConfig(String filename) {
-        stop();
+        running = false;
 
         tiles.clear();
         creatures.clear();
@@ -482,8 +485,7 @@ public class World implements Printable, IViewable {
             br = new BufferedReader(fis);
             if (!br.readLine().trim().equals("worlddata"))
                 throw new InputMismatchException("File does not start with \"worlddata\"");
-            stepCounter = Integer.parseInt(br.readLine().trim().split(" ")[1]);
-            running = (stepCounter != 0);
+            loadedStepCounter = Integer.parseInt(br.readLine().trim().split(" ")[1]);
             activeplayer = br.readLine().trim().split(" ")[1];
             int fps = Integer.parseInt(br.readLine().trim().split(" ")[1]);
             for (int i = 0; i < fps; i++) {
@@ -586,8 +588,8 @@ public class World implements Printable, IViewable {
      */
     public void startGame(boolean managed) {
         managedMode = managed;
-        if (!running) // Ha loadot hívtunk, akkor lehetséges, hogy running - ekkor ne reseteljük a lépésszámot.
-            stepCounter = 0;
+        stepCounter = loadedStepCounter;
+        loadedStepCounter = 0;
         running = true;
         System.out.println("> Game Started");
         advanceGame();
