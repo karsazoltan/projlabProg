@@ -259,12 +259,11 @@ public class Tile implements Printable, IViewable {
      * @return Visszaadja, hogy szomszédosak-e a mezők
      */
 	public boolean isNeighbor(Tile other) {
-        boolean result = false;
         for( Tile neighbor : neighbors ){
             if( neighbor == other )
-                result = true;
+                return true;
         }
-		return result;
+		return false;
 	}
 
     /**
