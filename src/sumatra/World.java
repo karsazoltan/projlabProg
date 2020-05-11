@@ -134,37 +134,6 @@ public class World implements Printable, IViewable {
     }
 
     /**
-     * Ciklusfüggvény, a játék menetét vezérli. A grafikus felület bevezetése óta nem használt
-     */
-    private void gameLoop() {
-        int nextstormstep = ThreadLocalRandom.current().nextInt(Math.max(2 * creatures.size(),1));
-
-        // Ha load történt, akkor történhet ilyen
-        if (!activeplayer.equals("none")) {
-            try {
-                int idx = Integer.parseInt(activeplayer);
-                if (idx < creatures.size())
-                    step(idx);
-            } catch (Exception ignored) {} // Ha invalid a creature id, ne bajlódjunk vele, induljon rendesen a játék
-        }
-
-        if (!managedMode) {
-            while (running) {
-                step(stepCounter % creatures.size());
-                if (stepCounter == nextstormstep) {
-                    generateSnowstorm();
-                    nextstormstep += ThreadLocalRandom.current().nextInt(Math.max(2 * creatures.size(),1));
-                }
-            }
-        } else {
-            while (running && input.hasNextLine()) {
-                String line = input.nextLine().trim();
-                Interpreter.interpretGameplayCommand(line);
-            }
-        }
-    }
-
-    /**
      * Élőlény-generáló függvény, közvetlenül az inputtal dolgozik.
      */
     public void generateCreatures() {
@@ -392,24 +361,6 @@ public class World implements Printable, IViewable {
             }
         } else {
             affectedTiles = Interpreter.requestSnowstormGeneration(tiles.size());
-
-            /* INPUTOS MÓD, ez nem kell
-            System.out.println("    > Enter affected tiles and layers of snow to generate (<t> <#>),");
-            System.out.print("    > or F to finish:\n        ");
-            String line = input.nextLine().trim();
-            while (!line.equals("F")) {
-                try {
-                    String[] words = line.split(" ");
-                    int tile = Integer.parseInt(words[0]);
-                    int snow = Integer.parseInt(words[1]);
-                    affectedTiles.put(tile, snow);
-                } catch (Exception e) {
-                    System.out.println("    > Error: Invalid syntax!");
-                }
-                System.out.print("        ");
-                line = input.nextLine().trim();
-            }
-             */
         }
 
         System.out.print("> Snowstorm! Tiles affected: ");
@@ -628,8 +579,6 @@ public class World implements Printable, IViewable {
             creatures.get(idx).playManagedRound();
         else
             creatures.get(idx).playRound();
-
-        //activeplayer = "none";
     }
 
     /**
@@ -749,10 +698,17 @@ public class World implements Printable, IViewable {
         return creatures;
     }
 
+    /**
+     * Visszaadja a játékban levő mezők számát.
+     * @return a játékban levő mezők számát.
+     */
     public int getTileCount() {
         return tiles.size();
     }
 
+    /**
+     * Befejezi egy játékos a körét.
+     */
     public void playerFinished() {
         activeplayer = "none";
         advanceGame();
