@@ -1,12 +1,12 @@
 \fajl
 { BearTileChooserWindow.java}
-{ 1216 byte }
+{ 1423 byte }
 { Sat May  9 14:48:48 2020 }
 { BearTileChooserWindow programosztály }
 
 \fajl
 { BuildingView.java}
-{ 901 byte }
+{ 900 byte }
 { Thu May  7 16:31:50 2020 }
 { BuildingView programosztály }
 
@@ -18,13 +18,13 @@
 
 \fajl
 { CommandButton.java}
-{ 2237 byte }
+{ 2514 byte }
 { Thu May  7 15:12:34 2020 }
 { CommandButton programosztály }
 
 \fajl
 { CommandPanel.java}
-{ 1175 byte }
+{ 1492 byte }
 { Thu May  7 13:23:05 2020 }
 { CommandPanel programosztály }
 
@@ -42,37 +42,37 @@
 
 \fajl
 { CreatureView.java}
-{ 1020 byte }
+{ 1462 byte }
 { Thu May  7 13:23:05 2020 }
 { CreatureView programosztály }
 
 \fajl
 { FlarePartsPanel.java}
-{ 1328 byte }
+{ 1327 byte }
 { Thu May  7 13:23:05 2020 }
 { FlarePartsPanel programosztály }
 
 \fajl
 { GameAreaPanel.java}
-{ 5132 byte }
+{ 5528 byte }
 { Thu May  7 13:23:05 2020 }
 { GameAreaPanel programosztály }
 
 \fajl
 { InitCreatureWindow.java}
-{ 3447 byte }
+{ 3362 byte }
 { Thu May  7 15:16:55 2020 }
 { InitCreatureWindow programosztály }
 
 \fajl
 { InitWorldWindow.java}
-{ 8835 byte }
+{ 8709 byte }
 { Thu May  7 13:30:38 2020 }
 { InitWorldWindow programosztály }
 
 \fajl
 { ItemView.java}
-{ 580 byte }
+{ 788 byte }
 { Thu May  7 13:23:05 2020 }
 { ItemView programosztály }
 
@@ -102,25 +102,25 @@
 
 \fajl
 { OneCreaturePanel.java}
-{ 1355 byte }
+{ 1350 byte }
 { Thu May  7 13:23:05 2020 }
 { OneCreaturePanel programosztály }
 
 \fajl
 { SnowstormGeneratorWindow.java}
-{ 3811 byte }
+{ 3781 byte }
 { Sat May  9 14:48:48 2020 }
 { SnowstormGeneratorWindow programosztály }
 
 \fajl
 { TileView.java}
-{ 3497 byte }
+{ 4160 byte }
 { Thu May  7 13:23:05 2020 }
 { TileView programosztály }
 
 \fajl
 { UpdateJPanel.java}
-{ 448 byte }
+{ 780 byte }
 { Thu May  7 16:51:28 2020 }
 { UpdateJPanel programosztály }
 
@@ -150,7 +150,7 @@
 
 \fajl
 { Bear.java}
-{ 4098 byte }
+{ 3355 byte }
 { Wed Apr 22 14:10:07 2020 }
 { Bear programosztály }
 
@@ -210,7 +210,7 @@
 
 \fajl
 { HoleTile.java}
-{ 1553 byte }
+{ 1461 byte }
 { Wed Mar 25 20:44:17 2020 }
 { HoleTile programosztály }
 
@@ -222,13 +222,13 @@
 
 \fajl
 { Interpreter.java}
-{ 10129 byte }
+{ 10100 byte }
 { Wed Apr 22 14:10:07 2020 }
 { Interpreter programosztály }
 
 \fajl
 { Item.java}
-{ 677 byte }
+{ 616 byte }
 { Wed Mar 25 10:57:36 2020 }
 { Item programosztály }
 
@@ -246,13 +246,13 @@
 
 \fajl
 { NoRope.java}
-{ 735 byte }
+{ 674 byte }
 { Wed Mar 25 20:44:17 2020 }
 { NoRope programosztály }
 
 \fajl
 { Player.java}
-{ 8572 byte }
+{ 8652 byte }
 { Thu Mar 26 13:05:21 2020 }
 { Player programosztály }
 
@@ -294,13 +294,13 @@
 
 \fajl
 { Tile.java}
-{ 11299 byte }
+{ 11263 byte }
 { Wed Mar 25 20:44:17 2020 }
 { Tile programosztály }
 
 \fajl
 { UnstableTile.java}
-{ 1674 byte }
+{ 1522 byte }
 { Wed Mar 25 20:44:17 2020 }
 { UnstableTile programosztály }
 
@@ -312,7 +312,7 @@
 
 \fajl
 { World.java}
-{ 28556 byte }
+{ 26706 byte }
 { Wed Mar 25 10:57:36 2020 }
 { World programosztály }
 
