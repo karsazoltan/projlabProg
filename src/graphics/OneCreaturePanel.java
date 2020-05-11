@@ -17,6 +17,7 @@ public class OneCreaturePanel extends JPanel implements IView{
     /* Referencia a hozzátartozó lényre. */
     Creature creature;
 
+    /* Konstruktor */
     public OneCreaturePanel(Creature pcreature){
         creature = pcreature;
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));

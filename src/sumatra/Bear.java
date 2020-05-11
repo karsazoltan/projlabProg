@@ -40,7 +40,10 @@ public class Bear extends Creature{
         pw.flush();
     }
 
-    // TODO COMMENT
+    /**
+     * Visszaad egy lista sztringet a medve állapotáról, a megjelenítéshez kell.
+     * @return egy lista sztring.
+     */
     @Override
     public ArrayList<String> getDisplayData() {
         ArrayList<String> data = new ArrayList<String>();

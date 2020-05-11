@@ -6,7 +6,6 @@ import sumatra.World;
 
 import java.awt.*;
 
-import java.awt.Color;
 import java.util.ArrayList;
 
 /**
@@ -16,6 +15,7 @@ public class FlarePartsPanel extends JPanel implements IView {
     /* Az eddig összegyűjtött rakétadaraboknak egy-egy label */
     private ArrayList<JLabel> pLabels = new ArrayList<>();
 
+    /* Konstruktor */
     public FlarePartsPanel(){      
         World.getInstance().addView(this);
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
