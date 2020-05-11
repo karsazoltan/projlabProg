@@ -8,11 +8,21 @@ import java.util.ArrayList;
 
 import sumatra.*;
 
+/**
+ * A játék bal oldalán látható lény listát kezelő panel.
+ */
 public class CreaturesPanel extends JPanel {
+    /** Singleton megvalósítás: példány */
     private static CreaturesPanel instance = new CreaturesPanel();
+    /** Singleton megvalósítás: függvény */
     public static CreaturesPanel getInstance() { return instance; }
 
+    /**
+    * Ebben a panelben vannak a lények.
+    */
     JPanel panel = new JPanel();
+
+    /** Singleton megvalósítás: privát konstruktor */
     private CreaturesPanel(){
         setLayout(new BorderLayout());
         
@@ -27,6 +37,9 @@ public class CreaturesPanel extends JPanel {
         add(scrollPane, BorderLayout.CENTER);
     }
 
+    /**
+     * Hozzárendeli a CreaturesPanelhez a modellben levő lényeket.
+     */
     public void attachViews(){
         panel.removeAll();
         repaint();

@@ -8,8 +8,13 @@ import java.util.ArrayList;
 import sumatra.Creature;
 import sumatra.Bear;
 
+/**
+ * Egy darab lénynek, a játék bal oldalán levő megjelenítésével foglalkozó panel.
+ */
 public class OneCreaturePanel extends JPanel implements IView{
+    /* A lény adatait megjelenítő szövegek */
     ArrayList<JLabel> labels = new ArrayList<JLabel>();
+    /* Referencia a hozzátartozó lényre. */
     Creature creature;
 
     public OneCreaturePanel(Creature pcreature){
@@ -24,6 +29,9 @@ public class OneCreaturePanel extends JPanel implements IView{
         subjectChanged();
     }
 
+    /**
+     * Megváltozott a lény.
+     */
     public void subjectChanged(){
         for( JLabel label : labels ){
             remove( label );
