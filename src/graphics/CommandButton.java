@@ -6,22 +6,33 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.function.Function;
 
+/**
+ * A akciógombokat reprezentáló osztály
+ */
 public class CommandButton extends JButton implements ActionListener {
-    private CommandPanel cp;
     private Command command;
 
-    public CommandButton(Command comm, CommandPanel cp) {
+    /**
+     * Konstruktor
+     * @param comm A gombhoz tartozó parancs
+     */
+    public CommandButton(Command comm) {
         command = comm;
-        this.cp = cp;
     }
 
+    /**
+     * A gombhoz tartozó parancs getterje
+     * @return A gomboz tartozó parancs
+     */
     public Command getCommand() {
         return command;
     }
 
+    /**
+     * A gomb lenyomásával kiváltott esemény
+     * @param e Az esemény
+     */
     public void actionPerformed(ActionEvent e) {
         if (command.hasParameters()) {
             JDialog d = new JDialog();
@@ -41,7 +52,7 @@ public class CommandButton extends JButton implements ActionListener {
                     int index = jcb.getSelectedIndex();
                     if (index < 0) return;
                     Interpreter.interpretCommand(command.getCommand() + " " + options[index]);
-                    cp.updateButtons();
+                    CommandPanel.getInstance().updateButtons();
                     d.dispose();
                 };
             } else {
@@ -49,7 +60,7 @@ public class CommandButton extends JButton implements ActionListener {
                 generic = tf;
                 lambda = (arg) -> {
                     Interpreter.interpretCommand(command.getCommand() + " " + tf.getText());
-                    cp.updateButtons();
+                    CommandPanel.getInstance().updateButtons();
                     d.dispose();
                 };
             }
@@ -63,7 +74,7 @@ public class CommandButton extends JButton implements ActionListener {
             d.setVisible(true);
         } else {
             Interpreter.interpretCommand(command.getCommand());
-            cp.updateButtons();
+            CommandPanel.getInstance().updateButtons();
         }
     }
 }

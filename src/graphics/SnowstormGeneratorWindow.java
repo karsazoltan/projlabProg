@@ -17,6 +17,10 @@ public class SnowstormGeneratorWindow extends Dialog {
     ArrayList<Integer> tiles = new ArrayList<Integer>();
     Boolean done = false;
 
+    /**
+     * Creates a dialog box in a Java Swing Modal Dialog 
+     * @param tileCount the number of tiles 
+     */
     public SnowstormGeneratorWindow(int tileCount) {
         super(Main.getMw(), "Snowstorm Generator"); 
         for (int i = 0; i < tileCount; ++i) {
@@ -88,6 +92,11 @@ public class SnowstormGeneratorWindow extends Dialog {
         setLocationRelativeTo(null);
     }
 
+    /**
+     * Sets the dialog visible then waits for the window to return a hashmap
+     * that contains the affected tiles.
+     * @return hashmap tile ID -> snow ammount
+     */
     public HashMap<Integer,Integer> showDialog() {
         setVisible(true);
         return addedSnowyTiles;

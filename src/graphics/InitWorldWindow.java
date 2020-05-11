@@ -31,7 +31,10 @@ public class InitWorldWindow extends JFrame {
     String link_list = "";
 
 
-
+    /**
+     * Constuctor for World Creator Window
+     * Creates a new frame and then calls the Interpreter's world creator function 
+     */
     public InitWorldWindow() {
         super("World Creator");
 

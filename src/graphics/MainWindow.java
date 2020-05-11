@@ -63,7 +63,10 @@ public class MainWindow extends JFrame {
                     GameAreaPanel.getInstance().saveLayout(jfk.getSelectedFile().getAbsolutePath());
                     CommandPanel.getInstance().updateButtons();
                 } catch (IOException ex) {
-                    ex.printStackTrace();
+                    JOptionPane jop = new JOptionPane("Error: Couldn't save file!", JOptionPane.ERROR_MESSAGE);
+                    JDialog dialog = jop.createDialog("Error!");
+                    dialog.setAlwaysOnTop(true);
+                    dialog.setVisible(true);
                 }
             }
         });
@@ -79,7 +82,10 @@ public class MainWindow extends JFrame {
                     CreaturesPanel.getInstance().attachViews();
                     World.getInstance().updateViews();
                 } catch (IOException ex) {
-                    ex.printStackTrace();
+                    JOptionPane jop = new JOptionPane("Error: Couldn't load file!", JOptionPane.ERROR_MESSAGE);
+                    JDialog dialog = jop.createDialog("Error!");
+                    dialog.setAlwaysOnTop(true);
+                    dialog.setVisible(true);
                 }
             }
         });
