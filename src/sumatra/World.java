@@ -491,6 +491,7 @@ public class World implements Printable, IViewable {
         tiles.clear();
         creatures.clear();
         flareParts.clear();
+        updateViews();
 
         FileReader fis;
         BufferedReader br = new BufferedReader(Reader.nullReader()); // Java 11 sajátosság, de cserébe szép lesz a finally
