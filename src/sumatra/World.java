@@ -156,9 +156,8 @@ public class World implements Printable, IViewable {
             }
         } else {
             while (running && input.hasNextLine()) {
-                //String line = input.nextLine().trim();
-                //Interpreter.interpretGameplayCommand(line);
-                // TODO SZKENNERKISZEDÉS
+                String line = input.nextLine().trim();
+                Interpreter.interpretGameplayCommand(line);
             }
         }
     }

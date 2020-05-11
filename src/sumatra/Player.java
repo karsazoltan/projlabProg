@@ -257,14 +257,7 @@ public abstract class Player extends Creature{
     void playRound() {
         System.out.println("> Player " + index + ", you're up!");
         mana = 4;        
-        boolean exit;
-        // TODO SZKENNERKIKAPCSOLÁS
-        //Scanner input = World.getInstance().getInputScanner();
-        //do{
-        //    String line = input.nextLine().trim();
-        //    exit = Interpreter.interpretPlayerCommand(this, line);
-        //}while( !exit );
-        //System.out.println("> Round finished");
+        updateViews();
     }
 
     /**
