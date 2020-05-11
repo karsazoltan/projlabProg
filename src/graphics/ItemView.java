@@ -15,8 +15,6 @@ public class ItemView extends UpdateJPanel {
     public void Update(Tile t) {
         if(t.getItem() != null)
             label.setText("I");
-        else
-            label.setText("");
     }
     @Override
     public Dimension getPreferredSize() {

@@ -10,7 +10,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Flow;
 
 public class TileView extends JPanel implements IView {
     private int x, y;
@@ -19,7 +18,7 @@ public class TileView extends JPanel implements IView {
 
     private JLabel idLabel;
     private JLabel capLabel;
-    private JLabel snowLabel;
+    private JLabel snow_itemLabel;
 
     public TileView(Tile t, int x, int y) {
         t.addView(this);
@@ -40,27 +39,21 @@ public class TileView extends JPanel implements IView {
         info.setPreferredSize(new Dimension(140, 40));
         info.setLayout(new FlowLayout());
 
-        capLabel = new JLabel();
+        capLabel = new JLabel("");
         JPanel capPanel = new JPanel();
         capPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
         capPanel.setPreferredSize(new Dimension(30, 30));
         capPanel.add(capLabel);
-        snowLabel = new JLabel();
-        JPanel snowPanel = new JPanel();
-        snowPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
-        snowPanel.setPreferredSize(new Dimension(30, 30));
-        snowPanel.add(snowLabel);
-
         info.add(capPanel);
-        info.add(snowPanel);
+
+        snow_itemLabel = new JLabel("");
+        ItemView iv = new ItemView(snow_itemLabel);
+        views.add(iv);
+        info.add(iv);
 
         BuildingView bv = new BuildingView(new JLabel(""));
         info.add(bv);
         views.add(bv);
-
-        ItemView iv = new ItemView(new JLabel(""));
-        views.add(iv);
-        info.add(iv);
 
         add(info, BorderLayout.PAGE_END);
 
@@ -105,7 +98,8 @@ public class TileView extends JPanel implements IView {
             up.Update(tile);
         }
         capLabel.setText(tile.getInfo());
-        snowLabel.setText(tile.getSnow().toString());
+        if(tile.getSnow() != 0)
+            snow_itemLabel.setText(tile.getSnow().toString());
     }
 
     public Point getPosition() {
