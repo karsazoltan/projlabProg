@@ -17,6 +17,10 @@ public class InitCreatureWindow extends JFrame {
     String creature_list = "";
     ArrayList<Integer> tiles = new ArrayList<Integer>();
 
+    /**
+     * Creates a creature initializer window then adds the specified creatures to the game.
+     * @param nr the number of the tiles in the game. 
+     */
     public InitCreatureWindow(int nr) {
         super("Creature Creator"); 
         for (int i = 0; i < nr; ++i) {

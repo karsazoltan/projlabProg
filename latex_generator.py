@@ -31,6 +31,7 @@ for file_name, size, created in zip(java_files, java_sizes, java_created):
     file.write('{ ' + file_name.split('.')[0] + ' programosztály }\n')
     file.write('\n')
 
+"""
 for file_name, size, created in zip(txt_files, txt_sizes, txt_created):
     file.write("\\fajl\n")
     file.write('{ ' + file_name + ' }\n')
@@ -38,3 +39,4 @@ for file_name, size, created in zip(txt_files, txt_sizes, txt_created):
     file.write('{ ' + time.ctime(created) + ' }\n')
     file.write('{ ' + file_name.split('.')[0] + ' tesztesetfájl }\n')
     file.write('\n')
+"""
