@@ -39,7 +39,7 @@ public class Tile implements Printable, IViewable {
     /**
      * A táblára épített építmény
      */
-    private Building building;
+    protected Building building;
 
     /**
      * a mezőt azonosító szám

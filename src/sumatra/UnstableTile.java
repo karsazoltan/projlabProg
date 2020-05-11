@@ -17,6 +17,7 @@ public class UnstableTile extends Tile {
      */
     @Override
     public void accept(Creature c) {
+        building.newCreature(c, creatures);
         creatures.add(c);
         if (creatures.size() > capacity) {
             flip();
